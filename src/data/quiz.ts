@@ -345,7 +345,37 @@ export const personalityResults: Record<string, PersonalityResult> = {
         website: "https://www.mit.edu/",
         phone: "(617) 253-3400",
         email: "admissions@mit.edu",
-        regionalCounselors: ["Stuart Schmill (Dean)", "Michael Yang", "Molly Thompson‑Vander Heyden", "Trinidad Carney", "Yi Tso"]
+        regionalCounselors: ["Stuart Schmill (Dean)", "Michael Yang", "Molly Thompson‑Vander Heyden", "Trinidad Carney", "Yi Tso"],
+        
+        // Academic Information
+        tuition: "$59,750/year (2024-25)",
+        acceptanceRate: "3.96%",
+        averageGPA: "4.17",
+        testScores: "SAT: 1520-1580, ACT: 35-36",
+        applicationDeadline: "January 1 (Regular Decision)",
+        studentFacultyRatio: "3:1",
+        classSize: "Average class size: 12 students",
+        
+        // Campus Life
+        studentPopulation: "4,638 undergraduates",
+        campusCulture: "Collaborative, innovation-focused, academically rigorous environment with strong emphasis on hands-on learning and research",
+        housingOptions: ["Residence Halls", "Fraternities/Sororities", "Graduate Housing", "Co-ops"],
+        activities: ["Robotics Competitions", "Hackathons", "Research Groups", "Student Government", "Music Groups", "Sports Clubs"],
+        athletics: "NCAA Division III, 33 varsity sports",
+        
+        // Career Support
+        jobPlacementRate: "94% employed or in graduate school within 6 months",
+        alumniNetwork: "Strong global network of 140,000+ alumni in tech, finance, research, and entrepreneurship",
+        internshipPrograms: ["UROP (Undergraduate Research)", "Industry Internships", "Co-op Programs", "International Internships"],
+        careerServices: ["Career Advising", "Job Placement", "Interview Prep", "Resume Review", "Networking Events"],
+        
+        // Special Features
+        notableAlumni: ["Buzz Aldrin", "Tim Berners-Lee", "Drew Houston (Dropbox)", "Robert Noyce (Intel)", "Katherine Johnson"],
+        researchOpportunities: ["AI/Machine Learning", "Bioengineering", "Climate Science", "Quantum Computing", "Space Technology"],
+        studyAbroad: "MIT International Science and Technology Initiatives (MISTI) in 25+ countries",
+        honorsPrograms: ["Honors Programs in all majors", "Research Opportunities", "Advanced Placement"],
+        scholarships: ["Need-based Aid", "Merit Scholarships", "Work-Study Programs", "External Scholarships"],
+        campusFacilities: ["State-of-art Labs", "Maker Spaces", "Libraries", "Recreation Center", "Innovation Labs"]
       },
       {
         name: "Stanford University",

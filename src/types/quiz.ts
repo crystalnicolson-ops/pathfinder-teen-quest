@@ -47,6 +47,36 @@ export interface College {
   phone?: string;
   email?: string;
   regionalCounselors?: string[];
+  
+  // Academic Information
+  tuition?: string;
+  acceptanceRate?: string;
+  averageGPA?: string;
+  testScores?: string;
+  applicationDeadline?: string;
+  studentFacultyRatio?: string;
+  classSize?: string;
+  
+  // Campus Life
+  studentPopulation?: string;
+  campusCulture?: string;
+  housingOptions?: string[];
+  activities?: string[];
+  athletics?: string;
+  
+  // Career Support
+  jobPlacementRate?: string;
+  alumniNetwork?: string;
+  internshipPrograms?: string[];
+  careerServices?: string[];
+  
+  // Special Features
+  notableAlumni?: string[];
+  researchOpportunities?: string[];
+  studyAbroad?: string;
+  honorsPrograms?: string[];
+  scholarships?: string[];
+  campusFacilities?: string[];
 }
 
 export interface PersonalityResult {
