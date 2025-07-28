@@ -427,7 +427,7 @@ export const personalityResults: Record<string, PersonalityResult> = {
         website: "https://www.caltech.edu/",
         phone: "626-395-6341",
         email: "ugadmissions@caltech.edu",
-        regionalCounselors: ["Emily Gray", "Jonah Magill", "Zion Smith", "Melissa Rodriguez", "Lucas Demetriades", "Andres Diaz"]
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "University of California, Berkeley",
@@ -437,7 +437,7 @@ export const personalityResults: Record<string, PersonalityResult> = {
         website: "https://www.berkeley.edu/",
         phone: "(510) 642-3175",
         email: "berkeleyinfo@berkeley.edu",
-        regionalCounselors: ["Juan Román", "Betsy Barba", "Theodore Ny"]
+        regionalCounselors: ["Handled by department emails"]
       },
       {
         name: "Georgia Institute of Technology",
@@ -476,21 +476,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Philadelphia, PA",
         programs: ["Business Administration", "Management", "Economics"],
         ranking: "#1 in Business",
-        website: "https://www.wharton.upenn.edu/"
+        website: "https://www.wharton.upenn.edu/",
+        phone: "(215) 898-7507",
+        email: "info@admissions.ugao.upenn.edu",
+        regionalCounselors: ["Juan Román", "Betsy Barba", "Theodore Ny"]
       },
       {
         name: "Harvard University",
         location: "Cambridge, MA",
         programs: ["Business", "Economics", "Government"],
         ranking: "#3 overall",
-        website: "https://www.harvard.edu/"
+        website: "https://www.harvard.edu/",
+        phone: "(617) 495-1551",
+        email: "college@fas.harvard.edu",
+        regionalCounselors: ["General Advising Office"]
       },
       {
         name: "Northwestern University",
         location: "Evanston, IL", 
         programs: ["Business", "Economics", "Political Science"],
         ranking: "#9 overall",
-        website: "https://www.northwestern.edu/"
+        website: "https://www.northwestern.edu/",
+        phone: "(847) 491-7271",
+        email: "ug-admission@northwestern.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -519,21 +528,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Los Angeles, CA",
         programs: ["Business", "Communications", "Innovation"],
         ranking: "#27 overall",
-        website: "https://www.usc.edu/"
+        website: "https://www.usc.edu/",
+        phone: "(213) 740-1111",
+        email: "askUSC (portal)",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "New York University",
         location: "New York, NY",
         programs: ["Business", "Media Studies", "Entrepreneurship"],
         ranking: "#30 overall",
-        website: "https://www.nyu.edu/"
+        website: "https://www.nyu.edu/",
+        phone: "(212) 998-4500",
+        email: "admissions@nyu.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "University of Texas at Austin",
         location: "Austin, TX",
         programs: ["Business", "Communications", "Technology"],
         ranking: "#38 overall",
-        website: "https://www.utexas.edu/"
+        website: "https://www.utexas.edu/",
+        phone: "512-475-7399",
+        email: "admissions@austin.utexas.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -562,21 +580,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "New Haven, CT",
         programs: ["Psychology", "Social Work", "Public Health"],
         ranking: "#5 overall",
-        website: "https://www.yale.edu/"
+        website: "https://www.yale.edu/",
+        phone: "(203) 432-9316",
+        email: "student.questions@yale.edu",
+        regionalCounselors: ["Jeremiah Quinlan (Dean)"]
       },
       {
         name: "University of Chicago",
         location: "Chicago, IL",
         programs: ["Psychology", "Social Work", "Public Policy"],
         ranking: "#6 overall",
-        website: "https://www.uchicago.edu/"
+        website: "https://www.uchicago.edu/",
+        phone: "(773) 702-8650",
+        email: "collegeadmissions@uchicago.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "Vanderbilt University",
         location: "Nashville, TN",
         programs: ["Psychology", "Human Development", "Social Work"],
         ranking: "#13 overall",
-        website: "https://www.vanderbilt.edu/"
+        website: "https://www.vanderbilt.edu/",
+        phone: "(615) 322-2561",
+        email: "admissions@vanderbilt.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -605,21 +632,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Providence, RI",
         programs: ["Graphic Design", "Game Design", "Digital Media"],
         ranking: "#1 in Art & Design",
-        website: "https://www.risd.edu/"
+        website: "https://www.risd.edu/",
+        phone: "401-454-6300",
+        email: "admissions@risd.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "California Institute of the Arts",
         location: "Valencia, CA",
         programs: ["Animation", "Art", "Creative Writing"],
         ranking: "#6 in Art & Design",
-        website: "https://calarts.edu/"
+        website: "https://calarts.edu/",
+        phone: "661-255-1050",
+        email: "admissions@calarts.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "Parsons School of Design",
         location: "New York, NY",
         programs: ["Design & Technology", "Illustration", "Fine Arts"],
         ranking: "#3 in Art & Design",
-        website: "https://www.newschool.edu/parsons/"
+        website: "https://www.newschool.edu/parsons/",
+        phone: "(212) 229-5150",
+        email: "thinkparsons@newschool.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -648,21 +684,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "New York, NY",
         programs: ["Education", "Psychology", "Human Development"],
         ranking: "#1 in Education",
-        website: "https://www.tc.columbia.edu/"
+        website: "https://www.tc.columbia.edu/",
+        phone: "(212) 678-3710",
+        email: "admission@tc.columbia.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "Harvard Graduate School of Education",
         location: "Cambridge, MA",
         programs: ["Education Policy", "Human Development", "Teaching"],
         ranking: "#2 in Education",
-        website: "https://www.gse.harvard.edu/"
+        website: "https://www.gse.harvard.edu/",
+        phone: "(617) 495-3414",
+        email: "admissions@gse.harvard.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "University of California, Los Angeles",
         location: "Los Angeles, CA",
         programs: ["Education", "Psychology", "Social Welfare"],
         ranking: "#20 overall",
-        website: "https://www.ucla.edu/"
+        website: "https://www.ucla.edu/",
+        phone: "(310) 825-3101",
+        email: "ugadm@saonet.ucla.edu",
+        regionalCounselors: ["Emily Gray", "Jonah Magill", "Zion Smith", "Melissa Rodriguez", "Lucas Demetriades", "Andres Diaz"]
       }
     ]
   },
@@ -691,21 +736,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Los Angeles, CA",
         programs: ["Film & Media", "Communications", "Journalism"],
         ranking: "#27 overall",
-        website: "https://www.usc.edu/"
+        website: "https://www.usc.edu/",
+        phone: "(213) 740-1111",
+        email: "askUSC (portal)",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "New York University",
         location: "New York, NY",
         programs: ["Media Studies", "Film", "Creative Writing"],
         ranking: "#30 overall",
-        website: "https://www.nyu.edu/"
+        website: "https://www.nyu.edu/",
+        phone: "(212) 998-4500",
+        email: "admissions@nyu.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "University of California, Berkeley",
         location: "Berkeley, CA",
         programs: ["Media Studies", "English", "Anthropology"],
         ranking: "#22 overall",
-        website: "https://www.berkeley.edu/"
+        website: "https://www.berkeley.edu/",
+        phone: "(510) 642-3175",
+        email: "berkeleyinfo@berkeley.edu",
+        regionalCounselors: ["Handled by department emails"]
       }
     ]
   },
@@ -734,21 +788,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Philadelphia, PA",
         programs: ["Business", "Accounting", "Finance"],
         ranking: "#8 overall",
-        website: "https://www.upenn.edu/"
+        website: "https://www.upenn.edu/",
+        phone: "(215) 898-7507",
+        email: "info@admissions.ugao.upenn.edu",
+        regionalCounselors: ["Eric Furda (Dean)", "northeastteam@admissions.upenn.edu"]
       },
       {
         name: "University of Michigan",
         location: "Ann Arbor, MI",
         programs: ["Business", "Engineering", "Information"],
         ranking: "#21 overall",
-        website: "https://umich.edu/"
+        website: "https://umich.edu/",
+        phone: "734-764-7433",
+        email: "admissions.umich.edu (via contact form)",
+        regionalCounselors: ["Miguel Alvarez", "Keith Gehres"]
       },
       {
         name: "University of Virginia",
         location: "Charlottesville, VA",
         programs: ["Business", "Commerce", "Engineering"],
         ranking: "#24 overall",
-        website: "https://www.virginia.edu/"
+        website: "https://www.virginia.edu/",
+        phone: "434-982-3200",
+        email: "undergradadmission@virginia.edu",
+        regionalCounselors: ["General admissions advisors"]
       }
     ]
   },
@@ -777,21 +840,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Baltimore, MD",
         programs: ["Nursing", "Public Health", "Education"],
         ranking: "#9 overall",
-        website: "https://www.jhu.edu/"
+        website: "https://www.jhu.edu/",
+        phone: "(410) 516-8171",
+        email: "gotojhu@jhu.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "University of Pennsylvania",
         location: "Philadelphia, PA",
         programs: ["Nursing", "Education", "Social Work"],
         ranking: "#8 overall",
-        website: "https://www.upenn.edu/"
+        website: "https://www.upenn.edu/",
+        phone: "(215) 898-7507",
+        email: "info@admissions.ugao.upenn.edu",
+        regionalCounselors: ["Eric Furda (Dean)", "northeastteam@admissions.upenn.edu"]
       },
       {
         name: "Vanderbilt University",
         location: "Nashville, TN",
         programs: ["Nursing", "Education", "Human Development"],
         ranking: "#13 overall",
-        website: "https://www.vanderbilt.edu/"
+        website: "https://www.vanderbilt.edu/",
+        phone: "(615) 322-2561",
+        email: "admissions@vanderbilt.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -820,21 +892,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Philadelphia, PA",
         programs: ["Business Administration", "Management", "Operations"],
         ranking: "#1 in Business",
-        website: "https://www.wharton.upenn.edu/"
+        website: "https://www.wharton.upenn.edu/",
+        phone: "(215) 898-7507",
+        email: "info@admissions.ugao.upenn.edu",
+        regionalCounselors: ["Juan Román", "Betsy Barba", "Theodore Ny"]
       },
       {
         name: "Northwestern University (Kellogg)",
         location: "Evanston, IL",
         programs: ["Business", "Management", "Operations"],
         ranking: "#3 in Business",
-        website: "https://www.northwestern.edu/"
+        website: "https://www.northwestern.edu/",
+        phone: "(847) 491-3300",
+        email: "kellogg-ug@northwestern.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "University of Chicago (Booth)",
         location: "Chicago, IL",
         programs: ["Business", "Economics", "Management"],
         ranking: "#6 overall",
-        website: "https://www.uchicago.edu/"
+        website: "https://www.uchicago.edu/",
+        phone: "(773) 702-7743",
+        email: "admissions@chicagobooth.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -863,21 +944,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Ithaca, NY",
         programs: ["Hotel Administration", "Human Relations", "Communications"],
         ranking: "#17 overall",
-        website: "https://www.cornell.edu/"
+        website: "https://www.cornell.edu/",
+        phone: "General Admissions",
+        email: "General Admissions",
+        regionalCounselors: ["Sabrina Williams", "Elena Montoya", "Nathan Fish", "Maggie Cazares (engineering)", "Flannery Weiss (engineering)"]
       },
       {
         name: "University of Southern California",
         location: "Los Angeles, CA",
         programs: ["Public Relations", "Communications", "Business"],
         ranking: "#27 overall",
-        website: "https://www.usc.edu/"
+        website: "https://www.usc.edu/",
+        phone: "(213) 740-1111",
+        email: "askUSC (portal)",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "Boston University",
         location: "Boston, MA",
         programs: ["Communications", "Hospitality", "Public Relations"],
         ranking: "#43 overall",
-        website: "https://www.bu.edu/"
+        website: "https://www.bu.edu/",
+        phone: "(617) 353-2300",
+        email: "admissions@bu.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -906,21 +996,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "West Lafayette, IN",
         programs: ["Engineering Technology", "Aviation", "Computer Graphics"],
         ranking: "#49 overall",
-        website: "https://www.purdue.edu/"
+        website: "https://www.purdue.edu/",
+        phone: "765-494-1776",
+        email: "admissions@purdue.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "Georgia Institute of Technology",
         location: "Atlanta, GA",
         programs: ["Mechanical Engineering", "Aerospace Engineering", "Industrial Design"],
         ranking: "#38 overall",
-        website: "https://www.gatech.edu/"
+        website: "https://www.gatech.edu/",
+        phone: "(404) 894-4154",
+        email: "admission@gatech.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "Virginia Tech",
         location: "Blacksburg, VA",
         programs: ["Engineering", "Technology", "Construction"],
         ranking: "#75 overall",
-        website: "https://www.vt.edu/"
+        website: "https://www.vt.edu/",
+        phone: "(540) 231-6267",
+        email: "admissions@vt.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -949,21 +1048,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Pasadena, CA",
         programs: ["Photography", "Fine Arts", "Illustration"],
         ranking: "Top Art School",
-        website: "https://www.artcenter.edu/"
+        website: "https://www.artcenter.edu/",
+        phone: "626-396-2200",
+        email: "General Admissions",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "Rhode Island School of Design",
         location: "Providence, RI",
         programs: ["Photography", "Interior Architecture", "Fine Arts"],
         ranking: "#1 in Art & Design",
-        website: "https://www.risd.edu/"
+        website: "https://www.risd.edu/",
+        phone: "401-454-6300",
+        email: "admissions@risd.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "Savannah College of Art and Design",
         location: "Savannah, GA",
         programs: ["Photography", "Interior Design", "Fine Arts"],
         ranking: "Top Creative School",
-        website: "https://www.scad.edu/"
+        website: "https://www.scad.edu/",
+        phone: "912-525-5100",
+        email: "General Admissions",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -992,21 +1100,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Gainesville, FL",
         programs: ["Exercise Science", "Sports Management", "Emergency Management"],
         ranking: "#28 overall",
-        website: "https://www.ufl.edu/"
+        website: "https://www.ufl.edu/",
+        phone: "(352) 392-1365",
+        email: "freshman@ufl.edu",
+        regionalCounselors: ["Grayson Shultz (New England)", "Steve Milley (Richmond area)"]
       },
       {
         name: "Arizona State University",
         location: "Tempe, AZ",
         programs: ["Exercise Science", "Kinesiology", "Emergency Management"],
         ranking: "#103 overall",
-        website: "https://www.asu.edu/"
+        website: "https://www.asu.edu/",
+        phone: "480-965-7788",
+        email: "enrollmentonline@asu.edu",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "Penn State University",
         location: "University Park, PA",
         programs: ["Kinesiology", "Recreation & Sports Management", "Health Sciences"],
         ranking: "#63 overall",
-        website: "https://www.psu.edu/"
+        website: "https://www.psu.edu/",
+        phone: "1-814-865-5471",
+        email: "admissions@psu.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },
@@ -1035,21 +1152,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "New York, NY",
         programs: ["Dance", "Drama", "Music"],
         ranking: "Top Performing Arts School",
-        website: "https://www.juilliard.edu/"
+        website: "https://www.juilliard.edu/",
+        phone: "212-799-5000",
+        email: "General Admissions",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "University of Southern California",
         location: "Los Angeles, CA",
         programs: ["Theatre", "Dance", "Cinematic Arts"],
         ranking: "#27 overall",
-        website: "https://www.usc.edu/"
+        website: "https://www.usc.edu/",
+        phone: "(213) 740-1111",
+        email: "askUSC (portal)",
+        regionalCounselors: ["General Admissions Staff"]
       },
       {
         name: "New York University (Tisch)",
         location: "New York, NY",
         programs: ["Drama", "Dance", "Film & TV"],
         ranking: "#30 overall",
-        website: "https://www.nyu.edu/"
+        website: "https://www.nyu.edu/",
+        phone: "(212) 998-1900",
+        email: "tisch.ug.admissions@nyu.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   }
