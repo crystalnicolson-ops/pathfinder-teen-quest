@@ -319,42 +319,42 @@ export function calculateMBTI(responses: { traits: string[] }[]): PersonalityTyp
 export const personalityResults: Record<string, PersonalityResult> = {
   "The Strategist": {
     type: "The Strategist",
-    description: "🧠 The Strategist (INTJ) – \"I plan things 10 steps ahead.\" You love long-term goals and deep thinking. You're excellent at STEM and leadership.",
+    description: "🧠 The Strategist (INTJ) – \"Logical • Independent • Planner\" Professional with glasses and blueprints. You love strategic thinking and long-term planning.",
     careers: [
       {
-        title: "Software Architect",
-        description: "Design complex software systems and plan technical strategies",
-        averageSalary: "$120,000 - $180,000",
-        jobGrowth: "22% (much faster than average)",
-        indeedLink: "https://www.indeed.com/jobs?q=software+architect"
+        title: "Architect",
+        description: "Design buildings and spaces that are functional and aesthetically pleasing",
+        averageSalary: "$75,000 - $120,000",
+        jobGrowth: "7% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=architect"
       },
       {
-        title: "Systems Engineer",
-        description: "Design and manage complex engineering systems",
-        averageSalary: "$85,000 - $130,000",
-        jobGrowth: "7% (as fast as average)",
-        indeedLink: "https://www.indeed.com/jobs?q=systems+engineer"
+        title: "Software Engineer",
+        description: "Create software applications and systems for various platforms",
+        averageSalary: "$75,000 - $130,000",
+        jobGrowth: "25% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=software+engineer"
       },
       {
-        title: "Cybersecurity Analyst",
-        description: "Protect organizations from digital threats and security breaches",
-        averageSalary: "$70,000 - $120,000",
-        jobGrowth: "31% (much faster than average)",
-        indeedLink: "https://www.indeed.com/jobs?q=cybersecurity+analyst"
+        title: "Urban Planner",
+        description: "Design land use plans and programs for cities and communities",
+        averageSalary: "$65,000 - $95,000",
+        jobGrowth: "7% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=urban+planner"
       },
       {
-        title: "Data Scientist",
-        description: "Analyze complex data to help organizations make strategic decisions",
-        averageSalary: "$85,000 - $140,000",
-        jobGrowth: "35% (much faster than average)",
-        indeedLink: "https://www.indeed.com/jobs?q=data+scientist"
+        title: "Systems Analyst",
+        description: "Study business processes and design information technology solutions",
+        averageSalary: "$70,000 - $110,000",
+        jobGrowth: "7% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=systems+analyst"
       },
       {
-        title: "Product Manager",
-        description: "Lead product development strategy and coordinate teams",
-        averageSalary: "$85,000 - $140,000",
-        jobGrowth: "19% (much faster than average)",
-        indeedLink: "https://www.indeed.com/jobs?q=product+manager"
+        title: "Robotics Designer",
+        description: "Design and develop robotic systems for various applications",
+        averageSalary: "$80,000 - $130,000",
+        jobGrowth: "9% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=robotics+designer"
       }
     ],
     colleges: [
