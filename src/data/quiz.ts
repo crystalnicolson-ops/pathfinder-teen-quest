@@ -334,6 +334,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$85,000 - $130,000",
         jobGrowth: "7% (as fast as average)",
         indeedLink: "https://www.indeed.com/jobs?q=systems+engineer"
+      },
+      {
+        title: "Cybersecurity Analyst",
+        description: "Protect organizations from digital threats and security breaches",
+        averageSalary: "$70,000 - $120,000",
+        jobGrowth: "31% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=cybersecurity+analyst"
+      },
+      {
+        title: "Data Scientist",
+        description: "Analyze complex data to help organizations make strategic decisions",
+        averageSalary: "$85,000 - $140,000",
+        jobGrowth: "35% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=data+scientist"
+      },
+      {
+        title: "Product Manager",
+        description: "Lead product development strategy and coordinate teams",
+        averageSalary: "$85,000 - $140,000",
+        jobGrowth: "19% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=product+manager"
       }
     ],
     colleges: [
@@ -416,6 +437,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$70,000 - $120,000",
         jobGrowth: "25% (much faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=app+developer"
+      },
+      {
+        title: "Patent Analyst",
+        description: "Research and analyze patents for intellectual property protection",
+        averageSalary: "$65,000 - $110,000",
+        jobGrowth: "6% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=patent+analyst"
+      },
+      {
+        title: "Technical Writer",
+        description: "Create technical documentation and user manuals",
+        averageSalary: "$55,000 - $90,000",
+        jobGrowth: "12% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=technical+writer"
+      },
+      {
+        title: "Laboratory Technician",
+        description: "Perform scientific tests and experiments in laboratory settings",
+        averageSalary: "$40,000 - $65,000",
+        jobGrowth: "7% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=laboratory+technician"
       }
     ],
     colleges: [
@@ -468,6 +510,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$120,000 - $200,000",
         jobGrowth: "9% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=corporate+lawyer"
+      },
+      {
+        title: "Management Consultant",
+        description: "Advise organizations on strategic business improvements",
+        averageSalary: "$90,000 - $160,000",
+        jobGrowth: "13% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=management+consultant"
+      },
+      {
+        title: "Investment Banking Analyst",
+        description: "Analyze financial markets and investment opportunities",
+        averageSalary: "$85,000 - $150,000",
+        jobGrowth: "10% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=investment+banking+analyst"
+      },
+      {
+        title: "Executive Director",
+        description: "Lead organizational strategy and executive decision-making",
+        averageSalary: "$100,000 - $180,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=executive+director"
       }
     ],
     colleges: [
@@ -520,6 +583,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$60,000 - $200,000+",
         jobGrowth: "Variable",
         indeedLink: "https://www.indeed.com/jobs?q=entrepreneur+startup"
+      },
+      {
+        title: "Innovation Manager",
+        description: "Lead creative problem-solving and new product development",
+        averageSalary: "$75,000 - $120,000",
+        jobGrowth: "11% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=innovation+manager"
+      },
+      {
+        title: "Market Research Analyst",
+        description: "Study market conditions and consumer behavior trends",
+        averageSalary: "$55,000 - $85,000",
+        jobGrowth: "22% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=market+research+analyst"
+      },
+      {
+        title: "Creative Director",
+        description: "Lead creative teams and develop brand strategies",
+        averageSalary: "$70,000 - $130,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=creative+director"
       }
     ],
     colleges: [
@@ -572,6 +656,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$55,000 - $90,000",
         jobGrowth: "12% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=nonprofit+program+director"
+      },
+      {
+        title: "Social Worker",
+        description: "Help individuals and families navigate life challenges",
+        averageSalary: "$45,000 - $70,000",
+        jobGrowth: "12% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=social+worker"
+      },
+      {
+        title: "Life Coach",
+        description: "Guide individuals toward personal and professional goals",
+        averageSalary: "$40,000 - $75,000",
+        jobGrowth: "15% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=life+coach"
+      },
+      {
+        title: "Community Organizer",
+        description: "Mobilize communities for social change and advocacy",
+        averageSalary: "$35,000 - $60,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=community+organizer"
       }
     ],
     colleges: [
@@ -624,6 +729,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$60,000 - $100,000",
         jobGrowth: "16% (much faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=game+designer"
+      },
+      {
+        title: "UX/UI Designer",
+        description: "Design user-friendly interfaces for websites and applications",
+        averageSalary: "$55,000 - $95,000",
+        jobGrowth: "13% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=ux+ui+designer"
+      },
+      {
+        title: "Creative Writer",
+        description: "Write original content for books, scripts, and digital media",
+        averageSalary: "$35,000 - $70,000",
+        jobGrowth: "9% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=creative+writer"
+      },
+      {
+        title: "Art Therapist",
+        description: "Use art as therapy to help people express emotions and heal",
+        averageSalary: "$40,000 - $70,000",
+        jobGrowth: "13% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=art+therapist"
       }
     ],
     colleges: [
@@ -676,6 +802,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$55,000 - $85,000",
         jobGrowth: "11% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=training+development+specialist"
+      },
+      {
+        title: "School Counselor",
+        description: "Provide academic and emotional support to students",
+        averageSalary: "$45,000 - $70,000",
+        jobGrowth: "10% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=school+counselor"
+      },
+      {
+        title: "Corporate Trainer",
+        description: "Develop and deliver training programs for employees",
+        averageSalary: "$50,000 - $80,000",
+        jobGrowth: "11% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=corporate+trainer"
+      },
+      {
+        title: "Youth Program Coordinator",
+        description: "Organize and oversee programs for young people",
+        averageSalary: "$35,000 - $55,000",
+        jobGrowth: "15% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=youth+program+coordinator"
       }
     ],
     colleges: [
@@ -728,6 +875,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$35,000 - $75,000",
         jobGrowth: "Variable",
         indeedLink: "https://www.indeed.com/jobs?q=travel+blogger"
+      },
+      {
+        title: "Video Content Creator",
+        description: "Produce engaging video content for various platforms",
+        averageSalary: "$40,000 - $80,000",
+        jobGrowth: "14% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=video+content+creator"
+      },
+      {
+        title: "Public Relations Specialist",
+        description: "Manage public image and communications for organizations",
+        averageSalary: "$45,000 - $75,000",
+        jobGrowth: "11% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=public+relations+specialist"
+      },
+      {
+        title: "Marketing Coordinator",
+        description: "Support marketing campaigns and promotional activities",
+        averageSalary: "$40,000 - $65,000",
+        jobGrowth: "18% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=marketing+coordinator"
       }
     ],
     colleges: [
@@ -780,6 +948,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$65,000 - $100,000",
         jobGrowth: "9% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=financial+analyst"
+      },
+      {
+        title: "Quality Assurance Manager",
+        description: "Ensure products and services meet established standards",
+        averageSalary: "$60,000 - $95,000",
+        jobGrowth: "7% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=quality+assurance+manager"
+      },
+      {
+        title: "Database Administrator",
+        description: "Manage and maintain database systems for organizations",
+        averageSalary: "$70,000 - $110,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=database+administrator"
+      },
+      {
+        title: "Budget Analyst",
+        description: "Review budget proposals and monitor organizational spending",
+        averageSalary: "$55,000 - $85,000",
+        jobGrowth: "3% (as fast as average)",
+        indeedLink: "https://www.indeed.com/jobs?q=budget+analyst"
       }
     ],
     colleges: [
@@ -832,6 +1021,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$40,000 - $65,000",
         jobGrowth: "7% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=elementary+school+teacher"
+      },
+      {
+        title: "Medical Assistant",
+        description: "Support healthcare professionals in clinical settings",
+        averageSalary: "$30,000 - $45,000",
+        jobGrowth: "18% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=medical+assistant"
+      },
+      {
+        title: "Child Care Worker",
+        description: "Care for and supervise children in various settings",
+        averageSalary: "$25,000 - $35,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=child+care+worker"
+      },
+      {
+        title: "Administrative Assistant",
+        description: "Provide administrative support to keep offices running smoothly",
+        averageSalary: "$30,000 - $50,000",
+        jobGrowth: "-7% (declining)",
+        indeedLink: "https://www.indeed.com/jobs?q=administrative+assistant"
       }
     ],
     colleges: [
@@ -884,6 +1094,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$70,000 - $110,000",
         jobGrowth: "14% (much faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=business+analyst"
+      },
+      {
+        title: "Supply Chain Manager",
+        description: "Oversee and optimize supply chain operations",
+        averageSalary: "$75,000 - $120,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=supply+chain+manager"
+      },
+      {
+        title: "Project Manager",
+        description: "Plan, execute, and oversee projects from start to finish",
+        averageSalary: "$70,000 - $115,000",
+        jobGrowth: "11% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=project+manager"
+      },
+      {
+        title: "Compliance Officer",
+        description: "Ensure organizations follow laws and regulations",
+        averageSalary: "$60,000 - $95,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=compliance+officer"
       }
     ],
     colleges: [
@@ -936,6 +1167,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$45,000 - $70,000",
         jobGrowth: "9% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=human+resources+coordinator"
+      },
+      {
+        title: "Wedding Planner",
+        description: "Coordinate and plan wedding ceremonies and receptions",
+        averageSalary: "$40,000 - $70,000",
+        jobGrowth: "18% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=wedding+planner"
+      },
+      {
+        title: "Customer Success Manager",
+        description: "Ensure customer satisfaction and retention",
+        averageSalary: "$55,000 - $85,000",
+        jobGrowth: "15% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=customer+success+manager"
+      },
+      {
+        title: "Community Relations Manager",
+        description: "Build relationships between organizations and communities",
+        averageSalary: "$50,000 - $75,000",
+        jobGrowth: "11% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=community+relations+manager"
       }
     ],
     colleges: [
@@ -988,6 +1240,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$50,000 - $80,000",
         jobGrowth: "15% (much faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=drone+pilot"
+      },
+      {
+        title: "HVAC Technician",
+        description: "Install and repair heating, ventilation, and air conditioning systems",
+        averageSalary: "$45,000 - $70,000",
+        jobGrowth: "15% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=hvac+technician"
+      },
+      {
+        title: "Electrician",
+        description: "Install and maintain electrical systems and equipment",
+        averageSalary: "$50,000 - $80,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=electrician"
+      },
+      {
+        title: "Computer Repair Technician",
+        description: "Diagnose and fix computer hardware and software issues",
+        averageSalary: "$35,000 - $55,000",
+        jobGrowth: "5% (as fast as average)",
+        indeedLink: "https://www.indeed.com/jobs?q=computer+repair+technician"
       }
     ],
     colleges: [
@@ -1040,6 +1313,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$50,000 - $80,000",
         jobGrowth: "5% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=interior+designer"
+      },
+      {
+        title: "Music Therapist",
+        description: "Use music to help people improve their physical and mental health",
+        averageSalary: "$40,000 - $65,000",
+        jobGrowth: "13% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=music+therapist"
+      },
+      {
+        title: "Florist",
+        description: "Create floral arrangements and manage flower shop operations",
+        averageSalary: "$25,000 - $40,000",
+        jobGrowth: "-20% (declining)",
+        indeedLink: "https://www.indeed.com/jobs?q=florist"
+      },
+      {
+        title: "Fashion Designer",
+        description: "Create original clothing, accessories, and footwear designs",
+        averageSalary: "$40,000 - $85,000",
+        jobGrowth: "0% (stable)",
+        indeedLink: "https://www.indeed.com/jobs?q=fashion+designer"
       }
     ],
     colleges: [
@@ -1092,6 +1386,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$35,000 - $50,000",
         jobGrowth: "11% (much faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=emergency+medical+technician"
+      },
+      {
+        title: "Firefighter",
+        description: "Respond to emergency situations and fire incidents",
+        averageSalary: "$45,000 - $75,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=firefighter"
+      },
+      {
+        title: "Sales Representative",
+        description: "Sell products or services to businesses and consumers",
+        averageSalary: "$40,000 - $70,000",
+        jobGrowth: "4% (as fast as average)",
+        indeedLink: "https://www.indeed.com/jobs?q=sales+representative"
+      },
+      {
+        title: "Real Estate Agent",
+        description: "Help clients buy, sell, and rent properties",
+        averageSalary: "$40,000 - $100,000+",
+        jobGrowth: "5% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=real+estate+agent"
       }
     ],
     colleges: [
@@ -1144,6 +1459,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$30,000 - $55,000",
         jobGrowth: "7% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=dance+instructor"
+      },
+      {
+        title: "Radio DJ",
+        description: "Host radio shows and entertain audiences with music and talk",
+        averageSalary: "$25,000 - $60,000",
+        jobGrowth: "-12% (declining)",
+        indeedLink: "https://www.indeed.com/jobs?q=radio+dj"
+      },
+      {
+        title: "Actor/Actress",
+        description: "Perform in theater, film, television, and other media",
+        averageSalary: "$20,000 - $100,000+",
+        jobGrowth: "32% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=actor+actress"
+      },
+      {
+        title: "Event Host/MC",
+        description: "Lead and entertain audiences at various events and functions",
+        averageSalary: "$30,000 - $65,000",
+        jobGrowth: "18% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=event+host+mc"
       }
     ],
     colleges: [
