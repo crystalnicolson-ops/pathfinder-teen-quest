@@ -8,12 +8,26 @@ export interface Question {
 }
 
 export type PersonalityType = 
-  | 'Creative Innovator'
-  | 'Analytical Problem Solver'
-  | 'People-Focused Helper'
-  | 'Leadership Organizer'
-  | 'Detail-Oriented Planner'
-  | 'Hands-On Builder';
+  // The Thinkers
+  | 'The Strategist'
+  | 'The Inventor'
+  | 'The Boss'
+  | 'The Challenger'
+  // The Dreamers
+  | 'The Visionary'
+  | 'The Creator'
+  | 'The Coach'
+  | 'The Free Spirit'
+  // The Planners
+  | 'The Organizer'
+  | 'The Helper'
+  | 'The Manager'
+  | 'The Host'
+  // The Explorers
+  | 'The Fixer'
+  | 'The Artist'
+  | 'The Adventurer'
+  | 'The Performer';
 
 export interface Career {
   title: string;
