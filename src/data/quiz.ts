@@ -4,7 +4,7 @@ export const questions: Question[] = [
   {
     text: "How do you feel about group projects?",
     options: {
-      A: { text: "Love organizing them", traits: ["I", "S", "T", "J"] },
+      A: { text: "Love organizing them and keeping everyone on task", traits: ["I", "S", "T", "J"] },
       B: { text: "Prefer working alone or with someone creative", traits: ["I", "N", "F", "P"] },
       C: { text: "They're fun if we don't take it too seriously", traits: ["E", "N", "T", "P"] },
       D: { text: "I make sure everyone feels heard and included", traits: ["I", "S", "F", "J"] }
@@ -13,8 +13,8 @@ export const questions: Question[] = [
   {
     text: "You forgot your homework! You…",
     options: {
-      A: { text: "Stress — you never forget stuff", traits: ["I", "S", "T", "J"] },
-      B: { text: "Make up a creative excuse", traits: ["I", "N", "F", "P"] },
+      A: { text: "Stress — you never forget things like that", traits: ["I", "S", "T", "J"] },
+      B: { text: "Make up an excuse", traits: ["I", "N", "F", "P"] },
       C: { text: "Laugh it off and talk your way out", traits: ["E", "N", "T", "P"] },
       D: { text: "Apologize and try to fix it", traits: ["I", "S", "F", "J"] }
     }
@@ -23,16 +23,16 @@ export const questions: Question[] = [
     text: "What's your note-taking style?",
     options: {
       A: { text: "Bullet points, highlights, organized folders", traits: ["I", "S", "T", "J"] },
-      B: { text: "Doodles in the margins, colorful", traits: ["I", "N", "F", "P"] },
-      C: { text: "Barely any — you remember most of it", traits: ["E", "N", "T", "P"] },
-      D: { text: "Neat notes with reminders to help others too", traits: ["I", "S", "F", "J"] }
+      B: { text: "Doodles in the margins, colorful notes", traits: ["I", "N", "F", "P"] },
+      C: { text: "Barely any — you remember most of it anyway", traits: ["E", "N", "T", "P"] },
+      D: { text: "Neat notes with reminders to help others", traits: ["I", "S", "F", "J"] }
     }
   },
   {
     text: "You're at a party. What are you doing?",
     options: {
       A: { text: "Talking to a few close friends", traits: ["I", "S", "T", "J"] },
-      B: { text: "Taking artsy pics and vibing", traits: ["I", "N", "F", "P"] },
+      B: { text: "Taking selfies and vibing with music", traits: ["I", "N", "F", "P"] },
       C: { text: "Dancing, laughing, being loud", traits: ["E", "N", "T", "P"] },
       D: { text: "Helping clean up or check on people", traits: ["I", "S", "F", "J"] }
     }
@@ -41,7 +41,7 @@ export const questions: Question[] = [
     text: "Your friend is upset. You…",
     options: {
       A: { text: "Offer advice to fix the problem", traits: ["I", "S", "T", "J"] },
-      B: { text: "Write them a heartfelt note or draw something", traits: ["I", "N", "F", "P"] },
+      B: { text: "Write them a note", traits: ["I", "N", "F", "P"] },
       C: { text: "Distract them with fun", traits: ["E", "N", "T", "P"] },
       D: { text: "Sit quietly with them and listen", traits: ["I", "S", "F", "J"] }
     }
@@ -50,7 +50,7 @@ export const questions: Question[] = [
     text: "You get a big school assignment. You…",
     options: {
       A: { text: "Make a checklist and start early", traits: ["I", "S", "T", "J"] },
-      B: { text: "Sketch or brainstorm ideas first", traits: ["I", "N", "F", "P"] },
+      B: { text: "Brainstorm creative ideas first", traits: ["I", "N", "F", "P"] },
       C: { text: "Wait until you're in the mood to do it", traits: ["E", "N", "T", "P"] },
       D: { text: "Ask others for help and get to work", traits: ["I", "S", "F", "J"] }
     }
@@ -58,217 +58,217 @@ export const questions: Question[] = [
   {
     text: "Your ideal weekend activity is…",
     options: {
-      A: { text: "Reading, organizing, or working on goals", traits: ["I", "S", "T", "J"] },
-      B: { text: "Painting, writing, or imagining new stories", traits: ["I", "N", "F", "P"] },
-      C: { text: "Hanging out, going places, trying something new", traits: ["E", "N", "T", "P"] },
-      D: { text: "Helping someone, baking, or relaxing with others", traits: ["I", "S", "F", "J"] }
+      A: { text: "Reading, organizing, or setting goals", traits: ["I", "S", "T", "J"] },
+      B: { text: "Drawing, writing, or creating", traits: ["I", "N", "F", "P"] },
+      C: { text: "Hanging out, trying something new", traits: ["E", "N", "T", "P"] },
+      D: { text: "Helping someone or baking with friends", traits: ["I", "S", "F", "J"] }
     }
   },
   {
     text: "When someone disagrees with you, you…",
     options: {
-      A: { text: "Explain your logic and stay calm", traits: ["I", "S", "T", "J"] },
-      B: { text: "Try to find middle ground and keep peace", traits: ["I", "N", "F", "P"] },
-      C: { text: "Debate! You're not afraid to speak up", traits: ["E", "N", "T", "P"] },
-      D: { text: "Let it go and avoid conflict", traits: ["I", "S", "F", "J"] }
+      A: { text: "Explain your logic calmly", traits: ["I", "S", "T", "J"] },
+      B: { text: "Try to find middle ground", traits: ["I", "N", "F", "P"] },
+      C: { text: "Debate! You love a good challenge", traits: ["E", "N", "T", "P"] },
+      D: { text: "Let it go — conflict is uncomfortable", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When making decisions, you usually…",
+    text: "Your dream job involves…",
     options: {
-      A: { text: "Think through all the facts first", traits: ["I", "S", "T", "J"] },
-      B: { text: "Go with what feels right in your heart", traits: ["I", "N", "F", "P"] },
-      C: { text: "Consider all possibilities and wing it", traits: ["E", "N", "T", "P"] },
-      D: { text: "Ask trusted people for their advice", traits: ["I", "S", "F", "J"] }
+      A: { text: "Planning, researching, analyzing", traits: ["I", "S", "T", "J"] },
+      B: { text: "Creating, inspiring, expressing", traits: ["I", "N", "F", "P"] },
+      C: { text: "Leading, performing, influencing", traits: ["E", "N", "T", "P"] },
+      D: { text: "Helping, teaching, healing", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your room is usually…",
+    text: "You're happiest when…",
     options: {
-      A: { text: "Clean and organized with everything in place", traits: ["I", "S", "T", "J"] },
-      B: { text: "Messy but you know where everything is", traits: ["I", "N", "F", "P"] },
-      C: { text: "Whatever — you're barely there anyway", traits: ["E", "N", "T", "P"] },
-      D: { text: "Cozy and welcoming for friends to hang out", traits: ["I", "S", "F", "J"] }
+      A: { text: "Everything goes according to plan", traits: ["I", "S", "T", "J"] },
+      B: { text: "You're creating something meaningful", traits: ["I", "N", "F", "P"] },
+      C: { text: "You're in the middle of the action", traits: ["E", "N", "T", "P"] },
+      D: { text: "The people around you are doing well", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "You're planning a vacation. You…",
+    text: "You're asked to give a presentation. You…",
     options: {
-      A: { text: "Research everything and make detailed itineraries", traits: ["I", "S", "T", "J"] },
-      B: { text: "Dream about magical places you'd love to see", traits: ["I", "N", "F", "P"] },
-      C: { text: "Book last minute and figure it out as you go", traits: ["E", "N", "T", "P"] },
-      D: { text: "Ask friends where they want to go together", traits: ["I", "S", "F", "J"] }
+      A: { text: "Prepare slides, notes, and rehearse", traits: ["I", "S", "T", "J"] },
+      B: { text: "Add creativity and personality to it", traits: ["I", "N", "F", "P"] },
+      C: { text: "Wing it with confidence and energy", traits: ["E", "N", "T", "P"] },
+      D: { text: "Focus on helping the audience understand", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When you're learning something new, you…",
+    text: "You find out your plans suddenly changed. You…",
     options: {
-      A: { text: "Follow step-by-step instructions carefully", traits: ["I", "S", "T", "J"] },
-      B: { text: "Connect it to things you already love", traits: ["I", "N", "F", "P"] },
-      C: { text: "Jump in and learn by doing", traits: ["E", "N", "T", "P"] },
-      D: { text: "Find someone to learn with you", traits: ["I", "S", "F", "J"] }
+      A: { text: "Get annoyed — you prefer structure", traits: ["I", "S", "T", "J"] },
+      B: { text: "Roll with it and get creative", traits: ["I", "N", "F", "P"] },
+      C: { text: "Love it — you enjoy spontaneity", traits: ["E", "N", "T", "P"] },
+      D: { text: "Ask what others want to do instead", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your favorite way to spend money is on…",
+    text: "You get lost somewhere new. What do you do?",
     options: {
-      A: { text: "Practical things you actually need", traits: ["I", "S", "T", "J"] },
-      B: { text: "Art supplies, books, or creative experiences", traits: ["I", "N", "F", "P"] },
-      C: { text: "Adventures, concerts, or spontaneous fun", traits: ["E", "N", "T", "P"] },
-      D: { text: "Gifts for people you care about", traits: ["I", "S", "F", "J"] }
+      A: { text: "Use your phone or retrace your steps logically", traits: ["I", "S", "T", "J"] },
+      B: { text: "Stay calm and look around for inspiration", traits: ["I", "N", "F", "P"] },
+      C: { text: "Ask someone right away — adventure!", traits: ["E", "N", "T", "P"] },
+      D: { text: "Try to stay safe and text someone for help", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When you're feeling overwhelmed, you…",
+    text: "Your favorite way to relax is…",
     options: {
-      A: { text: "Make a to-do list and tackle it systematically", traits: ["I", "S", "T", "J"] },
-      B: { text: "Take a break and do something creative", traits: ["I", "N", "F", "P"] },
-      C: { text: "Call a friend and talk it out", traits: ["E", "N", "T", "P"] },
-      D: { text: "Take care of your basic needs first", traits: ["I", "S", "F", "J"] }
+      A: { text: "Reading, planning, or puzzles", traits: ["I", "S", "T", "J"] },
+      B: { text: "Drawing, journaling, or music", traits: ["I", "N", "F", "P"] },
+      C: { text: "Watching something fun or being active", traits: ["E", "N", "T", "P"] },
+      D: { text: "Spending time with someone you care about", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your ideal job would involve…",
+    text: "People usually describe you as…",
     options: {
-      A: { text: "Clear goals, good pay, and job security", traits: ["I", "S", "T", "J"] },
-      B: { text: "Expressing yourself and helping others grow", traits: ["I", "N", "F", "P"] },
-      C: { text: "Variety, challenge, and meeting new people", traits: ["E", "N", "T", "P"] },
-      D: { text: "Working with a close team you really care about", traits: ["I", "S", "F", "J"] }
+      A: { text: "Focused and responsible", traits: ["I", "S", "T", "J"] },
+      B: { text: "Creative and thoughtful", traits: ["I", "N", "F", "P"] },
+      C: { text: "Energetic and outgoing", traits: ["E", "N", "T", "P"] },
+      D: { text: "Kind and dependable", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When you meet new people, you…",
+    text: "You're shopping for clothes. You pick…",
     options: {
-      A: { text: "Are polite but take time to open up", traits: ["I", "S", "T", "J"] },
-      B: { text: "Look for deeper connections and shared interests", traits: ["I", "N", "F", "P"] },
-      C: { text: "Jump right into conversation and have fun", traits: ["E", "N", "T", "P"] },
-      D: { text: "Try to make them feel comfortable and included", traits: ["I", "S", "F", "J"] }
+      A: { text: "Classic, functional styles", traits: ["I", "S", "T", "J"] },
+      B: { text: "Something artistic or original", traits: ["I", "N", "F", "P"] },
+      C: { text: "Trendy and bold looks", traits: ["E", "N", "T", "P"] },
+      D: { text: "Comfy, coordinated outfits", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your approach to deadlines is…",
+    text: "You get a new app. First thing you do?",
     options: {
-      A: { text: "Finish early so you don't have to stress", traits: ["I", "S", "T", "J"] },
-      B: { text: "Work best under a little pressure", traits: ["I", "N", "F", "P"] },
-      C: { text: "Usually last minute but you always pull through", traits: ["E", "N", "T", "P"] },
-      D: { text: "Get it done on time, especially if others depend on you", traits: ["I", "S", "F", "J"] }
+      A: { text: "Read about it and explore the features", traits: ["I", "S", "T", "J"] },
+      B: { text: "Customize it and make it your own", traits: ["I", "N", "F", "P"] },
+      C: { text: "Jump in and figure it out while using it", traits: ["E", "N", "T", "P"] },
+      D: { text: "Ask someone how it works and try it together", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When choosing classes, you pick…",
+    text: "You're best at…",
     options: {
-      A: { text: "Ones that will help your future career goals", traits: ["I", "S", "T", "J"] },
-      B: { text: "Whatever sounds interesting and inspiring", traits: ["I", "N", "F", "P"] },
-      C: { text: "Fun ones with teachers you've heard are cool", traits: ["E", "N", "T", "P"] },
-      D: { text: "Classes your friends are taking too", traits: ["I", "S", "F", "J"] }
+      A: { text: "Solving problems and making plans", traits: ["I", "S", "T", "J"] },
+      B: { text: "Expressing feelings and creativity", traits: ["I", "N", "F", "P"] },
+      C: { text: "Taking charge and energizing others", traits: ["E", "N", "T", "P"] },
+      D: { text: "Supporting people and noticing needs", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your biggest fear is probably…",
+    text: "You care most about…",
     options: {
-      A: { text: "Failing at something important", traits: ["I", "S", "T", "J"] },
-      B: { text: "Losing your creativity or authenticity", traits: ["I", "N", "F", "P"] },
-      C: { text: "Being stuck in a boring routine", traits: ["E", "N", "T", "P"] },
-      D: { text: "Letting down people who count on you", traits: ["I", "S", "F", "J"] }
+      A: { text: "Achieving goals", traits: ["I", "S", "T", "J"] },
+      B: { text: "Being authentic", traits: ["I", "N", "F", "P"] },
+      C: { text: "Enjoying life", traits: ["E", "N", "T", "P"] },
+      D: { text: "Helping others", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When it comes to rules, you…",
+    text: "You love when school lets you…",
     options: {
-      A: { text: "Follow them — they exist for good reasons", traits: ["I", "S", "T", "J"] },
-      B: { text: "Follow most of them but question the unfair ones", traits: ["I", "N", "F", "P"] },
-      C: { text: "Bend them when they don't make sense", traits: ["E", "N", "T", "P"] },
-      D: { text: "Follow them to keep peace and avoid trouble", traits: ["I", "S", "F", "J"] }
+      A: { text: "Do a research project", traits: ["I", "S", "T", "J"] },
+      B: { text: "Create a video or artwork", traits: ["I", "N", "F", "P"] },
+      C: { text: "Present or debate", traits: ["E", "N", "T", "P"] },
+      D: { text: "Work in a group or mentor someone", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your phone is mostly used for…",
+    text: "Your dream would be to…",
     options: {
-      A: { text: "Productive apps, calendars, and staying organized", traits: ["I", "S", "T", "J"] },
-      B: { text: "Creative apps, music, and inspiration", traits: ["I", "N", "F", "P"] },
-      C: { text: "Social media, games, and staying connected", traits: ["E", "N", "T", "P"] },
-      D: { text: "Texting close friends and family", traits: ["I", "S", "F", "J"] }
+      A: { text: "Invent something useful", traits: ["I", "S", "T", "J"] },
+      B: { text: "Publish a book or album", traits: ["I", "N", "F", "P"] },
+      C: { text: "Be famous or run a business", traits: ["E", "N", "T", "P"] },
+      D: { text: "Make a real difference in others' lives", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When you're in a bad mood, you…",
+    text: "When solving a problem, you…",
     options: {
-      A: { text: "Figure out what's wrong and fix it", traits: ["I", "S", "T", "J"] },
-      B: { text: "Need space to feel your feelings", traits: ["I", "N", "F", "P"] },
-      C: { text: "Do something fun to distract yourself", traits: ["E", "N", "T", "P"] },
-      D: { text: "Talk to someone who cares about you", traits: ["I", "S", "F", "J"] }
+      A: { text: "Look at the facts and break it down", traits: ["I", "S", "T", "J"] },
+      B: { text: "Think about how people feel", traits: ["I", "N", "F", "P"] },
+      C: { text: "Act fast and adjust along the way", traits: ["E", "N", "T", "P"] },
+      D: { text: "Ask for ideas and build a solution together", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your biggest strength is probably…",
+    text: "You're planning your weekend. You…",
     options: {
-      A: { text: "Being reliable and getting things done", traits: ["I", "S", "T", "J"] },
-      B: { text: "Understanding people and being creative", traits: ["I", "N", "F", "P"] },
-      C: { text: "Being adaptable and seeing possibilities", traits: ["E", "N", "T", "P"] },
-      D: { text: "Caring for others and creating harmony", traits: ["I", "S", "F", "J"] }
+      A: { text: "Schedule everything ahead", traits: ["I", "S", "T", "J"] },
+      B: { text: "Go with the flow", traits: ["I", "N", "F", "P"] },
+      C: { text: "Wait and see what pops up", traits: ["E", "N", "T", "P"] },
+      D: { text: "Ask friends and fit around them", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "At lunch, you usually…",
+    text: "In a group chat, you're the one who…",
     options: {
-      A: { text: "Sit with the same group of friends", traits: ["I", "S", "T", "J"] },
-      B: { text: "Find a quiet spot to recharge", traits: ["I", "N", "F", "P"] },
-      C: { text: "Float between different friend groups", traits: ["E", "N", "T", "P"] },
-      D: { text: "Make sure no one is sitting alone", traits: ["I", "S", "F", "J"] }
+      A: { text: "Shares reminders and plans", traits: ["I", "S", "T", "J"] },
+      B: { text: "Sends memes or thoughtful messages", traits: ["I", "N", "F", "P"] },
+      C: { text: "Starts convos or keeps it lively", traits: ["E", "N", "T", "P"] },
+      D: { text: "Makes sure no one's being left out", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your dream house would be…",
+    text: "You're building a school club. You focus on…",
     options: {
-      A: { text: "Practical, well-designed, and efficient", traits: ["I", "S", "T", "J"] },
-      B: { text: "Unique, artistic, and full of personality", traits: ["I", "N", "F", "P"] },
-      C: { text: "Open, modern, and great for entertaining", traits: ["E", "N", "T", "P"] },
-      D: { text: "Cozy, welcoming, and perfect for family", traits: ["I", "S", "F", "J"] }
+      A: { text: "The rules and structure", traits: ["I", "S", "T", "J"] },
+      B: { text: "The logo, theme, or creative angle", traits: ["I", "N", "F", "P"] },
+      C: { text: "Promotion and exciting events", traits: ["E", "N", "T", "P"] },
+      D: { text: "Teamwork and making it welcoming", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When working on a team project, you naturally…",
+    text: "Your biggest fear is…",
     options: {
-      A: { text: "Take charge and keep everyone on track", traits: ["I", "S", "T", "J"] },
-      B: { text: "Contribute creative ideas and support others", traits: ["I", "N", "F", "P"] },
-      C: { text: "Generate energy and help solve problems", traits: ["E", "N", "T", "P"] },
-      D: { text: "Make sure everyone feels included and valued", traits: ["I", "S", "F", "J"] }
+      A: { text: "Failing or being unprepared", traits: ["I", "S", "T", "J"] },
+      B: { text: "Being misunderstood or ignored", traits: ["I", "N", "F", "P"] },
+      C: { text: "Missing out or being bored", traits: ["E", "N", "T", "P"] },
+      D: { text: "Hurting someone's feelings", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your perfect day off would involve…",
+    text: "What's your morning routine like?",
     options: {
-      A: { text: "Accomplishing personal goals and feeling productive", traits: ["I", "S", "T", "J"] },
-      B: { text: "Creating something beautiful or meaningful", traits: ["I", "N", "F", "P"] },
-      C: { text: "Trying something new and exciting", traits: ["E", "N", "T", "P"] },
-      D: { text: "Spending quality time with people you love", traits: ["I", "S", "F", "J"] }
+      A: { text: "Consistent and timely", traits: ["I", "S", "T", "J"] },
+      B: { text: "Calm and slow", traits: ["I", "N", "F", "P"] },
+      C: { text: "Rushed but fun", traits: ["E", "N", "T", "P"] },
+      D: { text: "Focused on others (like helping family)", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When facing a big decision, you…",
+    text: "Your ideal workspace looks like…",
     options: {
-      A: { text: "Research thoroughly and weigh pros and cons", traits: ["I", "S", "T", "J"] },
-      B: { text: "Imagine different scenarios and trust your intuition", traits: ["I", "N", "F", "P"] },
-      C: { text: "Talk it through with lots of people", traits: ["E", "N", "T", "P"] },
-      D: { text: "Consider how it will affect everyone involved", traits: ["I", "S", "F", "J"] }
+      A: { text: "Clean and organized", traits: ["I", "S", "T", "J"] },
+      B: { text: "Personalized and cozy", traits: ["I", "N", "F", "P"] },
+      C: { text: "Active and stimulating", traits: ["E", "N", "T", "P"] },
+      D: { text: "Calm and supportive", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "Your approach to social media is…",
+    text: "You tend to learn best by…",
     options: {
-      A: { text: "Minimal posting, mostly for staying informed", traits: ["I", "S", "T", "J"] },
-      B: { text: "Sharing art, quotes, and meaningful moments", traits: ["I", "N", "F", "P"] },
-      C: { text: "Active posting and engaging with everyone", traits: ["E", "N", "T", "P"] },
-      D: { text: "Keeping up with friends and celebrating others", traits: ["I", "S", "F", "J"] }
+      A: { text: "Reading and studying", traits: ["I", "S", "T", "J"] },
+      B: { text: "Visuals and hands-on creativity", traits: ["I", "N", "F", "P"] },
+      C: { text: "Doing it while moving or trying", traits: ["E", "N", "T", "P"] },
+      D: { text: "Talking it out or helping someone else", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "When you disagree with a teacher, you…",
+    text: "You want to be remembered as…",
     options: {
-      A: { text: "Research the topic and present logical arguments", traits: ["I", "S", "T", "J"] },
-      B: { text: "Respectfully share your perspective", traits: ["I", "N", "F", "P"] },
-      C: { text: "Speak up and debate your point confidently", traits: ["E", "N", "T", "P"] },
-      D: { text: "Keep quiet to avoid conflict", traits: ["I", "S", "F", "J"] }
+      A: { text: "Smart and reliable", traits: ["I", "S", "T", "J"] },
+      B: { text: "Unique and imaginative", traits: ["I", "N", "F", "P"] },
+      C: { text: "Fun and inspiring", traits: ["E", "N", "T", "P"] },
+      D: { text: "Caring and loyal", traits: ["I", "S", "F", "J"] }
     }
   }
 ];
