@@ -4,10 +4,10 @@ export const questions: Question[] = [
   {
     text: "How do you feel about group projects?",
     options: {
-      A: { text: "Love organizing them", traits: ["I", "S", "T", "J"] },
+      A: { text: "Love organizing them", traits: ["E", "S", "T", "J"] },
       B: { text: "Prefer working alone or with someone creative", traits: ["I", "N", "F", "P"] },
       C: { text: "They're fun if we don't take it too seriously", traits: ["E", "N", "T", "P"] },
-      D: { text: "I make sure everyone feels heard and included", traits: ["I", "S", "F", "J"] }
+      D: { text: "I make sure everyone feels heard and included", traits: ["E", "S", "F", "J"] }
     }
   },
   {
@@ -33,8 +33,8 @@ export const questions: Question[] = [
     options: {
       A: { text: "Talking to a few close friends", traits: ["I", "S", "T", "J"] },
       B: { text: "Taking artsy pics and vibing", traits: ["I", "N", "F", "P"] },
-      C: { text: "Dancing, laughing, being loud", traits: ["E", "N", "T", "P"] },
-      D: { text: "Helping clean up or check on people", traits: ["I", "S", "F", "J"] }
+      C: { text: "Dancing, laughing, being loud", traits: ["E", "S", "T", "P"] },
+      D: { text: "Helping clean up or check on people", traits: ["E", "S", "F", "J"] }
     }
   },
   {
@@ -44,6 +44,96 @@ export const questions: Question[] = [
       B: { text: "Write them a heartfelt note or draw something", traits: ["I", "N", "F", "P"] },
       C: { text: "Distract them with fun", traits: ["E", "N", "T", "P"] },
       D: { text: "Sit quietly with them and listen", traits: ["I", "S", "F", "J"] }
+    }
+  },
+  {
+    text: "Your ideal weekend includes:",
+    options: {
+      A: { text: "Organizing your room and getting ahead on assignments", traits: ["I", "S", "T", "J"] },
+      B: { text: "Reading, journaling, or working on creative projects", traits: ["I", "N", "F", "P"] },
+      C: { text: "Hanging out with friends and trying new things", traits: ["E", "N", "T", "P"] },
+      D: { text: "Spending quality time with family or close friends", traits: ["I", "S", "F", "J"] }
+    }
+  },
+  {
+    text: "When making decisions, you usually:",
+    options: {
+      A: { text: "Think through pros and cons logically", traits: ["I", "N", "T", "J"] },
+      B: { text: "Go with what feels right in your heart", traits: ["I", "N", "F", "P"] },
+      C: { text: "Talk it out with others and see what they think", traits: ["E", "N", "F", "J"] },
+      D: { text: "Use past experience to guide you", traits: ["I", "S", "T", "J"] }
+    }
+  },
+  {
+    text: "Your phone dies during lunch. You:",
+    options: {
+      A: { text: "Feel anxious — you need to check messages", traits: ["E", "S", "F", "J"] },
+      B: { text: "Enjoy the break from technology", traits: ["I", "N", "F", "P"] },
+      C: { text: "Borrow someone's charger immediately", traits: ["E", "S", "T", "P"] },
+      D: { text: "Use the time to catch up on homework", traits: ["I", "S", "T", "J"] }
+    }
+  },
+  {
+    text: "In class discussions, you:",
+    options: {
+      A: { text: "Share your thoughts confidently", traits: ["E", "N", "T", "J"] },
+      B: { text: "Listen first, then share something meaningful", traits: ["I", "N", "F", "J"] },
+      C: { text: "Make jokes to keep things light", traits: ["E", "S", "F", "P"] },
+      D: { text: "Prefer to listen unless directly asked", traits: ["I", "S", "F", "J"] }
+    }
+  },
+  {
+    text: "Your dream summer job would be:",
+    options: {
+      A: { text: "Camp counselor leading activities", traits: ["E", "S", "F", "J"] },
+      B: { text: "Art studio assistant or bookstore clerk", traits: ["I", "N", "F", "P"] },
+      C: { text: "Event planning intern or social media creator", traits: ["E", "N", "T", "P"] },
+      D: { text: "Library assistant or research helper", traits: ["I", "S", "T", "J"] }
+    }
+  },
+  {
+    text: "When stressed about a test, you:",
+    options: {
+      A: { text: "Make a detailed study schedule", traits: ["I", "S", "T", "J"] },
+      B: { text: "Find a creative way to remember information", traits: ["I", "N", "F", "P"] },
+      C: { text: "Form a study group with friends", traits: ["E", "S", "F", "J"] },
+      D: { text: "Focus on the big concepts first", traits: ["E", "N", "T", "J"] }
+    }
+  },
+  {
+    text: "Your room/locker tends to be:",
+    options: {
+      A: { text: "Super organized with everything in its place", traits: ["I", "S", "T", "J"] },
+      B: { text: "Decorated with art, photos, and meaningful objects", traits: ["I", "N", "F", "P"] },
+      C: { text: "A bit messy but you know where everything is", traits: ["E", "N", "T", "P"] },
+      D: { text: "Clean and cozy with pictures of friends/family", traits: ["I", "S", "F", "J"] }
+    }
+  },
+  {
+    text: "If you could change one thing about school:",
+    options: {
+      A: { text: "More structure and clear expectations", traits: ["I", "S", "T", "J"] },
+      B: { text: "More creative and personalized learning", traits: ["I", "N", "F", "P"] },
+      C: { text: "More interactive and discussion-based classes", traits: ["E", "N", "T", "P"] },
+      D: { text: "Smaller classes with more personal attention", traits: ["I", "S", "F", "J"] }
+    }
+  },
+  {
+    text: "Your friends would describe you as:",
+    options: {
+      A: { text: "Reliable and responsible", traits: ["I", "S", "T", "J"] },
+      B: { text: "Creative and understanding", traits: ["I", "N", "F", "P"] },
+      C: { text: "Fun and energetic", traits: ["E", "S", "F", "P"] },
+      D: { text: "Caring and supportive", traits: ["I", "S", "F", "J"] }
+    }
+  },
+  {
+    text: "When planning for the future, you:",
+    options: {
+      A: { text: "Have a clear 5-year plan", traits: ["I", "N", "T", "J"] },
+      B: { text: "Dream about possibilities but stay flexible", traits: ["I", "N", "F", "P"] },
+      C: { text: "Focus on exciting opportunities coming up", traits: ["E", "N", "T", "P"] },
+      D: { text: "Take it one step at a time", traits: ["I", "S", "F", "J"] }
     }
   }
 ];
