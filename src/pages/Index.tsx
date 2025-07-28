@@ -38,13 +38,6 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-hero">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
-        <div className="absolute inset-0">
-          <img 
-            src={heroImage} 
-            alt="Teens exploring careers" 
-            className="w-full h-full object-cover opacity-20"
-          />
-        </div>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 py-16 text-center">
           <Badge variant="secondary" className="mb-6 text-base px-4 py-2">
