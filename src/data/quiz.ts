@@ -1,67 +1,95 @@
-import { Question, PersonalityResult } from '@/types/quiz';
+import { Question, PersonalityResult, PersonalityType } from '@/types/quiz';
 
 export const questions: Question[] = [
   {
-    id: 1,
-    text: "What type of project gets you most excited?",
-    options: [
-      { text: "Designing something new and unique", personality: "The Creator" },
-      { text: "Solving complex puzzles or problems", personality: "The Strategist" },
-      { text: "Helping others achieve their goals", personality: "The Coach" },
-      { text: "Leading a team to success", personality: "The Boss" },
-      { text: "Organizing and perfecting details", personality: "The Organizer" },
-      { text: "Building or fixing things with my hands", personality: "The Fixer" }
-    ]
+    text: "How do you feel about group projects?",
+    options: {
+      A: { text: "Love organizing them", traits: ["I", "S", "T", "J"] },
+      B: { text: "Prefer working alone or with someone creative", traits: ["I", "N", "F", "P"] },
+      C: { text: "They're fun if we don't take it too seriously", traits: ["E", "N", "T", "P"] },
+      D: { text: "I make sure everyone feels heard and included", traits: ["I", "S", "F", "J"] }
+    }
   },
   {
-    id: 2,
-    text: "In group work, you naturally tend to:",
-    options: [
-      { text: "Come up with creative ideas", personality: "The Inventor" },
-      { text: "Research and analyze information", personality: "The Strategist" },
-      { text: "Make sure everyone feels included", personality: "The Helper" },
-      { text: "Take charge and delegate tasks", personality: "The Manager" },
-      { text: "Keep everyone on schedule", personality: "The Organizer" },
-      { text: "Handle the technical/practical work", personality: "The Fixer" }
-    ]
+    text: "You forgot your homework! You…",
+    options: {
+      A: { text: "Stress — you never forget stuff", traits: ["I", "S", "T", "J"] },
+      B: { text: "Make up a creative excuse", traits: ["I", "N", "F", "P"] },
+      C: { text: "Laugh it off and talk your way out", traits: ["E", "N", "T", "P"] },
+      D: { text: "Apologize and try to fix it", traits: ["I", "S", "F", "J"] }
+    }
   },
   {
-    id: 3,
-    text: "Your ideal work environment would be:",
-    options: [
-      { text: "A colorful studio or creative space", personality: "The Artist" },
-      { text: "A quiet office with multiple monitors", personality: "The Inventor" },
-      { text: "An open space where I can interact with people", personality: "The Free Spirit" },
-      { text: "A professional meeting room", personality: "The Boss" },
-      { text: "An organized, systematic workspace", personality: "The Organizer" },
-      { text: "A workshop or lab with tools", personality: "The Fixer" }
-    ]
+    text: "What's your note-taking style?",
+    options: {
+      A: { text: "Bullet points, highlights, organized folders", traits: ["I", "S", "T", "J"] },
+      B: { text: "Doodles in the margins, colorful", traits: ["I", "N", "F", "P"] },
+      C: { text: "Barely any — you remember most of it", traits: ["E", "N", "T", "P"] },
+      D: { text: "Neat notes with reminders to help others too", traits: ["I", "S", "F", "J"] }
+    }
   },
   {
-    id: 4,
-    text: "What motivates you most?",
-    options: [
-      { text: "Creating something that inspires others", personality: "The Creator" },
-      { text: "Discovering how things work", personality: "The Inventor" },
-      { text: "Making a positive impact on people's lives", personality: "The Visionary" },
-      { text: "Achieving ambitious goals", personality: "The Challenger" },
-      { text: "Getting things done efficiently", personality: "The Manager" },
-      { text: "Seeing tangible results from my work", personality: "The Adventurer" }
-    ]
+    text: "You're at a party. What are you doing?",
+    options: {
+      A: { text: "Talking to a few close friends", traits: ["I", "S", "T", "J"] },
+      B: { text: "Taking artsy pics and vibing", traits: ["I", "N", "F", "P"] },
+      C: { text: "Dancing, laughing, being loud", traits: ["E", "N", "T", "P"] },
+      D: { text: "Helping clean up or check on people", traits: ["I", "S", "F", "J"] }
+    }
   },
   {
-    id: 5,
-    text: "When facing a challenge, you prefer to:",
-    options: [
-      { text: "Think outside the box for creative solutions", personality: "The Challenger" },
-      { text: "Research and analyze all options", personality: "The Strategist" },
-      { text: "Ask others for their input and collaborate", personality: "The Coach" },
-      { text: "Create a strategic plan and execute it", personality: "The Boss" },
-      { text: "Break it down into manageable steps", personality: "The Helper" },
-      { text: "Jump in and start experimenting", personality: "The Performer" }
-    ]
+    text: "Your friend is upset. You…",
+    options: {
+      A: { text: "Offer advice to fix the problem", traits: ["I", "S", "T", "J"] },
+      B: { text: "Write them a heartfelt note or draw something", traits: ["I", "N", "F", "P"] },
+      C: { text: "Distract them with fun", traits: ["E", "N", "T", "P"] },
+      D: { text: "Sit quietly with them and listen", traits: ["I", "S", "F", "J"] }
+    }
   }
 ];
+
+export function calculateMBTI(responses: { traits: string[] }[]): PersonalityType {
+  const traitCounts = {
+    E: 0, I: 0,
+    S: 0, N: 0,
+    T: 0, F: 0,
+    J: 0, P: 0
+  };
+
+  for (const response of responses) {
+    for (const trait of response.traits) {
+      traitCounts[trait as keyof typeof traitCounts]++;
+    }
+  }
+
+  const mbtiCode = [
+    traitCounts.E > traitCounts.I ? 'E' : 'I',
+    traitCounts.S > traitCounts.N ? 'S' : 'N',
+    traitCounts.T > traitCounts.F ? 'T' : 'F',
+    traitCounts.J > traitCounts.P ? 'J' : 'P'
+  ].join('');
+
+  const mbtiToPersonality: Record<string, PersonalityType> = {
+    'INTJ': 'The Strategist',
+    'INTP': 'The Inventor',
+    'ENTJ': 'The Boss',
+    'ENTP': 'The Challenger',
+    'INFJ': 'The Visionary',
+    'INFP': 'The Creator',
+    'ENFJ': 'The Coach',
+    'ENFP': 'The Free Spirit',
+    'ISTJ': 'The Organizer',
+    'ISFJ': 'The Helper',
+    'ESTJ': 'The Manager',
+    'ESFJ': 'The Host',
+    'ISTP': 'The Fixer',
+    'ISFP': 'The Artist',
+    'ESTP': 'The Adventurer',
+    'ESFP': 'The Performer'
+  };
+
+  return mbtiToPersonality[mbtiCode] || 'The Strategist';
+}
 
 export const personalityResults: Record<string, PersonalityResult> = {
   "The Strategist": {

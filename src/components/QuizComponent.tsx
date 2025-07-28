@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
-import { questions } from '@/data/quiz';
+import { questions, calculateMBTI } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
 
 interface QuizComponentProps {
@@ -11,28 +11,20 @@ interface QuizComponentProps {
 
 export default function QuizComponent({ onComplete }: QuizComponentProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [answers, setAnswers] = useState<PersonalityType[]>([]);
+  const [answers, setAnswers] = useState<{ traits: string[] }[]>([]);
 
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
-  const handleAnswer = (personality: PersonalityType) => {
-    const newAnswers = [...answers, personality];
+  const handleAnswer = (traits: string[]) => {
+    const newAnswers = [...answers, { traits }];
     setAnswers(newAnswers);
 
     if (currentQuestion < questions.length - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
-      // Calculate most common personality type
-      const personalityCount: Record<string, number> = {};
-      newAnswers.forEach(p => {
-        personalityCount[p] = (personalityCount[p] || 0) + 1;
-      });
-      
-      const dominantPersonality = Object.keys(personalityCount).reduce((a, b) => 
-        personalityCount[a] > personalityCount[b] ? a : b
-      ) as PersonalityType;
-
-      onComplete(dominantPersonality);
+      // Calculate MBTI personality type
+      const personality = calculateMBTI(newAnswers);
+      onComplete(personality);
     }
   };
 
@@ -58,14 +50,15 @@ export default function QuizComponent({ onComplete }: QuizComponentProps) {
         </h2>
 
         <div className="space-y-3">
-          {question.options.map((option, index) => (
+          {Object.entries(question.options).map(([key, option]) => (
             <Button
-              key={index}
+              key={key}
               variant="card"
               size="lg"
               className="w-full text-left justify-start h-auto p-4 text-wrap"
-              onClick={() => handleAnswer(option.personality)}
+              onClick={() => handleAnswer(option.traits)}
             >
+              <span className="font-medium mr-2">{key}.</span>
               {option.text}
             </Button>
           ))}

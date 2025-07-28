@@ -1,10 +1,11 @@
 export interface Question {
-  id: number;
   text: string;
   options: {
-    text: string;
-    personality: PersonalityType;
-  }[];
+    A: { text: string; traits: string[] };
+    B: { text: string; traits: string[] };
+    C: { text: string; traits: string[] };
+    D: { text: string; traits: string[] };
+  };
 }
 
 export type PersonalityType = 
