@@ -76,9 +76,40 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
             <CardTitle className="text-3xl font-bold text-primary mb-4">
               {result.type}
             </CardTitle>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed mb-6">
               {result.description}
             </p>
+            
+            {/* Detailed Personality Insights */}
+            <div className="grid md:grid-cols-3 gap-4 mt-6">
+              <div className="bg-gradient-card p-4 rounded-lg border">
+                <h4 className="font-semibold text-foreground mb-2">🎯 Your Strengths</h4>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Strategic thinking and planning</li>
+                  <li>• Independent problem-solving</li>
+                  <li>• Long-term vision and focus</li>
+                  <li>• Analytical decision making</li>
+                </ul>
+              </div>
+              <div className="bg-gradient-card p-4 rounded-lg border">
+                <h4 className="font-semibold text-foreground mb-2">💡 Work Style</h4>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Prefers working independently</li>
+                  <li>• Values competence and efficiency</li>
+                  <li>• Enjoys complex challenges</li>
+                  <li>• Focuses on long-term outcomes</li>
+                </ul>
+              </div>
+              <div className="bg-gradient-card p-4 rounded-lg border">
+                <h4 className="font-semibold text-foreground mb-2">🌟 Best Environments</h4>
+                <ul className="text-sm text-muted-foreground space-y-1">
+                  <li>• Structured and organized</li>
+                  <li>• Innovation-focused teams</li>
+                  <li>• Minimal micromanagement</li>
+                  <li>• Intellectually stimulating</li>
+                </ul>
+              </div>
+            </div>
           </CardHeader>
         </Card>
 
@@ -89,12 +120,31 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
               <Users className="h-6 w-6 text-primary" />
               Perfect Career Matches
             </CardTitle>
+            <p className="text-muted-foreground mt-2">
+              These careers align perfectly with your personality traits, work style preferences, and natural strengths. 
+              Your analytical thinking, strategic planning abilities, and preference for independent work make you 
+              an ideal fit for these roles.
+            </p>
           </CardHeader>
           <CardContent className="grid md:grid-cols-2 gap-6">
             {result.careers.map((career, index) => (
               <div key={index} className="border rounded-lg p-4 bg-gradient-card">
-                <h3 className="text-xl font-semibold mb-2 text-foreground">{career.title}</h3>
+                <div className="flex items-start justify-between mb-2">
+                  <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
+                  <Badge variant="secondary" className="ml-2">Perfect Match</Badge>
+                </div>
                 <p className="text-muted-foreground mb-4">{career.description}</p>
+                
+                {/* Why it's perfect section */}
+                <div className="bg-primary/5 p-3 rounded-md mb-4">
+                  <h4 className="text-sm font-semibold text-primary mb-2">🎯 Why This is Perfect for You:</h4>
+                  <ul className="text-xs text-muted-foreground space-y-1">
+                    <li>• Utilizes your strategic thinking and planning skills</li>
+                    <li>• Offers intellectual challenges and complex problem-solving</li>
+                    <li>• Allows for independent work with minimal supervision</li>
+                    <li>• Provides opportunities for long-term project ownership</li>
+                  </ul>
+                </div>
                 
                 <div className="space-y-2 mb-4">
                   <div className="flex items-center gap-2">
