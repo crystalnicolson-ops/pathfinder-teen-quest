@@ -11,23 +11,23 @@ export interface Question {
 export type PersonalityType = 
   // The Thinkers
   | 'The Strategist'
-  | 'The Thinker'
-  | 'The Commander'
-  | 'The Visionary'
+  | 'The Inventor'
+  | 'The Boss'
+  | 'The Challenger'
   // The Dreamers
-  | 'The Advocate'
+  | 'The Visionary'
   | 'The Creator'
-  | 'The Guide'
-  | 'The Explorer'
+  | 'The Coach'
+  | 'The Free Spirit'
   // The Planners
-  | 'The Inspector'
+  | 'The Organizer'
   | 'The Helper'
-  | 'The Executive'
+  | 'The Manager'
   | 'The Host'
   // The Explorers
-  | 'The Tinkerer'
+  | 'The Fixer'
   | 'The Artist'
-  | 'The Dynamo'
+  | 'The Adventurer'
   | 'The Performer';
 
 export interface Career {
@@ -47,6 +47,10 @@ export interface College {
   phone?: string;
   email?: string;
   regionalCounselors?: string[];
+  
+  // Why Good Fit & Relevant Majors
+  whyGoodFit?: string;
+  relevantMajors?: string[];
   
   // Academic Information
   tuition?: string;

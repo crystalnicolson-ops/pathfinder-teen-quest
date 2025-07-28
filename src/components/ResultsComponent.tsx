@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap } from 'lucide-react';
+import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
 
@@ -227,7 +227,37 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
                       )}
                     </div>
                   </div>
-                )}
+                 )}
+
+                 {/* Why Good Fit & Relevant Majors */}
+                 {(college.whyGoodFit || college.relevantMajors) && (
+                   <div className="mb-6">
+                     <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                       <Star className="h-4 w-4 text-primary" />
+                       Perfect Match for {result.type}
+                     </h4>
+                     <div className="space-y-4">
+                       {college.whyGoodFit && (
+                         <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-4 rounded-lg border border-primary/20">
+                           <h5 className="font-medium text-primary mb-2">Why This Is A Great Fit:</h5>
+                           <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
+                         </div>
+                       )}
+                       {college.relevantMajors && college.relevantMajors.length > 0 && (
+                         <div className="bg-secondary/30 p-4 rounded-lg">
+                           <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
+                           <div className="flex flex-wrap gap-2">
+                             {college.relevantMajors.map((major, index) => (
+                               <span key={index} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium border border-primary/20">
+                                 {major}
+                               </span>
+                             ))}
+                           </div>
+                         </div>
+                       )}
+                     </div>
+                   </div>
+                 )}
 
                 {/* Academic Information */}
                 {college.tuition && (

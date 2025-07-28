@@ -296,20 +296,20 @@ export function calculateMBTI(responses: { traits: string[] }[]): PersonalityTyp
 
   const mbtiToPersonality: Record<string, PersonalityType> = {
     'INTJ': 'The Strategist',
-    'INTP': 'The Thinker',
-    'ENTJ': 'The Commander',
-    'ENTP': 'The Visionary',
-    'INFJ': 'The Advocate',
+    'INTP': 'The Inventor',
+    'ENTJ': 'The Boss',
+    'ENTP': 'The Challenger',
+    'INFJ': 'The Visionary',
     'INFP': 'The Creator',
-    'ENFJ': 'The Guide',
-    'ENFP': 'The Explorer',
-    'ISTJ': 'The Inspector',
+    'ENFJ': 'The Coach',
+    'ENFP': 'The Free Spirit',
+    'ISTJ': 'The Organizer',
     'ISFJ': 'The Helper',
-    'ESTJ': 'The Executive',
+    'ESTJ': 'The Manager',
     'ESFJ': 'The Host',
-    'ISTP': 'The Tinkerer',
+    'ISTP': 'The Fixer',
     'ISFP': 'The Artist',
-    'ESTP': 'The Dynamo',
+    'ESTP': 'The Adventurer',
     'ESFP': 'The Performer'
   };
 
@@ -368,6 +368,10 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "admissions@mit.edu",
         regionalCounselors: ["Stuart Schmill (Dean)", "Michael Yang", "Molly Thompson‑Vander Heyden", "Trinidad Carney", "Yi Tso"],
         
+        // Why Good Fit & Relevant Majors
+        whyGoodFit: "Perfect for Strategists who love systematic thinking and long-term planning. MIT's rigorous analytical environment, cutting-edge research opportunities, and focus on innovation align with the INTJ personality. The collaborative problem-solving culture and emphasis on practical applications of theory appeal to strategic minds.",
+        relevantMajors: ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Architecture", "Urban Studies & Planning", "Management Science", "Applied Mathematics", "Systems Engineering"],
+        
         // Academic Information
         tuition: "$59,750/year (2024-25)",
         acceptanceRate: "3.96%",
@@ -406,7 +410,9 @@ export const personalityResults: Record<string, PersonalityResult> = {
         website: "https://www.stanford.edu/",
         phone: "(650) 723-2091",
         email: "admission@stanford.edu",
-        regionalCounselors: ["Bob Patterson (Director)", "Katie Phillips", "Laura Selznick", "Melissa Stevenson", "Gabriel Wolfenstein"]
+        regionalCounselors: ["Bob Patterson (Director)", "Katie Phillips", "Laura Selznick", "Melissa Stevenson", "Gabriel Wolfenstein"],
+        whyGoodFit: "Ideal for Strategists who want to combine technical excellence with entrepreneurial thinking. Stanford's innovation ecosystem, strong industry connections, and emphasis on interdisciplinary problem-solving match the INTJ's strategic mindset and desire for long-term impact.",
+        relevantMajors: ["Computer Science", "Engineering (all disciplines)", "Mathematical & Computational Science", "Management Science & Engineering", "Symbolic Systems", "Product Design"]
       },
       {
         name: "Carnegie Mellon University",
@@ -416,7 +422,9 @@ export const personalityResults: Record<string, PersonalityResult> = {
         website: "https://www.cmu.edu/",
         phone: "(412) 268-2082",
         email: "admission@andrew.cmu.edu",
-        regionalCounselors: ["Miguel Alvarez", "Keith Gehres"]
+        regionalCounselors: ["Miguel Alvarez", "Keith Gehres"],
+        whyGoodFit: "Perfect for Strategists who love the intersection of technology and human behavior. CMU's data-driven approach, world-class computer science programs, and research opportunities in AI/robotics align with the INTJ's analytical nature and future-focused thinking.",
+        relevantMajors: ["Computer Science", "Information Systems", "Robotics", "Human-Computer Interaction", "Electrical & Computer Engineering", "Statistics & Data Science"]
       }
     ]
   },
