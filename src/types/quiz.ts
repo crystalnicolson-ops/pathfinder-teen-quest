@@ -11,23 +11,23 @@ export interface Question {
 export type PersonalityType = 
   // The Thinkers
   | 'The Strategist'
-  | 'The Inventor'
-  | 'The Boss'
-  | 'The Challenger'
-  // The Dreamers
+  | 'The Thinker'
+  | 'The Commander'
   | 'The Visionary'
+  // The Dreamers
+  | 'The Advocate'
   | 'The Creator'
-  | 'The Coach'
-  | 'The Free Spirit'
+  | 'The Guide'
+  | 'The Explorer'
   // The Planners
-  | 'The Organizer'
+  | 'The Inspector'
   | 'The Helper'
-  | 'The Manager'
+  | 'The Executive'
   | 'The Host'
   // The Explorers
-  | 'The Fixer'
+  | 'The Tinkerer'
   | 'The Artist'
-  | 'The Adventurer'
+  | 'The Dynamo'
   | 'The Performer';
 
 export interface Career {

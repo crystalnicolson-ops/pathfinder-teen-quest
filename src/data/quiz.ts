@@ -296,20 +296,20 @@ export function calculateMBTI(responses: { traits: string[] }[]): PersonalityTyp
 
   const mbtiToPersonality: Record<string, PersonalityType> = {
     'INTJ': 'The Strategist',
-    'INTP': 'The Inventor',
-    'ENTJ': 'The Boss',
-    'ENTP': 'The Challenger',
-    'INFJ': 'The Visionary',
+    'INTP': 'The Thinker',
+    'ENTJ': 'The Commander',
+    'ENTP': 'The Visionary',
+    'INFJ': 'The Advocate',
     'INFP': 'The Creator',
-    'ENFJ': 'The Coach',
-    'ENFP': 'The Free Spirit',
-    'ISTJ': 'The Organizer',
+    'ENFJ': 'The Guide',
+    'ENFP': 'The Explorer',
+    'ISTJ': 'The Inspector',
     'ISFJ': 'The Helper',
-    'ESTJ': 'The Manager',
+    'ESTJ': 'The Executive',
     'ESFJ': 'The Host',
-    'ISTP': 'The Fixer',
+    'ISTP': 'The Tinkerer',
     'ISFP': 'The Artist',
-    'ESTP': 'The Adventurer',
+    'ESTP': 'The Dynamo',
     'ESFP': 'The Performer'
   };
 
@@ -420,9 +420,9 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Inventor": {
-    type: "The Inventor",
-    description: "🧪 The Inventor (INTP) – \"I like figuring out how things work.\" You love curiosity, experiments, and building. You're great at puzzles and logic.",
+  "The Thinker": {
+    type: "The Thinker",
+    description: "🧪 The Thinker (INTP) – \"Curious • Analytical • Inventive\" You love figuring out how things work and exploring ideas. You're great at puzzles and logical thinking.",
     careers: [
       {
         title: "Research Scientist",
@@ -493,9 +493,9 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Boss": {
-    type: "The Boss",
-    description: "🧑‍💼 The Boss (ENTJ) – \"I take charge and get things done.\" You love leading and making plans. You're great at debating and organizing.",
+  "The Commander": {
+    type: "The Commander",
+    description: "👑 The Commander (ENTJ) – \"Leader • Strategic • Goal-driven\" You love taking charge and making strategic plans. You're great at leading and organizing.",
     careers: [
       {
         title: "Business Development Manager",
@@ -566,8 +566,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Challenger": {
-    type: "The Challenger",
+  "The Visionary": {
+    type: "The Visionary",
     description: "💡 The Challenger (ENTP) – \"I love new ideas and pushing limits.\" You love debates, creativity, and risk. You're great at brainstorms and quick thinking.",
     careers: [
       {
@@ -639,8 +639,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Visionary": {
-    type: "The Visionary",
+  "The Advocate": {
+    type: "The Advocate",
     description: "🌌 The Visionary (INFJ) – \"I want to make a difference quietly.\" You love helping others and making meaning. You're great at listening and writing.",
     careers: [
       {
@@ -785,8 +785,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Coach": {
-    type: "The Coach",
+  "The Guide": {
+    type: "The Guide",
     description: "🌟 The Coach (ENFJ) – \"I lift others up and help them grow.\" You love encouraging others. You're great at speaking and leading groups.",
     careers: [
       {
@@ -858,8 +858,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Free Spirit": {
-    type: "The Free Spirit",
+  "The Explorer": {
+    type: "The Explorer",
     description: "🎉 The Free Spirit (ENFP) – \"I want to explore everything and inspire others.\" You love adventures, people, and stories. You're great at being enthusiastic and creative.",
     careers: [
       {
@@ -931,8 +931,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Organizer": {
-    type: "The Organizer",
+  "The Inspector": {
+    type: "The Inspector",
     description: "📋 The Organizer (ISTJ) – \"I follow the rules and stay on track.\" You love order and getting things done. You're great at schedules and remembering details.",
     careers: [
       {
@@ -1077,8 +1077,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Manager": {
-    type: "The Manager",
+  "The Executive": {
+    type: "The Executive",
     description: "👔 The Manager (ESTJ) – \"I like being in charge and fixing problems.\" You love responsibility and organizing. You're great at managing events and making decisions.",
     careers: [
       {
@@ -1223,8 +1223,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Fixer": {
-    type: "The Fixer",
+  "The Tinkerer": {
+    type: "The Tinkerer",
     description: "🛠️ The Fixer (ISTP) – \"I tinker, fix, and figure things out with my hands.\" You love tools and working solo. You're great at building and mechanics.",
     careers: [
       {
@@ -1369,8 +1369,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ]
   },
-  "The Adventurer": {
-    type: "The Adventurer",
+  "The Dynamo": {
+    type: "The Dynamo",
     description: "🔥 The Adventurer (ESTP) – \"I like action and excitement.\" You love thrills and movement. You're great at sports and selling.",
     careers: [
       {
