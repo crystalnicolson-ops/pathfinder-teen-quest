@@ -342,21 +342,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Cambridge, MA",
         programs: ["Computer Science", "Engineering", "Mathematics"],
         ranking: "#2 overall",
-        website: "https://www.mit.edu/"
+        website: "https://www.mit.edu/",
+        phone: "(617) 253-3400",
+        email: "admissions@mit.edu",
+        regionalCounselors: ["Stuart Schmill (Dean)", "Michael Yang", "Molly Thompson‑Vander Heyden", "Trinidad Carney", "Yi Tso"]
       },
       {
         name: "Stanford University",
         location: "Stanford, CA", 
         programs: ["Computer Science", "Engineering", "Applied Physics"],
         ranking: "#6 overall",
-        website: "https://www.stanford.edu/"
+        website: "https://www.stanford.edu/",
+        phone: "(650) 723-2091",
+        email: "admission@stanford.edu",
+        regionalCounselors: ["Bob Patterson (Director)", "Katie Phillips", "Laura Selznick", "Melissa Stevenson", "Gabriel Wolfenstein"]
       },
       {
         name: "Carnegie Mellon University",
         location: "Pittsburgh, PA",
         programs: ["Computer Science", "Information Systems", "Robotics"],
         ranking: "#25 overall",
-        website: "https://www.cmu.edu/"
+        website: "https://www.cmu.edu/",
+        phone: "(412) 268-2082",
+        email: "admission@andrew.cmu.edu",
+        regionalCounselors: ["Miguel Alvarez", "Keith Gehres"]
       }
     ]
   },
@@ -385,21 +394,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         location: "Pasadena, CA",
         programs: ["Computer Science", "Engineering", "Applied Physics"],
         ranking: "#9 overall",
-        website: "https://www.caltech.edu/"
+        website: "https://www.caltech.edu/",
+        phone: "626-395-6341",
+        email: "ugadmissions@caltech.edu",
+        regionalCounselors: ["Emily Gray", "Jonah Magill", "Zion Smith", "Melissa Rodriguez", "Lucas Demetriades", "Andres Diaz"]
       },
       {
         name: "University of California, Berkeley",
         location: "Berkeley, CA",
         programs: ["Computer Science", "Engineering", "Physics"],
         ranking: "#22 overall", 
-        website: "https://www.berkeley.edu/"
+        website: "https://www.berkeley.edu/",
+        phone: "(510) 642-3175",
+        email: "berkeleyinfo@berkeley.edu",
+        regionalCounselors: ["Juan Román", "Betsy Barba", "Theodore Ny"]
       },
       {
         name: "Georgia Institute of Technology",
         location: "Atlanta, GA",
         programs: ["Computer Science", "Engineering", "Research"],
         ranking: "#38 overall",
-        website: "https://www.gatech.edu/"
+        website: "https://www.gatech.edu/",
+        phone: "(404) 894-4154",
+        email: "admission@gatech.edu",
+        regionalCounselors: ["General Admissions Staff"]
       }
     ]
   },

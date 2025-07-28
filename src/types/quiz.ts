@@ -44,6 +44,9 @@ export interface College {
   programs: string[];
   ranking: string;
   website: string;
+  phone?: string;
+  email?: string;
+  regionalCounselors?: string[];
 }
 
 export interface PersonalityResult {

@@ -183,15 +183,48 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
               Top College Recommendations
             </CardTitle>
           </CardHeader>
-          <CardContent className="grid md:grid-cols-3 gap-6">
+          <CardContent className="grid md:grid-cols-1 lg:grid-cols-2 gap-6">
             {result.colleges.map((college, index) => (
-              <div key={index} className="border rounded-lg p-4 bg-gradient-card">
-                <h3 className="text-lg font-semibold mb-2 text-foreground">{college.name}</h3>
-                <div className="flex items-center gap-2 mb-2">
+              <div key={index} className="border rounded-lg p-6 bg-gradient-card">
+                <h3 className="text-xl font-semibold mb-2 text-foreground">{college.name}</h3>
+                <div className="flex items-center gap-2 mb-4">
                   <MapPin className="h-4 w-4 text-secondary" />
                   <span className="text-sm text-muted-foreground">{college.location}</span>
                 </div>
                 
+                {/* Contact Information - Only show if available */}
+                {(college.phone || college.email || (college.regionalCounselors && college.regionalCounselors.length > 0)) && (
+                  <div className="bg-primary/5 p-4 rounded-md mb-4">
+                    <h4 className="font-semibold text-primary mb-3">📞 Admissions Contact</h4>
+                    <div className="space-y-2 text-sm">
+                      {college.phone && (
+                        <div className="flex items-center gap-2">
+                          <span className="font-medium">Phone:</span>
+                          <a href={`tel:${college.phone}`} className="text-primary hover:underline">
+                            {college.phone}
+                          </a>
+                        </div>
+                      )}
+                      {college.email && (
+                        <div className="flex items-center gap-2">
+                          <span className="font-medium">Email:</span>
+                          <a href={`mailto:${college.email}`} className="text-primary hover:underline break-all">
+                            {college.email}
+                          </a>
+                        </div>
+                      )}
+                      {college.regionalCounselors && college.regionalCounselors.length > 0 && (
+                        <div>
+                          <span className="font-medium">Regional Counselors:</span>
+                          <div className="mt-1 text-muted-foreground text-xs">
+                            {college.regionalCounselors.join(', ')}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                )}
+
                 <Badge variant="secondary" className="mb-3">{college.ranking}</Badge>
                 
                 <div className="mb-4">
