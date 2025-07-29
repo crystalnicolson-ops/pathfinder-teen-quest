@@ -24,6 +24,44 @@ import avatarArtist from '@/assets/avatar-artist.jpg';
 import avatarAdventurer from '@/assets/avatar-adventurer.jpg';
 import avatarPerformer from '@/assets/avatar-performer.jpg';
 
+// Import celebrity illustrations
+import celebrityStrategist from '@/assets/celebrity-strategist.jpg';
+import celebrityInventor from '@/assets/celebrity-inventor.jpg';
+import celebrityBoss from '@/assets/celebrity-boss.jpg';
+import celebrityChallenger from '@/assets/celebrity-challenger.jpg';
+import celebrityVisionary from '@/assets/celebrity-visionary.jpg';
+import celebrityCreator from '@/assets/celebrity-creator.jpg';
+import celebrityCoach from '@/assets/celebrity-coach.jpg';
+import celebrityFreeSpirit from '@/assets/celebrity-free-spirit.jpg';
+import celebrityOrganizer from '@/assets/celebrity-organizer.jpg';
+import celebrityHelper from '@/assets/celebrity-helper.jpg';
+import celebrityManager from '@/assets/celebrity-manager.jpg';
+import celebrityHost from '@/assets/celebrity-host.jpg';
+import celebrityFixer from '@/assets/celebrity-fixer.jpg';
+import celebrityArtist from '@/assets/celebrity-artist.jpg';
+import celebrityAdventurer from '@/assets/celebrity-adventurer.jpg';
+import celebrityPerformer from '@/assets/celebrity-performer.jpg';
+
+// Celebrity illustration mapping
+const celebrityImages: Record<PersonalityType, string> = {
+  'The Strategist': celebrityStrategist,
+  'The Inventor': celebrityInventor,
+  'The Boss': celebrityBoss,
+  'The Challenger': celebrityChallenger,
+  'The Visionary': celebrityVisionary,
+  'The Creator': celebrityCreator,
+  'The Coach': celebrityCoach,
+  'The Free Spirit': celebrityFreeSpirit,
+  'The Organizer': celebrityOrganizer,
+  'The Helper': celebrityHelper,
+  'The Manager': celebrityManager,
+  'The Host': celebrityHost,
+  'The Fixer': celebrityFixer,
+  'The Artist': celebrityArtist,
+  'The Adventurer': celebrityAdventurer,
+  'The Performer': celebrityPerformer,
+};
+
 // Avatar mapping
 const personalityAvatars: Record<PersonalityType, string> = {
   'The Strategist': avatarStrategist,
@@ -136,8 +174,8 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
                 <div key={index} className="text-center">
                   <div className="w-20 h-20 mx-auto mb-2 rounded-full overflow-hidden shadow-lg border-2 border-primary/20">
                     <img 
-                      src={celebrity.image} 
-                      alt={`${celebrity.name} character`}
+                      src={celebrityImages[result.type]} 
+                      alt={`${celebrity.name} character illustration`}
                       className="w-full h-full object-cover"
                     />
                   </div>

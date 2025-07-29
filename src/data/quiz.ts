@@ -428,11 +428,11 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ],
     celebrities: [
-      { name: "Zendaya", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
-      { name: "Tom Holland", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
-      { name: "Taylor Hill", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
-      { name: "Noah Schnapp", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
-      { name: "Sabrina Carpenter", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" }
+      { name: "Zendaya", image: "/src/assets/celebrity-strategist.jpg" },
+      { name: "Tom Holland", image: "/src/assets/celebrity-strategist.jpg" },
+      { name: "Taylor Hill", image: "/src/assets/celebrity-strategist.jpg" },
+      { name: "Noah Schnapp", image: "/src/assets/celebrity-strategist.jpg" },
+      { name: "Sabrina Carpenter", image: "/src/assets/celebrity-strategist.jpg" }
     ]
   },
   "The Inventor": {
@@ -508,11 +508,11 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ],
     celebrities: [
-      { name: "Billie Eilish", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
-      { name: "Timothée Chalamet", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
-      { name: "Sadie Sink", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
-      { name: "Finn Wolfhard", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
-      { name: "Maddie Ziegler", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" }
+      { name: "Billie Eilish", image: "/src/assets/celebrity-inventor.jpg" },
+      { name: "Timothée Chalamet", image: "/src/assets/celebrity-inventor.jpg" },
+      { name: "Sadie Sink", image: "/src/assets/celebrity-inventor.jpg" },
+      { name: "Finn Wolfhard", image: "/src/assets/celebrity-inventor.jpg" },
+      { name: "Maddie Ziegler", image: "/src/assets/celebrity-inventor.jpg" }
     ]
   },
   "The Boss": {
