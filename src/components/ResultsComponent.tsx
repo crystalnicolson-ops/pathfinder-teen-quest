@@ -307,7 +307,7 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
             variant="outline" 
             onClick={onRetake}
             size="lg"
-            className="bg-white/10 border-white/20 text-white hover:bg-white/20 transition-all duration-300"
+            className="bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/90 transition-all duration-300"
           >
             Retake Quiz
           </Button>
