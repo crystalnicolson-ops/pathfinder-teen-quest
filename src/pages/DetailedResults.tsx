@@ -33,25 +33,25 @@ export default function DetailedResults() {
           </Button>
           
           {/* Navigation Tabs */}
-          <div className="flex justify-center gap-2 mb-6">
+          <div className="flex justify-center gap-4 mb-8">
             <Button 
               variant={!section || section === 'careers' ? "default" : "outline"}
               onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20 data-[state=active]:bg-white/30"
+              className="bg-white/20 border-white/40 text-white hover:bg-white/30 shadow-lg font-semibold px-6"
             >
               Career Matches
             </Button>
             <Button 
               variant={section === 'colleges' ? "default" : "outline"}
               onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20 data-[state=active]:bg-white/30"
+              className="bg-white/20 border-white/40 text-white hover:bg-white/30 shadow-lg font-semibold px-6"
             >
               College Options
             </Button>
             <Button 
               variant="outline"
               onClick={() => navigate('/', { state: { showResults: true } })}
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+              className="bg-white/20 border-white/40 text-white hover:bg-white/30 shadow-lg font-semibold px-6"
             >
               Personality Results
             </Button>
