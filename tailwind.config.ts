@@ -105,12 +105,18 @@ export default {
 				'gradient-primary': 'var(--gradient-primary)',
 				'gradient-secondary': 'var(--gradient-secondary)',
 				'gradient-hero': 'var(--gradient-hero)',
-				'gradient-card': 'var(--gradient-card)'
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-pink': 'var(--gradient-pink)',
+				'gradient-purple': 'var(--gradient-purple)',
+				'gradient-blue': 'var(--gradient-blue)',
+				'gradient-rainbow': 'var(--gradient-rainbow)'
 			},
 			boxShadow: {
 				'primary': 'var(--shadow-primary)',
 				'secondary': 'var(--shadow-secondary)',
-				'card': 'var(--shadow-card)'
+				'card': 'var(--shadow-card)',
+				'pink': 'var(--shadow-pink)',
+				'blue': 'var(--shadow-blue)'
 			}
 		}
 	},
