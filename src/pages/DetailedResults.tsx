@@ -232,42 +232,7 @@ export default function DetailedResults() {
                   <Badge variant="secondary" className="mb-4">{college.ranking}</Badge>
                 </div>
 
-                {/* Contact Information */}
-                {(college.phone || college.email || (college.regionalCounselors && college.regionalCounselors.length > 0)) && (
-                  <div className="bg-primary/5 p-4 rounded-md mb-6">
-                    <h4 className="font-semibold text-primary mb-3">📞 Admissions Contact</h4>
-                    <div className="grid md:grid-cols-2 gap-4 text-sm">
-                      {college.phone && (
-                        <div 
-                          className="bg-gradient-to-r from-blue-400 to-blue-500 text-white p-2 rounded-lg cursor-pointer hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
-                          onClick={() => window.open(`tel:${college.phone}`, '_self')}
-                        >
-                          <span className="font-medium">📞 Call:</span>
-                          <span>{college.phone}</span>
-                        </div>
-                      )}
-                      {college.email && (
-                        <div 
-                          className="bg-gradient-to-r from-red-400 to-red-500 text-white p-2 rounded-lg cursor-pointer hover:from-red-500 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
-                          onClick={() => window.open(`mailto:${college.email}`, '_self')}
-                        >
-                          <span className="font-medium">✉️ Email:</span>
-                          <span className="truncate">{college.email}</span>
-                        </div>
-                      )}
-                      {college.regionalCounselors && college.regionalCounselors.length > 0 && (
-                        <div className="md:col-span-2">
-                          <span className="font-medium">Regional Counselors:</span>
-                          <div className="mt-1 text-muted-foreground text-xs">
-                            {college.regionalCounselors.join(', ')}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                 )}
-
-                 {/* Why Good Fit & Relevant Majors */}
+                  {/* Why Good Fit & Relevant Majors */}
                  {(college.whyGoodFit || college.relevantMajors) && (
                    <div className="mb-6">
                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
@@ -460,42 +425,7 @@ export default function DetailedResults() {
                     <Badge variant="outline" className="mb-4 border-secondary text-secondary">{college.ranking}</Badge>
                   </div>
 
-                  {/* Contact Information */}
-                  {(college.phone || college.email || (college.regionalCounselors && college.regionalCounselors.length > 0)) && (
-                    <div className="bg-secondary/5 p-4 rounded-md mb-6">
-                      <h4 className="font-semibold text-secondary mb-3">📞 Admissions Contact</h4>
-                      <div className="grid md:grid-cols-2 gap-4 text-sm">
-                        {college.phone && (
-                          <div 
-                            className="bg-gradient-to-r from-blue-400 to-blue-500 text-white p-2 rounded-lg cursor-pointer hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
-                            onClick={() => window.open(`tel:${college.phone}`, '_self')}
-                          >
-                            <span className="font-medium">📞 Call:</span>
-                            <span>{college.phone}</span>
-                          </div>
-                        )}
-                        {college.email && (
-                          <div 
-                            className="bg-gradient-to-r from-red-400 to-red-500 text-white p-2 rounded-lg cursor-pointer hover:from-red-500 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
-                            onClick={() => window.open(`mailto:${college.email}`, '_self')}
-                          >
-                            <span className="font-medium">✉️ Email:</span>
-                            <span className="truncate">{college.email}</span>
-                          </div>
-                        )}
-                        {college.regionalCounselors && college.regionalCounselors.length > 0 && (
-                          <div className="md:col-span-2">
-                            <span className="font-medium">Regional Counselors:</span>
-                            <div className="mt-1 text-muted-foreground text-xs">
-                              {college.regionalCounselors.join(', ')}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                   )}
-
-                   {/* Why Good Fit & Relevant Majors */}
+                  {/* Why Good Fit & Relevant Majors */}
                    {(college.whyGoodFit || college.relevantMajors) && (
                      <div className="mb-6">
                        <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
@@ -689,42 +619,7 @@ export default function DetailedResults() {
                     <Badge variant="outline" className="mb-4 border-green-600 text-green-600">{college.ranking}</Badge>
                   </div>
 
-                  {/* Contact Information */}
-                  {(college.phone || college.email || (college.regionalCounselors && college.regionalCounselors.length > 0)) && (
-                    <div className="bg-green-600/5 p-4 rounded-md mb-6">
-                      <h4 className="font-semibold text-green-600 mb-3">📞 Admissions Contact</h4>
-                      <div className="grid md:grid-cols-2 gap-4 text-sm">
-                        {college.phone && (
-                          <div 
-                            className="bg-gradient-to-r from-blue-400 to-blue-500 text-white p-2 rounded-lg cursor-pointer hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
-                            onClick={() => window.open(`tel:${college.phone}`, '_self')}
-                          >
-                            <span className="font-medium">📞 Call:</span>
-                            <span>{college.phone}</span>
-                          </div>
-                        )}
-                        {college.email && (
-                          <div 
-                            className="bg-gradient-to-r from-red-400 to-red-500 text-white p-2 rounded-lg cursor-pointer hover:from-red-500 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
-                            onClick={() => window.open(`mailto:${college.email}`, '_self')}
-                          >
-                            <span className="font-medium">✉️ Email:</span>
-                            <span className="truncate">{college.email}</span>
-                          </div>
-                        )}
-                        {college.regionalCounselors && college.regionalCounselors.length > 0 && (
-                          <div className="md:col-span-2">
-                            <span className="font-medium">Regional Counselors:</span>
-                            <div className="mt-1 text-muted-foreground text-xs">
-                              {college.regionalCounselors.join(', ')}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                   )}
-
-                   {/* Why Good Fit & Relevant Majors */}
+                  {/* Why Good Fit & Relevant Majors */}
                    {(college.whyGoodFit || college.relevantMajors) && (
                      <div className="mb-6">
                        <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
