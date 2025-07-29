@@ -201,7 +201,9 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
               {result.traits.map((trait, index) => (
                 <div key={index} className="relative">
                   <div className="flex items-center justify-between mb-2">
-                    <span className="text-sm font-medium text-foreground">{trait.name}</span>
+                    <span className={`text-sm font-medium text-foreground ${trait.percentage >= 70 ? 'font-bold' : ''}`}>
+                      {trait.name}
+                    </span>
                     <span className="text-sm font-bold text-primary">{trait.percentage}%</span>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
