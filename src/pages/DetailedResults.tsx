@@ -34,27 +34,32 @@ export default function DetailedResults() {
           
           {/* Navigation Tabs */}
           <div className="flex justify-center gap-4 mb-8">
-            <Button 
-              variant={!section || section === 'careers' ? "default" : "outline"}
+            <div 
+              className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
+                !section || section === 'careers' 
+                  ? 'bg-gradient-to-r from-orange-500 to-orange-600 text-white' 
+                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-orange-400 hover:to-orange-500'
+              }`}
               onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
-              className="bg-white/20 border-white/40 text-white hover:bg-white/30 shadow-lg font-semibold px-6"
             >
               Career Matches
-            </Button>
-            <Button 
-              variant={section === 'colleges' ? "default" : "outline"}
+            </div>
+            <div 
+              className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
+                section === 'colleges' 
+                  ? 'bg-gradient-to-r from-teal-500 to-teal-600 text-white' 
+                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-teal-400 hover:to-teal-500'
+              }`}
               onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
-              className="bg-white/20 border-white/40 text-white hover:bg-white/30 shadow-lg font-semibold px-6"
             >
               College Options
-            </Button>
-            <Button 
-              variant="outline"
+            </div>
+            <div 
+              className="px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white hover:from-indigo-600 hover:to-indigo-700"
               onClick={() => navigate('/', { state: { showResults: true } })}
-              className="bg-white/20 border-white/40 text-white hover:bg-white/30 shadow-lg font-semibold px-6"
             >
               Personality Results
-            </Button>
+            </div>
           </div>
 
           <h1 className="text-4xl font-bold text-white mb-2">
@@ -115,15 +120,13 @@ export default function DetailedResults() {
                       </div>
                     </div>
 
-                    <Button 
-                      variant="secondary" 
-                      size="sm" 
-                      className="w-full"
+                    <div 
+                      className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-lg cursor-pointer hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                       onClick={() => window.open(career.indeedLink, '_blank')}
                     >
-                      <ExternalLink className="h-4 w-4 mr-2" />
+                      <ExternalLink className="h-4 w-4" />
                       View Entry Jobs on Indeed
-                    </Button>
+                    </div>
                   </div>
                 ))}
               </CardContent>
@@ -176,15 +179,13 @@ export default function DetailedResults() {
                       </div>
                     </div>
 
-                    <Button 
-                      variant="default" 
-                      size="sm" 
-                      className="w-full bg-primary hover:bg-primary/90"
+                    <div 
+                      className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                       onClick={() => window.open(career.indeedLink, '_blank')}
                     >
-                      <ExternalLink className="h-4 w-4 mr-2" />
+                      <ExternalLink className="h-4 w-4" />
                       View Senior Roles on Indeed
-                    </Button>
+                    </div>
                   </div>
                 ))}
               </CardContent>
@@ -220,19 +221,21 @@ export default function DetailedResults() {
                     <h4 className="font-semibold text-primary mb-3">📞 Admissions Contact</h4>
                     <div className="grid md:grid-cols-2 gap-4 text-sm">
                       {college.phone && (
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium">Phone:</span>
-                          <a href={`tel:${college.phone}`} className="text-primary hover:underline">
-                            {college.phone}
-                          </a>
+                        <div 
+                          className="bg-gradient-to-r from-blue-400 to-blue-500 text-white p-2 rounded-lg cursor-pointer hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
+                          onClick={() => window.open(`tel:${college.phone}`, '_self')}
+                        >
+                          <span className="font-medium">📞 Call:</span>
+                          <span>{college.phone}</span>
                         </div>
                       )}
                       {college.email && (
-                        <div className="flex items-center gap-2">
-                          <span className="font-medium">Email:</span>
-                          <a href={`mailto:${college.email}`} className="text-primary hover:underline break-all">
-                            {college.email}
-                          </a>
+                        <div 
+                          className="bg-gradient-to-r from-red-400 to-red-500 text-white p-2 rounded-lg cursor-pointer hover:from-red-500 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
+                          onClick={() => window.open(`mailto:${college.email}`, '_self')}
+                        >
+                          <span className="font-medium">✉️ Email:</span>
+                          <span className="truncate">{college.email}</span>
                         </div>
                       )}
                       {college.regionalCounselors && college.regionalCounselors.length > 0 && (
@@ -378,15 +381,13 @@ export default function DetailedResults() {
                 )}
 
                 {/* Website Link */}
-                <Button 
-                  variant="outline" 
-                  size="sm" 
-                  className="w-full"
+                <div 
+                  className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white p-3 rounded-lg cursor-pointer hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                   onClick={() => window.open(college.website, '_blank')}
                 >
-                  <ExternalLink className="h-4 w-4 mr-2" />
+                  <ExternalLink className="h-4 w-4" />
                   Visit College Website
-                </Button>
+                </div>
               </div>
             ))}
           </CardContent>
