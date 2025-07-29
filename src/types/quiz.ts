@@ -98,6 +98,8 @@ export interface PersonalityResult {
   type: PersonalityType;
   description: string;
   careers: Career[];
+  entryLevelCareers: Career[];
+  advancedCareers: Career[];
   colleges: College[];
   celebrities: Celebrity[];
   traits: PersonalityTrait[];

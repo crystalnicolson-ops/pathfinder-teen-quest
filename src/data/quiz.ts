@@ -357,6 +357,52 @@ export const personalityResults: Record<string, PersonalityResult> = {
         indeedLink: "https://www.indeed.com/jobs?q=robotics+designer"
       }
     ],
+    entryLevelCareers: [
+      {
+        title: "Junior Software Developer",
+        description: "Start your tech career by writing code and learning software development fundamentals",
+        averageSalary: "$50,000 - $70,000",
+        jobGrowth: "25% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=junior+software+developer"
+      },
+      {
+        title: "Business Analyst Trainee",
+        description: "Analyze business processes and learn to recommend technology solutions",
+        averageSalary: "$45,000 - $65,000",
+        jobGrowth: "11% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=entry+level+business+analyst"
+      },
+      {
+        title: "Architecture Intern",
+        description: "Support architectural teams with drafting, research, and design assistance",
+        averageSalary: "$35,000 - $45,000",
+        jobGrowth: "7% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=architecture+intern"
+      }
+    ],
+    advancedCareers: [
+      {
+        title: "Senior Software Architect",
+        description: "Lead complex software design decisions and guide development teams",
+        averageSalary: "$120,000 - $180,000",
+        jobGrowth: "25% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=senior+software+architect"
+      },
+      {
+        title: "Chief Technology Officer",
+        description: "Lead technology strategy and innovation for entire organizations",
+        averageSalary: "$150,000 - $300,000",
+        jobGrowth: "11% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=chief+technology+officer"
+      },
+      {
+        title: "Principal Systems Designer",
+        description: "Design and oversee large-scale system architectures and strategic technology initiatives",
+        averageSalary: "$130,000 - $200,000",
+        jobGrowth: "9% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=principal+systems+designer"
+      }
+    ],
     colleges: [
       {
         name: "Massachusetts Institute of Technology",
@@ -521,6 +567,38 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Finn Wolfhard", emoji: "🎸", description: "Creative and unpredictable" },
       { name: "Maddie Ziegler", emoji: "💃", description: "Experimental dance" }
     ],
+    entryLevelCareers: [
+      {
+        title: "Junior Data Analyst",
+        description: "Learn to analyze data and create reports to support business decisions",
+        averageSalary: "$45,000 - $65,000",
+        jobGrowth: "31% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=junior+data+analyst"
+      },
+      {
+        title: "Research Assistant",
+        description: "Support scientific research projects and learn laboratory techniques",
+        averageSalary: "$35,000 - $50,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=research+assistant"
+      }
+    ],
+    advancedCareers: [
+      {
+        title: "Lead AI Researcher",
+        description: "Direct artificial intelligence research teams and breakthrough innovations",
+        averageSalary: "$150,000 - $250,000",
+        jobGrowth: "31% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=lead+ai+researcher"
+      },
+      {
+        title: "Chief Data Officer",
+        description: "Lead organization-wide data strategy and analytics initiatives",
+        averageSalary: "$180,000 - $300,000",
+        jobGrowth: "31% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=chief+data+officer"
+      }
+    ],
     traits: [
       { name: "Good listener", percentage: 89 },
       { name: "Judgmental", percentage: 23 },
@@ -608,6 +686,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "IShowSpeed", emoji: "🔥", description: "Bold and aggressive persona" },
       { name: "Halle Bailey", emoji: "🧜‍♀️", description: "Leading with grace and strength" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 56 },
       { name: "Judgmental", percentage: 67 },
@@ -695,6 +775,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Charli D'Amelio", emoji: "🩰", description: "Trend-setting creator" },
       { name: "Kai Cenat", emoji: "🎮", description: "Loud, fun streamer" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 78 },
       { name: "Judgmental", percentage: 34 },
@@ -782,6 +864,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Florence Pugh", emoji: "🎭", description: "Visionary actress" },
       { name: "Joshua Bassett", emoji: "💔", description: "Emotional depth" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 94 },
       { name: "Judgmental", percentage: 28 },
@@ -869,6 +953,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Dylan Minnette", emoji: "🎧", description: "Moody music & acting" },
       { name: "Amandla Stenberg", emoji: "🧿", description: "Culturally conscious artist" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 91 },
       { name: "Judgmental", percentage: 19 },
@@ -956,6 +1042,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Caleb McLaughlin", emoji: "🏀", description: "Motivational energy" },
       { name: "Coco Gauff", emoji: "🎾", description: "Young leader in sports" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 88 },
       { name: "Judgmental", percentage: 22 },
@@ -1043,6 +1131,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Jaden Hossler", emoji: "🖤", description: "Emo-energy free thinker" },
       { name: "Avani Gregg", emoji: "💄", description: "Creative and expressive" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 82 },
       { name: "Judgmental", percentage: 15 },
@@ -1130,6 +1220,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Maitreyi Ramakrishnan", emoji: "📝", description: "Organized actor" },
       { name: "Skai Jackson", emoji: "🧹", description: "Polished and tidy" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 76 },
       { name: "Judgmental", percentage: 52 },
@@ -1217,6 +1309,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Asher Angel", emoji: "🐶", description: "Loving and wholesome" },
       { name: "Sadie Sink", emoji: "🎀", description: "Compassionate energy" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 96 },
       { name: "Judgmental", percentage: 18 },
@@ -1304,6 +1398,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Sofia Wylie", emoji: "🎤", description: "Driven and polished" },
       { name: "Gavin Casalegno", emoji: "📈", description: "Professional presence" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 68 },
       { name: "Judgmental", percentage: 71 },
@@ -1391,6 +1487,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Peyton List", emoji: "💐", description: "Social & stylish" },
       { name: "Chloe Bailey", emoji: "🌹", description: "Bold but welcoming" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 84 },
       { name: "Judgmental", percentage: 25 },
@@ -1478,6 +1576,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Sabrina Carpenter", emoji: "🛎️", description: "Versatile and practical" },
       { name: "Bryce Hall", emoji: "🪛", description: "Direct and reactive" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 71 },
       { name: "Judgmental", percentage: 38 },
@@ -1565,6 +1665,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Beabadoobee", emoji: "🌸", description: "Alt-indie, dreamy style" },
       { name: "King Princess", emoji: "🌈", description: "Bold and expressive" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 79 },
       { name: "Judgmental", percentage: 31 },
@@ -1652,6 +1754,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Millie Bobby Brown", emoji: "🐉", description: "Multi-talented adventurer" },
       { name: "Logan Paul", emoji: "🎥", description: "Risk-taking content creator" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 62 },
       { name: "Judgmental", percentage: 43 },
@@ -1739,6 +1843,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Lil Nas X", emoji: "🌈", description: "Show-stopping performer" },
       { name: "Sabrina Carpenter", emoji: "✨", description: "Spotlight-ready" }
     ],
+    entryLevelCareers: [],
+    advancedCareers: [],
     traits: [
       { name: "Good listener", percentage: 74 },
       { name: "Judgmental", percentage: 36 },

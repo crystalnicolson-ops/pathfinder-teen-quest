@@ -86,7 +86,7 @@ export default function DetailedResults() {
                 </p>
               </CardHeader>
               <CardContent className="grid md:grid-cols-2 gap-6">
-                {result.careers.slice(0, 2).map((career, index) => (
+                {result.entryLevelCareers.map((career, index) => (
                   <div key={index} className="border rounded-lg p-4 bg-gradient-card">
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
@@ -145,7 +145,7 @@ export default function DetailedResults() {
                 </p>
               </CardHeader>
               <CardContent className="grid md:grid-cols-2 gap-6">
-                {result.careers.slice(2).map((career, index) => (
+                {result.advancedCareers.map((career, index) => (
                   <div key={index} className="border rounded-lg p-4 bg-gradient-card border-primary/20">
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
