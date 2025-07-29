@@ -56,6 +56,7 @@ export interface College {
   tuition?: string;
   acceptanceRate?: string;
   averageGPA?: string;
+  unweightedGPA?: string;
   testScores?: string;
   applicationDeadline?: string;
   studentFacultyRatio?: string;
@@ -83,6 +84,13 @@ export interface College {
   campusFacilities?: string[];
 }
 
+export interface CollegeTiers {
+  tier1: College[];
+  tier2: College[];
+  tier3: College[];
+  tier4: College[];
+}
+
 export interface Celebrity {
   name: string;
   emoji: string;
@@ -100,7 +108,7 @@ export interface PersonalityResult {
   careers: Career[];
   entryLevelCareers: Career[];
   advancedCareers: Career[];
-  colleges: College[];
+  colleges: College[] | CollegeTiers;
   celebrities: Celebrity[];
   traits: PersonalityTrait[];
 }

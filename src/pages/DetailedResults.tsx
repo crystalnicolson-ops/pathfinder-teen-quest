@@ -4,7 +4,29 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft, Home } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
-import { PersonalityType } from '@/types/quiz';
+import { PersonalityType, College, CollegeTiers } from '@/types/quiz';
+
+// Helper function to get colleges by tier
+const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | 'tier2' | 'tier3' | 'tier4'): College[] => {
+  if (Array.isArray(colleges)) {
+    // Legacy structure - filter by college names
+    const tierCollege = {
+      tier1: ['harvard', 'massachusetts institute of technology', 'mit', 'stanford', 'yale', 'princeton', 'california institute of technology', 'caltech'],
+      tier2: ['university of chicago', 'chicago', 'columbia', 'johns hopkins', 'hopkins', 'northwestern', 'duke', 'brown', 'cornell'],
+      tier3: ['carnegie mellon', 'cmu', 'university of california berkeley', 'berkeley', 'rice', 'university of washington', 'university of rochester', 'uc irvine'],
+      tier4: ['georgia institute of technology', 'georgia tech', 'university of illinois', 'illinois', 'ucsd', 'san diego', 'purdue', 'umass', 'utah']
+    };
+    
+    return colleges.filter(college => {
+      const name = college.name.toLowerCase();
+      return tierCollege[tier].some(keyword => name.includes(keyword));
+    });
+  } else {
+    // New tiered structure
+    return colleges[tier] || [];
+  }
+};
+
 
 export default function DetailedResults() {
   const location = useLocation();
@@ -218,12 +240,7 @@ export default function DetailedResults() {
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
-              {result.colleges.filter(college => {
-                const name = college.name.toLowerCase();
-                return name.includes('harvard') || name.includes('massachusetts institute of technology') || 
-                       name.includes('stanford') || name.includes('yale') || name.includes('princeton') ||
-                       name.includes('california institute of technology') || name.includes('caltech');
-              }).map((college, index) => (
+              {getCollegesByTier(result.colleges, 'tier1').map((college, index) => (
               <div key={index} className="border rounded-lg p-6 bg-gradient-card">
                 {/* Header */}
                 <div className="mb-6">
@@ -284,12 +301,12 @@ export default function DetailedResults() {
                         <div className="text-muted-foreground">{college.acceptanceRate}</div>
                       </div>
                     )}
-                    {college.averageGPA && (
-                      <div className="bg-white/50 p-3 rounded">
-                        <span className="font-medium">Unweighted GPA:</span>
-                        <div className="text-muted-foreground">{college.averageGPA}</div>
-                      </div>
-                    )}
+                     {(college.averageGPA || college.unweightedGPA) && (
+                       <div className="bg-white/50 p-3 rounded">
+                         <span className="font-medium">Unweighted GPA:</span>
+                         <div className="text-muted-foreground">{college.unweightedGPA || college.averageGPA}</div>
+                       </div>
+                     )}
                     {college.testScores && (
                       <div className="bg-white/50 p-3 rounded">
                         <span className="font-medium">Test Scores:</span>
@@ -348,14 +365,7 @@ export default function DetailedResults() {
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
-              {result.colleges.filter(college => {
-                const name = college.name.toLowerCase();
-                return name.includes('university of chicago') || name.includes('columbia university') ||
-                       name.includes('northwestern university') || name.includes('duke university') ||
-                       name.includes('johns hopkins') || name.includes('brown university') ||
-                       name.includes('dartmouth') || name.includes('cornell university') ||
-                       name.includes('university of pennsylvania');
-              }).map((college, index) => (
+              {getCollegesByTier(result.colleges, 'tier2').map((college, index) => (
                 <div key={index} className="border rounded-lg p-6 bg-gradient-card border-secondary/20">
                   {/* Header */}
                   <div className="mb-6">
@@ -480,14 +490,7 @@ export default function DetailedResults() {
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
-              {result.colleges.filter(college => {
-                const name = college.name.toLowerCase();
-                return name.includes('university of california, berkeley') || name.includes('ucla') ||
-                       name.includes('university of michigan') || name.includes('carnegie mellon') ||
-                       name.includes('rice university') || name.includes('vanderbilt') ||
-                       name.includes('university of virginia') || name.includes('georgetown') ||
-                       name.includes('notre dame') || name.includes('washington university');
-              }).map((college, index) => (
+              {getCollegesByTier(result.colleges, 'tier3').map((college, index) => (
                 <div key={index} className="border rounded-lg p-6 bg-gradient-card border-secondary/20">
                   {/* Header */}
                   <div className="mb-6">
@@ -612,30 +615,7 @@ export default function DetailedResults() {
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
-              {result.colleges.filter(college => {
-                const name = college.name.toLowerCase();
-                // Tier 1 schools
-                const isTier1 = name.includes('harvard') || name.includes('massachusetts institute of technology') || 
-                               name.includes('stanford') || name.includes('yale') || name.includes('princeton') ||
-                               name.includes('california institute of technology') || name.includes('caltech');
-                
-                // Tier 2 schools
-                const isTier2 = name.includes('university of chicago') || name.includes('columbia university') ||
-                               name.includes('northwestern university') || name.includes('duke university') ||
-                               name.includes('johns hopkins') || name.includes('brown university') ||
-                               name.includes('dartmouth') || name.includes('cornell university') ||
-                               name.includes('university of pennsylvania');
-                
-                // Tier 3 schools
-                const isTier3 = name.includes('university of california, berkeley') || name.includes('ucla') ||
-                               name.includes('university of michigan') || name.includes('carnegie mellon') ||
-                               name.includes('rice university') || name.includes('vanderbilt') ||
-                               name.includes('university of virginia') || name.includes('georgetown') ||
-                               name.includes('notre dame') || name.includes('washington university');
-                
-                // Tier 4: Everything else (Georgia Tech, Purdue, UW, Virginia Tech, ASU, etc.)
-                return !isTier1 && !isTier2 && !isTier3;
-              }).map((college, index) => (
+              {getCollegesByTier(result.colleges, 'tier4').map((college, index) => (
                 <div key={index} className="border rounded-lg p-6 bg-gradient-card border-purple-600/20">
                   {/* Header */}
                   <div className="mb-6">
