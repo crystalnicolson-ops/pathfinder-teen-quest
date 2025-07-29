@@ -128,10 +128,10 @@ const Index = () => {
             It only takes 5 minutes!
           </p>
           <Button 
-            variant="hero" 
+            variant="secondary" 
             size="lg" 
             onClick={handleStartQuiz}
-            className="text-lg px-8 py-6"
+            className="text-lg px-8 py-6 rounded-full"
           >
             <TrendingUp className="h-6 w-6 mr-2" />
             Begin Assessment
