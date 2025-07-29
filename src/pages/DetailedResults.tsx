@@ -291,51 +291,7 @@ export default function DetailedResults() {
                   </div>
                 )}
 
-                {/* Campus Life */}
-                {college.studentPopulation && (
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <Users className="h-4 w-4 text-primary" />
-                      Campus Life
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-4 text-sm">
-                      <div className="bg-white/50 p-3 rounded">
-                        <span className="font-medium">Student Population:</span>
-                        <div className="text-muted-foreground">{college.studentPopulation}</div>
-                      </div>
-                      <div className="bg-white/50 p-3 rounded">
-                        <span className="font-medium">Athletics:</span>
-                        <div className="text-muted-foreground">{college.athletics}</div>
-                      </div>
-                      <div className="md:col-span-2 bg-white/50 p-3 rounded">
-                        <span className="font-medium">Campus Culture:</span>
-                        <div className="text-muted-foreground mt-1">{college.campusCulture}</div>
-                      </div>
-                      {college.housingOptions && college.housingOptions.length > 0 && (
-                        <div className="md:col-span-2">
-                          <span className="font-medium">Housing Options:</span>
-                          <div className="flex flex-wrap gap-1 mt-2">
-                            {college.housingOptions.map((option, idx) => (
-                              <Badge key={idx} variant="outline" className="text-xs">{option}</Badge>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                      {college.activities && college.activities.length > 0 && (
-                        <div className="md:col-span-2">
-                          <span className="font-medium">Popular Activities:</span>
-                          <div className="flex flex-wrap gap-1 mt-2">
-                            {college.activities.map((activity, idx) => (
-                              <Badge key={idx} variant="outline" className="text-xs">{activity}</Badge>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                )}
-
-                {/* Career Support */}
+                  {/* Career Support */}
                 {college.jobPlacementRate && (
                   <div className="mb-6">
                     <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
@@ -461,50 +417,6 @@ export default function DetailedResults() {
                           <span className="font-medium">Student-Faculty Ratio:</span>
                           <div className="text-muted-foreground">{college.studentFacultyRatio}</div>
                         </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Campus Life */}
-                  {college.studentPopulation && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <Users className="h-4 w-4 text-secondary" />
-                        Campus Life
-                      </h4>
-                      <div className="grid md:grid-cols-2 gap-4 text-sm">
-                        <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Student Population:</span>
-                          <div className="text-muted-foreground">{college.studentPopulation}</div>
-                        </div>
-                        <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Athletics:</span>
-                          <div className="text-muted-foreground">{college.athletics}</div>
-                        </div>
-                        <div className="md:col-span-2 bg-white/50 p-3 rounded">
-                          <span className="font-medium">Campus Culture:</span>
-                          <div className="text-muted-foreground mt-1">{college.campusCulture}</div>
-                        </div>
-                        {college.housingOptions && college.housingOptions.length > 0 && (
-                          <div className="md:col-span-2">
-                            <span className="font-medium">Housing Options:</span>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {college.housingOptions.map((option, idx) => (
-                                <Badge key={idx} variant="outline" className="text-xs">{option}</Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                        {college.activities && college.activities.length > 0 && (
-                          <div className="md:col-span-2">
-                            <span className="font-medium">Popular Activities:</span>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {college.activities.map((activity, idx) => (
-                                <Badge key={idx} variant="outline" className="text-xs">{activity}</Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
                       </div>
                     </div>
                   )}
@@ -635,50 +547,6 @@ export default function DetailedResults() {
                           <span className="font-medium">Student-Faculty Ratio:</span>
                           <div className="text-muted-foreground">{college.studentFacultyRatio}</div>
                         </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Campus Life */}
-                  {college.studentPopulation && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <Users className="h-4 w-4 text-secondary" />
-                        Campus Life
-                      </h4>
-                      <div className="grid md:grid-cols-2 gap-4 text-sm">
-                        <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Student Population:</span>
-                          <div className="text-muted-foreground">{college.studentPopulation}</div>
-                        </div>
-                        <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Athletics:</span>
-                          <div className="text-muted-foreground">{college.athletics}</div>
-                        </div>
-                        <div className="md:col-span-2 bg-white/50 p-3 rounded">
-                          <span className="font-medium">Campus Culture:</span>
-                          <div className="text-muted-foreground mt-1">{college.campusCulture}</div>
-                        </div>
-                        {college.housingOptions && college.housingOptions.length > 0 && (
-                          <div className="md:col-span-2">
-                            <span className="font-medium">Housing Options:</span>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {college.housingOptions.map((option, idx) => (
-                                <Badge key={idx} variant="outline" className="text-xs">{option}</Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                        {college.activities && college.activities.length > 0 && (
-                          <div className="md:col-span-2">
-                            <span className="font-medium">Popular Activities:</span>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {college.activities.map((activity, idx) => (
-                                <Badge key={idx} variant="outline" className="text-xs">{activity}</Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
                       </div>
                     </div>
                   )}
@@ -825,50 +693,6 @@ export default function DetailedResults() {
                           <span className="font-medium">Student-Faculty Ratio:</span>
                           <div className="text-muted-foreground">{college.studentFacultyRatio}</div>
                         </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Campus Life */}
-                  {college.studentPopulation && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <Users className="h-4 w-4 text-green-600" />
-                        Campus Life
-                      </h4>
-                      <div className="grid md:grid-cols-2 gap-4 text-sm">
-                        <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Student Population:</span>
-                          <div className="text-muted-foreground">{college.studentPopulation}</div>
-                        </div>
-                        <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Athletics:</span>
-                          <div className="text-muted-foreground">{college.athletics}</div>
-                        </div>
-                        <div className="md:col-span-2 bg-white/50 p-3 rounded">
-                          <span className="font-medium">Campus Culture:</span>
-                          <div className="text-muted-foreground mt-1">{college.campusCulture}</div>
-                        </div>
-                        {college.housingOptions && college.housingOptions.length > 0 && (
-                          <div className="md:col-span-2">
-                            <span className="font-medium">Housing Options:</span>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {college.housingOptions.map((option, idx) => (
-                                <Badge key={idx} variant="outline" className="text-xs">{option}</Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                        {college.activities && college.activities.length > 0 && (
-                          <div className="md:col-span-2">
-                            <span className="font-medium">Popular Activities:</span>
-                            <div className="flex flex-wrap gap-1 mt-2">
-                              {college.activities.map((activity, idx) => (
-                                <Badge key={idx} variant="outline" className="text-xs">{activity}</Badge>
-                              ))}
-                            </div>
-                          </div>
-                        )}
                       </div>
                     </div>
                   )}
