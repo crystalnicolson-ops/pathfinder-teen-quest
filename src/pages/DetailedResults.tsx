@@ -201,25 +201,18 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-primary" />
-                Tier 1 Schools (Most Selective)
+                Tier 1 - Top Elite Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Top-tier institutions with the highest selectivity and prestige. These schools typically have acceptance rates under 15% and require exceptional academic credentials.
+                Extremely selective, world-renowned academic and research reputations. Acceptance rates ~3-5%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
               {result.colleges.filter(college => {
-                const ranking = college.ranking?.toLowerCase() || '';
-                return ranking.includes('#1') || ranking.includes('#2') || ranking.includes('#3') || 
-                       ranking.includes('#4') || ranking.includes('#5') || ranking.includes('#6') ||
-                       ranking.includes('#7') || ranking.includes('#8') || ranking.includes('#9') ||
-                       ranking.includes('#10') || ranking.includes('#11') || ranking.includes('#12') ||
-                       ranking.includes('#13') || ranking.includes('#14') || ranking.includes('#15') ||
-                       ranking.includes('top 5') || ranking.includes('ivy') || 
-                       college.name.includes('MIT') || college.name.includes('Harvard') || 
-                       college.name.includes('Stanford') || college.name.includes('Princeton') || 
-                       college.name.includes('Yale') || college.name.includes('Columbia') ||
-                       college.name.includes('University of Chicago') || college.name.includes('California Institute');
+                const name = college.name.toLowerCase();
+                return name.includes('harvard') || name.includes('massachusetts institute of technology') || 
+                       name.includes('stanford') || name.includes('yale') || name.includes('princeton') ||
+                       name.includes('california institute of technology') || name.includes('caltech');
               }).map((college, index) => (
               <div key={index} className="border rounded-lg p-6 bg-gradient-card">
                 {/* Header */}
@@ -380,39 +373,28 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-secondary" />
-                Tier 2 Schools (Selective)
+                Tier 3 - High-Status Research Institutions
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Excellent institutions with strong academic programs. These schools typically have acceptance rates between 15-40% and offer great opportunities for career advancement.
+                Competitive, strong across multiple fields, widely respected. Acceptance rates ~10-20%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
               {result.colleges.filter(college => {
-                const ranking = college.ranking?.toLowerCase() || '';
-                // Tier 1: Top 15 schools
-                const isTopTier = ranking.includes('#1') || ranking.includes('#2') || ranking.includes('#3') || 
-                                 ranking.includes('#4') || ranking.includes('#5') || ranking.includes('#6') ||
-                                 ranking.includes('#7') || ranking.includes('#8') || ranking.includes('#9') ||
-                                 ranking.includes('#10') || ranking.includes('#11') || ranking.includes('#12') ||
-                                 ranking.includes('#13') || ranking.includes('#14') || ranking.includes('#15') ||
-                                 ranking.includes('top 5') || ranking.includes('ivy') || 
-                                 college.name.includes('MIT') || college.name.includes('Harvard') || 
-                                 college.name.includes('Stanford') || college.name.includes('Princeton') || 
-                                 college.name.includes('Yale') || college.name.includes('Columbia') ||
-                                 college.name.includes('University of Chicago') || college.name.includes('California Institute');
+                const name = college.name.toLowerCase();
+                // Tier 1 schools
+                const isTier1 = name.includes('harvard') || name.includes('massachusetts institute of technology') || 
+                               name.includes('stanford') || name.includes('yale') || name.includes('princeton') ||
+                               name.includes('california institute of technology') || name.includes('caltech');
                 
-                // Tier 2: Schools ranked 16-50
-                const isMidTier = ranking.includes('#16') || ranking.includes('#17') || ranking.includes('#18') || ranking.includes('#19') ||
-                                 ranking.includes('#20') || ranking.includes('#21') || ranking.includes('#22') || ranking.includes('#23') ||
-                                 ranking.includes('#24') || ranking.includes('#25') || ranking.includes('#26') || ranking.includes('#27') ||
-                                 ranking.includes('#28') || ranking.includes('#29') || ranking.includes('#30') || ranking.includes('#31') ||
-                                 ranking.includes('#32') || ranking.includes('#33') || ranking.includes('#34') || ranking.includes('#35') ||
-                                 ranking.includes('#36') || ranking.includes('#37') || ranking.includes('#38') || ranking.includes('#39') ||
-                                 ranking.includes('#40') || ranking.includes('#41') || ranking.includes('#42') || ranking.includes('#43') ||
-                                 ranking.includes('#44') || ranking.includes('#45') || ranking.includes('#46') || ranking.includes('#47') ||
-                                 ranking.includes('#48') || ranking.includes('#49') || ranking.includes('#50');
+                // Tier 3 schools
+                const isTier3 = name.includes('university of california, berkeley') || name.includes('ucla') ||
+                               name.includes('university of michigan') || name.includes('carnegie mellon') ||
+                               name.includes('rice university') || name.includes('vanderbilt') ||
+                               name.includes('university of virginia') || name.includes('georgetown') ||
+                               name.includes('notre dame') || name.includes('washington university');
                 
-                return !isTopTier && isMidTier;
+                return !isTier1 && isTier3;
               }).map((college, index) => (
                 <div key={index} className="border rounded-lg p-6 bg-gradient-card border-secondary/20">
                   {/* Header */}
@@ -573,40 +555,29 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-green-600" />
-                Tier 3 Schools (Accessible)
+                Tier 4 - Solid Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Quality institutions with good programs and higher acceptance rates. These schools typically accept 40%+ of applicants and offer excellent value and opportunities.
+                Good academic reputations, broader admissions, quality programs. Acceptance rates ~20-40%+.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
               {result.colleges.filter(college => {
-                const ranking = college.ranking?.toLowerCase() || '';
-                // Tier 1: Top 15 schools
-                const isTopTier = ranking.includes('#1') || ranking.includes('#2') || ranking.includes('#3') || 
-                                 ranking.includes('#4') || ranking.includes('#5') || ranking.includes('#6') ||
-                                 ranking.includes('#7') || ranking.includes('#8') || ranking.includes('#9') ||
-                                 ranking.includes('#10') || ranking.includes('#11') || ranking.includes('#12') ||
-                                 ranking.includes('#13') || ranking.includes('#14') || ranking.includes('#15') ||
-                                 ranking.includes('top 5') || ranking.includes('ivy') || 
-                                 college.name.includes('MIT') || college.name.includes('Harvard') || 
-                                 college.name.includes('Stanford') || college.name.includes('Princeton') || 
-                                 college.name.includes('Yale') || college.name.includes('Columbia') ||
-                                 college.name.includes('University of Chicago') || college.name.includes('California Institute');
+                const name = college.name.toLowerCase();
+                // Tier 1 schools
+                const isTier1 = name.includes('harvard') || name.includes('massachusetts institute of technology') || 
+                               name.includes('stanford') || name.includes('yale') || name.includes('princeton') ||
+                               name.includes('california institute of technology') || name.includes('caltech');
                 
-                // Tier 2: Schools ranked 16-50
-                const isMidTier = ranking.includes('#16') || ranking.includes('#17') || ranking.includes('#18') || ranking.includes('#19') ||
-                                 ranking.includes('#20') || ranking.includes('#21') || ranking.includes('#22') || ranking.includes('#23') ||
-                                 ranking.includes('#24') || ranking.includes('#25') || ranking.includes('#26') || ranking.includes('#27') ||
-                                 ranking.includes('#28') || ranking.includes('#29') || ranking.includes('#30') || ranking.includes('#31') ||
-                                 ranking.includes('#32') || ranking.includes('#33') || ranking.includes('#34') || ranking.includes('#35') ||
-                                 ranking.includes('#36') || ranking.includes('#37') || ranking.includes('#38') || ranking.includes('#39') ||
-                                 ranking.includes('#40') || ranking.includes('#41') || ranking.includes('#42') || ranking.includes('#43') ||
-                                 ranking.includes('#44') || ranking.includes('#45') || ranking.includes('#46') || ranking.includes('#47') ||
-                                 ranking.includes('#48') || ranking.includes('#49') || ranking.includes('#50');
+                // Tier 3 schools
+                const isTier3 = name.includes('university of california, berkeley') || name.includes('ucla') ||
+                               name.includes('university of michigan') || name.includes('carnegie mellon') ||
+                               name.includes('rice university') || name.includes('vanderbilt') ||
+                               name.includes('university of virginia') || name.includes('georgetown') ||
+                               name.includes('notre dame') || name.includes('washington university');
                 
-                // Tier 3: Schools ranked 51+ or unranked quality schools
-                return !isTopTier && !isMidTier;
+                // Tier 4: Everything else (Georgia Tech, Purdue, UW, Virginia Tech, ASU, etc.)
+                return !isTier1 && !isTier3;
               }).map((college, index) => (
                 <div key={index} className="border rounded-lg p-6 bg-gradient-card border-green-600/20">
                   {/* Header */}
