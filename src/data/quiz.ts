@@ -461,6 +461,54 @@ export const personalityResults: Record<string, PersonalityResult> = {
         relevantMajors: ["Computer Science", "Engineering (all disciplines)", "Mathematical & Computational Science", "Management Science & Engineering", "Symbolic Systems", "Product Design"]
       },
       {
+        name: "Harvard University",
+        location: "Cambridge, MA",
+        programs: ["Computer Science", "Applied Mathematics", "Engineering"],
+        ranking: "#3 overall",
+        website: "https://www.harvard.edu/",
+        phone: "(617) 495-1551",
+        email: "college@fas.harvard.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Perfect for Strategists who want to combine analytical thinking with leadership development. Harvard's rigorous academic environment, extensive alumni network, and emphasis on critical thinking align perfectly with the INTJ's strategic mindset and long-term planning abilities.",
+        relevantMajors: ["Computer Science", "Applied Mathematics", "Engineering Sciences", "Economics", "Statistics", "Applied Physics"]
+      },
+      {
+        name: "University of Chicago",
+        location: "Chicago, IL",
+        programs: ["Computer Science", "Economics", "Mathematics"],
+        ranking: "#6 overall",
+        website: "https://www.uchicago.edu/",
+        phone: "(773) 702-8650",
+        email: "collegeadmissions@uchicago.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Ideal for Strategists who thrive on intellectual rigor and analytical thinking. UChicago's emphasis on critical inquiry, quantitative methods, and systematic problem-solving perfectly matches the INTJ's preference for deep analysis and strategic planning.",
+        relevantMajors: ["Computer Science", "Economics", "Statistics", "Applied Mathematics", "Computational & Applied Mathematics", "Data Science"]
+      },
+      {
+        name: "Columbia University",
+        location: "New York, NY",
+        programs: ["Computer Science", "Engineering", "Applied Mathematics"],
+        ranking: "#12 overall",
+        website: "https://www.columbia.edu/",
+        phone: "(212) 854-2522",
+        email: "ugrad-admiss@columbia.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Excellent for Strategists who want to combine technical expertise with real-world impact. Columbia's location in NYC, strong engineering programs, and research opportunities provide the perfect environment for strategic thinkers to develop innovative solutions.",
+        relevantMajors: ["Computer Science", "Industrial Engineering & Operations Research", "Applied Mathematics", "Financial Engineering", "Data Science", "Systems Engineering"]
+      },
+      {
+        name: "Northwestern University",
+        location: "Evanston, IL",
+        programs: ["Computer Science", "Engineering", "Industrial Engineering"],
+        ranking: "#9 overall",
+        website: "https://www.northwestern.edu/",
+        phone: "(847) 491-7271",
+        email: "ug-admission@northwestern.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Great for Strategists who value interdisciplinary thinking and practical application. Northwestern's strong engineering programs, collaborative culture, and emphasis on innovation provide excellent preparation for strategic leadership roles.",
+        relevantMajors: ["Computer Science", "Industrial Engineering", "Systems Engineering", "Applied Mathematics", "Data Science", "Technology & Social Behavior"]
+      },
+      {
         name: "Carnegie Mellon University",
         location: "Pittsburgh, PA",
         programs: ["Computer Science", "Information Systems", "Robotics"],
