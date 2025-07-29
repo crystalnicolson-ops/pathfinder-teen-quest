@@ -58,7 +58,7 @@ const Index = () => {
             variant="hero" 
             size="lg" 
             onClick={handleStartQuiz}
-            className="text-lg px-8 py-6 animate-pulse-slow bg-blue-500 text-white rounded-full border-2 border-blue-500 hover:bg-blue-600 hover:border-blue-600"
+            className="text-lg px-8 py-6 animate-pulse-slow"
           >
             <Target className="h-6 w-6 mr-2" />
             Start Your Journey
