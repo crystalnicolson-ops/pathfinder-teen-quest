@@ -31,6 +31,32 @@ export default function DetailedResults() {
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Results
           </Button>
+          
+          {/* Navigation Tabs */}
+          <div className="flex justify-center gap-2 mb-6">
+            <Button 
+              variant={!section || section === 'careers' ? "default" : "outline"}
+              onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20 data-[state=active]:bg-white/30"
+            >
+              Career Matches
+            </Button>
+            <Button 
+              variant={section === 'colleges' ? "default" : "outline"}
+              onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20 data-[state=active]:bg-white/30"
+            >
+              College Options
+            </Button>
+            <Button 
+              variant="outline"
+              onClick={() => navigate('/', { state: { showResults: true } })}
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+            >
+              Personality Results
+            </Button>
+          </div>
+
           <h1 className="text-4xl font-bold text-white mb-2">
             {section === 'careers' ? 'Your Career Matches' : 
              section === 'colleges' ? 'Your College Options' : 
