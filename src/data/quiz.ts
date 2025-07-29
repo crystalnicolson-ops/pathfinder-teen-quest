@@ -2,273 +2,273 @@ import { Question, PersonalityResult, PersonalityType } from '@/types/quiz';
 
 export const questions: Question[] = [
   {
-    text: "How do you feel about group projects?",
+    text: "When the teacher assigns a group project, I secretly hope I can do it all myself.",
     options: {
-      A: { text: "They're fun if we don't take it too seriously", traits: ["E", "N", "T", "P"] },
-      B: { text: "Love organizing them and keeping everyone on task", traits: ["I", "S", "T", "J"] },
-      C: { text: "I make sure everyone feels heard and included", traits: ["I", "S", "F", "J"] },
-      D: { text: "Prefer working alone or with someone creative", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["I", "N", "T", "J"] },
+      C: { text: "Neutral", traits: ["I", "S", "F", "P"] },
+      D: { text: "Disagree", traits: ["E", "S", "F", "J"] }
     }
   },
   {
-    text: "You forgot your homework! You…",
+    text: "I often get caught daydreaming about what my life could look like in 10 years.",
     options: {
-      A: { text: "Apologize and try to fix it", traits: ["I", "S", "F", "J"] },
-      B: { text: "Laugh it off and talk your way out", traits: ["E", "N", "T", "P"] },
-      C: { text: "Stress — you never forget things like that", traits: ["I", "S", "T", "J"] },
-      D: { text: "Make up an excuse", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "N", "F", "P"] },
+      B: { text: "Agree", traits: ["I", "N", "T", "P"] },
+      C: { text: "Neutral", traits: ["I", "S", "F", "J"] },
+      D: { text: "Disagree", traits: ["E", "S", "T", "J"] }
     }
   },
   {
-    text: "What's your note-taking style?",
+    text: "If someone asks for my opinion, I usually give the most practical or logical answer.",
     options: {
-      A: { text: "Doodles in the margins, colorful notes", traits: ["I", "N", "F", "P"] },
-      B: { text: "Neat notes with reminders to help others", traits: ["I", "S", "F", "J"] },
-      C: { text: "Barely any — you remember most of it anyway", traits: ["E", "N", "T", "P"] },
-      D: { text: "Bullet points, highlights, organized folders", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["E", "S", "T", "J"] },
+      C: { text: "Neutral", traits: ["I", "N", "T", "P"] },
+      D: { text: "Disagree", traits: ["I", "N", "F", "P"] }
     }
   },
   {
-    text: "You're at a party. What are you doing?",
+    text: "I like having my schedule figured out before the day starts.",
     options: {
-      A: { text: "Helping clean up or check on people", traits: ["I", "S", "F", "J"] },
-      B: { text: "Dancing, laughing, being loud", traits: ["E", "N", "T", "P"] },
-      C: { text: "Taking selfies and vibing with music", traits: ["I", "N", "F", "P"] },
-      D: { text: "Talking to a few close friends", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["E", "S", "F", "J"] },
+      C: { text: "Neutral", traits: ["I", "N", "F", "J"] },
+      D: { text: "Disagree", traits: ["E", "N", "T", "P"] }
     }
   },
   {
-    text: "Your friend is upset. You…",
+    text: "I get a boost of energy from hanging out with a group of people after school.",
     options: {
-      A: { text: "Write them a note", traits: ["I", "N", "F", "P"] },
-      B: { text: "Sit quietly with them and listen", traits: ["I", "S", "F", "J"] },
-      C: { text: "Offer advice to fix the problem", traits: ["I", "S", "T", "J"] },
-      D: { text: "Distract them with fun", traits: ["E", "N", "T", "P"] }
+      A: { text: "Strongly Agree", traits: ["E", "S", "F", "P"] },
+      B: { text: "Agree", traits: ["E", "N", "F", "P"] },
+      C: { text: "Neutral", traits: ["I", "S", "F", "J"] },
+      D: { text: "Disagree", traits: ["I", "N", "T", "P"] }
     }
   },
   {
-    text: "You get a big school assignment. You…",
+    text: "When solving a problem, I look for real-world facts instead of hunches or feelings.",
     options: {
-      A: { text: "Wait until you're in the mood to do it", traits: ["E", "N", "T", "P"] },
-      B: { text: "Brainstorm creative ideas first", traits: ["I", "N", "F", "P"] },
-      C: { text: "Ask others for help and get to work", traits: ["I", "S", "F", "J"] },
-      D: { text: "Make a checklist and start early", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["E", "S", "T", "J"] },
+      C: { text: "Neutral", traits: ["I", "N", "T", "P"] },
+      D: { text: "Disagree", traits: ["I", "N", "F", "P"] }
     }
   },
   {
-    text: "Your ideal weekend activity is…",
+    text: "I often think about how my decisions affect the people around me.",
     options: {
-      A: { text: "Drawing, writing, or creating", traits: ["I", "N", "F", "P"] },
-      B: { text: "Reading, organizing, or setting goals", traits: ["I", "S", "T", "J"] },
-      C: { text: "Helping someone or baking with friends", traits: ["I", "S", "F", "J"] },
-      D: { text: "Hanging out, trying something new", traits: ["E", "N", "T", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "F", "J"] },
+      B: { text: "Agree", traits: ["E", "S", "F", "J"] },
+      C: { text: "Neutral", traits: ["I", "N", "F", "P"] },
+      D: { text: "Disagree", traits: ["E", "N", "T", "P"] }
     }
   },
   {
-    text: "When someone disagrees with you, you…",
+    text: "I feel overwhelmed when someone tries to pin me to a strict plan.",
     options: {
-      A: { text: "Let it go — conflict is uncomfortable", traits: ["I", "S", "F", "J"] },
-      B: { text: "Explain your logic calmly", traits: ["I", "S", "T", "J"] },
-      C: { text: "Debate! You love a good challenge", traits: ["E", "N", "T", "P"] },
-      D: { text: "Try to find middle ground", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "N", "F", "P"] },
+      B: { text: "Agree", traits: ["E", "N", "T", "P"] },
+      C: { text: "Neutral", traits: ["I", "S", "F", "P"] },
+      D: { text: "Disagree", traits: ["I", "S", "T", "J"] }
     }
   },
   {
-    text: "Your dream job involves…",
+    text: "At lunch, I'd rather sit with one close friend than a big group.",
     options: {
-      A: { text: "Leading, performing, influencing", traits: ["E", "N", "T", "P"] },
-      B: { text: "Helping, teaching, healing", traits: ["I", "S", "F", "J"] },
-      C: { text: "Creating, inspiring, expressing", traits: ["I", "N", "F", "P"] },
-      D: { text: "Planning, researching, analyzing", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "F", "J"] },
+      B: { text: "Agree", traits: ["I", "N", "F", "P"] },
+      C: { text: "Neutral", traits: ["I", "S", "T", "J"] },
+      D: { text: "Disagree", traits: ["E", "S", "F", "P"] }
     }
   },
   {
-    text: "You're happiest when…",
+    text: "I enjoy figuring out how to fix broken tech or gadgets.",
     options: {
-      A: { text: "You're creating something meaningful", traits: ["I", "N", "F", "P"] },
-      B: { text: "You're in the middle of the action", traits: ["E", "N", "T", "P"] },
-      C: { text: "Everything goes according to plan", traits: ["I", "S", "T", "J"] },
-      D: { text: "The people around you are doing well", traits: ["I", "S", "F", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "P"] },
+      B: { text: "Agree", traits: ["I", "N", "T", "P"] },
+      C: { text: "Neutral", traits: ["E", "S", "T", "J"] },
+      D: { text: "Disagree", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "You're asked to give a presentation. You…",
+    text: "I feel most comfortable when I stick to the same morning routine every day.",
     options: {
-      A: { text: "Focus on helping the audience understand", traits: ["I", "S", "F", "J"] },
-      B: { text: "Wing it with confidence and energy", traits: ["E", "N", "T", "P"] },
-      C: { text: "Prepare slides, notes, and rehearse", traits: ["I", "S", "T", "J"] },
-      D: { text: "Add creativity and personality to it", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["I", "S", "F", "J"] },
+      C: { text: "Neutral", traits: ["E", "S", "T", "J"] },
+      D: { text: "Disagree", traits: ["E", "N", "F", "P"] }
     }
   },
   {
-    text: "You find out your plans suddenly changed. You…",
+    text: "I'd rather invent my own way to do an assignment than follow the instructions exactly.",
     options: {
-      A: { text: "Roll with it and get creative", traits: ["I", "N", "F", "P"] },
-      B: { text: "Ask what others want to do instead", traits: ["I", "S", "F", "J"] },
-      C: { text: "Love it — you enjoy spontaneity", traits: ["E", "N", "T", "P"] },
-      D: { text: "Get annoyed — you prefer structure", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "N", "F", "P"] },
+      B: { text: "Agree", traits: ["E", "N", "T", "P"] },
+      C: { text: "Neutral", traits: ["I", "N", "T", "P"] },
+      D: { text: "Disagree", traits: ["I", "S", "T", "J"] }
     }
   },
   {
-    text: "You get lost somewhere new. What do you do?",
+    text: "When someone's upset, I feel the urge to comfort or help them.",
     options: {
-      A: { text: "Ask someone right away — adventure!", traits: ["E", "N", "T", "P"] },
-      B: { text: "Use your phone or retrace your steps logically", traits: ["I", "S", "T", "J"] },
-      C: { text: "Try to stay safe and text someone for help", traits: ["I", "S", "F", "J"] },
-      D: { text: "Stay calm and look around for inspiration", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "F", "J"] },
+      B: { text: "Agree", traits: ["E", "S", "F", "J"] },
+      C: { text: "Neutral", traits: ["I", "N", "F", "P"] },
+      D: { text: "Disagree", traits: ["I", "S", "T", "P"] }
     }
   },
   {
-    text: "Your favorite way to relax is…",
+    text: "If no one takes the lead in a group, I'll usually step up and organize things.",
     options: {
-      A: { text: "Spending time with someone you care about", traits: ["I", "S", "F", "J"] },
-      B: { text: "Drawing, journaling, or music", traits: ["I", "N", "F", "P"] },
-      C: { text: "Reading, planning, or puzzles", traits: ["I", "S", "T", "J"] },
-      D: { text: "Watching something fun or being active", traits: ["E", "N", "T", "P"] }
+      A: { text: "Strongly Agree", traits: ["E", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["E", "N", "T", "J"] },
+      C: { text: "Neutral", traits: ["E", "S", "F", "J"] },
+      D: { text: "Disagree", traits: ["I", "S", "F", "P"] }
     }
   },
   {
-    text: "People usually describe you as…",
+    text: "I'd rather talk about things that are real and current than imaginary or 'what if' stuff.",
     options: {
-      A: { text: "Energetic and outgoing", traits: ["E", "N", "T", "P"] },
-      B: { text: "Kind and dependable", traits: ["I", "S", "F", "J"] },
-      C: { text: "Focused and responsible", traits: ["I", "S", "T", "J"] },
-      D: { text: "Creative and thoughtful", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["E", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["I", "S", "T", "J"] },
+      C: { text: "Neutral", traits: ["E", "S", "F", "J"] },
+      D: { text: "Disagree", traits: ["I", "N", "F", "P"] }
     }
   },
   {
-    text: "You're shopping for clothes. You pick…",
+    text: "I get stressed when plans change last minute.",
     options: {
-      A: { text: "Comfy, coordinated outfits", traits: ["I", "S", "F", "J"] },
-      B: { text: "Trendy and bold looks", traits: ["E", "N", "T", "P"] },
-      C: { text: "Something artistic or original", traits: ["I", "N", "F", "P"] },
-      D: { text: "Classic, functional styles", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["I", "S", "F", "J"] },
+      C: { text: "Neutral", traits: ["E", "S", "T", "J"] },
+      D: { text: "Disagree", traits: ["E", "N", "T", "P"] }
     }
   },
   {
-    text: "You get a new app. First thing you do?",
+    text: "I get bored if every day feels the same.",
     options: {
-      A: { text: "Customize it and make it your own", traits: ["I", "N", "F", "P"] },
-      B: { text: "Ask someone how it works and try it together", traits: ["I", "S", "F", "J"] },
-      C: { text: "Jump in and figure it out while using it", traits: ["E", "N", "T", "P"] },
-      D: { text: "Read about it and explore the features", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["E", "N", "F", "P"] },
+      B: { text: "Agree", traits: ["E", "S", "T", "P"] },
+      C: { text: "Neutral", traits: ["I", "N", "F", "P"] },
+      D: { text: "Disagree", traits: ["I", "S", "T", "J"] }
     }
   },
   {
-    text: "You're best at…",
+    text: "I enjoy writing goals for myself and imagining what I'll do next.",
     options: {
-      A: { text: "Taking charge and energizing others", traits: ["E", "N", "T", "P"] },
-      B: { text: "Solving problems and making plans", traits: ["I", "S", "T", "J"] },
-      C: { text: "Supporting people and noticing needs", traits: ["I", "S", "F", "J"] },
-      D: { text: "Expressing feelings and creativity", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "N", "T", "J"] },
+      B: { text: "Agree", traits: ["I", "N", "F", "J"] },
+      C: { text: "Neutral", traits: ["E", "N", "T", "P"] },
+      D: { text: "Disagree", traits: ["E", "S", "T", "P"] }
     }
   },
   {
-    text: "You care most about…",
+    text: "I like breaking tasks into steps instead of jumping in randomly.",
     options: {
-      A: { text: "Being authentic", traits: ["I", "N", "F", "P"] },
-      B: { text: "Enjoying life", traits: ["E", "N", "T", "P"] },
-      C: { text: "Helping others", traits: ["I", "S", "F", "J"] },
-      D: { text: "Achieving goals", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["I", "N", "T", "J"] },
+      C: { text: "Neutral", traits: ["E", "S", "F", "J"] },
+      D: { text: "Disagree", traits: ["E", "N", "T", "P"] }
     }
   },
   {
-    text: "You love when school lets you…",
+    text: "When I need to choose something, I often trust my gut feeling.",
     options: {
-      A: { text: "Work in a group or mentor someone", traits: ["I", "S", "F", "J"] },
-      B: { text: "Do a research project", traits: ["I", "S", "T", "J"] },
-      C: { text: "Present or debate", traits: ["E", "N", "T", "P"] },
-      D: { text: "Create a video or artwork", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "N", "F", "P"] },
+      B: { text: "Agree", traits: ["E", "N", "F", "P"] },
+      C: { text: "Neutral", traits: ["I", "S", "F", "J"] },
+      D: { text: "Disagree", traits: ["I", "S", "T", "J"] }
     }
   },
   {
-    text: "Your dream would be to…",
+    text: "I'm the kind of person who color-codes notes and keeps things organized.",
     options: {
-      A: { text: "Be famous or run a business", traits: ["E", "N", "T", "P"] },
-      B: { text: "Make a real difference in others' lives", traits: ["I", "S", "F", "J"] },
-      C: { text: "Invent something useful", traits: ["I", "S", "T", "J"] },
-      D: { text: "Publish a book or album", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["I", "S", "F", "J"] },
+      C: { text: "Neutral", traits: ["E", "S", "T", "J"] },
+      D: { text: "Disagree", traits: ["I", "N", "F", "P"] }
     }
   },
   {
-    text: "When solving a problem, you…",
+    text: "I come alive when I'm doing something artistic, like writing, drawing, or creating.",
     options: {
-      A: { text: "Think about how people feel", traits: ["I", "N", "F", "P"] },
-      B: { text: "Act fast and adjust along the way", traits: ["E", "N", "T", "P"] },
-      C: { text: "Ask for ideas and build a solution together", traits: ["I", "S", "F", "J"] },
-      D: { text: "Look at the facts and break it down", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "N", "F", "P"] },
+      B: { text: "Agree", traits: ["I", "S", "F", "P"] },
+      C: { text: "Neutral", traits: ["E", "N", "F", "P"] },
+      D: { text: "Disagree", traits: ["I", "S", "T", "J"] }
     }
   },
   {
-    text: "You're planning your weekend. You…",
+    text: "When a friend is hurting, I want to help them feel better even if I don't know how.",
     options: {
-      A: { text: "Ask friends and fit around them", traits: ["I", "S", "F", "J"] },
-      B: { text: "Schedule everything ahead", traits: ["I", "S", "T", "J"] },
-      C: { text: "Wait and see what pops up", traits: ["E", "N", "T", "P"] },
-      D: { text: "Go with the flow", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "F", "J"] },
+      B: { text: "Agree", traits: ["E", "S", "F", "J"] },
+      C: { text: "Neutral", traits: ["I", "N", "F", "P"] },
+      D: { text: "Disagree", traits: ["I", "S", "T", "P"] }
     }
   },
   {
-    text: "In a group chat, you're the one who…",
+    text: "If a group gets off track, I usually try to get everyone back on task.",
     options: {
-      A: { text: "Starts convos or keeps it lively", traits: ["E", "N", "T", "P"] },
-      B: { text: "Makes sure no one's being left out", traits: ["I", "S", "F", "J"] },
-      C: { text: "Sends memes or thoughtful messages", traits: ["I", "N", "F", "P"] },
-      D: { text: "Shares reminders and plans", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["E", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["I", "S", "T", "J"] },
+      C: { text: "Neutral", traits: ["E", "S", "F", "J"] },
+      D: { text: "Disagree", traits: ["I", "N", "F", "P"] }
     }
   },
   {
-    text: "You're building a school club. You focus on…",
+    text: "I notice little details that other people often miss.",
     options: {
-      A: { text: "Promotion and exciting events", traits: ["E", "N", "T", "P"] },
-      B: { text: "The logo, theme, or creative angle", traits: ["I", "N", "F", "P"] },
-      C: { text: "The rules and structure", traits: ["I", "S", "T", "J"] },
-      D: { text: "Teamwork and making it welcoming", traits: ["I", "S", "F", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "J"] },
+      B: { text: "Agree", traits: ["I", "S", "F", "J"] },
+      C: { text: "Neutral", traits: ["I", "S", "T", "P"] },
+      D: { text: "Disagree", traits: ["E", "N", "T", "P"] }
     }
   },
   {
-    text: "Your biggest fear is…",
+    text: "If there's a chance to perform or be in the spotlight, I'll probably say yes.",
     options: {
-      A: { text: "Hurting someone's feelings", traits: ["I", "S", "F", "J"] },
-      B: { text: "Being misunderstood or ignored", traits: ["I", "N", "F", "P"] },
-      C: { text: "Missing out or being bored", traits: ["E", "N", "T", "P"] },
-      D: { text: "Failing or being unprepared", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["E", "S", "F", "P"] },
+      B: { text: "Agree", traits: ["E", "N", "F", "P"] },
+      C: { text: "Neutral", traits: ["E", "S", "T", "J"] },
+      D: { text: "Disagree", traits: ["I", "S", "F", "J"] }
     }
   },
   {
-    text: "What's your morning routine like?",
+    text: "Sometimes I imagine entire stories or scenes in my head just for fun.",
     options: {
-      A: { text: "Rushed but fun", traits: ["E", "N", "T", "P"] },
-      B: { text: "Focused on others (like helping family)", traits: ["I", "S", "F", "J"] },
-      C: { text: "Calm and slow", traits: ["I", "N", "F", "P"] },
-      D: { text: "Consistent and timely", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["I", "N", "F", "P"] },
+      B: { text: "Agree", traits: ["I", "N", "T", "P"] },
+      C: { text: "Neutral", traits: ["E", "N", "F", "P"] },
+      D: { text: "Disagree", traits: ["I", "S", "T", "J"] }
     }
   },
   {
-    text: "Your ideal workspace looks like…",
+    text: "I like giving advice when friends ask about relationships or decisions.",
     options: {
-      A: { text: "Active and stimulating", traits: ["E", "N", "T", "P"] },
-      B: { text: "Clean and organized", traits: ["I", "S", "T", "J"] },
-      C: { text: "Calm and supportive", traits: ["I", "S", "F", "J"] },
-      D: { text: "Personalized and cozy", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["E", "S", "F", "J"] },
+      B: { text: "Agree", traits: ["I", "S", "F", "J"] },
+      C: { text: "Neutral", traits: ["E", "N", "F", "J"] },
+      D: { text: "Disagree", traits: ["I", "S", "T", "P"] }
     }
   },
   {
-    text: "You tend to learn best by…",
+    text: "When doing schoolwork, I focus more on what's due now than long-term deadlines.",
     options: {
-      A: { text: "Visuals and hands-on creativity", traits: ["I", "N", "F", "P"] },
-      B: { text: "Talking it out or helping someone else", traits: ["I", "S", "F", "J"] },
-      C: { text: "Doing it while moving or trying", traits: ["E", "N", "T", "P"] },
-      D: { text: "Reading and studying", traits: ["I", "S", "T", "J"] }
+      A: { text: "Strongly Agree", traits: ["E", "S", "T", "P"] },
+      B: { text: "Agree", traits: ["I", "S", "F", "P"] },
+      C: { text: "Neutral", traits: ["E", "N", "F", "P"] },
+      D: { text: "Disagree", traits: ["I", "N", "T", "J"] }
     }
   },
   {
-    text: "You want to be remembered as…",
+    text: "I like hands-on work—like building, designing, or fixing things.",
     options: {
-      A: { text: "Caring and loyal", traits: ["I", "S", "F", "J"] },
-      B: { text: "Fun and inspiring", traits: ["E", "N", "T", "P"] },
-      C: { text: "Smart and reliable", traits: ["I", "S", "T", "J"] },
-      D: { text: "Unique and imaginative", traits: ["I", "N", "F", "P"] }
+      A: { text: "Strongly Agree", traits: ["I", "S", "T", "P"] },
+      B: { text: "Agree", traits: ["E", "S", "T", "P"] },
+      C: { text: "Neutral", traits: ["I", "S", "F", "P"] },
+      D: { text: "Disagree", traits: ["I", "N", "F", "J"] }
     }
   }
 ];
