@@ -9,7 +9,7 @@ import { PersonalityType } from '@/types/quiz';
 export default function DetailedResults() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { personality } = location.state || {};
+  const { personality, section } = location.state || {};
 
   if (!personality) {
     navigate('/');
@@ -31,73 +31,80 @@ export default function DetailedResults() {
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Results
           </Button>
-          <h1 className="text-4xl font-bold text-white mb-2">Career & College Details</h1>
+          <h1 className="text-4xl font-bold text-white mb-2">
+            {section === 'careers' ? 'Your Career Matches' : 
+             section === 'colleges' ? 'Your College Options' : 
+             'Career & College Details'}
+          </h1>
           <p className="text-white/80 text-lg">For {result.type}</p>
         </div>
 
         {/* Career Recommendations */}
-        <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-              <Users className="h-6 w-6 text-primary" />
-              Perfect Career Matches
-            </CardTitle>
-            <p className="text-muted-foreground mt-2">
-              These careers align perfectly with your personality traits, work style preferences, and natural strengths. 
-              Your analytical thinking, strategic planning abilities, and preference for independent work make you 
-              an ideal fit for these roles.
-            </p>
-          </CardHeader>
-          <CardContent className="grid md:grid-cols-2 gap-6">
-            {result.careers.map((career, index) => (
-              <div key={index} className="border rounded-lg p-4 bg-gradient-card">
-                <div className="flex items-start justify-between mb-2">
-                  <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
-                  <Badge variant="secondary" className="ml-2">Perfect Match</Badge>
-                </div>
-                <p className="text-muted-foreground mb-4">{career.description}</p>
-                
-                {/* Why it's perfect section */}
-                <div className="bg-primary/5 p-3 rounded-md mb-4">
-                  <h4 className="text-sm font-semibold text-primary mb-2">🎯 Why This is Perfect for You:</h4>
-                  <ul className="text-xs text-muted-foreground space-y-1">
-                    <li>• Utilizes your strategic thinking and planning skills</li>
-                    <li>• Offers intellectual challenges and complex problem-solving</li>
-                    <li>• Allows for independent work with minimal supervision</li>
-                    <li>• Provides opportunities for long-term project ownership</li>
-                  </ul>
-                </div>
-                
-                <div className="space-y-2 mb-4">
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-secondary" />
-                    <span className="text-sm">
-                      <strong>Salary:</strong> {career.averageSalary}
-                    </span>
+        {(!section || section === 'careers') && (
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+                <Users className="h-6 w-6 text-primary" />
+                Perfect Career Matches
+              </CardTitle>
+              <p className="text-muted-foreground mt-2">
+                These careers align perfectly with your personality traits, work style preferences, and natural strengths. 
+                Your analytical thinking, strategic planning abilities, and preference for independent work make you 
+                an ideal fit for these roles.
+              </p>
+            </CardHeader>
+            <CardContent className="grid md:grid-cols-2 gap-6">
+              {result.careers.map((career, index) => (
+                <div key={index} className="border rounded-lg p-4 bg-gradient-card">
+                  <div className="flex items-start justify-between mb-2">
+                    <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
+                    <Badge variant="secondary" className="ml-2">Perfect Match</Badge>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <TrendingUp className="h-4 w-4 text-secondary" />
-                    <span className="text-sm">
-                      <strong>Job Growth:</strong> {career.jobGrowth}
-                    </span>
+                  <p className="text-muted-foreground mb-4">{career.description}</p>
+                  
+                  {/* Why it's perfect section */}
+                  <div className="bg-primary/5 p-3 rounded-md mb-4">
+                    <h4 className="text-sm font-semibold text-primary mb-2">🎯 Why This is Perfect for You:</h4>
+                    <ul className="text-xs text-muted-foreground space-y-1">
+                      <li>• Utilizes your strategic thinking and planning skills</li>
+                      <li>• Offers intellectual challenges and complex problem-solving</li>
+                      <li>• Allows for independent work with minimal supervision</li>
+                      <li>• Provides opportunities for long-term project ownership</li>
+                    </ul>
                   </div>
-                </div>
+                  
+                  <div className="space-y-2 mb-4">
+                    <div className="flex items-center gap-2">
+                      <TrendingUp className="h-4 w-4 text-secondary" />
+                      <span className="text-sm">
+                        <strong>Salary:</strong> {career.averageSalary}
+                      </span>
+                    </div>
+                    <div className="flex items-center gap-2">
+                      <TrendingUp className="h-4 w-4 text-secondary" />
+                      <span className="text-sm">
+                        <strong>Job Growth:</strong> {career.jobGrowth}
+                      </span>
+                    </div>
+                  </div>
 
-                <Button 
-                  variant="secondary" 
-                  size="sm" 
-                  className="w-full"
-                  onClick={() => window.open(career.indeedLink, '_blank')}
-                >
-                  <ExternalLink className="h-4 w-4 mr-2" />
-                  View Jobs on Indeed
-                </Button>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
+                  <Button 
+                    variant="secondary" 
+                    size="sm" 
+                    className="w-full"
+                    onClick={() => window.open(career.indeedLink, '_blank')}
+                  >
+                    <ExternalLink className="h-4 w-4 mr-2" />
+                    View Jobs on Indeed
+                  </Button>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        )}
 
         {/* College Recommendations */}
+        {(!section || section === 'colleges') && (
         <Card className="bg-white/95 backdrop-blur-sm shadow-card">
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
@@ -295,6 +302,7 @@ export default function DetailedResults() {
             ))}
           </CardContent>
         </Card>
+        )}
       </div>
     </div>
   );
