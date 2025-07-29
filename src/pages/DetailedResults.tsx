@@ -37,8 +37,8 @@ export default function DetailedResults() {
             <div 
               className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
                 !section || section === 'careers' 
-                  ? 'bg-gradient-to-r from-blue-500 to-blue-600 text-white' 
-                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-blue-400 hover:to-blue-500'
+                  ? 'bg-gradient-to-r from-green-700 to-green-800 text-white' 
+                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-green-600 hover:to-green-700'
               }`}
               onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
             >
