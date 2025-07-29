@@ -83,9 +83,15 @@ export interface College {
   campusFacilities?: string[];
 }
 
+export interface Celebrity {
+  name: string;
+  image: string;
+}
+
 export interface PersonalityResult {
   type: PersonalityType;
   description: string;
   careers: Career[];
   colleges: College[];
+  celebrities: Celebrity[];
 }

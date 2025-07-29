@@ -426,6 +426,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Perfect for Strategists who love the intersection of technology and human behavior. CMU's data-driven approach, world-class computer science programs, and research opportunities in AI/robotics align with the INTJ's analytical nature and future-focused thinking.",
         relevantMajors: ["Computer Science", "Information Systems", "Robotics", "Human-Computer Interaction", "Electrical & Computer Engineering", "Statistics & Data Science"]
       }
+    ],
+    celebrities: [
+      { name: "Zendaya", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Tom Holland", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Taylor Hill", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Noah Schnapp", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Sabrina Carpenter", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" }
     ]
   },
   "The Inventor": {
@@ -499,6 +506,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "admission@gatech.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Billie Eilish", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Timothée Chalamet", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Sadie Sink", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Finn Wolfhard", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Maddie Ziegler", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" }
     ]
   },
   "The Boss": {
@@ -572,6 +586,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "ug-admission@northwestern.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Olivia Rodrigo", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Millie Bobby Brown", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Dove Cameron", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "IShowSpeed", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Halle Bailey", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" }
     ]
   },
   "The Challenger": {
@@ -645,6 +666,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "admissions@austin.utexas.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Ryan Trahan", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Emma Chamberlain", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "KSI", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Charli D'Amelio", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Kai Cenat", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" }
     ]
   },
   "The Visionary": {
@@ -718,6 +746,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "admissions@vanderbilt.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Taylor Swift", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Shawn Mendes", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Gaten Matarazzo", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Florence Pugh", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Joshua Bassett", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" }
     ]
   },
   "The Creator": {
@@ -791,6 +826,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "thinkparsons@newschool.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Conan Gray", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Lana Del Rey", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Gracie Abrams", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Dylan Minnette", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Amandla Stenberg", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" }
     ]
   },
   "The Coach": {
@@ -864,6 +906,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "ugadm@saonet.ucla.edu",
         regionalCounselors: ["Emily Gray", "Jonah Magill", "Zion Smith", "Melissa Rodriguez", "Lucas Demetriades", "Andres Diaz"]
       }
+    ],
+    celebrities: [
+      { name: "Selena Gomez", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Jack Wright", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Joey King", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Caleb McLaughlin", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Coco Gauff", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" }
     ]
   },
   "The Free Spirit": {
@@ -937,6 +986,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "berkeleyinfo@berkeley.edu",
         regionalCounselors: ["Handled by department emails"]
       }
+    ],
+    celebrities: [
+      { name: "Jenna Ortega", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Doja Cat", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Bella Poarch", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Jaden Hossler", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Avani Gregg", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" }
     ]
   },
   "The Organizer": {
@@ -1010,6 +1066,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "undergradadmission@virginia.edu",
         regionalCounselors: ["General admissions advisors"]
       }
+    ],
+    celebrities: [
+      { name: "JoJo Siwa", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Joshua Rush", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Marcus Scribner", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Maitreyi Ramakrishnan", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Skai Jackson", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" }
     ]
   },
   "The Helper": {
@@ -1083,6 +1146,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "admissions@vanderbilt.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Elle Fanning", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Niall Horan", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Lizzy Greene", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Asher Angel", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Sadie Sink", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" }
     ]
   },
   "The Manager": {
@@ -1156,6 +1226,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "admissions@chicagobooth.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Dixie D'Amelio", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Peyton Elizabeth Lee", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Noah Beck", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Sofia Wylie", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Gavin Casalegno", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" }
     ]
   },
   "The Host": {
@@ -1229,6 +1306,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "admissions@bu.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Addison Rae", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Madison Beer", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Ross Lynch", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Peyton List", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Chloe Bailey", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" }
     ]
   },
   "The Fixer": {
@@ -1302,6 +1386,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "admissions@vt.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Jacob Elordi", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Lili Reinhart", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "KJ Apa", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Sabrina Carpenter", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Bryce Hall", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" }
     ]
   },
   "The Artist": {
@@ -1375,6 +1466,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "General Admissions",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Tate McRae", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Olivia Rodrigo", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Lil Huddy", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Beabadoobee", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "King Princess", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" }
     ]
   },
   "The Adventurer": {
@@ -1448,6 +1546,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "admissions@psu.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "JoJo Siwa", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Chloe Kim", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "Jake Paul", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Millie Bobby Brown", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Logan Paul", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" }
     ]
   },
   "The Performer": {
@@ -1521,6 +1626,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
         email: "tisch.ug.admissions@nyu.edu",
         regionalCounselors: ["General Admissions Staff"]
       }
+    ],
+    celebrities: [
+      { name: "Megan Thee Stallion", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" },
+      { name: "IShowSpeed", image: "https://images.unsplash.com/photo-1501286353178-1ec881214838" },
+      { name: "Cardi B", image: "https://images.unsplash.com/photo-1441057206919-63d19fac2369" },
+      { name: "Lil Nas X", image: "https://images.unsplash.com/photo-1582562124811-c09040d0a901" },
+      { name: "Sabrina Carpenter", image: "https://images.unsplash.com/photo-1535268647677-300dbf3d78d1" }
     ]
   }
 };

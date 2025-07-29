@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Star } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
 import { useNavigate } from 'react-router-dom';
@@ -117,6 +117,35 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
               </div>
             </div>
           </CardHeader>
+        </Card>
+
+        {/* Celebrities Section */}
+        <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+              <Star className="h-6 w-6 text-primary" />
+              Celebrities Like You
+            </CardTitle>
+            <p className="text-muted-foreground">
+              These famous people share your {result.type} personality type!
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
+              {result.celebrities.map((celebrity, index) => (
+                <div key={index} className="text-center">
+                  <div className="w-20 h-20 mx-auto mb-2 rounded-full overflow-hidden shadow-lg border-2 border-primary/20">
+                    <img 
+                      src={celebrity.image} 
+                      alt={`${celebrity.name} character`}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <p className="text-sm font-medium text-foreground">{celebrity.name}</p>
+                </div>
+              ))}
+            </div>
+          </CardContent>
         </Card>
 
         {/* Action Buttons */}
