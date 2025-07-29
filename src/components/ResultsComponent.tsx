@@ -268,7 +268,7 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
               </div>
               
               <Briefcase className="h-6 w-6 mr-3 group-hover:animate-bounce" />
-              <span className="relative z-10">Discover Your Dream Career!</span>
+              <span className="relative z-10">Best Career Matches</span>
               <ArrowRight className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
             
