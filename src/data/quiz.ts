@@ -473,6 +473,42 @@ export const personalityResults: Record<string, PersonalityResult> = {
         relevantMajors: ["Computer Science", "Applied Mathematics", "Engineering Sciences", "Economics", "Statistics", "Applied Physics"]
       },
       {
+        name: "Yale University",
+        location: "New Haven, CT",
+        programs: ["Computer Science", "Engineering", "Applied Mathematics"],
+        ranking: "#5 overall",
+        website: "https://www.yale.edu/",
+        phone: "(203) 432-9300",
+        email: "student.questions@yale.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Excellent for Strategists who value both analytical rigor and leadership development. Yale's liberal arts approach combined with strong STEM programs helps develop the well-rounded strategic thinking that INTJs excel at.",
+        relevantMajors: ["Computer Science", "Applied Mathematics", "Engineering Sciences", "Economics", "Statistics", "Cognitive Science"]
+      },
+      {
+        name: "Princeton University", 
+        location: "Princeton, NJ",
+        programs: ["Computer Science", "Engineering", "Applied Mathematics"],
+        ranking: "#1 overall",
+        website: "https://www.princeton.edu/",
+        phone: "(609) 258-3060",
+        email: "uaoffice@princeton.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Perfect for Strategists who thrive in collaborative yet intellectually rigorous environments. Princeton's emphasis on undergraduate research, small class sizes, and interdisciplinary approach aligns with INTJ preferences for depth and strategic thinking.",
+        relevantMajors: ["Computer Science", "Operations Research & Financial Engineering", "Applied Mathematics", "Electrical Engineering", "Economics", "Philosophy"]
+      },
+      {
+        name: "California Institute of Technology",
+        location: "Pasadena, CA",
+        programs: ["Engineering", "Computer Science", "Applied Physics"],
+        ranking: "#7 overall",
+        website: "https://www.caltech.edu/",
+        phone: "(626) 395-6341",
+        email: "ugadmissions@caltech.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Ideal for Strategists who want to push the boundaries of science and technology. Caltech's intense focus on research, small student body, and cutting-edge facilities provide the perfect environment for strategic innovation.",
+        relevantMajors: ["Computer Science", "Applied Physics", "Engineering", "Applied Mathematics", "Control & Dynamical Systems", "Information & Data Sciences"]
+      },
+      {
         name: "University of Chicago",
         location: "Chicago, IL",
         programs: ["Computer Science", "Economics", "Mathematics"],
@@ -509,6 +545,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         relevantMajors: ["Computer Science", "Industrial Engineering", "Systems Engineering", "Applied Mathematics", "Data Science", "Technology & Social Behavior"]
       },
       {
+        name: "Duke University",
+        location: "Durham, NC", 
+        programs: ["Computer Science", "Engineering", "Applied Mathematics"],
+        ranking: "#7 overall",
+        website: "https://www.duke.edu/",
+        phone: "(919) 684-3214",
+        email: "undergrad-admissions@duke.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Great for Strategists who want to combine technical excellence with leadership development. Duke's strong engineering programs, interdisciplinary approach, and collaborative culture align with INTJ strategic planning abilities.",
+        relevantMajors: ["Computer Science", "Electrical & Computer Engineering", "Applied Mathematics", "Statistics", "Economics", "Public Policy"]
+      },
+      {
+        name: "Johns Hopkins University",
+        location: "Baltimore, MD",
+        programs: ["Computer Science", "Engineering", "Applied Mathematics"],
+        ranking: "#9 overall", 
+        website: "https://www.jhu.edu/",
+        phone: "(410) 516-8171",
+        email: "gotojhu@jhu.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Perfect for Strategists interested in research and innovation. JHU's world-class research opportunities, strong STEM programs, and emphasis on discovery align with the INTJ's analytical and strategic nature.",
+        relevantMajors: ["Computer Science", "Applied Mathematics & Statistics", "Electrical Engineering", "Biomedical Engineering", "Economics", "International Studies"]
+      },
+      {
         name: "Carnegie Mellon University",
         location: "Pittsburgh, PA",
         programs: ["Computer Science", "Information Systems", "Robotics"],
@@ -531,6 +591,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         regionalCounselors: ["General Admissions Staff"],
         whyGoodFit: "Excellent for Strategists who thrive in intellectually rigorous environments. UC Berkeley's world-renowned STEM programs, research opportunities, and innovation culture provide the perfect setting for strategic thinkers to develop cutting-edge solutions.",
         relevantMajors: ["Computer Science", "Electrical Engineering & Computer Science", "Data Science", "Applied Mathematics", "Operations Research", "Industrial Engineering"]
+      },
+      {
+        name: "Rice University",
+        location: "Houston, TX",
+        programs: ["Computer Science", "Engineering", "Applied Mathematics"],
+        ranking: "#17 overall",
+        website: "https://www.rice.edu/",
+        phone: "(713) 348-7423",
+        email: "admi@rice.edu", 
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Excellent for Strategists who value close-knit academic communities with rigorous programs. Rice's collaborative environment, strong STEM programs, and research opportunities provide ideal conditions for strategic development.",
+        relevantMajors: ["Computer Science", "Electrical & Computer Engineering", "Applied Mathematics", "Statistics", "Economics", "Policy Studies"]
+      },
+      {
+        name: "Vanderbilt University",
+        location: "Nashville, TN",
+        programs: ["Computer Science", "Engineering", "Applied Mathematics"],
+        ranking: "#13 overall",
+        website: "https://www.vanderbilt.edu/",
+        phone: "(615) 322-2561",
+        email: "admissions@vanderbilt.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Great for Strategists who want academic excellence with a collaborative environment. Vanderbilt's strong programs, research opportunities, and emphasis on interdisciplinary learning align with INTJ strategic thinking.",
+        relevantMajors: ["Computer Science", "Engineering Science", "Applied Mathematics", "Economics", "Data Science", "Cognitive Studies"]
       },
       {
         name: "Georgia Institute of Technology",
@@ -603,6 +687,30 @@ export const personalityResults: Record<string, PersonalityResult> = {
         regionalCounselors: ["General Admissions Staff"],
         whyGoodFit: "Perfect for Strategists who want flexibility and innovation in their education. ASU's cutting-edge programs, online options, and entrepreneurial culture provide diverse pathways for strategic thinking and career development.",
         relevantMajors: ["Computer Science", "Industrial Engineering", "Business Analytics", "Information Systems", "Software Engineering", "Project Management"]
+      },
+      {
+        name: "University of Texas at Austin",
+        location: "Austin, TX",
+        programs: ["Computer Science", "Engineering", "Business"],
+        ranking: "#32 overall",
+        website: "https://www.utexas.edu/",
+        phone: "(512) 475-7399",
+        email: "admissions@utexas.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Perfect for Strategists who want strong technical programs in a vibrant city environment. UT Austin's excellent computer science and engineering programs, combined with its entrepreneurial culture, provide great opportunities for strategic career development.",
+        relevantMajors: ["Computer Science", "Electrical & Computer Engineering", "Industrial Engineering", "Business Administration", "Applied Mathematics", "Information Systems"]
+      },
+      {
+        name: "University of California, San Diego",
+        location: "San Diego, CA",
+        programs: ["Computer Science", "Engineering", "Data Science"],
+        ranking: "#28 overall",
+        website: "https://www.ucsd.edu/",
+        phone: "(858) 534-4831",
+        email: "admissionsinfo@ucsd.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Excellent for Strategists interested in cutting-edge technology and research. UCSD's strong STEM programs, research opportunities, and location in a major tech hub provide ideal conditions for strategic innovation.",
+        relevantMajors: ["Computer Science", "Data Science", "Electrical Engineering", "Applied Mathematics", "Cognitive Science", "Structural Engineering"]
       }
     ],
     celebrities: [
