@@ -37,8 +37,8 @@ export default function DetailedResults() {
             <div 
               className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
                 !section || section === 'careers' 
-                  ? 'bg-gradient-to-r from-green-700 to-green-800 text-white' 
-                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-green-600 hover:to-green-700'
+                  ? 'bg-gradient-to-r from-purple-700 to-purple-800 text-white' 
+                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-purple-600 hover:to-purple-700'
               }`}
               onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
             >
@@ -315,7 +315,7 @@ export default function DetailedResults() {
 
                 {/* Website Link */}
                 <div 
-                  className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white p-3 rounded-lg cursor-pointer hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                  className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                   onClick={() => window.open(college.website, '_blank')}
                 >
                   <ExternalLink className="h-4 w-4" />
@@ -447,7 +447,7 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white p-3 rounded-lg cursor-pointer hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                     onClick={() => window.open(college.website, '_blank')}
                   >
                     <ExternalLink className="h-4 w-4" />
@@ -462,7 +462,7 @@ export default function DetailedResults() {
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <GraduationCap className="h-6 w-6 text-green-500" />
+                <GraduationCap className="h-6 w-6 text-purple-500" />
                 Tier 3 - High-Status Research Institutions
               </CardTitle>
               <p className="text-muted-foreground mt-2">
@@ -579,7 +579,7 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white p-3 rounded-lg cursor-pointer hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                     onClick={() => window.open(college.website, '_blank')}
                   >
                     <ExternalLink className="h-4 w-4" />
@@ -594,7 +594,7 @@ export default function DetailedResults() {
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <GraduationCap className="h-6 w-6 text-green-600" />
+                <GraduationCap className="h-6 w-6 text-purple-600" />
                 Tier 4 - Solid Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
@@ -626,37 +626,37 @@ export default function DetailedResults() {
                 // Tier 4: Everything else (Georgia Tech, Purdue, UW, Virginia Tech, ASU, etc.)
                 return !isTier1 && !isTier2 && !isTier3;
               }).map((college, index) => (
-                <div key={index} className="border rounded-lg p-6 bg-gradient-card border-green-600/20">
+                <div key={index} className="border rounded-lg p-6 bg-gradient-card border-purple-600/20">
                   {/* Header */}
                   <div className="mb-6">
                     <h3 className="text-2xl font-bold mb-2 text-foreground">{college.name}</h3>
                     <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="h-4 w-4 text-green-600" />
+                      <MapPin className="h-4 w-4 text-purple-600" />
                       <span className="text-muted-foreground">{college.location}</span>
                     </div>
-                    <Badge variant="outline" className="mb-4 border-green-600 text-green-600">{college.ranking}</Badge>
+                    <Badge variant="outline" className="mb-4 border-purple-600 text-purple-600">{college.ranking}</Badge>
                   </div>
 
                   {/* Why Good Fit & Relevant Majors */}
                    {(college.whyGoodFit || college.relevantMajors) && (
                      <div className="mb-6">
                        <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                         <Star className="h-4 w-4 text-green-600" />
+                         <Star className="h-4 w-4 text-purple-600" />
                          Solid Match for {result.type}
                        </h4>
                        <div className="space-y-4">
                          {college.whyGoodFit && (
-                           <div className="bg-gradient-to-r from-green-600/10 to-green-600/5 p-4 rounded-lg border border-green-600/20">
-                             <h5 className="font-medium text-green-600 mb-2">Why This Is A Great Fit:</h5>
+                            <div className="bg-gradient-to-r from-purple-600/10 to-purple-600/5 p-4 rounded-lg border border-purple-600/20">
+                              <h5 className="font-medium text-purple-600 mb-2">Why This Is A Great Fit:</h5>
                              <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                            </div>
                          )}
                          {college.relevantMajors && college.relevantMajors.length > 0 && (
-                           <div className="bg-green-600/30 p-4 rounded-lg">
+                           <div className="bg-purple-600/30 p-4 rounded-lg">
                              <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
                              <div className="flex flex-wrap gap-2">
                                {college.relevantMajors.map((major, index) => (
-                                 <span key={index} className="bg-green-600/10 text-green-600 px-3 py-1 rounded-full text-xs font-medium border border-green-600/20">
+                                 <span key={index} className="bg-purple-600/10 text-purple-600 px-3 py-1 rounded-full text-xs font-medium border border-purple-600/20">
                                    {major}
                                  </span>
                                ))}
@@ -670,7 +670,7 @@ export default function DetailedResults() {
                   {/* Academic Information */}
                   <div className="mb-6">
                     <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <GraduationCap className="h-4 w-4 text-green-600" />
+                      <GraduationCap className="h-4 w-4 text-purple-600" />
                       Academic Information
                     </h4>
                     <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
@@ -727,7 +727,7 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white p-3 rounded-lg cursor-pointer hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                    className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                     onClick={() => window.open(college.website, '_blank')}
                   >
                     <ExternalLink className="h-4 w-4" />
