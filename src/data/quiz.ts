@@ -428,11 +428,11 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ],
     celebrities: [
-      { name: "Zendaya", image: "/src/assets/celebrity-strategist.jpg" },
-      { name: "Tom Holland", image: "/src/assets/celebrity-strategist.jpg" },
-      { name: "Taylor Hill", image: "/src/assets/celebrity-strategist.jpg" },
-      { name: "Noah Schnapp", image: "/src/assets/celebrity-strategist.jpg" },
-      { name: "Sabrina Carpenter", image: "/src/assets/celebrity-strategist.jpg" }
+      { name: "Zendaya", image: "/src/assets/celebrity-zendaya.jpg" },
+      { name: "Tom Holland", image: "/src/assets/celebrity-tom-holland.jpg" },
+      { name: "Taylor Hill", image: "/src/assets/celebrity-taylor-hill.jpg" },
+      { name: "Noah Schnapp", image: "/src/assets/celebrity-noah-schnapp.jpg" },
+      { name: "Sabrina Carpenter", image: "/src/assets/celebrity-sabrina-carpenter.jpg" }
     ]
   },
   "The Inventor": {
@@ -508,11 +508,11 @@ export const personalityResults: Record<string, PersonalityResult> = {
       }
     ],
     celebrities: [
-      { name: "Billie Eilish", image: "/src/assets/celebrity-inventor.jpg" },
-      { name: "Timothée Chalamet", image: "/src/assets/celebrity-inventor.jpg" },
-      { name: "Sadie Sink", image: "/src/assets/celebrity-inventor.jpg" },
-      { name: "Finn Wolfhard", image: "/src/assets/celebrity-inventor.jpg" },
-      { name: "Maddie Ziegler", image: "/src/assets/celebrity-inventor.jpg" }
+      { name: "Billie Eilish", image: "/src/assets/celebrity-billie-eilish.jpg" },
+      { name: "Timothée Chalamet", image: "/src/assets/celebrity-timothee-chalamet.jpg" },
+      { name: "Sadie Sink", image: "/src/assets/celebrity-sadie-sink.jpg" },
+      { name: "Finn Wolfhard", image: "/src/assets/celebrity-finn-wolfhard.jpg" },
+      { name: "Maddie Ziegler", image: "/src/assets/celebrity-maddie-ziegler.jpg" }
     ]
   },
   "The Boss": {

@@ -174,7 +174,7 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
                 <div key={index} className="text-center">
                   <div className="w-20 h-20 mx-auto mb-2 rounded-full overflow-hidden shadow-lg border-2 border-primary/20">
                     <img 
-                      src={celebrityImages[result.type]} 
+                      src={celebrity.image} 
                       alt={`${celebrity.name} character illustration`}
                       className="w-full h-full object-cover"
                     />
