@@ -2,7 +2,7 @@ import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft } from 'lucide-react';
+import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft, Home } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
 
@@ -23,14 +23,24 @@ export default function DetailedResults() {
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center pt-8 pb-4">
-          <Button 
-            variant="outline" 
-            onClick={() => navigate(-1)}
-            className="mb-4 bg-white/10 border-white/20 text-white hover:bg-white/20"
-          >
-            <ArrowLeft className="h-4 w-4 mr-2" />
-            Back to Results
-          </Button>
+          <div className="flex gap-3 justify-center mb-4">
+            <Button 
+              variant="outline" 
+              onClick={() => navigate('/')}
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+            >
+              <Home className="h-4 w-4 mr-2" />
+              Home
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={() => navigate(-1)}
+              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+            >
+              <ArrowLeft className="h-4 w-4 mr-2" />
+              Back to Results
+            </Button>
+          </div>
           
           {/* Navigation Tabs */}
           <div className="flex justify-center gap-4 mb-8">
