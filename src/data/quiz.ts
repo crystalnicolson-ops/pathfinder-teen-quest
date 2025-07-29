@@ -477,7 +477,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Independence", percentage: 78 },
       { name: "Analytical Skills", percentage: 82 },
       { name: "Long-term Planning", percentage: 86 },
-      { name: "Problem Solving", percentage: 80 }
+      { name: "Problem Solving", percentage: 80 },
+      { name: "Artistic", percentage: 45 }
     ]
   },
 
@@ -634,7 +635,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Logical Thinking", percentage: 85 },
       { name: "Independence", percentage: 82 },
       { name: "Innovation", percentage: 87 },
-      { name: "Theoretical Understanding", percentage: 84 }
+      { name: "Theoretical Understanding", percentage: 84 },
+      { name: "Artistic", percentage: 52 }
     ]
   }
 
