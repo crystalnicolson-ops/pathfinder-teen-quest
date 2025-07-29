@@ -57,8 +57,8 @@ export default function DetailedResults() {
             <div 
               className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
                 section === 'colleges' 
-                  ? 'bg-gradient-to-r from-teal-500 to-teal-600 text-white' 
-                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-teal-400 hover:to-teal-500'
+                  ? 'bg-gradient-secondary text-white' 
+                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:bg-secondary/80'
               }`}
               onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
             >

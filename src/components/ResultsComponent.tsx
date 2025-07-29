@@ -283,7 +283,7 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
             <Button 
               onClick={handleViewColleges}
               size="lg"
-              className="relative bg-gradient-to-r from-emerald-600 via-teal-600 to-cyan-600 text-white rounded-full border-2 border-transparent hover:from-emerald-700 hover:via-teal-700 hover:to-cyan-700 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl px-8 py-6 text-lg font-bold overflow-hidden"
+              className="relative bg-gradient-secondary text-white rounded-full border-2 border-transparent hover:bg-secondary/80 transform transition-all duration-300 hover:scale-105 hover:shadow-blue px-8 py-6 text-lg font-bold overflow-hidden"
             >
               {/* Animated background effect */}
               <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
@@ -299,7 +299,7 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
             </Button>
             
             {/* Glowing ring effect */}
-            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-emerald-600 to-cyan-600 opacity-30 group-hover:opacity-50 blur-xl transition-opacity duration-300 -z-10"></div>
+            <div className="absolute inset-0 rounded-full bg-gradient-secondary opacity-30 group-hover:opacity-50 blur-xl transition-opacity duration-300 -z-10"></div>
           </div>
 
           {/* Retake Button */}
