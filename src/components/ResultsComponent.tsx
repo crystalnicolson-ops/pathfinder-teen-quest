@@ -24,42 +24,42 @@ import avatarArtist from '@/assets/avatar-artist.jpg';
 import avatarAdventurer from '@/assets/avatar-adventurer.jpg';
 import avatarPerformer from '@/assets/avatar-performer.jpg';
 
-// Import celebrity illustrations
-import celebrityStrategist from '@/assets/celebrity-strategist.jpg';
-import celebrityInventor from '@/assets/celebrity-inventor.jpg';
-import celebrityBoss from '@/assets/celebrity-boss.jpg';
-import celebrityChallenger from '@/assets/celebrity-challenger.jpg';
-import celebrityVisionary from '@/assets/celebrity-visionary.jpg';
-import celebrityCreator from '@/assets/celebrity-creator.jpg';
-import celebrityCoach from '@/assets/celebrity-coach.jpg';
-import celebrityFreeSpirit from '@/assets/celebrity-free-spirit.jpg';
-import celebrityOrganizer from '@/assets/celebrity-organizer.jpg';
-import celebrityHelper from '@/assets/celebrity-helper.jpg';
-import celebrityManager from '@/assets/celebrity-manager.jpg';
-import celebrityHost from '@/assets/celebrity-host.jpg';
-import celebrityFixer from '@/assets/celebrity-fixer.jpg';
-import celebrityArtist from '@/assets/celebrity-artist.jpg';
-import celebrityAdventurer from '@/assets/celebrity-adventurer.jpg';
-import celebrityPerformer from '@/assets/celebrity-performer.jpg';
+// Import symbolic personality images
+import symbolStrategist from '@/assets/symbol-strategist.jpg';
+import symbolInventor from '@/assets/symbol-inventor.jpg';
+import symbolBoss from '@/assets/symbol-boss.jpg';
+import symbolChallenger from '@/assets/symbol-challenger.jpg';
+import symbolVisionary from '@/assets/symbol-visionary.jpg';
+import symbolCreator from '@/assets/symbol-creator.jpg';
+import symbolCoach from '@/assets/symbol-coach.jpg';
+import symbolFreeSpirit from '@/assets/symbol-free-spirit.jpg';
+import symbolOrganizer from '@/assets/symbol-organizer.jpg';
+import symbolHelper from '@/assets/symbol-helper.jpg';
+import symbolManager from '@/assets/symbol-manager.jpg';
+import symbolHost from '@/assets/symbol-host.jpg';
+import symbolFixer from '@/assets/symbol-fixer.jpg';
+import symbolArtist from '@/assets/symbol-artist.jpg';
+import symbolAdventurer from '@/assets/symbol-adventurer.jpg';
+import symbolPerformer from '@/assets/symbol-performer.jpg';
 
-// Celebrity illustration mapping
-const celebrityImages: Record<PersonalityType, string> = {
-  'The Strategist': celebrityStrategist,
-  'The Inventor': celebrityInventor,
-  'The Boss': celebrityBoss,
-  'The Challenger': celebrityChallenger,
-  'The Visionary': celebrityVisionary,
-  'The Creator': celebrityCreator,
-  'The Coach': celebrityCoach,
-  'The Free Spirit': celebrityFreeSpirit,
-  'The Organizer': celebrityOrganizer,
-  'The Helper': celebrityHelper,
-  'The Manager': celebrityManager,
-  'The Host': celebrityHost,
-  'The Fixer': celebrityFixer,
-  'The Artist': celebrityArtist,
-  'The Adventurer': celebrityAdventurer,
-  'The Performer': celebrityPerformer,
+// Personality symbol mapping
+const personalitySymbols: Record<PersonalityType, string> = {
+  'The Strategist': symbolStrategist,
+  'The Inventor': symbolInventor,
+  'The Boss': symbolBoss,
+  'The Challenger': symbolChallenger,
+  'The Visionary': symbolVisionary,
+  'The Creator': symbolCreator,
+  'The Coach': symbolCoach,
+  'The Free Spirit': symbolFreeSpirit,
+  'The Organizer': symbolOrganizer,
+  'The Helper': symbolHelper,
+  'The Manager': symbolManager,
+  'The Host': symbolHost,
+  'The Fixer': symbolFixer,
+  'The Artist': symbolArtist,
+  'The Adventurer': symbolAdventurer,
+  'The Performer': symbolPerformer,
 };
 
 // Avatar mapping
@@ -166,7 +166,7 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
               <Star className="h-6 w-6 text-primary" />
-              Celebrities Like You
+              Famous People Like You
             </CardTitle>
             <p className="text-muted-foreground">
               These famous people share your {result.type} personality type!
@@ -176,10 +176,10 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               {result.celebrities.map((celebrity, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-2 rounded-full overflow-hidden shadow-lg border-2 border-primary/20">
+                  <div className="w-20 h-20 mx-auto mb-2 rounded-lg overflow-hidden shadow-lg border-2 border-primary/20">
                     <img 
-                      src={celebrity.image} 
-                      alt={`${celebrity.name} character illustration`}
+                      src={personalitySymbols[result.type]} 
+                      alt={`${result.type} symbolic representation`}
                       className="w-full h-full object-cover"
                     />
                   </div>
