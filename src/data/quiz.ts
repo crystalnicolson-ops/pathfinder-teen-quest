@@ -471,6 +471,90 @@ export const personalityResults: Record<string, PersonalityResult> = {
         regionalCounselors: ["Miguel Alvarez", "Keith Gehres"],
         whyGoodFit: "Perfect for Strategists who love the intersection of technology and human behavior. CMU's data-driven approach, world-class computer science programs, and research opportunities in AI/robotics align with the INTJ's analytical nature and future-focused thinking.",
         relevantMajors: ["Computer Science", "Information Systems", "Robotics", "Human-Computer Interaction", "Electrical & Computer Engineering", "Statistics & Data Science"]
+      },
+      {
+        name: "University of California, Berkeley",
+        location: "Berkeley, CA",
+        programs: ["Computer Science", "Engineering", "Data Science"],
+        ranking: "#20 overall",
+        website: "https://www.berkeley.edu/",
+        phone: "(510) 642-3175",
+        email: "admissions@berkeley.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Excellent for Strategists who thrive in intellectually rigorous environments. UC Berkeley's world-renowned STEM programs, research opportunities, and innovation culture provide the perfect setting for strategic thinkers to develop cutting-edge solutions.",
+        relevantMajors: ["Computer Science", "Electrical Engineering & Computer Science", "Data Science", "Applied Mathematics", "Operations Research", "Industrial Engineering"]
+      },
+      {
+        name: "Georgia Institute of Technology",
+        location: "Atlanta, GA",
+        programs: ["Engineering", "Computer Science", "Technology"],
+        ranking: "#33 overall",
+        website: "https://www.gatech.edu/",
+        phone: "(404) 894-4154",
+        email: "admission@gatech.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Perfect for Strategists who want to bridge technology and business. Georgia Tech's strong engineering programs, emphasis on practical application, and connections to industry align with the INTJ's systematic approach to problem-solving.",
+        relevantMajors: ["Computer Science", "Industrial Engineering", "Systems Engineering", "Business Administration", "Electrical Engineering", "Cybersecurity"]
+      },
+      {
+        name: "University of Michigan",
+        location: "Ann Arbor, MI",
+        programs: ["Engineering", "Business", "Computer Science"],
+        ranking: "#21 overall",
+        website: "https://www.umich.edu/",
+        phone: "(734) 764-7433",
+        email: "admissions@umich.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Great for Strategists who value both academic excellence and practical application. Michigan's top-ranked programs, research opportunities, and strong alumni network provide excellent preparation for leadership roles in technology and business.",
+        relevantMajors: ["Computer Science & Engineering", "Industrial & Operations Engineering", "Business Administration", "Information Systems", "Data Science", "Aerospace Engineering"]
+      },
+      {
+        name: "Purdue University",
+        location: "West Lafayette, IN",
+        programs: ["Engineering", "Computer Science", "Technology"],
+        ranking: "#51 overall",
+        website: "https://www.purdue.edu/",
+        phone: "(765) 494-1776",
+        email: "admissions@purdue.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Ideal for Strategists who want strong technical training with practical focus. Purdue's excellent engineering programs, cooperative education opportunities, and industry connections provide solid preparation for strategic leadership in technical fields.",
+        relevantMajors: ["Computer Science", "Industrial Engineering", "Electrical Engineering", "Systems Engineering", "Data Science", "Management"]
+      },
+      {
+        name: "University of Washington",
+        location: "Seattle, WA",
+        programs: ["Computer Science", "Engineering", "Information"],
+        ranking: "#55 overall",
+        website: "https://www.washington.edu/",
+        phone: "(206) 543-9686",
+        email: "admissions@uw.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Excellent for Strategists interested in technology and innovation. Located in a major tech hub, UW offers strong STEM programs, research opportunities, and connections to leading tech companies, perfect for strategic career development.",
+        relevantMajors: ["Computer Science", "Informatics", "Industrial & Systems Engineering", "Applied Mathematics", "Business Administration", "Human Centered Design & Engineering"]
+      },
+      {
+        name: "Virginia Tech",
+        location: "Blacksburg, VA",
+        programs: ["Engineering", "Computer Science", "Architecture"],
+        ranking: "#75 overall",
+        website: "https://www.vt.edu/",
+        phone: "(540) 231-6267",
+        email: "admissions@vt.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Great for Strategists who value hands-on learning and practical application. Virginia Tech's strong engineering programs, collaborative environment, and emphasis on innovation provide excellent preparation for strategic roles in technology and design.",
+        relevantMajors: ["Computer Science", "Industrial & Systems Engineering", "Architecture", "Business Information Technology", "Computer Engineering", "Statistics"]
+      },
+      {
+        name: "Arizona State University",
+        location: "Tempe, AZ",
+        programs: ["Engineering", "Business", "Computing"],
+        ranking: "#103 overall",
+        website: "https://www.asu.edu/",
+        phone: "(480) 965-7788",
+        email: "admissions@asu.edu",
+        regionalCounselors: ["General Admissions Staff"],
+        whyGoodFit: "Perfect for Strategists who want flexibility and innovation in their education. ASU's cutting-edge programs, online options, and entrepreneurial culture provide diverse pathways for strategic thinking and career development.",
+        relevantMajors: ["Computer Science", "Industrial Engineering", "Business Analytics", "Information Systems", "Software Engineering", "Project Management"]
       }
     ],
     celebrities: [
