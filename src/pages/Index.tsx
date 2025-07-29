@@ -55,10 +55,10 @@ const Index = () => {
           </p>
           
           <Button 
-            variant="hero" 
+            variant="secondary" 
             size="lg" 
             onClick={handleStartQuiz}
-            className="text-lg px-8 py-6 animate-pulse-slow"
+            className="text-lg px-8 py-6 animate-pulse-slow rounded-full"
           >
             <Target className="h-6 w-6 mr-2" />
             Start Your Journey
