@@ -136,17 +136,17 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
               </h4>
               <div className="space-y-4 text-left">
                 <p className="text-muted-foreground leading-relaxed">
-                  As <strong>{result.type}</strong>, you are someone who naturally thinks several steps ahead. You see the big picture while also understanding the details needed to make things happen. You're drawn to complex problems and enjoy finding innovative solutions.
+                  As <strong>{result.type}</strong>, you are someone who naturally <strong>thinks several steps ahead</strong>. You see the <strong>big picture</strong> while also understanding the details needed to make things happen. You're drawn to <strong>complex problems</strong> and enjoy finding <strong>innovative solutions</strong>.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  You tend to be highly independent and prefer to work at your own pace. While others might see you as quiet or reserved, you're actually processing information and developing comprehensive plans. You value competence and efficiency, both in yourself and others.
+                  You tend to be highly <strong>independent</strong> and prefer to work at your own pace. While others might see you as quiet or reserved, you're actually <strong>processing information</strong> and developing <strong>comprehensive plans</strong>. You value <strong>competence and efficiency</strong>, both in yourself and others.
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  In relationships and teamwork, you appreciate people who share your drive for excellence and can match your intellectual curiosity. You're loyal to those who earn your respect and can be incredibly supportive when you believe in a cause or person.
+                  In relationships and teamwork, you appreciate people who share your <strong>drive for excellence</strong> and can match your <strong>intellectual curiosity</strong>. You're <strong>loyal</strong> to those who earn your respect and can be incredibly <strong>supportive</strong> when you believe in a cause or person.
                 </p>
                 <div className="bg-white/50 p-4 rounded-lg border-l-4 border-primary">
                   <p className="text-sm font-medium text-foreground">
-                    <strong>Key Insight:</strong> Your superpower is your ability to see long-term potential and create systematic approaches to achieve ambitious goals. You're the person others turn to when they need a solid, well-thought-out plan.
+                    <strong>Key Insight:</strong> Your superpower is your ability to see <strong>long-term potential</strong> and create <strong>systematic approaches</strong> to achieve <strong>ambitious goals</strong>. You're the person others turn to when they need a solid, <strong>well-thought-out plan</strong>.
                   </p>
                 </div>
               </div>
