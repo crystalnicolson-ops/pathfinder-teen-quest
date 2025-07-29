@@ -85,7 +85,8 @@ export interface College {
 
 export interface Celebrity {
   name: string;
-  image: string;
+  emoji: string;
+  description: string;
 }
 
 export interface PersonalityResult {

@@ -176,14 +176,11 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
             <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
               {result.celebrities.map((celebrity, index) => (
                 <div key={index} className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-2 rounded-lg overflow-hidden shadow-lg border-2 border-primary/20">
-                    <img 
-                      src={personalitySymbols[result.type]} 
-                      alt={`${result.type} symbolic representation`}
-                      className="w-full h-full object-cover"
-                    />
+                  <div className="w-20 h-20 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/20 flex items-center justify-center shadow-lg">
+                    <span className="text-3xl">{celebrity.emoji}</span>
                   </div>
                   <p className="text-sm font-medium text-foreground">{celebrity.name}</p>
+                  <p className="text-xs text-muted-foreground">{celebrity.description}</p>
                 </div>
               ))}
             </div>
