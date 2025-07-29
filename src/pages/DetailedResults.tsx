@@ -256,60 +256,62 @@ export default function DetailedResults() {
                  )}
 
                 {/* Academic Information */}
-                {college.tuition && (
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <GraduationCap className="h-4 w-4 text-primary" />
-                      Academic Information
-                    </h4>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                <div className="mb-6">
+                  <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                    <GraduationCap className="h-4 w-4 text-primary" />
+                    Academic Information
+                  </h4>
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                    {college.tuition && (
                       <div className="bg-white/50 p-3 rounded">
                         <span className="font-medium">Tuition:</span>
                         <div className="text-muted-foreground">{college.tuition}</div>
                       </div>
+                    )}
+                    {college.acceptanceRate && (
                       <div className="bg-white/50 p-3 rounded">
                         <span className="font-medium">Acceptance Rate:</span>
                         <div className="text-muted-foreground">{college.acceptanceRate}</div>
                       </div>
+                    )}
+                    {college.averageGPA && (
                       <div className="bg-white/50 p-3 rounded">
                         <span className="font-medium">Average GPA:</span>
                         <div className="text-muted-foreground">{college.averageGPA}</div>
                       </div>
+                    )}
+                    {college.testScores && (
                       <div className="bg-white/50 p-3 rounded">
                         <span className="font-medium">Test Scores:</span>
                         <div className="text-muted-foreground">{college.testScores}</div>
                       </div>
+                    )}
+                    {college.applicationDeadline && (
                       <div className="bg-white/50 p-3 rounded">
                         <span className="font-medium">Application Deadline:</span>
                         <div className="text-muted-foreground">{college.applicationDeadline}</div>
                       </div>
+                    )}
+                    {college.studentFacultyRatio && (
                       <div className="bg-white/50 p-3 rounded">
                         <span className="font-medium">Student-Faculty Ratio:</span>
                         <div className="text-muted-foreground">{college.studentFacultyRatio}</div>
                       </div>
-                    </div>
-                  </div>
-                )}
-
-                  {/* Career Support */}
-                {college.jobPlacementRate && (
-                  <div className="mb-6">
-                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                      <TrendingUp className="h-4 w-4 text-primary" />
-                      Career Support
-                    </h4>
-                    <div className="grid md:grid-cols-2 gap-4 text-sm">
+                    )}
+                    {college.classSize && (
                       <div className="bg-white/50 p-3 rounded">
-                        <span className="font-medium">Job Placement Rate:</span>
-                        <div className="text-muted-foreground">{college.jobPlacementRate}</div>
+                        <span className="font-medium">Average Class Size:</span>
+                        <div className="text-muted-foreground">{college.classSize}</div>
                       </div>
+                    )}
+                    {college.studentPopulation && (
                       <div className="bg-white/50 p-3 rounded">
-                        <span className="font-medium">Alumni Network:</span>
-                        <div className="text-muted-foreground">{college.alumniNetwork || 'Strong alumni connections'}</div>
+                        <span className="font-medium">Student Population:</span>
+                        <div className="text-muted-foreground">{college.studentPopulation}</div>
                       </div>
-                    </div>
+                    )}
                   </div>
-                )}
+                </div>
 
                 {/* Website Link */}
                 <div 
@@ -386,60 +388,62 @@ export default function DetailedResults() {
                   )}
 
                   {/* Academic Information */}
-                  {college.tuition && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <GraduationCap className="h-4 w-4 text-secondary" />
-                        Academic Information
-                      </h4>
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                      <GraduationCap className="h-4 w-4 text-secondary" />
+                      Academic Information
+                    </h4>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                      {college.tuition && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Tuition:</span>
                           <div className="text-muted-foreground">{college.tuition}</div>
                         </div>
+                      )}
+                      {college.acceptanceRate && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Acceptance Rate:</span>
                           <div className="text-muted-foreground">{college.acceptanceRate}</div>
                         </div>
+                      )}
+                      {college.averageGPA && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Average GPA:</span>
                           <div className="text-muted-foreground">{college.averageGPA}</div>
                         </div>
+                      )}
+                      {college.testScores && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Test Scores:</span>
                           <div className="text-muted-foreground">{college.testScores}</div>
                         </div>
+                      )}
+                      {college.applicationDeadline && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Application Deadline:</span>
                           <div className="text-muted-foreground">{college.applicationDeadline}</div>
                         </div>
+                      )}
+                      {college.studentFacultyRatio && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Student-Faculty Ratio:</span>
                           <div className="text-muted-foreground">{college.studentFacultyRatio}</div>
                         </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Career Support */}
-                  {college.jobPlacementRate && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <TrendingUp className="h-4 w-4 text-secondary" />
-                        Career Support
-                      </h4>
-                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                      )}
+                      {college.classSize && (
                         <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Job Placement Rate:</span>
-                          <div className="text-muted-foreground">{college.jobPlacementRate}</div>
+                          <span className="font-medium">Average Class Size:</span>
+                          <div className="text-muted-foreground">{college.classSize}</div>
                         </div>
+                      )}
+                      {college.studentPopulation && (
                         <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Alumni Network:</span>
-                          <div className="text-muted-foreground">{college.alumniNetwork || 'Strong alumni connections'}</div>
+                          <span className="font-medium">Student Population:</span>
+                          <div className="text-muted-foreground">{college.studentPopulation}</div>
                         </div>
-                      </div>
+                      )}
                     </div>
-                  )}
+                  </div>
 
                   {/* Website Link */}
                   <div 
@@ -516,60 +520,62 @@ export default function DetailedResults() {
                    )}
 
                   {/* Academic Information */}
-                  {college.tuition && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <GraduationCap className="h-4 w-4 text-secondary" />
-                        Academic Information
-                      </h4>
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                      <GraduationCap className="h-4 w-4 text-secondary" />
+                      Academic Information
+                    </h4>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                      {college.tuition && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Tuition:</span>
                           <div className="text-muted-foreground">{college.tuition}</div>
                         </div>
+                      )}
+                      {college.acceptanceRate && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Acceptance Rate:</span>
                           <div className="text-muted-foreground">{college.acceptanceRate}</div>
                         </div>
+                      )}
+                      {college.averageGPA && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Average GPA:</span>
                           <div className="text-muted-foreground">{college.averageGPA}</div>
                         </div>
+                      )}
+                      {college.testScores && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Test Scores:</span>
                           <div className="text-muted-foreground">{college.testScores}</div>
                         </div>
+                      )}
+                      {college.applicationDeadline && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Application Deadline:</span>
                           <div className="text-muted-foreground">{college.applicationDeadline}</div>
                         </div>
+                      )}
+                      {college.studentFacultyRatio && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Student-Faculty Ratio:</span>
                           <div className="text-muted-foreground">{college.studentFacultyRatio}</div>
                         </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Career Support */}
-                  {college.jobPlacementRate && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <TrendingUp className="h-4 w-4 text-secondary" />
-                        Career Support
-                      </h4>
-                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                      )}
+                      {college.classSize && (
                         <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Job Placement Rate:</span>
-                          <div className="text-muted-foreground">{college.jobPlacementRate}</div>
+                          <span className="font-medium">Average Class Size:</span>
+                          <div className="text-muted-foreground">{college.classSize}</div>
                         </div>
+                      )}
+                      {college.studentPopulation && (
                         <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Alumni Network:</span>
-                          <div className="text-muted-foreground">{college.alumniNetwork || 'Strong alumni connections'}</div>
+                          <span className="font-medium">Student Population:</span>
+                          <div className="text-muted-foreground">{college.studentPopulation}</div>
                         </div>
-                      </div>
+                      )}
                     </div>
-                  )}
+                  </div>
 
                   {/* Website Link */}
                   <div 
@@ -662,60 +668,62 @@ export default function DetailedResults() {
                    )}
 
                   {/* Academic Information */}
-                  {college.tuition && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <GraduationCap className="h-4 w-4 text-green-600" />
-                        Academic Information
-                      </h4>
-                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                  <div className="mb-6">
+                    <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                      <GraduationCap className="h-4 w-4 text-green-600" />
+                      Academic Information
+                    </h4>
+                    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                      {college.tuition && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Tuition:</span>
                           <div className="text-muted-foreground">{college.tuition}</div>
                         </div>
+                      )}
+                      {college.acceptanceRate && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Acceptance Rate:</span>
                           <div className="text-muted-foreground">{college.acceptanceRate}</div>
                         </div>
+                      )}
+                      {college.averageGPA && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Average GPA:</span>
                           <div className="text-muted-foreground">{college.averageGPA}</div>
                         </div>
+                      )}
+                      {college.testScores && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Test Scores:</span>
                           <div className="text-muted-foreground">{college.testScores}</div>
                         </div>
+                      )}
+                      {college.applicationDeadline && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Application Deadline:</span>
                           <div className="text-muted-foreground">{college.applicationDeadline}</div>
                         </div>
+                      )}
+                      {college.studentFacultyRatio && (
                         <div className="bg-white/50 p-3 rounded">
                           <span className="font-medium">Student-Faculty Ratio:</span>
                           <div className="text-muted-foreground">{college.studentFacultyRatio}</div>
                         </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Career Support */}
-                  {college.jobPlacementRate && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <TrendingUp className="h-4 w-4 text-green-600" />
-                        Career Support
-                      </h4>
-                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                      )}
+                      {college.classSize && (
                         <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Job Placement Rate:</span>
-                          <div className="text-muted-foreground">{college.jobPlacementRate}</div>
+                          <span className="font-medium">Average Class Size:</span>
+                          <div className="text-muted-foreground">{college.classSize}</div>
                         </div>
+                      )}
+                      {college.studentPopulation && (
                         <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Alumni Network:</span>
-                          <div className="text-muted-foreground">{college.alumniNetwork || 'Strong alumni connections'}</div>
+                          <span className="font-medium">Student Population:</span>
+                          <div className="text-muted-foreground">{college.studentPopulation}</div>
                         </div>
-                      </div>
+                      )}
                     </div>
-                  )}
+                  </div>
 
                   {/* Website Link */}
                   <div 
