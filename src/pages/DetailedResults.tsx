@@ -67,66 +67,129 @@ export default function DetailedResults() {
 
         {/* Career Recommendations */}
         {(!section || section === 'careers') && (
-          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <Users className="h-6 w-6 text-primary" />
-                Perfect Career Matches
-              </CardTitle>
-              <p className="text-muted-foreground mt-2">
-                These careers align perfectly with your personality traits, work style preferences, and natural strengths. 
-                Your analytical thinking, strategic planning abilities, and preference for independent work make you 
-                an ideal fit for these roles.
-              </p>
-            </CardHeader>
-            <CardContent className="grid md:grid-cols-2 gap-6">
-              {result.careers.map((career, index) => (
-                <div key={index} className="border rounded-lg p-4 bg-gradient-card">
-                  <div className="flex items-start justify-between mb-2">
-                    <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
-                    <Badge variant="secondary" className="ml-2">Perfect Match</Badge>
-                  </div>
-                  <p className="text-muted-foreground mb-4">{career.description}</p>
-                  
-                  {/* Why it's perfect section */}
-                  <div className="bg-primary/5 p-3 rounded-md mb-4">
-                    <h4 className="text-sm font-semibold text-primary mb-2">🎯 Why This is Perfect for You:</h4>
-                    <ul className="text-xs text-muted-foreground space-y-1">
-                      <li>• Utilizes your strategic thinking and planning skills</li>
-                      <li>• Offers intellectual challenges and complex problem-solving</li>
-                      <li>• Allows for independent work with minimal supervision</li>
-                      <li>• Provides opportunities for long-term project ownership</li>
-                    </ul>
-                  </div>
-                  
-                  <div className="space-y-2 mb-4">
-                    <div className="flex items-center gap-2">
-                      <TrendingUp className="h-4 w-4 text-secondary" />
-                      <span className="text-sm">
-                        <strong>Salary:</strong> {career.averageSalary}
-                      </span>
+          <div className="space-y-6">
+            {/* Entry Level Careers */}
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+                  <Users className="h-6 w-6 text-primary" />
+                  Entry Level Career Matches
+                </CardTitle>
+                <p className="text-muted-foreground mt-2">
+                  Start your career journey with these entry-level positions that match your personality and provide 
+                  a strong foundation for future growth.
+                </p>
+              </CardHeader>
+              <CardContent className="grid md:grid-cols-2 gap-6">
+                {result.careers.slice(0, 2).map((career, index) => (
+                  <div key={index} className="border rounded-lg p-4 bg-gradient-card">
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
+                      <Badge variant="secondary" className="ml-2">Entry Level</Badge>
                     </div>
-                    <div className="flex items-center gap-2">
-                      <TrendingUp className="h-4 w-4 text-secondary" />
-                      <span className="text-sm">
-                        <strong>Job Growth:</strong> {career.jobGrowth}
-                      </span>
+                    <p className="text-muted-foreground mb-4">{career.description}</p>
+                    
+                    {/* Why it's perfect section */}
+                    <div className="bg-primary/5 p-3 rounded-md mb-4">
+                      <h4 className="text-sm font-semibold text-primary mb-2">🎯 Why Start Here:</h4>
+                      <ul className="text-xs text-muted-foreground space-y-1">
+                        <li>• Perfect introduction to your field of interest</li>
+                        <li>• Builds foundational skills and experience</li>
+                        <li>• Provides mentorship and learning opportunities</li>
+                        <li>• Clear progression path to advanced roles</li>
+                      </ul>
                     </div>
-                  </div>
+                    
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-secondary" />
+                        <span className="text-sm">
+                          <strong>Starting Salary:</strong> {career.averageSalary}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-secondary" />
+                        <span className="text-sm">
+                          <strong>Job Growth:</strong> {career.jobGrowth}
+                        </span>
+                      </div>
+                    </div>
 
-                  <Button 
-                    variant="secondary" 
-                    size="sm" 
-                    className="w-full"
-                    onClick={() => window.open(career.indeedLink, '_blank')}
-                  >
-                    <ExternalLink className="h-4 w-4 mr-2" />
-                    View Jobs on Indeed
-                  </Button>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
+                    <Button 
+                      variant="secondary" 
+                      size="sm" 
+                      className="w-full"
+                      onClick={() => window.open(career.indeedLink, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      View Entry Jobs on Indeed
+                    </Button>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+
+            {/* Advanced Level Careers */}
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+                  <Star className="h-6 w-6 text-primary" />
+                  Advanced Career Opportunities
+                </CardTitle>
+                <p className="text-muted-foreground mt-2">
+                  With experience and expertise, you can advance to these leadership and specialized roles that 
+                  maximize your strategic thinking abilities.
+                </p>
+              </CardHeader>
+              <CardContent className="grid md:grid-cols-2 gap-6">
+                {result.careers.slice(2).map((career, index) => (
+                  <div key={index} className="border rounded-lg p-4 bg-gradient-card border-primary/20">
+                    <div className="flex items-start justify-between mb-2">
+                      <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
+                      <Badge variant="default" className="ml-2 bg-primary">Advanced</Badge>
+                    </div>
+                    <p className="text-muted-foreground mb-4">{career.description}</p>
+                    
+                    {/* Why it's perfect section */}
+                    <div className="bg-primary/10 p-3 rounded-md mb-4 border border-primary/20">
+                      <h4 className="text-sm font-semibold text-primary mb-2">🚀 Advanced Impact:</h4>
+                      <ul className="text-xs text-muted-foreground space-y-1">
+                        <li>• Lead strategic initiatives and complex projects</li>
+                        <li>• Utilize advanced analytical and planning skills</li>
+                        <li>• Mentor others and shape organizational direction</li>
+                        <li>• Maximum autonomy and intellectual challenge</li>
+                      </ul>
+                    </div>
+                    
+                    <div className="space-y-2 mb-4">
+                      <div className="flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-secondary" />
+                        <span className="text-sm">
+                          <strong>Senior Salary:</strong> {career.averageSalary}
+                        </span>
+                      </div>
+                      <div className="flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-secondary" />
+                        <span className="text-sm">
+                          <strong>Job Growth:</strong> {career.jobGrowth}
+                        </span>
+                      </div>
+                    </div>
+
+                    <Button 
+                      variant="default" 
+                      size="sm" 
+                      className="w-full bg-primary hover:bg-primary/90"
+                      onClick={() => window.open(career.indeedLink, '_blank')}
+                    >
+                      <ExternalLink className="h-4 w-4 mr-2" />
+                      View Senior Roles on Indeed
+                    </Button>
+                  </div>
+                ))}
+              </CardContent>
+            </Card>
+          </div>
         )}
 
         {/* College Recommendations */}
