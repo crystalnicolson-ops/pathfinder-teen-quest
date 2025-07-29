@@ -128,6 +128,30 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
               {result.description}
             </p>
             
+            {/* Detailed Personality Explanation */}
+            <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 rounded-lg border mb-6">
+              <h4 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                <Star className="h-5 w-5 text-primary" />
+                What Does This Mean?
+              </h4>
+              <div className="space-y-4 text-left">
+                <p className="text-muted-foreground leading-relaxed">
+                  As <strong>{result.type}</strong>, you are someone who naturally thinks several steps ahead. You see the big picture while also understanding the details needed to make things happen. You're drawn to complex problems and enjoy finding innovative solutions.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  You tend to be highly independent and prefer to work at your own pace. While others might see you as quiet or reserved, you're actually processing information and developing comprehensive plans. You value competence and efficiency, both in yourself and others.
+                </p>
+                <p className="text-muted-foreground leading-relaxed">
+                  In relationships and teamwork, you appreciate people who share your drive for excellence and can match your intellectual curiosity. You're loyal to those who earn your respect and can be incredibly supportive when you believe in a cause or person.
+                </p>
+                <div className="bg-white/50 p-4 rounded-lg border-l-4 border-primary">
+                  <p className="text-sm font-medium text-foreground">
+                    <strong>Key Insight:</strong> Your superpower is your ability to see long-term potential and create systematic approaches to achieve ambitious goals. You're the person others turn to when they need a solid, well-thought-out plan.
+                  </p>
+                </div>
+              </div>
+            </div>
+            
             {/* Detailed Personality Insights */}
             <div className="grid md:grid-cols-3 gap-4 mt-6">
               <div className="bg-gradient-card p-4 rounded-lg border">
