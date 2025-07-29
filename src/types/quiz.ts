@@ -89,10 +89,16 @@ export interface Celebrity {
   description: string;
 }
 
+export interface PersonalityTrait {
+  name: string;
+  percentage: number;
+}
+
 export interface PersonalityResult {
   type: PersonalityType;
   description: string;
   careers: Career[];
   colleges: College[];
   celebrities: Celebrity[];
+  traits: PersonalityTrait[];
 }

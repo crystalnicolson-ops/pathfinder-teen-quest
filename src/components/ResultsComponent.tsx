@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Star, Sparkles, Rocket, GraduationCap, Briefcase } from 'lucide-react';
+import { ArrowRight, Star, Sparkles, Rocket, GraduationCap, Briefcase, TrendingUp } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
 import { useNavigate } from 'react-router-dom';
@@ -161,7 +161,46 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
           </CardHeader>
         </Card>
 
-        {/* Celebrities Section */}
+        {/* Personality Traits */}
+        <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+              <TrendingUp className="h-6 w-6 text-primary" />
+              Your Personality Breakdown
+            </CardTitle>
+            <p className="text-muted-foreground">
+              See how you score on key personality traits
+            </p>
+          </CardHeader>
+          <CardContent>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {result.traits.map((trait, index) => (
+                <div key={index} className="relative">
+                  <div className="flex items-center justify-between mb-2">
+                    <span className="text-sm font-medium text-foreground">{trait.name}</span>
+                    <span className="text-sm font-bold text-primary">{trait.percentage}%</span>
+                  </div>
+                  <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
+                    <div 
+                      className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all duration-700 ease-out"
+                      style={{ width: `${trait.percentage}%` }}
+                    ></div>
+                  </div>
+                  <div className="flex justify-center">
+                    <Badge 
+                      variant={trait.percentage >= 70 ? "default" : trait.percentage >= 40 ? "secondary" : "outline"}
+                      className="text-xs"
+                    >
+                      {trait.percentage >= 70 ? "High" : trait.percentage >= 40 ? "Moderate" : "Low"}
+                    </Badge>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Famous People Section */}
         <Card className="bg-white/95 backdrop-blur-sm shadow-card">
           <CardHeader>
             <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">

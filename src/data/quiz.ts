@@ -433,6 +433,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Taylor Hill", emoji: "📸", description: "Model & fashion" },
       { name: "Noah Schnapp", emoji: "🧠", description: "Analytical actor" },
       { name: "Sabrina Carpenter", emoji: "🧭", description: "Strategic and sharp" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 72 },
+      { name: "Judgmental", percentage: 45 },
+      { name: "Outgoing", percentage: 38 },
+      { name: "Artistic", percentage: 61 },
+      { name: "Strong leader", percentage: 84 }
     ]
   },
   "The Inventor": {
@@ -513,6 +520,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Sadie Sink", emoji: "🔬", description: "Quiet intensity & depth" },
       { name: "Finn Wolfhard", emoji: "🎸", description: "Creative and unpredictable" },
       { name: "Maddie Ziegler", emoji: "💃", description: "Experimental dance" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 89 },
+      { name: "Judgmental", percentage: 23 },
+      { name: "Outgoing", percentage: 42 },
+      { name: "Artistic", percentage: 95 },
+      { name: "Strong leader", percentage: 31 }
     ]
   },
   "The Boss": {
@@ -593,6 +607,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Dove Cameron", emoji: "💼", description: "Polished and driven" },
       { name: "IShowSpeed", emoji: "🔥", description: "Bold and aggressive persona" },
       { name: "Halle Bailey", emoji: "🧜‍♀️", description: "Leading with grace and strength" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 56 },
+      { name: "Judgmental", percentage: 67 },
+      { name: "Outgoing", percentage: 91 },
+      { name: "Artistic", percentage: 48 },
+      { name: "Strong leader", percentage: 96 }
     ]
   },
   "The Challenger": {
@@ -673,6 +694,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "KSI", emoji: "🥊", description: "Fighter and provocateur" },
       { name: "Charli D'Amelio", emoji: "🩰", description: "Trend-setting creator" },
       { name: "Kai Cenat", emoji: "🎮", description: "Loud, fun streamer" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 78 },
+      { name: "Judgmental", percentage: 34 },
+      { name: "Outgoing", percentage: 88 },
+      { name: "Artistic", percentage: 72 },
+      { name: "Strong leader", percentage: 81 }
     ]
   },
   "The Visionary": {
@@ -753,6 +781,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Gaten Matarazzo", emoji: "🧠", description: "Underrated thinker" },
       { name: "Florence Pugh", emoji: "🎭", description: "Visionary actress" },
       { name: "Joshua Bassett", emoji: "💔", description: "Emotional depth" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 94 },
+      { name: "Judgmental", percentage: 28 },
+      { name: "Outgoing", percentage: 35 },
+      { name: "Artistic", percentage: 86 },
+      { name: "Strong leader", percentage: 67 }
     ]
   },
   "The Creator": {
@@ -833,6 +868,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Gracie Abrams", emoji: "📓", description: "Diary-core songwriting" },
       { name: "Dylan Minnette", emoji: "🎧", description: "Moody music & acting" },
       { name: "Amandla Stenberg", emoji: "🧿", description: "Culturally conscious artist" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 91 },
+      { name: "Judgmental", percentage: 19 },
+      { name: "Outgoing", percentage: 44 },
+      { name: "Artistic", percentage: 98 },
+      { name: "Strong leader", percentage: 29 }
     ]
   },
   "The Coach": {
@@ -913,6 +955,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Joey King", emoji: "🎬", description: "Supportive performer" },
       { name: "Caleb McLaughlin", emoji: "🏀", description: "Motivational energy" },
       { name: "Coco Gauff", emoji: "🎾", description: "Young leader in sports" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 88 },
+      { name: "Judgmental", percentage: 22 },
+      { name: "Outgoing", percentage: 85 },
+      { name: "Artistic", percentage: 64 },
+      { name: "Strong leader", percentage: 92 }
     ]
   },
   "The Free Spirit": {
@@ -993,6 +1042,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Bella Poarch", emoji: "🎶", description: "Visual storyteller" },
       { name: "Jaden Hossler", emoji: "🖤", description: "Emo-energy free thinker" },
       { name: "Avani Gregg", emoji: "💄", description: "Creative and expressive" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 82 },
+      { name: "Judgmental", percentage: 15 },
+      { name: "Outgoing", percentage: 94 },
+      { name: "Artistic", percentage: 89 },
+      { name: "Strong leader", percentage: 58 }
     ]
   },
   "The Organizer": {
@@ -1073,6 +1129,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Marcus Scribner", emoji: "📊", description: "Detail-oriented" },
       { name: "Maitreyi Ramakrishnan", emoji: "📝", description: "Organized actor" },
       { name: "Skai Jackson", emoji: "🧹", description: "Polished and tidy" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 76 },
+      { name: "Judgmental", percentage: 52 },
+      { name: "Outgoing", percentage: 41 },
+      { name: "Artistic", percentage: 33 },
+      { name: "Strong leader", percentage: 79 }
     ]
   },
   "The Helper": {
@@ -1153,6 +1216,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Lizzy Greene", emoji: "👩‍⚕️", description: "Soft-spoken and nurturing" },
       { name: "Asher Angel", emoji: "🐶", description: "Loving and wholesome" },
       { name: "Sadie Sink", emoji: "🎀", description: "Compassionate energy" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 96 },
+      { name: "Judgmental", percentage: 18 },
+      { name: "Outgoing", percentage: 47 },
+      { name: "Artistic", percentage: 55 },
+      { name: "Strong leader", percentage: 34 }
     ]
   },
   "The Manager": {
@@ -1233,6 +1303,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Noah Beck", emoji: "💼", description: "Ambitious & brand-savvy" },
       { name: "Sofia Wylie", emoji: "🎤", description: "Driven and polished" },
       { name: "Gavin Casalegno", emoji: "📈", description: "Professional presence" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 68 },
+      { name: "Judgmental", percentage: 71 },
+      { name: "Outgoing", percentage: 76 },
+      { name: "Artistic", percentage: 42 },
+      { name: "Strong leader", percentage: 93 }
     ]
   },
   "The Host": {
@@ -1313,6 +1390,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Ross Lynch", emoji: "🎸", description: "Friendly & fun" },
       { name: "Peyton List", emoji: "💐", description: "Social & stylish" },
       { name: "Chloe Bailey", emoji: "🌹", description: "Bold but welcoming" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 84 },
+      { name: "Judgmental", percentage: 25 },
+      { name: "Outgoing", percentage: 95 },
+      { name: "Artistic", percentage: 67 },
+      { name: "Strong leader", percentage: 73 }
     ]
   },
   "The Fixer": {
@@ -1393,6 +1477,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "KJ Apa", emoji: "🪓", description: "Strong, action-based" },
       { name: "Sabrina Carpenter", emoji: "🛎️", description: "Versatile and practical" },
       { name: "Bryce Hall", emoji: "🪛", description: "Direct and reactive" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 71 },
+      { name: "Judgmental", percentage: 38 },
+      { name: "Outgoing", percentage: 29 },
+      { name: "Artistic", percentage: 74 },
+      { name: "Strong leader", percentage: 46 }
     ]
   },
   "The Artist": {
@@ -1473,6 +1564,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Lil Huddy", emoji: "🖋️", description: "Aesthetic-driven" },
       { name: "Beabadoobee", emoji: "🌸", description: "Alt-indie, dreamy style" },
       { name: "King Princess", emoji: "🌈", description: "Bold and expressive" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 79 },
+      { name: "Judgmental", percentage: 31 },
+      { name: "Outgoing", percentage: 52 },
+      { name: "Artistic", percentage: 93 },
+      { name: "Strong leader", percentage: 41 }
     ]
   },
   "The Adventurer": {
@@ -1553,6 +1651,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Jake Paul", emoji: "🥊", description: "Controversial but bold" },
       { name: "Millie Bobby Brown", emoji: "🐉", description: "Multi-talented adventurer" },
       { name: "Logan Paul", emoji: "🎥", description: "Risk-taking content creator" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 62 },
+      { name: "Judgmental", percentage: 43 },
+      { name: "Outgoing", percentage: 97 },
+      { name: "Artistic", percentage: 56 },
+      { name: "Strong leader", percentage: 78 }
     ]
   },
   "The Performer": {
@@ -1633,6 +1738,13 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Cardi B", emoji: "💃", description: "Unapologetic star power" },
       { name: "Lil Nas X", emoji: "🌈", description: "Show-stopping performer" },
       { name: "Sabrina Carpenter", emoji: "✨", description: "Spotlight-ready" }
+    ],
+    traits: [
+      { name: "Good listener", percentage: 74 },
+      { name: "Judgmental", percentage: 36 },
+      { name: "Outgoing", percentage: 98 },
+      { name: "Artistic", percentage: 81 },
+      { name: "Strong leader", percentage: 69 }
     ]
   }
 };
