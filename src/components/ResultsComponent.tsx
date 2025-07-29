@@ -226,31 +226,6 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
           </CardContent>
         </Card>
 
-        {/* Famous People Section */}
-        <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-              <Star className="h-6 w-6 text-primary" />
-              Famous People Like You
-            </CardTitle>
-            <p className="text-muted-foreground">
-              These famous people share your {result.type} personality type!
-            </p>
-          </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-2 md:grid-cols-5 gap-4">
-              {result.celebrities.map((celebrity, index) => (
-                <div key={index} className="text-center">
-                  <div className="w-20 h-20 mx-auto mb-2 rounded-lg bg-gradient-to-br from-primary/10 to-secondary/10 border-2 border-primary/20 flex items-center justify-center shadow-lg">
-                    <span className="text-3xl">{celebrity.emoji}</span>
-                  </div>
-                  <p className="text-sm font-medium text-foreground">{celebrity.name}</p>
-                  <p className="text-xs text-muted-foreground">{celebrity.description}</p>
-                </div>
-              ))}
-            </div>
-          </CardContent>
-        </Card>
 
         {/* Action Buttons */}
         <div className="flex flex-col gap-6 items-center">
