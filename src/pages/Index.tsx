@@ -11,8 +11,8 @@ import heroImage from '@/assets/hero-careers.jpg';
 type AppState = 'landing' | 'quiz' | 'results';
 
 const Index = () => {
-  const [appState, setAppState] = useState<AppState>('landing');
-  const [personalityResult, setPersonalityResult] = useState<PersonalityType | null>(null);
+  const [appState, setAppState] = useState<AppState>('results');
+  const [personalityResult, setPersonalityResult] = useState<PersonalityType | null>('The Strategist');
 
   const handleStartQuiz = () => setAppState('quiz');
   
