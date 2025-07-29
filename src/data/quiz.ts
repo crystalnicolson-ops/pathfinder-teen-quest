@@ -363,7 +363,15 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#2 overall",
         website: "https://www.mit.edu/",
         whyGoodFit: "Perfect for Strategists who love systematic thinking and long-term planning. MIT's rigorous analytical environment and cutting-edge research opportunities align with the INTJ personality.",
-        relevantMajors: ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Architecture", "Systems Engineering"]
+        relevantMajors: ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Architecture", "Systems Engineering"],
+        tuition: "$59,750/year",
+        acceptanceRate: "3.96%",
+        averageGPA: "4.17",
+        testScores: "SAT: 1520-1580, ACT: 35-36",
+        applicationDeadline: "January 1",
+        studentFacultyRatio: "3:1",
+        classSize: "12 students",
+        studentPopulation: "4,638 undergraduates"
       },
       {
         name: "Stanford University",
@@ -372,7 +380,15 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#6 overall",
         website: "https://www.stanford.edu/",
         whyGoodFit: "Ideal for Strategists who want to combine technical excellence with entrepreneurial thinking. Stanford's innovation ecosystem matches the INTJ's strategic mindset.",
-        relevantMajors: ["Computer Science", "Engineering", "Mathematical & Computational Science", "Management Science & Engineering"]
+        relevantMajors: ["Computer Science", "Engineering", "Mathematical & Computational Science", "Management Science & Engineering"],
+        tuition: "$61,731/year",
+        acceptanceRate: "3.68%",
+        averageGPA: "4.18",
+        testScores: "SAT: 1500-1570, ACT: 33-35",
+        applicationDeadline: "January 5",
+        studentFacultyRatio: "5:1",
+        classSize: "18 students",
+        studentPopulation: "7,087 undergraduates"
       },
       {
         name: "Princeton University",
@@ -381,7 +397,15 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#1 overall",
         website: "https://www.princeton.edu/",
         whyGoodFit: "Perfect for Strategists who thrive in intellectually rigorous environments. Princeton's emphasis on undergraduate research aligns with INTJ preferences.",
-        relevantMajors: ["Computer Science", "Operations Research & Financial Engineering", "Applied Mathematics", "Electrical Engineering"]
+        relevantMajors: ["Computer Science", "Operations Research & Financial Engineering", "Applied Mathematics", "Electrical Engineering"],
+        tuition: "$59,710/year",
+        acceptanceRate: "5.77%",
+        averageGPA: "4.14",
+        testScores: "SAT: 1500-1580, ACT: 34-36",
+        applicationDeadline: "January 1",
+        studentFacultyRatio: "5:1",
+        classSize: "16 students",
+        studentPopulation: "5,321 undergraduates"
       },
       // Tier 2: UChicago, Columbia, Johns Hopkins
       {
@@ -391,7 +415,15 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#6 overall",
         website: "https://www.uchicago.edu/",
         whyGoodFit: "Ideal for Strategists who thrive on intellectual rigor and analytical thinking. UChicago's emphasis on critical inquiry matches the INTJ's strategic planning.",
-        relevantMajors: ["Computer Science", "Economics", "Statistics", "Applied Mathematics", "Data Science"]
+        relevantMajors: ["Computer Science", "Economics", "Statistics", "Applied Mathematics", "Data Science"],
+        tuition: "$64,965/year",
+        acceptanceRate: "7.25%",
+        averageGPA: "4.48",
+        testScores: "SAT: 1520-1580, ACT: 34-36",
+        applicationDeadline: "January 2",
+        studentFacultyRatio: "5:1",
+        classSize: "18 students",
+        studentPopulation: "7,526 undergraduates"
       },
       {
         name: "Columbia University",
@@ -400,7 +432,15 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#12 overall",
         website: "https://www.columbia.edu/",
         whyGoodFit: "Excellent for Strategists who want to combine technical expertise with real-world impact. Columbia's NYC location and research opportunities provide perfect environment for strategic innovation.",
-        relevantMajors: ["Computer Science", "Industrial Engineering & Operations Research", "Applied Mathematics", "Financial Engineering"]
+        relevantMajors: ["Computer Science", "Industrial Engineering & Operations Research", "Applied Mathematics", "Financial Engineering"],
+        tuition: "$65,524/year",
+        acceptanceRate: "3.73%",
+        averageGPA: "4.15",
+        testScores: "SAT: 1510-1570, ACT: 34-36",
+        applicationDeadline: "January 1",
+        studentFacultyRatio: "6:1",
+        classSize: "20 students",
+        studentPopulation: "8,148 undergraduates"
       },
       {
         name: "Johns Hopkins University",
@@ -409,7 +449,15 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#9 overall",
         website: "https://www.jhu.edu/",
         whyGoodFit: "Perfect for Strategists interested in research and innovation. JHU's world-class research opportunities align with the INTJ's analytical and strategic nature.",
-        relevantMajors: ["Computer Science", "Applied Mathematics & Statistics", "Electrical Engineering", "Biomedical Engineering"]
+        relevantMajors: ["Computer Science", "Applied Mathematics & Statistics", "Electrical Engineering", "Biomedical Engineering"],
+        tuition: "$63,340/year",
+        acceptanceRate: "7.5%",
+        averageGPA: "4.11",
+        testScores: "SAT: 1520-1570, ACT: 34-36",
+        applicationDeadline: "January 3",
+        studentFacultyRatio: "7:1",
+        classSize: "19 students",
+        studentPopulation: "6,064 undergraduates"
       },
       // Tier 3: Carnegie Mellon, UC Berkeley, Rice
       {
