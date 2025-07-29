@@ -40,7 +40,7 @@ const Index = () => {
       <div className="relative overflow-hidden">
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 py-16 text-center">
-          <Badge variant="secondary" className="mb-6 text-base px-4 py-2">
+          <Badge variant="secondary" className="mb-6 text-base px-4 py-2 text-white">
             <Sparkles className="h-4 w-4 mr-2" />
             Discover Your Future
           </Badge>
@@ -58,7 +58,7 @@ const Index = () => {
             variant="hero" 
             size="lg" 
             onClick={handleStartQuiz}
-            className="text-lg px-8 py-6 animate-pulse-slow"
+            className="text-lg px-8 py-6 animate-pulse-slow text-blue-500"
           >
             <Target className="h-6 w-6 mr-2" />
             Start Your Journey
