@@ -6,45 +6,48 @@
 
 @layer base {
   :root {
-    --background: 280 60% 95%;
-    --foreground: 240 10% 15%;
+    --background: 215 100% 97%;
+    --foreground: 215 25% 15%;
 
     --card: 0 0% 100%;
-    --card-foreground: 240 10% 15%;
+    --card-foreground: 215 25% 15%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 240 10% 15%;
+    --popover-foreground: 215 25% 15%;
 
-    --primary: 262 83% 58%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-glow: 280 100% 70%;
+    --primary-glow: 210 100% 75%;
 
-    --secondary: 185 84% 58%;
+    --secondary: 204 84% 65%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 250 50% 96%;
-    --muted-foreground: 240 10% 55%;
+    --muted: 215 50% 96%;
+    --muted-foreground: 215 25% 50%;
 
-    --accent: 185 84% 58%;
+    --accent: 210 95% 70%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 240 20% 90%;
-    --input: 240 20% 94%;
-    --ring: 262 83% 58%;
+    --border: 215 25% 88%;
+    --input: 215 25% 92%;
+    --ring: 217 91% 60%;
 
-    /* Custom gradients for teen appeal */
-    --gradient-primary: linear-gradient(135deg, hsl(280 60% 90%), hsl(290 50% 88%));
-    --gradient-secondary: linear-gradient(135deg, hsl(185 84% 58%), hsl(200 100% 65%));
-    --gradient-hero: linear-gradient(135deg, hsl(280 60% 90%) 0%, hsl(290 50% 88%) 50%, hsl(270 70% 85%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(250 50% 98%) 100%);
+    /* Blue-focused gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(217 91% 60%), hsl(210 100% 75%));
+    --gradient-secondary: linear-gradient(135deg, hsl(204 84% 65%), hsl(195 100% 70%));
+    --gradient-hero: linear-gradient(135deg, hsl(215 100% 97%) 0%, hsl(210 95% 88%) 50%, hsl(217 91% 85%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(215 50% 98%) 100%);
+    --gradient-blue: linear-gradient(135deg, hsl(217 91% 60%), hsl(230 95% 70%));
+    --gradient-ocean: linear-gradient(135deg, hsl(204 84% 65%), hsl(190 100% 75%));
     
-    /* Shadows with color */
-    --shadow-primary: 0 10px 30px -10px hsl(262 83% 58% / 0.3);
-    --shadow-secondary: 0 10px 30px -10px hsl(185 84% 58% / 0.3);
-    --shadow-card: 0 4px 20px -8px hsl(240 10% 15% / 0.1);
+    /* Blue-tinted shadows */
+    --shadow-primary: 0 10px 30px -10px hsl(217 91% 60% / 0.25);
+    --shadow-secondary: 0 10px 30px -10px hsl(204 84% 65% / 0.25);
+    --shadow-card: 0 4px 20px -8px hsl(217 50% 30% / 0.08);
+    --shadow-blue: 0 8px 25px -8px hsl(217 91% 60% / 0.2);
     
     /* Smooth transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
