@@ -105,7 +105,7 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center pt-8 pb-4">
-          <h1 className="text-4xl font-bold text-white mb-2">Your Results Are In!</h1>
+          <h1 className="text-4xl font-bold text-transparent bg-gradient-to-r from-yellow-400 via-orange-400 to-red-400 bg-clip-text mb-2 animate-pulse">Your Results Are In!</h1>
           <p className="text-white/80 text-lg">Discover your career path</p>
         </div>
 
