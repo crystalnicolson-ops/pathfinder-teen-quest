@@ -195,15 +195,26 @@ export default function DetailedResults() {
 
         {/* College Recommendations */}
         {(!section || section === 'colleges') && (
-        <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-              <GraduationCap className="h-6 w-6 text-primary" />
-              Top College Recommendations
-            </CardTitle>
-          </CardHeader>
-          <CardContent className="grid md:grid-cols-1 gap-8">
-            {result.colleges.map((college, index) => (
+        <div className="space-y-6">
+          {/* Tier 1 Colleges */}
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+                <GraduationCap className="h-6 w-6 text-primary" />
+                Tier 1 Schools (Most Selective)
+              </CardTitle>
+              <p className="text-muted-foreground mt-2">
+                Top-tier institutions with the highest selectivity and prestige. These schools typically have acceptance rates under 15% and require exceptional academic credentials.
+              </p>
+            </CardHeader>
+            <CardContent className="grid md:grid-cols-1 gap-8">
+              {result.colleges.filter(college => {
+                const ranking = college.ranking?.toLowerCase() || '';
+                return ranking.includes('#1') || ranking.includes('#2') || ranking.includes('#3') || 
+                       ranking.includes('#4') || ranking.includes('#5') || ranking.includes('top 5') ||
+                       ranking.includes('ivy') || college.name.includes('MIT') || college.name.includes('Harvard') || 
+                       college.name.includes('Stanford') || college.name.includes('Princeton') || college.name.includes('Yale');
+              }).map((college, index) => (
               <div key={index} className="border rounded-lg p-6 bg-gradient-card">
                 {/* Header */}
                 <div className="mb-6">
@@ -388,10 +399,453 @@ export default function DetailedResults() {
                   <ExternalLink className="h-4 w-4" />
                   Visit College Website
                 </div>
-              </div>
-            ))}
-          </CardContent>
-        </Card>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          {/* Tier 2 Colleges */}
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+                <GraduationCap className="h-6 w-6 text-secondary" />
+                Tier 2 Schools (Selective)
+              </CardTitle>
+              <p className="text-muted-foreground mt-2">
+                Excellent institutions with strong academic programs. These schools typically have acceptance rates between 15-40% and offer great opportunities for career advancement.
+              </p>
+            </CardHeader>
+            <CardContent className="grid md:grid-cols-1 gap-8">
+              {result.colleges.filter(college => {
+                const ranking = college.ranking?.toLowerCase() || '';
+                const hasTopRanking = ranking.includes('#1') || ranking.includes('#2') || ranking.includes('#3') || 
+                                     ranking.includes('#4') || ranking.includes('#5') || ranking.includes('top 5') ||
+                                     ranking.includes('ivy') || college.name.includes('MIT') || college.name.includes('Harvard') || 
+                                     college.name.includes('Stanford') || college.name.includes('Princeton') || college.name.includes('Yale');
+                const hasMidRanking = ranking.includes('#6') || ranking.includes('#7') || ranking.includes('#8') || ranking.includes('#9') ||
+                                     ranking.includes('#10') || ranking.includes('#11') || ranking.includes('#12') || ranking.includes('#13') ||
+                                     ranking.includes('#14') || ranking.includes('#15') || ranking.includes('#16') || ranking.includes('#17') ||
+                                     ranking.includes('#18') || ranking.includes('#19') || ranking.includes('#20') || ranking.includes('#21') ||
+                                     ranking.includes('#22') || ranking.includes('#23') || ranking.includes('#24') || ranking.includes('#25') ||
+                                     ranking.includes('#26') || ranking.includes('#27') || ranking.includes('#28') || ranking.includes('#29') ||
+                                     ranking.includes('#30') || ranking.includes('#31') || ranking.includes('#32') || ranking.includes('#33') ||
+                                     ranking.includes('#34') || ranking.includes('#35') || ranking.includes('#36') || ranking.includes('#37') ||
+                                     ranking.includes('#38') || ranking.includes('#39') || ranking.includes('#40') || ranking.includes('#41') ||
+                                     ranking.includes('#42') || ranking.includes('#43') || ranking.includes('#44') || ranking.includes('#45') ||
+                                     ranking.includes('#46') || ranking.includes('#47') || ranking.includes('#48') || ranking.includes('#49') ||
+                                     ranking.includes('#50') || ranking.includes('top 50');
+                return !hasTopRanking && hasMidRanking;
+              }).map((college, index) => (
+                <div key={index} className="border rounded-lg p-6 bg-gradient-card border-secondary/20">
+                  {/* Header */}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold mb-2 text-foreground">{college.name}</h3>
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin className="h-4 w-4 text-secondary" />
+                      <span className="text-muted-foreground">{college.location}</span>
+                    </div>
+                    <Badge variant="outline" className="mb-4 border-secondary text-secondary">{college.ranking}</Badge>
+                  </div>
+
+                  {/* Contact Information */}
+                  {(college.phone || college.email || (college.regionalCounselors && college.regionalCounselors.length > 0)) && (
+                    <div className="bg-secondary/5 p-4 rounded-md mb-6">
+                      <h4 className="font-semibold text-secondary mb-3">📞 Admissions Contact</h4>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        {college.phone && (
+                          <div 
+                            className="bg-gradient-to-r from-blue-400 to-blue-500 text-white p-2 rounded-lg cursor-pointer hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
+                            onClick={() => window.open(`tel:${college.phone}`, '_self')}
+                          >
+                            <span className="font-medium">📞 Call:</span>
+                            <span>{college.phone}</span>
+                          </div>
+                        )}
+                        {college.email && (
+                          <div 
+                            className="bg-gradient-to-r from-red-400 to-red-500 text-white p-2 rounded-lg cursor-pointer hover:from-red-500 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
+                            onClick={() => window.open(`mailto:${college.email}`, '_self')}
+                          >
+                            <span className="font-medium">✉️ Email:</span>
+                            <span className="truncate">{college.email}</span>
+                          </div>
+                        )}
+                        {college.regionalCounselors && college.regionalCounselors.length > 0 && (
+                          <div className="md:col-span-2">
+                            <span className="font-medium">Regional Counselors:</span>
+                            <div className="mt-1 text-muted-foreground text-xs">
+                              {college.regionalCounselors.join(', ')}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                   )}
+
+                   {/* Why Good Fit & Relevant Majors */}
+                   {(college.whyGoodFit || college.relevantMajors) && (
+                     <div className="mb-6">
+                       <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                         <Star className="h-4 w-4 text-secondary" />
+                         Great Match for {result.type}
+                       </h4>
+                       <div className="space-y-4">
+                         {college.whyGoodFit && (
+                           <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 p-4 rounded-lg border border-secondary/20">
+                             <h5 className="font-medium text-secondary mb-2">Why This Is A Great Fit:</h5>
+                             <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
+                           </div>
+                         )}
+                         {college.relevantMajors && college.relevantMajors.length > 0 && (
+                           <div className="bg-secondary/30 p-4 rounded-lg">
+                             <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
+                             <div className="flex flex-wrap gap-2">
+                               {college.relevantMajors.map((major, index) => (
+                                 <span key={index} className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium border border-secondary/20">
+                                   {major}
+                                 </span>
+                               ))}
+                             </div>
+                           </div>
+                         )}
+                       </div>
+                     </div>
+                   )}
+
+                  {/* Academic Information */}
+                  {college.tuition && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <GraduationCap className="h-4 w-4 text-secondary" />
+                        Academic Information
+                      </h4>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Tuition:</span>
+                          <div className="text-muted-foreground">{college.tuition}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Acceptance Rate:</span>
+                          <div className="text-muted-foreground">{college.acceptanceRate}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Average GPA:</span>
+                          <div className="text-muted-foreground">{college.averageGPA}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Test Scores:</span>
+                          <div className="text-muted-foreground">{college.testScores}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Application Deadline:</span>
+                          <div className="text-muted-foreground">{college.applicationDeadline}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Student-Faculty Ratio:</span>
+                          <div className="text-muted-foreground">{college.studentFacultyRatio}</div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Campus Life */}
+                  {college.studentPopulation && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <Users className="h-4 w-4 text-secondary" />
+                        Campus Life
+                      </h4>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Student Population:</span>
+                          <div className="text-muted-foreground">{college.studentPopulation}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Athletics:</span>
+                          <div className="text-muted-foreground">{college.athletics}</div>
+                        </div>
+                        <div className="md:col-span-2 bg-white/50 p-3 rounded">
+                          <span className="font-medium">Campus Culture:</span>
+                          <div className="text-muted-foreground mt-1">{college.campusCulture}</div>
+                        </div>
+                        {college.housingOptions && college.housingOptions.length > 0 && (
+                          <div className="md:col-span-2">
+                            <span className="font-medium">Housing Options:</span>
+                            <div className="flex flex-wrap gap-1 mt-2">
+                              {college.housingOptions.map((option, idx) => (
+                                <Badge key={idx} variant="outline" className="text-xs">{option}</Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        {college.activities && college.activities.length > 0 && (
+                          <div className="md:col-span-2">
+                            <span className="font-medium">Popular Activities:</span>
+                            <div className="flex flex-wrap gap-1 mt-2">
+                              {college.activities.map((activity, idx) => (
+                                <Badge key={idx} variant="outline" className="text-xs">{activity}</Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Career Support */}
+                  {college.jobPlacementRate && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-secondary" />
+                        Career Support
+                      </h4>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Job Placement Rate:</span>
+                          <div className="text-muted-foreground">{college.jobPlacementRate}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Alumni Network:</span>
+                          <div className="text-muted-foreground">{college.alumniNetwork || 'Strong alumni connections'}</div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Website Link */}
+                  <div 
+                    className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white p-3 rounded-lg cursor-pointer hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                    onClick={() => window.open(college.website, '_blank')}
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Visit College Website
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          {/* Tier 3 Colleges */}
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+                <GraduationCap className="h-6 w-6 text-green-600" />
+                Tier 3 Schools (Accessible)
+              </CardTitle>
+              <p className="text-muted-foreground mt-2">
+                Quality institutions with good programs and higher acceptance rates. These schools typically accept 40%+ of applicants and offer excellent value and opportunities.
+              </p>
+            </CardHeader>
+            <CardContent className="grid md:grid-cols-1 gap-8">
+              {result.colleges.filter(college => {
+                const ranking = college.ranking?.toLowerCase() || '';
+                const hasTopRanking = ranking.includes('#1') || ranking.includes('#2') || ranking.includes('#3') || 
+                                     ranking.includes('#4') || ranking.includes('#5') || ranking.includes('top 5') ||
+                                     ranking.includes('ivy') || college.name.includes('MIT') || college.name.includes('Harvard') || 
+                                     college.name.includes('Stanford') || college.name.includes('Princeton') || college.name.includes('Yale');
+                const hasMidRanking = ranking.includes('#6') || ranking.includes('#7') || ranking.includes('#8') || ranking.includes('#9') ||
+                                     ranking.includes('#10') || ranking.includes('#11') || ranking.includes('#12') || ranking.includes('#13') ||
+                                     ranking.includes('#14') || ranking.includes('#15') || ranking.includes('#16') || ranking.includes('#17') ||
+                                     ranking.includes('#18') || ranking.includes('#19') || ranking.includes('#20') || ranking.includes('#21') ||
+                                     ranking.includes('#22') || ranking.includes('#23') || ranking.includes('#24') || ranking.includes('#25') ||
+                                     ranking.includes('#26') || ranking.includes('#27') || ranking.includes('#28') || ranking.includes('#29') ||
+                                     ranking.includes('#30') || ranking.includes('#31') || ranking.includes('#32') || ranking.includes('#33') ||
+                                     ranking.includes('#34') || ranking.includes('#35') || ranking.includes('#36') || ranking.includes('#37') ||
+                                     ranking.includes('#38') || ranking.includes('#39') || ranking.includes('#40') || ranking.includes('#41') ||
+                                     ranking.includes('#42') || ranking.includes('#43') || ranking.includes('#44') || ranking.includes('#45') ||
+                                     ranking.includes('#46') || ranking.includes('#47') || ranking.includes('#48') || ranking.includes('#49') ||
+                                     ranking.includes('#50') || ranking.includes('top 50');
+                return !hasTopRanking && !hasMidRanking;
+              }).map((college, index) => (
+                <div key={index} className="border rounded-lg p-6 bg-gradient-card border-green-600/20">
+                  {/* Header */}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold mb-2 text-foreground">{college.name}</h3>
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin className="h-4 w-4 text-green-600" />
+                      <span className="text-muted-foreground">{college.location}</span>
+                    </div>
+                    <Badge variant="outline" className="mb-4 border-green-600 text-green-600">{college.ranking}</Badge>
+                  </div>
+
+                  {/* Contact Information */}
+                  {(college.phone || college.email || (college.regionalCounselors && college.regionalCounselors.length > 0)) && (
+                    <div className="bg-green-600/5 p-4 rounded-md mb-6">
+                      <h4 className="font-semibold text-green-600 mb-3">📞 Admissions Contact</h4>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        {college.phone && (
+                          <div 
+                            className="bg-gradient-to-r from-blue-400 to-blue-500 text-white p-2 rounded-lg cursor-pointer hover:from-blue-500 hover:to-blue-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
+                            onClick={() => window.open(`tel:${college.phone}`, '_self')}
+                          >
+                            <span className="font-medium">📞 Call:</span>
+                            <span>{college.phone}</span>
+                          </div>
+                        )}
+                        {college.email && (
+                          <div 
+                            className="bg-gradient-to-r from-red-400 to-red-500 text-white p-2 rounded-lg cursor-pointer hover:from-red-500 hover:to-red-600 transition-all duration-300 transform hover:scale-105 shadow-md flex items-center justify-center gap-2"
+                            onClick={() => window.open(`mailto:${college.email}`, '_self')}
+                          >
+                            <span className="font-medium">✉️ Email:</span>
+                            <span className="truncate">{college.email}</span>
+                          </div>
+                        )}
+                        {college.regionalCounselors && college.regionalCounselors.length > 0 && (
+                          <div className="md:col-span-2">
+                            <span className="font-medium">Regional Counselors:</span>
+                            <div className="mt-1 text-muted-foreground text-xs">
+                              {college.regionalCounselors.join(', ')}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                   )}
+
+                   {/* Why Good Fit & Relevant Majors */}
+                   {(college.whyGoodFit || college.relevantMajors) && (
+                     <div className="mb-6">
+                       <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                         <Star className="h-4 w-4 text-green-600" />
+                         Solid Match for {result.type}
+                       </h4>
+                       <div className="space-y-4">
+                         {college.whyGoodFit && (
+                           <div className="bg-gradient-to-r from-green-600/10 to-green-600/5 p-4 rounded-lg border border-green-600/20">
+                             <h5 className="font-medium text-green-600 mb-2">Why This Is A Great Fit:</h5>
+                             <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
+                           </div>
+                         )}
+                         {college.relevantMajors && college.relevantMajors.length > 0 && (
+                           <div className="bg-green-600/30 p-4 rounded-lg">
+                             <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
+                             <div className="flex flex-wrap gap-2">
+                               {college.relevantMajors.map((major, index) => (
+                                 <span key={index} className="bg-green-600/10 text-green-600 px-3 py-1 rounded-full text-xs font-medium border border-green-600/20">
+                                   {major}
+                                 </span>
+                               ))}
+                             </div>
+                           </div>
+                         )}
+                       </div>
+                     </div>
+                   )}
+
+                  {/* Academic Information */}
+                  {college.tuition && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <GraduationCap className="h-4 w-4 text-green-600" />
+                        Academic Information
+                      </h4>
+                      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 text-sm">
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Tuition:</span>
+                          <div className="text-muted-foreground">{college.tuition}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Acceptance Rate:</span>
+                          <div className="text-muted-foreground">{college.acceptanceRate}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Average GPA:</span>
+                          <div className="text-muted-foreground">{college.averageGPA}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Test Scores:</span>
+                          <div className="text-muted-foreground">{college.testScores}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Application Deadline:</span>
+                          <div className="text-muted-foreground">{college.applicationDeadline}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Student-Faculty Ratio:</span>
+                          <div className="text-muted-foreground">{college.studentFacultyRatio}</div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Campus Life */}
+                  {college.studentPopulation && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <Users className="h-4 w-4 text-green-600" />
+                        Campus Life
+                      </h4>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Student Population:</span>
+                          <div className="text-muted-foreground">{college.studentPopulation}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Athletics:</span>
+                          <div className="text-muted-foreground">{college.athletics}</div>
+                        </div>
+                        <div className="md:col-span-2 bg-white/50 p-3 rounded">
+                          <span className="font-medium">Campus Culture:</span>
+                          <div className="text-muted-foreground mt-1">{college.campusCulture}</div>
+                        </div>
+                        {college.housingOptions && college.housingOptions.length > 0 && (
+                          <div className="md:col-span-2">
+                            <span className="font-medium">Housing Options:</span>
+                            <div className="flex flex-wrap gap-1 mt-2">
+                              {college.housingOptions.map((option, idx) => (
+                                <Badge key={idx} variant="outline" className="text-xs">{option}</Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                        {college.activities && college.activities.length > 0 && (
+                          <div className="md:col-span-2">
+                            <span className="font-medium">Popular Activities:</span>
+                            <div className="flex flex-wrap gap-1 mt-2">
+                              {college.activities.map((activity, idx) => (
+                                <Badge key={idx} variant="outline" className="text-xs">{activity}</Badge>
+                              ))}
+                            </div>
+                          </div>
+                        )}
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Career Support */}
+                  {college.jobPlacementRate && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                        <TrendingUp className="h-4 w-4 text-green-600" />
+                        Career Support
+                      </h4>
+                      <div className="grid md:grid-cols-2 gap-4 text-sm">
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Job Placement Rate:</span>
+                          <div className="text-muted-foreground">{college.jobPlacementRate}</div>
+                        </div>
+                        <div className="bg-white/50 p-3 rounded">
+                          <span className="font-medium">Alumni Network:</span>
+                          <div className="text-muted-foreground">{college.alumniNetwork || 'Strong alumni connections'}</div>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Website Link */}
+                  <div 
+                    className="w-full bg-gradient-to-r from-green-500 to-green-600 text-white p-3 rounded-lg cursor-pointer hover:from-green-600 hover:to-green-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                    onClick={() => window.open(college.website, '_blank')}
+                  >
+                    <ExternalLink className="h-4 w-4" />
+                    Visit College Website
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+        </div>
         )}
       </div>
     </div>
