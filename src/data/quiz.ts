@@ -366,7 +366,7 @@ export const personalityResults: Record<string, PersonalityResult> = {
         relevantMajors: ["Computer Science", "Electrical Engineering", "Mechanical Engineering", "Architecture", "Systems Engineering"],
         tuition: "$59,750/year",
         acceptanceRate: "3.96%",
-        averageGPA: "4.17",
+        averageGPA: "3.95",
         testScores: "SAT: 1520-1580, ACT: 35-36",
         applicationDeadline: "January 1",
         studentFacultyRatio: "3:1",
@@ -383,7 +383,7 @@ export const personalityResults: Record<string, PersonalityResult> = {
         relevantMajors: ["Computer Science", "Engineering", "Mathematical & Computational Science", "Management Science & Engineering"],
         tuition: "$61,731/year",
         acceptanceRate: "3.68%",
-        averageGPA: "4.18",
+        averageGPA: "3.96",
         testScores: "SAT: 1500-1570, ACT: 33-35",
         applicationDeadline: "January 5",
         studentFacultyRatio: "5:1",
@@ -400,7 +400,7 @@ export const personalityResults: Record<string, PersonalityResult> = {
         relevantMajors: ["Computer Science", "Operations Research & Financial Engineering", "Applied Mathematics", "Electrical Engineering"],
         tuition: "$59,710/year",
         acceptanceRate: "5.77%",
-        averageGPA: "4.14",
+        averageGPA: "3.97",
         testScores: "SAT: 1500-1580, ACT: 34-36",
         applicationDeadline: "January 1",
         studentFacultyRatio: "5:1",
@@ -418,7 +418,7 @@ export const personalityResults: Record<string, PersonalityResult> = {
         relevantMajors: ["Computer Science", "Economics", "Statistics", "Applied Mathematics", "Data Science"],
         tuition: "$64,965/year",
         acceptanceRate: "7.25%",
-        averageGPA: "4.48",
+        averageGPA: "3.85-3.90",
         testScores: "SAT: 1520-1580, ACT: 34-36",
         applicationDeadline: "January 2",
         studentFacultyRatio: "5:1",
@@ -435,7 +435,7 @@ export const personalityResults: Record<string, PersonalityResult> = {
         relevantMajors: ["Computer Science", "Industrial Engineering & Operations Research", "Applied Mathematics", "Financial Engineering"],
         tuition: "$65,524/year",
         acceptanceRate: "3.73%",
-        averageGPA: "4.15",
+        averageGPA: "3.90",
         testScores: "SAT: 1510-1570, ACT: 34-36",
         applicationDeadline: "January 1",
         studentFacultyRatio: "6:1",
@@ -452,7 +452,7 @@ export const personalityResults: Record<string, PersonalityResult> = {
         relevantMajors: ["Computer Science", "Applied Mathematics & Statistics", "Electrical Engineering", "Biomedical Engineering"],
         tuition: "$63,340/year",
         acceptanceRate: "7.5%",
-        averageGPA: "4.11",
+        averageGPA: "3.74",
         testScores: "SAT: 1520-1570, ACT: 34-36",
         applicationDeadline: "January 3",
         studentFacultyRatio: "7:1",
@@ -467,7 +467,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#25 overall",
         website: "https://www.cmu.edu/",
         whyGoodFit: "Perfect for Strategists who love the intersection of technology and human behavior. CMU's data-driven approach aligns with the INTJ's analytical nature.",
-        relevantMajors: ["Computer Science", "Information Systems", "Robotics", "Human-Computer Interaction", "Electrical & Computer Engineering"]
+        relevantMajors: ["Computer Science", "Information Systems", "Robotics", "Human-Computer Interaction", "Electrical & Computer Engineering"],
+        averageGPA: "3.69"
       },
       {
         name: "University of California, Berkeley",
@@ -476,7 +477,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#20 overall",
         website: "https://www.berkeley.edu/",
         whyGoodFit: "Excellent for Strategists who thrive in intellectually rigorous environments. UC Berkeley's world-renowned STEM programs provide perfect setting for strategic thinking.",
-        relevantMajors: ["Computer Science", "Electrical Engineering & Computer Science", "Data Science", "Applied Mathematics"]
+        relevantMajors: ["Computer Science", "Electrical Engineering & Computer Science", "Data Science", "Applied Mathematics"],
+        averageGPA: "3.90"
       },
       {
         name: "Rice University",
@@ -485,7 +487,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#17 overall",
         website: "https://www.rice.edu/",
         whyGoodFit: "Excellent for Strategists who value close-knit academic communities with rigorous programs. Rice's collaborative environment provides ideal conditions for strategic development.",
-        relevantMajors: ["Computer Science", "Electrical & Computer Engineering", "Applied Mathematics", "Statistics"]
+        relevantMajors: ["Computer Science", "Electrical & Computer Engineering", "Applied Mathematics", "Statistics"],
+        averageGPA: "3.89"
       },
       // Tier 4: Georgia Tech, UIUC, UCSD
       {
@@ -495,7 +498,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#33 overall",
         website: "https://www.gatech.edu/",
         whyGoodFit: "Perfect for Strategists who want to bridge technology and business. Georgia Tech's strong engineering programs align with the INTJ's systematic approach.",
-        relevantMajors: ["Computer Science", "Industrial Engineering", "Systems Engineering", "Business Administration"]
+        relevantMajors: ["Computer Science", "Industrial Engineering", "Systems Engineering", "Business Administration"],
+        averageGPA: "3.8-3.9"
       },
       {
         name: "University of Illinois Urbana-Champaign",
@@ -504,7 +508,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#41 overall",
         website: "https://www.illinois.edu/",
         whyGoodFit: "Great for Strategists who want world-class technical education. UIUC's top-ranked programs provide excellent preparation for strategic leadership.",
-        relevantMajors: ["Computer Science", "Industrial Engineering", "Applied Mathematics", "Systems Engineering"]
+        relevantMajors: ["Computer Science", "Industrial Engineering", "Applied Mathematics", "Systems Engineering"],
+        averageGPA: "3.8-3.9"
       },
       {
         name: "University of California, San Diego",
@@ -513,7 +518,8 @@ export const personalityResults: Record<string, PersonalityResult> = {
         ranking: "#28 overall",
         website: "https://www.ucsd.edu/",
         whyGoodFit: "Excellent for Strategists interested in cutting-edge technology and research. UCSD's strong STEM programs provide ideal conditions for strategic innovation.",
-        relevantMajors: ["Computer Science", "Data Science", "Electrical Engineering", "Applied Mathematics"]
+        relevantMajors: ["Computer Science", "Data Science", "Electrical Engineering", "Applied Mathematics"],
+        averageGPA: "3.8-3.9"
       }
     ],
     celebrities: [

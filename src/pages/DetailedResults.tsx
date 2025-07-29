@@ -276,7 +276,7 @@ export default function DetailedResults() {
                     )}
                     {college.averageGPA && (
                       <div className="bg-white/50 p-3 rounded">
-                        <span className="font-medium">Average GPA:</span>
+                        <span className="font-medium">Unweighted GPA:</span>
                         <div className="text-muted-foreground">{college.averageGPA}</div>
                       </div>
                     )}
@@ -408,7 +408,7 @@ export default function DetailedResults() {
                       )}
                       {college.averageGPA && (
                         <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Average GPA:</span>
+                          <span className="font-medium">Unweighted GPA:</span>
                           <div className="text-muted-foreground">{college.averageGPA}</div>
                         </div>
                       )}
@@ -540,7 +540,7 @@ export default function DetailedResults() {
                       )}
                       {college.averageGPA && (
                         <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Average GPA:</span>
+                          <span className="font-medium">Unweighted GPA:</span>
                           <div className="text-muted-foreground">{college.averageGPA}</div>
                         </div>
                       )}
@@ -688,7 +688,7 @@ export default function DetailedResults() {
                       )}
                       {college.averageGPA && (
                         <div className="bg-white/50 p-3 rounded">
-                          <span className="font-medium">Average GPA:</span>
+                        <span className="font-medium">Unweighted GPA:</span>
                           <div className="text-muted-foreground">{college.averageGPA}</div>
                         </div>
                       )}
