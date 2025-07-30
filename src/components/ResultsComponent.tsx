@@ -230,18 +230,18 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
           </CardHeader>
 
           <CardContent className="px-6 pb-6">
-            <div className="space-y-4 mb-6">
+            <div className="space-y-3 mb-6">
               {result.traits.map((trait, index) => {
                 const isHigh = trait.percentage >= 70;
                 return (
-                  <div key={index} className="space-y-2">
+                  <div key={index} className="space-y-1">
                     <div className="flex justify-between items-center">
-                      <span className="font-medium text-foreground">{trait.name}</span>
-                      <span className="text-sm font-bold text-foreground">{trait.percentage}%</span>
+                      <span className="text-sm font-medium text-foreground">{trait.name}</span>
+                      <span className="text-xs font-bold text-foreground">{trait.percentage}%</span>
                     </div>
-                    <div className="w-full bg-gray-200 rounded-full h-3">
+                    <div className="w-full bg-gray-200 rounded-full h-2">
                       <div 
-                        className={`h-3 rounded-full transition-all duration-1000 ${
+                        className={`h-2 rounded-full transition-all duration-1000 ${
                           isHigh ? 'bg-green-500' : 'bg-gray-400'
                         }`}
                         style={{ width: `${trait.percentage}%` }}
