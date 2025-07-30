@@ -218,10 +218,8 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary via-secondary to-accent rounded-full shadow-lg mb-3">
                 <Sparkles className="h-6 w-6 text-white" />
               </div>
-              <CardTitle className="text-2xl font-bold mb-2">
-                <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                  Your Personality Playlist
-                </span>
+              <CardTitle className="text-2xl font-bold mb-2 text-foreground">
+                Your Personality Playlist
               </CardTitle>
               <p className="text-sm text-muted-foreground">
                 The unique combination that makes you <span className="text-primary font-bold">extraordinary</span> ✨
@@ -250,8 +248,8 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             <div className="text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-full border border-primary/20 shadow-md">
                 <Sparkles className="h-5 w-5 text-primary animate-spin" style={{animationDuration: '3s'}} />
-                <span className="text-base font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Focus on your strengths and grow the rest!
+                <span className="text-base font-semibold text-foreground">
+                  Focus on your strengths!
                 </span>
               </div>
             </div>
