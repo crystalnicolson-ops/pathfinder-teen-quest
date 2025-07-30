@@ -109,8 +109,8 @@ export default function AcademicWorksheet() {
             </Button>
           </div>
           
-          <h1 className="text-4xl font-bold text-white mb-2">Where Should I Apply?</h1>
-          <p className="text-white/80 text-lg">
+          <h1 className="text-4xl font-bold text-black mb-2">Where Should I Apply?</h1>
+          <p className="text-black/80 text-lg">
             Use this academic worksheet to assess if your profile matches college admission standards
           </p>
         </div>
