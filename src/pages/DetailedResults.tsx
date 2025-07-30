@@ -264,10 +264,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-primary" />
-                 Tier 1 - Hyper-Selective Universities
+                 Tier 1 - Long Shot Legends
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Global elite, Ivy-caliber institutions with exceptional prestige. Acceptance rates ≤5%.
+                Super competitive, for the bold and brilliant. Acceptance rates ≤5%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
@@ -332,10 +332,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-secondary" />
-                 Tier 2 - Very Selective Universities
+                 Tier 2 - Big Reach Goals
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Top-tier universities with outstanding academics and research. Acceptance rates 5%–8%.
+                Competitive but possible with standout stats. Acceptance rates 5%–8%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
@@ -400,10 +400,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-blue-600" />
-                Tier 3 - Selective Universities
+                 Tier 3 - Target Zone
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Highly regarded institutions with strong academic programs. Acceptance rates 8%–20%.
+                High-quality, realistic choices for many students. Acceptance rates 8%–20%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
@@ -468,10 +468,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-purple-600" />
-                 Tier 4 - Competitive Universities
+                 Tier 4 - Smart Picks
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Well-regarded institutions with strong programs and resources. Acceptance rates 20%–40%.
+                Great schools with solid chances of admission. Acceptance rates 20%–40%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
@@ -536,10 +536,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-green-600" />
-                 Tier 5 - Broad Admission Universities
+                 Tier 5 - Secure Stars
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Accessible quality institutions with diverse opportunities. Acceptance rates 40%–80%+.
+                Schools you're likely to get into and thrive at. Acceptance rates 40%–85%+.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
