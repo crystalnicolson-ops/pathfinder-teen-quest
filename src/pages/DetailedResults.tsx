@@ -270,40 +270,40 @@ export default function DetailedResults() {
                 Global elite, Ivy-caliber institutions with exceptional prestige. Acceptance rates ≤5%.
               </p>
             </CardHeader>
-            <CardContent className="grid md:grid-cols-1 gap-8">
+            <CardContent className="grid md:grid-cols-2 gap-4">
               {getCollegesByTier(result.colleges, 'tier1').map((college, index) => (
-              <div key={index} className="border rounded-lg p-6 bg-gradient-card">
+              <div key={index} className="border rounded-lg p-4 bg-gradient-card">
                 {/* Header */}
-                <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-2 text-foreground">{college.name}</h3>
-                  <div className="flex items-center gap-2 mb-2">
-                    <MapPin className="h-4 w-4 text-secondary" />
-                    <span className="text-muted-foreground">{college.location}</span>
+                <div className="mb-4">
+                  <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
+                  <div className="flex items-center gap-2 mb-1">
+                    <MapPin className="h-3 w-3 text-secondary" />
+                    <span className="text-sm text-muted-foreground">{college.location}</span>
                   </div>
-                  <Badge variant="secondary" className="mb-4">{college.ranking}</Badge>
+                  <Badge variant="secondary" className="mb-3 text-xs">{college.ranking}</Badge>
                 </div>
 
                   {/* Why Good Fit & Relevant Majors */}
-                 {(college.whyGoodFit || college.relevantMajors) && (
-                   <div className="mb-6">
-                     <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                       <Star className="h-4 w-4 text-primary" />
-                       Perfect Match for {result.type}
-                     </h4>
-                     <div className="space-y-4">
-                       {college.whyGoodFit && (
-                         <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-4 rounded-lg border border-primary/20">
-                           <h5 className="font-medium text-primary mb-2">Why This Is A Great Fit:</h5>
-                           <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
+                  {(college.whyGoodFit || college.relevantMajors) && (
+                    <div className="mb-4">
+                      <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
+                        <Star className="h-3 w-3 text-primary" />
+                        Perfect Match for {result.type}
+                      </h4>
+                      <div className="space-y-2">
+                        {college.whyGoodFit && (
+                          <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-3 rounded-lg border border-primary/20">
+                            <h5 className="font-medium text-primary mb-1 text-xs">Why This Is A Great Fit:</h5>
+                            <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                          </div>
                        )}
-                       {college.relevantMajors && college.relevantMajors.length > 0 && (
-                         <div className="bg-secondary/30 p-4 rounded-lg">
-                           <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
-                           <div className="flex flex-wrap gap-2">
-                             {college.relevantMajors.map((major, index) => (
-                               <span key={index} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-medium border border-primary/20">
-                                 {major}
+                        {college.relevantMajors && college.relevantMajors.length > 0 && (
+                          <div className="bg-secondary/30 p-3 rounded-lg">
+                            <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
+                            <div className="flex flex-wrap gap-1">
+                              {college.relevantMajors.map((major, index) => (
+                                <span key={index} className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium border border-primary/20">
+                                  {major}
                                </span>
                              ))}
                            </div>
@@ -316,7 +316,7 @@ export default function DetailedResults() {
 
                 {/* Website Link */}
                 <div 
-                  className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
+                  className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
                   onClick={() => window.open(college.website, '_blank')}
                 >
                   <ExternalLink className="h-3 w-3" />
@@ -338,39 +338,39 @@ export default function DetailedResults() {
                 Top-tier universities with outstanding academics and research. Acceptance rates 5%–8%.
               </p>
             </CardHeader>
-            <CardContent className="grid md:grid-cols-1 gap-8">
+            <CardContent className="grid md:grid-cols-2 gap-4">
               {getCollegesByTier(result.colleges, 'tier2').map((college, index) => (
-                <div key={index} className="border rounded-lg p-6 bg-gradient-card border-secondary/20">
+                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-secondary/20">
                   {/* Header */}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold mb-2 text-foreground">{college.name}</h3>
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="h-4 w-4 text-secondary" />
-                      <span className="text-muted-foreground">{college.location}</span>
+                  <div className="mb-4">
+                    <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <MapPin className="h-3 w-3 text-secondary" />
+                      <span className="text-sm text-muted-foreground">{college.location}</span>
                     </div>
-                    <Badge variant="outline" className="mb-4 border-secondary text-secondary">{college.ranking}</Badge>
+                    <Badge variant="outline" className="mb-3 text-xs border-secondary text-secondary">{college.ranking}</Badge>
                   </div>
 
                   {/* Why Good Fit & Relevant Majors */}
                   {(college.whyGoodFit || college.relevantMajors) && (
-                    <div className="mb-6">
-                      <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                        <Star className="h-4 w-4 text-secondary" />
+                    <div className="mb-4">
+                      <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
+                        <Star className="h-3 w-3 text-secondary" />
                         Great Match for {result.type}
                       </h4>
-                      <div className="space-y-4">
+                      <div className="space-y-2">
                         {college.whyGoodFit && (
-                          <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 p-4 rounded-lg border border-secondary/20">
-                            <h5 className="font-medium text-secondary mb-2">Why This Is A Great Fit:</h5>
-                            <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
+                          <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 p-3 rounded-lg border border-secondary/20">
+                            <h5 className="font-medium text-secondary mb-1 text-xs">Why This Is A Great Fit:</h5>
+                            <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                           </div>
                         )}
                         {college.relevantMajors && college.relevantMajors.length > 0 && (
-                          <div className="bg-secondary/30 p-4 rounded-lg">
-                            <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
-                            <div className="flex flex-wrap gap-2">
+                          <div className="bg-secondary/30 p-3 rounded-lg">
+                            <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
+                            <div className="flex flex-wrap gap-1">
                               {college.relevantMajors.map((major, index) => (
-                                <span key={index} className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium border border-secondary/20">
+                                <span key={index} className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium border border-secondary/20">
                                   {major}
                                 </span>
                               ))}
@@ -384,7 +384,7 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
+                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
                     onClick={() => window.open(college.website, '_blank')}
                   >
                     <ExternalLink className="h-3 w-3" />
@@ -406,39 +406,39 @@ export default function DetailedResults() {
                 Highly regarded institutions with strong academic programs. Acceptance rates 8%–20%.
               </p>
             </CardHeader>
-            <CardContent className="grid md:grid-cols-1 gap-8">
+            <CardContent className="grid md:grid-cols-2 gap-4">
               {getCollegesByTier(result.colleges, 'tier3').map((college, index) => (
-                <div key={index} className="border rounded-lg p-6 bg-gradient-card border-secondary/20">
+                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-secondary/20">
                   {/* Header */}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold mb-2 text-foreground">{college.name}</h3>
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="h-4 w-4 text-secondary" />
-                      <span className="text-muted-foreground">{college.location}</span>
+                  <div className="mb-4">
+                    <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <MapPin className="h-3 w-3 text-secondary" />
+                      <span className="text-sm text-muted-foreground">{college.location}</span>
                     </div>
-                    <Badge variant="outline" className="mb-4 border-secondary text-secondary">{college.ranking}</Badge>
+                    <Badge variant="outline" className="mb-3 text-xs border-secondary text-secondary">{college.ranking}</Badge>
                   </div>
 
                   {/* Why Good Fit & Relevant Majors */}
                    {(college.whyGoodFit || college.relevantMajors) && (
-                     <div className="mb-6">
-                       <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                         <Star className="h-4 w-4 text-secondary" />
+                     <div className="mb-4">
+                       <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
+                         <Star className="h-3 w-3 text-secondary" />
                          Great Match for {result.type}
                        </h4>
-                       <div className="space-y-4">
+                       <div className="space-y-2">
                          {college.whyGoodFit && (
-                           <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 p-4 rounded-lg border border-secondary/20">
-                             <h5 className="font-medium text-secondary mb-2">Why This Is A Great Fit:</h5>
-                             <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
+                           <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 p-3 rounded-lg border border-secondary/20">
+                             <h5 className="font-medium text-secondary mb-1 text-xs">Why This Is A Great Fit:</h5>
+                             <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                            </div>
                          )}
                          {college.relevantMajors && college.relevantMajors.length > 0 && (
-                           <div className="bg-secondary/30 p-4 rounded-lg">
-                             <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
-                             <div className="flex flex-wrap gap-2">
+                           <div className="bg-secondary/30 p-3 rounded-lg">
+                             <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
+                             <div className="flex flex-wrap gap-1">
                                {college.relevantMajors.map((major, index) => (
-                                 <span key={index} className="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-medium border border-secondary/20">
+                                 <span key={index} className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium border border-secondary/20">
                                    {major}
                                  </span>
                                ))}
@@ -452,7 +452,7 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
+                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
                     onClick={() => window.open(college.website, '_blank')}
                   >
                     <ExternalLink className="h-3 w-3" />
@@ -474,39 +474,39 @@ export default function DetailedResults() {
                 Well-regarded institutions with strong programs and resources. Acceptance rates 20%–40%.
               </p>
             </CardHeader>
-            <CardContent className="grid md:grid-cols-1 gap-8">
+            <CardContent className="grid md:grid-cols-2 gap-4">
               {getCollegesByTier(result.colleges, 'tier4').map((college, index) => (
-                <div key={index} className="border rounded-lg p-6 bg-gradient-card border-purple-600/20">
+                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-purple-600/20">
                   {/* Header */}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold mb-2 text-foreground">{college.name}</h3>
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="h-4 w-4 text-purple-600" />
-                      <span className="text-muted-foreground">{college.location}</span>
+                  <div className="mb-4">
+                    <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <MapPin className="h-3 w-3 text-purple-600" />
+                      <span className="text-sm text-muted-foreground">{college.location}</span>
                     </div>
-                    <Badge variant="outline" className="mb-4 border-purple-600 text-purple-600">{college.ranking}</Badge>
+                    <Badge variant="outline" className="mb-3 text-xs border-purple-600 text-purple-600">{college.ranking}</Badge>
                   </div>
 
                   {/* Why Good Fit & Relevant Majors */}
                    {(college.whyGoodFit || college.relevantMajors) && (
-                     <div className="mb-6">
-                       <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                         <Star className="h-4 w-4 text-purple-600" />
+                     <div className="mb-4">
+                       <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
+                         <Star className="h-3 w-3 text-purple-600" />
                          Solid Match for {result.type}
                        </h4>
-                       <div className="space-y-4">
+                       <div className="space-y-2">
                          {college.whyGoodFit && (
-                            <div className="bg-gradient-to-r from-purple-600/10 to-purple-600/5 p-4 rounded-lg border border-purple-600/20">
-                              <h5 className="font-medium text-purple-600 mb-2">Why This Is A Great Fit:</h5>
-                             <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
+                            <div className="bg-gradient-to-r from-purple-600/10 to-purple-600/5 p-3 rounded-lg border border-purple-600/20">
+                              <h5 className="font-medium text-purple-600 mb-1 text-xs">Why This Is A Great Fit:</h5>
+                             <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                            </div>
                          )}
                          {college.relevantMajors && college.relevantMajors.length > 0 && (
-                           <div className="bg-purple-600/30 p-4 rounded-lg">
-                             <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
-                             <div className="flex flex-wrap gap-2">
+                           <div className="bg-purple-600/30 p-3 rounded-lg">
+                             <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
+                             <div className="flex flex-wrap gap-1">
                                {college.relevantMajors.map((major, index) => (
-                                 <span key={index} className="bg-purple-600/10 text-purple-600 px-3 py-1 rounded-full text-xs font-medium border border-purple-600/20">
+                                 <span key={index} className="bg-purple-600/10 text-purple-600 px-2 py-1 rounded-full text-xs font-medium border border-purple-600/20">
                                    {major}
                                  </span>
                                ))}
@@ -520,7 +520,7 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
+                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
                     onClick={() => window.open(college.website, '_blank')}
                   >
                     <ExternalLink className="h-3 w-3" />
@@ -542,39 +542,39 @@ export default function DetailedResults() {
                 Accessible quality institutions with diverse opportunities. Acceptance rates 40%–80%+.
               </p>
             </CardHeader>
-            <CardContent className="grid md:grid-cols-1 gap-8">
+            <CardContent className="grid md:grid-cols-2 gap-4">
               {getCollegesByTier(result.colleges, 'tier5').map((college, index) => (
-                <div key={index} className="border rounded-lg p-6 bg-gradient-card border-green-600/20">
+                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-green-600/20">
                   {/* Header */}
-                  <div className="mb-6">
-                    <h3 className="text-2xl font-bold mb-2 text-foreground">{college.name}</h3>
-                    <div className="flex items-center gap-2 mb-2">
-                      <MapPin className="h-4 w-4 text-green-600" />
-                      <span className="text-muted-foreground">{college.location}</span>
+                  <div className="mb-4">
+                    <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
+                    <div className="flex items-center gap-2 mb-1">
+                      <MapPin className="h-3 w-3 text-green-600" />
+                      <span className="text-sm text-muted-foreground">{college.location}</span>
                     </div>
-                    <Badge variant="outline" className="mb-4 border-green-600 text-green-600">{college.ranking}</Badge>
+                    <Badge variant="outline" className="mb-3 text-xs border-green-600 text-green-600">{college.ranking}</Badge>
                   </div>
 
                   {/* Why Good Fit & Relevant Majors */}
                    {(college.whyGoodFit || college.relevantMajors) && (
-                     <div className="mb-6">
-                       <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
-                         <Star className="h-4 w-4 text-green-600" />
+                     <div className="mb-4">
+                       <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
+                         <Star className="h-3 w-3 text-green-600" />
                          Good Match for {result.type}
                        </h4>
-                       <div className="space-y-4">
+                       <div className="space-y-2">
                          {college.whyGoodFit && (
-                            <div className="bg-gradient-to-r from-green-600/10 to-green-600/5 p-4 rounded-lg border border-green-600/20">
-                              <h5 className="font-medium text-green-600 mb-2">Why This Is A Great Fit:</h5>
-                             <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
+                            <div className="bg-gradient-to-r from-green-600/10 to-green-600/5 p-3 rounded-lg border border-green-600/20">
+                              <h5 className="font-medium text-green-600 mb-1 text-xs">Why This Is A Great Fit:</h5>
+                             <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                            </div>
                          )}
                          {college.relevantMajors && college.relevantMajors.length > 0 && (
-                           <div className="bg-green-600/30 p-4 rounded-lg">
-                             <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
-                             <div className="flex flex-wrap gap-2">
+                           <div className="bg-green-600/30 p-3 rounded-lg">
+                             <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
+                             <div className="flex flex-wrap gap-1">
                                {college.relevantMajors.map((major, index) => (
-                                 <span key={index} className="bg-green-600/10 text-green-600 px-3 py-1 rounded-full text-xs font-medium border border-green-600/20">
+                                 <span key={index} className="bg-green-600/10 text-green-600 px-2 py-1 rounded-full text-xs font-medium border border-green-600/20">
                                    {major}
                                  </span>
                                ))}
@@ -588,7 +588,7 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
+                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
                     onClick={() => window.open(college.website, '_blank')}
                   >
                     <ExternalLink className="h-3 w-3" />
