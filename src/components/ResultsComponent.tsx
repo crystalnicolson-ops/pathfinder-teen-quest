@@ -230,7 +230,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
           </CardHeader>
 
           <CardContent className="px-6 pb-6">
-            <div className="space-y-3 mb-6">
+            <div className="max-w-md mx-auto space-y-3 mb-6">
               {result.traits.map((trait, index) => {
                 const isHigh = trait.percentage >= 70;
                 return (
