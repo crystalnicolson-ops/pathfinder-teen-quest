@@ -184,7 +184,7 @@ export default function DetailedResults() {
                     </div>
 
                     <div 
-                      className="w-full bg-gradient-to-r from-blue-500 to-blue-600 text-white p-3 rounded-lg cursor-pointer hover:from-blue-600 hover:to-blue-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                      className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
                       onClick={() => window.open(career.indeedLink, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4" />
