@@ -343,6 +343,20 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$50,000 - $70,000",
         jobGrowth: "25% (much faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=junior+software+developer"
+      },
+      {
+        title: "Data Analyst",
+        description: "Analyze data to help organizations make strategic decisions and identify patterns",
+        averageSalary: "$45,000 - $65,000",
+        jobGrowth: "11% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=data+analyst"
+      },
+      {
+        title: "Junior Systems Analyst",
+        description: "Study and improve computer systems to help organizations operate more efficiently",
+        averageSalary: "$48,000 - $68,000",
+        jobGrowth: "9% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=junior+systems+analyst"
       }
     ],
     advancedCareers: [
@@ -352,6 +366,20 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$120,000 - $180,000",
         jobGrowth: "25% (much faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=senior+software+architect"
+      },
+      {
+        title: "Chief Technology Officer",
+        description: "Lead technology strategy and innovation for the entire organization",
+        averageSalary: "$150,000 - $300,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=chief+technology+officer"
+      },
+      {
+        title: "Principal Data Scientist",
+        description: "Lead data science initiatives and develop advanced analytics strategies",
+        averageSalary: "$140,000 - $220,000",
+        jobGrowth: "15% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=principal+data+scientist"
       }
     ],
     colleges: [
@@ -555,6 +583,20 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$35,000 - $50,000",
         jobGrowth: "8% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=research+assistant"
+      },
+      {
+        title: "Junior Software Engineer",
+        description: "Develop software solutions and work on innovative technology projects",
+        averageSalary: "$50,000 - $70,000",
+        jobGrowth: "25% (much faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=junior+software+engineer"
+      },
+      {
+        title: "Laboratory Technician",
+        description: "Conduct experiments and tests in scientific laboratories",
+        averageSalary: "$40,000 - $55,000",
+        jobGrowth: "7% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=laboratory+technician"
       }
     ],
     advancedCareers: [
@@ -564,6 +606,20 @@ export const personalityResults: Record<string, PersonalityResult> = {
         averageSalary: "$130,000 - $200,000",
         jobGrowth: "8% (faster than average)",
         indeedLink: "https://www.indeed.com/jobs?q=principal+research+scientist"
+      },
+      {
+        title: "Research & Development Director",
+        description: "Lead R&D strategy and manage innovation teams in cutting-edge research",
+        averageSalary: "$140,000 - $220,000",
+        jobGrowth: "5% (average)",
+        indeedLink: "https://www.indeed.com/jobs?q=research+development+director"
+      },
+      {
+        title: "Chief Innovation Officer",
+        description: "Drive organizational innovation and technology advancement strategies",
+        averageSalary: "$160,000 - $280,000",
+        jobGrowth: "8% (faster than average)",
+        indeedLink: "https://www.indeed.com/jobs?q=chief+innovation+officer"
       }
     ],
     colleges: [
