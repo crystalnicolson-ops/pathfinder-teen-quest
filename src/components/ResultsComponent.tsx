@@ -125,7 +125,6 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
         {/* Header */}
         <div className="text-center pt-8 pb-4">
           <h1 className="text-4xl font-bold text-black mb-2 animate-pulse">Your Results Are In!</h1>
-          <p className="text-black/80 text-lg">Discover your career path</p>
         </div>
 
         {/* Personality Type */}
