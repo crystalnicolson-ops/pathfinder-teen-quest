@@ -244,28 +244,24 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                     {/* Main card */}
                     <div className={`relative p-3 rounded-lg border transition-all duration-300 hover:scale-105 cursor-pointer animate-fade-in ${
                       isHigh 
-                        ? 'bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 border-primary/30 shadow-md hover:shadow-lg' 
-                        : isMedium 
-                          ? 'bg-gradient-to-br from-secondary/8 to-muted/10 border-secondary/25 shadow-sm hover:shadow-md'
-                          : 'bg-gradient-to-br from-muted/10 to-background/50 border-muted/30 shadow-sm hover:shadow-md'
+                        ? 'bg-green-50 border-green-200 shadow-md hover:shadow-lg hover:bg-green-100' 
+                        : 'bg-gray-50 border-gray-200 shadow-sm hover:shadow-md hover:bg-gray-100'
                     }`}>
                       
                       {/* Top badge */}
                       <div className="flex justify-center mb-2">
-                        <div className={`px-1.5 py-0.5 rounded-full text-xs font-bold ${
+                        <div className={`px-2 py-1 rounded-full text-xs font-bold ${
                           isHigh 
-                            ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-sm' 
-                            : isMedium 
-                              ? 'bg-secondary/20 text-secondary'
-                              : 'bg-muted/30 text-muted-foreground'
+                            ? 'bg-green-500 text-white' 
+                            : 'bg-gray-400 text-white'
                         }`}>
-                          {isHigh ? '🔥' : isMedium ? '💪' : '🌱'}
+                          {isHigh ? 'STRENGTH' : 'GROWTH AREA'}
                         </div>
                       </div>
 
                       {/* Trait name */}
                       <h3 className={`text-xs font-semibold mb-2 text-center transition-colors duration-300 ${
-                        isHigh ? 'text-primary group-hover:text-secondary' : 'text-foreground group-hover:text-primary'
+                        isHigh ? 'text-green-700' : 'text-gray-600'
                       }`}>
                         {trait.name}
                       </h3>
@@ -299,8 +295,8 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                           />
                           <defs>
                             <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor={isHigh ? 'hsl(var(--primary))' : 'hsl(var(--secondary))'} />
-                              <stop offset="100%" stopColor={isHigh ? 'hsl(var(--secondary))' : 'hsl(var(--muted-foreground))'} />
+                              <stop offset="0%" stopColor={isHigh ? '#22c55e' : '#9ca3af'} />
+                              <stop offset="100%" stopColor={isHigh ? '#16a34a' : '#6b7280'} />
                             </linearGradient>
                           </defs>
                         </svg>
@@ -308,7 +304,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                         {/* Percentage in center */}
                         <div className="absolute inset-0 flex items-center justify-center">
                           <span className={`text-sm font-bold ${
-                            isHigh ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent' : 'text-foreground'
+                            isHigh ? 'text-green-700' : 'text-gray-600'
                           }`}>
                             {trait.percentage}%
                           </span>
