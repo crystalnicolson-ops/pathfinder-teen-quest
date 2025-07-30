@@ -220,7 +220,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               </div>
               <CardTitle className="text-2xl font-bold mb-2">
                 <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
-                  Your Personality DNA
+                  Your Personality Playlist
                 </span>
               </CardTitle>
               <p className="text-sm text-muted-foreground">
