@@ -399,8 +399,8 @@ export default function DetailedResults() {
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <GraduationCap className="h-6 w-6 text-purple-500" />
-                 Tier 3 - Selective Universities
+                <GraduationCap className="h-6 w-6 text-blue-600" />
+                Tier 3 - Selective Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
                 Highly regarded institutions with strong academic programs. Acceptance rates 8%–20%.
@@ -408,37 +408,37 @@ export default function DetailedResults() {
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
               {getCollegesByTier(result.colleges, 'tier3').map((college, index) => (
-                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-secondary/20">
+                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-blue-600/20">
                   {/* Header */}
                   <div className="mb-4">
                     <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
                     <div className="flex items-center gap-2 mb-1">
-                      <MapPin className="h-3 w-3 text-secondary" />
+                      <MapPin className="h-3 w-3 text-blue-600" />
                       <span className="text-sm text-muted-foreground">{college.location}</span>
                     </div>
-                    <Badge variant="outline" className="mb-3 text-xs border-secondary text-secondary">{college.ranking}</Badge>
+                    <Badge variant="outline" className="mb-3 text-xs border-blue-600 text-blue-600">{college.ranking}</Badge>
                   </div>
 
                   {/* Why Good Fit & Relevant Majors */}
                    {(college.whyGoodFit || college.relevantMajors) && (
                      <div className="mb-4">
                        <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
-                         <Star className="h-3 w-3 text-secondary" />
+                         <Star className="h-3 w-3 text-blue-600" />
                          Great Match for {result.type}
                        </h4>
                        <div className="space-y-2">
                          {college.whyGoodFit && (
-                           <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 p-3 rounded-lg border border-secondary/20">
-                             <h5 className="font-medium text-secondary mb-1 text-xs">Why This Is A Great Fit:</h5>
+                           <div className="bg-gradient-to-r from-blue-600/10 to-blue-600/5 p-3 rounded-lg border border-blue-600/20">
+                             <h5 className="font-medium text-blue-600 mb-1 text-xs">Why This Is A Great Fit:</h5>
                              <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                            </div>
                          )}
                          {college.relevantMajors && college.relevantMajors.length > 0 && (
-                           <div className="bg-secondary/30 p-3 rounded-lg">
+                           <div className="bg-blue-600/30 p-3 rounded-lg">
                              <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
                              <div className="flex flex-wrap gap-1">
                                {college.relevantMajors.map((major, index) => (
-                                 <span key={index} className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium border border-secondary/20">
+                                 <span key={index} className="bg-blue-600/10 text-blue-600 px-2 py-1 rounded-full text-xs font-medium border border-blue-600/20">
                                    {major}
                                  </span>
                                ))}
