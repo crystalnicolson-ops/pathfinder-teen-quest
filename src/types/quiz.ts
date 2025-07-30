@@ -89,6 +89,7 @@ export interface CollegeTiers {
   tier2: College[];
   tier3: College[];
   tier4: College[];
+  tier5: College[];
 }
 
 export interface Celebrity {

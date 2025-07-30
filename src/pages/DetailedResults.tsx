@@ -45,14 +45,15 @@ const personalityAvatars: Record<PersonalityType, string> = {
 };
 
 // Helper function to get colleges by tier
-const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | 'tier2' | 'tier3' | 'tier4'): College[] => {
+const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | 'tier2' | 'tier3' | 'tier4' | 'tier5'): College[] => {
   if (Array.isArray(colleges)) {
     // Legacy structure - filter by college names
     const tierCollege = {
-      tier1: ['harvard', 'massachusetts institute of technology', 'mit', 'stanford', 'yale', 'princeton', 'california institute of technology', 'caltech'],
-      tier2: ['university of chicago', 'chicago', 'columbia', 'johns hopkins', 'hopkins', 'northwestern', 'duke', 'brown', 'cornell'],
-      tier3: ['carnegie mellon', 'cmu', 'university of california berkeley', 'berkeley', 'rice', 'university of washington', 'university of rochester', 'uc irvine'],
-      tier4: ['georgia institute of technology', 'georgia tech', 'university of illinois', 'illinois', 'ucsd', 'san diego', 'purdue', 'umass', 'utah']
+      tier1: ['harvard', 'stanford', 'columbia', 'massachusetts institute of technology', 'mit', 'yale', 'princeton', 'california institute of technology', 'caltech', 'university of chicago', 'brown'],
+      tier2: ['dartmouth', 'duke', 'university of pennsylvania', 'penn', 'johns hopkins', 'northwestern', 'cornell'],
+      tier3: ['vanderbilt', 'university of notre dame', 'notre dame', 'rice', 'georgetown', 'washington university', 'berkeley', 'ucla'],
+      tier4: ['university of michigan', 'michigan', 'georgia institute of technology', 'georgia tech', 'emory', 'new york university', 'nyu', 'boston university', 'university of virginia', 'michigan state', 'indiana university', 'university of pittsburgh', 'university of minnesota', 'university of connecticut', 'temple'],
+      tier5: ['university of california davis', 'uc davis', 'university of california irvine', 'uc irvine', 'university of california santa barbara', 'ucsb', 'university of florida', 'university of illinois', 'illinois', 'university of washington', 'purdue', 'texas a&m', 'university of colorado', 'university of maryland', 'university of arizona', 'university of oregon', 'university of kansas', 'university of alabama', 'west virginia', 'louisiana state', 'lsu']
     };
     
     // First try keyword matching
@@ -63,8 +64,8 @@ const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | '
     
     // If no colleges match keywords, distribute evenly across tiers
     if (filtered.length === 0) {
-      const collegesPerTier = Math.ceil(colleges.length / 4);
-      const tierIndex = { tier1: 0, tier2: 1, tier3: 2, tier4: 3 }[tier];
+      const collegesPerTier = Math.ceil(colleges.length / 5);
+      const tierIndex = { tier1: 0, tier2: 1, tier3: 2, tier4: 3, tier5: 4 }[tier];
       const startIndex = tierIndex * collegesPerTier;
       const endIndex = startIndex + collegesPerTier;
       return colleges.slice(startIndex, endIndex);
@@ -263,10 +264,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-primary" />
-                Tier 1 - Global Elite Universities
+                 Tier 1 - Hyper-Selective Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Global elite, Ivy-caliber, top research and networking. Acceptance rates ~3–5%.
+                Global elite, Ivy-caliber institutions with exceptional prestige. Acceptance rates ≤5%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
@@ -331,10 +332,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-secondary" />
-                Tier 2 - Elite Private & Research Universities
+                 Tier 2 - Very Selective Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Elite private & research universities with wide discipline reach. Acceptance rates ~5–10%.
+                Top-tier universities with outstanding academics and research. Acceptance rates 5%–8%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
@@ -399,10 +400,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-purple-500" />
-                Tier 3 - Strong Flagship Publics & Respected Privates
+                 Tier 3 - Selective Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Strong flagship publics & respected privates — broad access. Acceptance rates ~10–20%.
+                Highly regarded institutions with strong academic programs. Acceptance rates 8%–20%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
@@ -462,15 +463,15 @@ export default function DetailedResults() {
             </CardContent>
           </Card>
 
-          {/* Tier 3 Colleges */}
+          {/* Tier 4 Colleges */}
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-purple-600" />
-                Tier 4 - Quality Institutions with Higher Acceptance
+                 Tier 4 - Competitive Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Quality institutions with higher acceptance; solid academics. Acceptance rates ~20–40%+.
+                Well-regarded institutions with strong programs and resources. Acceptance rates 20%–40%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
@@ -506,6 +507,74 @@ export default function DetailedResults() {
                              <div className="flex flex-wrap gap-2">
                                {college.relevantMajors.map((major, index) => (
                                  <span key={index} className="bg-purple-600/10 text-purple-600 px-3 py-1 rounded-full text-xs font-medium border border-purple-600/20">
+                                   {major}
+                                 </span>
+                               ))}
+                             </div>
+                           </div>
+                         )}
+                       </div>
+                     </div>
+                   )}
+
+
+                  {/* Website Link */}
+                  <div 
+                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
+                    onClick={() => window.open(college.website, '_blank')}
+                  >
+                    <ExternalLink className="h-3 w-3" />
+                    Visit Website
+                  </div>
+                </div>
+              ))}
+            </CardContent>
+          </Card>
+
+          {/* Tier 5 Colleges */}
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+                <GraduationCap className="h-6 w-6 text-green-600" />
+                 Tier 5 - Broad Admission Universities
+              </CardTitle>
+              <p className="text-muted-foreground mt-2">
+                Accessible quality institutions with diverse opportunities. Acceptance rates 40%–80%+.
+              </p>
+            </CardHeader>
+            <CardContent className="grid md:grid-cols-1 gap-8">
+              {getCollegesByTier(result.colleges, 'tier5').map((college, index) => (
+                <div key={index} className="border rounded-lg p-6 bg-gradient-card border-green-600/20">
+                  {/* Header */}
+                  <div className="mb-6">
+                    <h3 className="text-2xl font-bold mb-2 text-foreground">{college.name}</h3>
+                    <div className="flex items-center gap-2 mb-2">
+                      <MapPin className="h-4 w-4 text-green-600" />
+                      <span className="text-muted-foreground">{college.location}</span>
+                    </div>
+                    <Badge variant="outline" className="mb-4 border-green-600 text-green-600">{college.ranking}</Badge>
+                  </div>
+
+                  {/* Why Good Fit & Relevant Majors */}
+                   {(college.whyGoodFit || college.relevantMajors) && (
+                     <div className="mb-6">
+                       <h4 className="font-semibold text-foreground mb-3 flex items-center gap-2">
+                         <Star className="h-4 w-4 text-green-600" />
+                         Good Match for {result.type}
+                       </h4>
+                       <div className="space-y-4">
+                         {college.whyGoodFit && (
+                            <div className="bg-gradient-to-r from-green-600/10 to-green-600/5 p-4 rounded-lg border border-green-600/20">
+                              <h5 className="font-medium text-green-600 mb-2">Why This Is A Great Fit:</h5>
+                             <p className="text-sm text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
+                           </div>
+                         )}
+                         {college.relevantMajors && college.relevantMajors.length > 0 && (
+                           <div className="bg-green-600/30 p-4 rounded-lg">
+                             <h5 className="font-medium text-foreground mb-3">🎓 Recommended Majors:</h5>
+                             <div className="flex flex-wrap gap-2">
+                               {college.relevantMajors.map((major, index) => (
+                                 <span key={index} className="bg-green-600/10 text-green-600 px-3 py-1 rounded-full text-xs font-medium border border-green-600/20">
                                    {major}
                                  </span>
                                ))}
