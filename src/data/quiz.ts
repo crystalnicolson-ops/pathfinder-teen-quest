@@ -1948,12 +1948,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
     ],
     colleges: [
       {
-        name: "Purdue University",
-        location: "West Lafayette, IN",
-        programs: ["Engineering", "Technology", "Computer Science"],
-        ranking: "#51 overall",
-        website: "https://www.purdue.edu/",
-        whyGoodFit: "Perfect for Fixers who want hands-on engineering education. Purdue's strong technical programs align with ISTP practical problem-solving.",
+        name: "Georgia Institute of Technology",
+        location: "Atlanta, GA",
+        programs: ["Engineering", "Computer Science", "Technology"],
+        ranking: "#33 overall",
+        website: "https://www.gatech.edu/",
+        whyGoodFit: "Perfect for Fixers who want hands-on engineering education. Georgia Tech's strong technical programs align with ISTP practical problem-solving.",
         relevantMajors: ["Mechanical Engineering", "Computer Engineering", "Industrial Engineering", "Technology", "Computer Science"],
         averageGPA: "3.6-3.8"
       },
