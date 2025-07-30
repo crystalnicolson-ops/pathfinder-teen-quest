@@ -230,100 +230,45 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
           </CardHeader>
 
           <CardContent className="px-6 pb-6">
-            <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
-              {result.traits.map((trait, index) => {
-                const isHigh = trait.percentage >= 70;
-                const isMedium = trait.percentage >= 40;
-                
-                return (
-                  <div 
-                    key={index}
-                    className="group relative"
-                    style={{animationDelay: `${index * 100}ms`}}
-                  >
-                    {/* Main card */}
-                    <div className={`relative p-3 rounded-lg border transition-all duration-300 hover:scale-105 cursor-pointer animate-fade-in ${
-                      isHigh 
-                        ? 'bg-green-50 border-green-200 shadow-md hover:shadow-lg hover:bg-green-100' 
-                        : 'bg-gray-50 border-gray-200 shadow-sm hover:shadow-md hover:bg-gray-100'
-                    }`}>
-                      
-                      {/* Top badge */}
-                      <div className="flex justify-center mb-2">
-                        <div className={`px-2 py-1 rounded-full text-xs font-bold ${
-                          isHigh 
-                            ? 'bg-green-500 text-white' 
-                            : 'bg-gray-400 text-white'
-                        }`}>
-                          {isHigh ? 'STRENGTH' : 'GROWTH AREA'}
-                        </div>
-                      </div>
-
-                      {/* Trait name */}
-                      <h3 className={`text-xs font-semibold mb-2 text-center transition-colors duration-300 ${
-                        isHigh ? 'text-green-700' : 'text-gray-600'
-                      }`}>
-                        {trait.name}
-                      </h3>
-
-                      {/* Circular progress */}
-                      <div className="relative w-12 h-12 mx-auto mb-2">
-                        {/* Background circle */}
-                        <svg className="w-12 h-12 transform -rotate-90" viewBox="0 0 100 100">
-                          <circle
-                            cx="50"
-                            cy="50"
-                            r="30"
-                            stroke="currentColor"
-                            strokeWidth="4"
-                            fill="transparent"
-                            className="text-muted/20"
-                          />
-                          {/* Progress circle */}
-                          <circle
-                            cx="50"
-                            cy="50"
-                            r="30"
-                            stroke="url(#gradient)"
-                            strokeWidth="4"
-                            fill="transparent"
-                            strokeDasharray={`${2 * Math.PI * 30}`}
-                            strokeDashoffset={`${2 * Math.PI * 30 * (1 - trait.percentage / 100)}`}
-                            strokeLinecap="round"
-                            className="transition-all duration-1000 ease-out"
-                            style={{animationDelay: `${index * 200 + 500}ms`}}
-                          />
-                          <defs>
-                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                              <stop offset="0%" stopColor={isHigh ? '#22c55e' : '#9ca3af'} />
-                              <stop offset="100%" stopColor={isHigh ? '#16a34a' : '#6b7280'} />
-                            </linearGradient>
-                          </defs>
-                        </svg>
-                        
-                        {/* Percentage in center */}
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <span className={`text-sm font-bold ${
-                            isHigh ? 'text-green-700' : 'text-gray-600'
-                          }`}>
-                            {trait.percentage}%
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+            {/* Strengths Section */}
+            <div className="mb-6">
+              <h4 className="text-lg font-bold text-green-700 mb-3 flex items-center gap-2">
+                <Star className="h-5 w-5" />
+                Your Strengths (70%+)
+              </h4>
+              <div className="space-y-2">
+                {result.traits.filter(trait => trait.percentage >= 70).map((trait, index) => (
+                  <div key={index} className="flex items-center justify-between p-3 bg-green-50 rounded-lg border border-green-200">
+                    <span className="font-medium text-green-800">{trait.name}</span>
+                    <span className="text-green-700 font-bold">{trait.percentage}%</span>
                   </div>
-                );
-              })}
+                ))}
+              </div>
+            </div>
+
+            {/* Growth Areas Section */}
+            <div className="mb-6">
+              <h4 className="text-lg font-bold text-gray-600 mb-3 flex items-center gap-2">
+                <Rocket className="h-5 w-5" />
+                Growth Opportunities (Under 70%)
+              </h4>
+              <div className="space-y-2">
+                {result.traits.filter(trait => trait.percentage < 70).map((trait, index) => (
+                  <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
+                    <span className="font-medium text-gray-700">{trait.name}</span>
+                    <span className="text-gray-600 font-bold">{trait.percentage}%</span>
+                  </div>
+                ))}
+              </div>
             </div>
 
             {/* Bottom CTA */}
-            <div className="mt-8 text-center">
+            <div className="text-center">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-full border border-primary/20 shadow-md">
                 <Sparkles className="h-5 w-5 text-primary animate-spin" style={{animationDuration: '3s'}} />
                 <span className="text-base font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  This is what makes you uniquely YOU!
+                  Focus on your strengths and grow the rest!
                 </span>
-                <Rocket className="h-5 w-5 text-secondary animate-bounce" />
               </div>
             </div>
           </CardContent>
