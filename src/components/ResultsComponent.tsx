@@ -229,7 +229,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               {result.traits.map((trait, index) => {
                 const isHigh = trait.percentage >= 70;
                 return (
-                  <div key={index} className="flex justify-between items-center">
+                  <div key={index} className="flex items-center gap-3">
                     <span className={`text-sm font-medium ${isHigh ? 'text-green-700' : 'text-gray-600'}`}>
                       {trait.name}
                     </span>
