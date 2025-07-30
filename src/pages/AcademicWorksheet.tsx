@@ -248,19 +248,34 @@ export default function AcademicWorksheet() {
                   <div className="grid gap-4">
                     {calculateTierFit().map((rec, index) => (
                       <div key={index} className={`
-                        ${rec.color === 'purple' ? 'bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600' : ''}
-                        ${rec.color === 'blue' ? 'bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600' : ''}
-                        ${rec.color === 'green' ? 'bg-gradient-to-r from-emerald-600 via-green-600 to-lime-600' : ''}
-                        ${rec.color === 'orange' ? 'bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600' : ''}
-                        text-white p-6 rounded-lg shadow-lg border border-white/20 backdrop-blur-sm
+                        ${rec.color === 'purple' ? 'bg-gradient-to-r from-purple-200 via-pink-200 to-indigo-200 text-purple-800' : ''}
+                        ${rec.color === 'blue' ? 'bg-gradient-to-r from-blue-200 via-cyan-200 to-sky-200 text-blue-800' : ''}
+                        ${rec.color === 'green' ? 'bg-gradient-to-r from-emerald-200 via-green-200 to-teal-200 text-green-800' : ''}
+                        ${rec.color === 'orange' ? 'bg-gradient-to-r from-orange-200 via-peach-200 to-yellow-200 text-orange-800' : ''}
+                        p-6 rounded-lg shadow-lg border border-white/50 backdrop-blur-sm
                       `}>
                         <div className="flex items-center justify-between mb-3">
-                          <h4 className="text-lg font-bold text-white">{rec.tier}</h4>
-                          <Badge variant="secondary" className="bg-white/20 text-white border-white/30 hover:bg-white/30">
+                          <h4 className={`text-lg font-bold ${
+                            rec.color === 'purple' ? 'text-purple-800' : 
+                            rec.color === 'blue' ? 'text-blue-800' : 
+                            rec.color === 'green' ? 'text-green-800' : 
+                            'text-orange-800'
+                          }`}>{rec.tier}</h4>
+                          <Badge variant="secondary" className={`${
+                            rec.color === 'purple' ? 'bg-purple-300/50 text-purple-800 border-purple-300' : 
+                            rec.color === 'blue' ? 'bg-blue-300/50 text-blue-800 border-blue-300' : 
+                            rec.color === 'green' ? 'bg-green-300/50 text-green-800 border-green-300' : 
+                            'bg-orange-300/50 text-orange-800 border-orange-300'
+                          }`}>
                             {rec.fit}
                           </Badge>
                         </div>
-                        <p className="text-sm text-white/95 leading-relaxed">{rec.description}</p>
+                        <p className={`text-sm leading-relaxed ${
+                          rec.color === 'purple' ? 'text-purple-700' : 
+                          rec.color === 'blue' ? 'text-blue-700' : 
+                          rec.color === 'green' ? 'text-green-700' : 
+                          'text-orange-700'
+                        }`}>{rec.description}</p>
                       </div>
                     ))}
                   </div>
