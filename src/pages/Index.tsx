@@ -26,12 +26,16 @@ const Index = () => {
     setAppState('landing');
   };
 
+  const handleGoHome = () => {
+    setAppState('landing');
+  };
+
   if (appState === 'quiz') {
     return <QuizComponent onComplete={handleQuizComplete} />;
   }
 
   if (appState === 'results' && personalityResult) {
-    return <ResultsComponent personality={personalityResult} onRetake={handleRetakeQuiz} />;
+    return <ResultsComponent personality={personalityResult} onRetake={handleRetakeQuiz} onHome={handleGoHome} />;
   }
 
   return (

@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Star, Sparkles, Rocket, GraduationCap, Briefcase, TrendingUp } from 'lucide-react';
+import { ArrowRight, Star, Sparkles, Rocket, GraduationCap, Briefcase, TrendingUp, Home } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
 import { useNavigate } from 'react-router-dom';
@@ -85,9 +85,10 @@ const personalityAvatars: Record<PersonalityType, string> = {
 interface ResultsComponentProps {
   personality: PersonalityType;
   onRetake: () => void;
+  onHome: () => void;
 }
 
-export default function ResultsComponent({ personality, onRetake }: ResultsComponentProps) {
+export default function ResultsComponent({ personality, onRetake, onHome }: ResultsComponentProps) {
   const result = personalityResults[personality];
   const avatar = personalityAvatars[personality];
   const navigate = useNavigate();
@@ -277,15 +278,26 @@ export default function ResultsComponent({ personality, onRetake }: ResultsCompo
             <div className="absolute inset-0 rounded-full bg-gradient-secondary opacity-30 group-hover:opacity-50 blur-xl transition-opacity duration-300 -z-10"></div>
           </div>
 
-          {/* Retake Button */}
-          <Button 
-            variant="outline" 
-            onClick={onRetake}
-            size="lg"
-            className="bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/90 transition-all duration-300"
-          >
-            Retake Quiz
-          </Button>
+          {/* Home and Retake Buttons */}
+          <div className="flex gap-4">
+            <Button 
+              variant="outline" 
+              onClick={onHome}
+              size="lg"
+              className="bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/90 transition-all duration-300"
+            >
+              <Home className="h-4 w-4 mr-2" />
+              Home
+            </Button>
+            <Button 
+              variant="outline" 
+              onClick={onRetake}
+              size="lg"
+              className="bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/90 transition-all duration-300"
+            >
+              Retake Quiz
+            </Button>
+          </div>
         </div>
       </div>
     </div>
