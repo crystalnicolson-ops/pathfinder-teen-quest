@@ -5,6 +5,7 @@ export interface Question {
     B: { text: string; traits: string[] };
     C: { text: string; traits: string[] };
     D: { text: string; traits: string[] };
+    E: { text: string; traits: string[] };
   };
 }
 

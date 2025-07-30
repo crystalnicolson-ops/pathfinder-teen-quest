@@ -7,7 +7,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["I"] },
       B: { text: "Agree", traits: ["I"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["E"] }
+      D: { text: "Disagree", traits: ["E"] },
+      E: { text: "Strongly Disagree", traits: ["E"] }
     }
   },
   {
@@ -16,7 +17,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["N"] },
       B: { text: "Agree", traits: ["N"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["S"] }
+      D: { text: "Disagree", traits: ["S"] },
+      E: { text: "Strongly Disagree", traits: ["S"] }
     }
   },
   {
@@ -25,7 +27,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["T"] },
       B: { text: "Agree", traits: ["T"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["F"] }
+      D: { text: "Disagree", traits: ["F"] },
+      E: { text: "Strongly Disagree", traits: ["F"] }
     }
   },
   {
@@ -34,7 +37,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["J"] },
       B: { text: "Agree", traits: ["J"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["P"] }
+      D: { text: "Disagree", traits: ["P"] },
+      E: { text: "Strongly Disagree", traits: ["P"] }
     }
   },
   {
@@ -43,7 +47,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["E"] },
       B: { text: "Agree", traits: ["E"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["I"] }
+      D: { text: "Disagree", traits: ["I"] },
+      E: { text: "Strongly Disagree", traits: ["I"] }
     }
   },
   {
@@ -52,7 +57,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["S"] },
       B: { text: "Agree", traits: ["S"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["N"] }
+      D: { text: "Disagree", traits: ["N"] },
+      E: { text: "Strongly Disagree", traits: ["N"] }
     }
   },
   {
@@ -61,7 +67,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["F"] },
       B: { text: "Agree", traits: ["F"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["T"] }
+      D: { text: "Disagree", traits: ["T"] },
+      E: { text: "Strongly Disagree", traits: ["T"] }
     }
   },
   {
@@ -70,7 +77,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["P"] },
       B: { text: "Agree", traits: ["P"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["J"] }
+      D: { text: "Disagree", traits: ["J"] },
+      E: { text: "Strongly Disagree", traits: ["J"] }
     }
   },
   {
@@ -79,7 +87,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["I"] },
       B: { text: "Agree", traits: ["I"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["E"] }
+      D: { text: "Disagree", traits: ["E"] },
+      E: { text: "Strongly Disagree", traits: ["E"] }
     }
   },
   {
@@ -88,7 +97,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["T"] },
       B: { text: "Agree", traits: ["T"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["F"] }
+      D: { text: "Disagree", traits: ["F"] },
+      E: { text: "Strongly Disagree", traits: ["F"] }
     }
   },
   {
@@ -97,7 +107,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["J"] },
       B: { text: "Agree", traits: ["J"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["P"] }
+      D: { text: "Disagree", traits: ["P"] },
+      E: { text: "Strongly Disagree", traits: ["P"] }
     }
   },
   {
@@ -106,7 +117,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["N"] },
       B: { text: "Agree", traits: ["N"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["S"] }
+      D: { text: "Disagree", traits: ["S"] },
+      E: { text: "Strongly Disagree", traits: ["S"] }
     }
   },
   {
@@ -115,7 +127,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["F"] },
       B: { text: "Agree", traits: ["F"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["T"] }
+      D: { text: "Disagree", traits: ["T"] },
+      E: { text: "Strongly Disagree", traits: ["T"] }
     }
   },
   {
@@ -124,7 +137,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["E", "J"] },
       B: { text: "Agree", traits: ["E", "J"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["I", "P"] }
+      D: { text: "Disagree", traits: ["I", "P"] },
+      E: { text: "Strongly Disagree", traits: ["I", "P"] }
     }
   },
   {
@@ -133,7 +147,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["S"] },
       B: { text: "Agree", traits: ["S"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["N"] }
+      D: { text: "Disagree", traits: ["N"] },
+      E: { text: "Strongly Disagree", traits: ["N"] }
     }
   },
   {
@@ -142,7 +157,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["J"] },
       B: { text: "Agree", traits: ["J"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["P"] }
+      D: { text: "Disagree", traits: ["P"] },
+      E: { text: "Strongly Disagree", traits: ["P"] }
     }
   },
   {
@@ -151,7 +167,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["P"] },
       B: { text: "Agree", traits: ["P"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["J"] }
+      D: { text: "Disagree", traits: ["J"] },
+      E: { text: "Strongly Disagree", traits: ["J"] }
     }
   },
   {
@@ -160,7 +177,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["N"] },
       B: { text: "Agree", traits: ["N"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["S"] }
+      D: { text: "Disagree", traits: ["S"] },
+      E: { text: "Strongly Disagree", traits: ["S"] }
     }
   },
   {
@@ -169,7 +187,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["J"] },
       B: { text: "Agree", traits: ["J"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["P"] }
+      D: { text: "Disagree", traits: ["P"] },
+      E: { text: "Strongly Disagree", traits: ["P"] }
     }
   },
   {
@@ -178,7 +197,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["F"] },
       B: { text: "Agree", traits: ["F"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["T"] }
+      D: { text: "Disagree", traits: ["T"] },
+      E: { text: "Strongly Disagree", traits: ["T"] }
     }
   },
   {
@@ -187,7 +207,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["J"] },
       B: { text: "Agree", traits: ["J"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["P"] }
+      D: { text: "Disagree", traits: ["P"] },
+      E: { text: "Strongly Disagree", traits: ["P"] }
     }
   },
   {
@@ -196,7 +217,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["N", "F"] },
       B: { text: "Agree", traits: ["N", "F"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["S", "T"] }
+      D: { text: "Disagree", traits: ["S", "T"] },
+      E: { text: "Strongly Disagree", traits: ["S", "T"] }
     }
   },
   {
@@ -205,7 +227,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["F"] },
       B: { text: "Agree", traits: ["F"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["T"] }
+      D: { text: "Disagree", traits: ["T"] },
+      E: { text: "Strongly Disagree", traits: ["T"] }
     }
   },
   {
@@ -214,7 +237,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["E", "J"] },
       B: { text: "Agree", traits: ["E", "J"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["I", "P"] }
+      D: { text: "Disagree", traits: ["I", "P"] },
+      E: { text: "Strongly Disagree", traits: ["I", "P"] }
     }
   },
   {
@@ -223,7 +247,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["S"] },
       B: { text: "Agree", traits: ["S"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["N"] }
+      D: { text: "Disagree", traits: ["N"] },
+      E: { text: "Strongly Disagree", traits: ["N"] }
     }
   },
   {
@@ -232,7 +257,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["E", "N"] },
       B: { text: "Agree", traits: ["E", "N"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["I", "S"] }
+      D: { text: "Disagree", traits: ["I", "S"] },
+      E: { text: "Strongly Disagree", traits: ["I", "S"] }
     }
   },
   {
@@ -241,7 +267,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["N"] },
       B: { text: "Agree", traits: ["N"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["S"] }
+      D: { text: "Disagree", traits: ["S"] },
+      E: { text: "Strongly Disagree", traits: ["S"] }
     }
   },
   {
@@ -250,7 +277,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["F"] },
       B: { text: "Agree", traits: ["F"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["T"] }
+      D: { text: "Disagree", traits: ["T"] },
+      E: { text: "Strongly Disagree", traits: ["T"] }
     }
   },
   {
@@ -259,7 +287,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["S"] },
       B: { text: "Agree", traits: ["S"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["N"] }
+      D: { text: "Disagree", traits: ["N"] },
+      E: { text: "Strongly Disagree", traits: ["N"] }
     }
   },
   {
@@ -268,7 +297,8 @@ export const questions: Question[] = [
       A: { text: "Strongly Agree", traits: ["S", "T"] },
       B: { text: "Agree", traits: ["S", "T"] },
       C: { text: "Neutral", traits: [] },
-      D: { text: "Disagree", traits: ["N", "F"] }
+      D: { text: "Disagree", traits: ["N", "F"] },
+      E: { text: "Strongly Disagree", traits: ["N", "F"] }
     }
   }
 ];
