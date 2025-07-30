@@ -499,6 +499,152 @@ export default function DetailedResults() {
               ))}
             </CardContent>
           </Card>
+          
+          {/* Academic Worksheet */}
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+                <GraduationCap className="h-6 w-6 text-primary" />
+                Where Should I Apply?
+              </CardTitle>
+              <p className="text-muted-foreground mt-2">
+                Use this simplified academic worksheet to assess if your profile matches the admissions standards of various college tiers.
+              </p>
+            </CardHeader>
+            <CardContent className="space-y-8">
+              {/* Your Academic Profile */}
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-4">Your Academic Profile</h3>
+                <div className="grid md:grid-cols-2 gap-4">
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">1. What is your unweighted GPA (0.0 – 4.0)?</label>
+                    <input 
+                      type="number" 
+                      step="0.01" 
+                      min="0" 
+                      max="4" 
+                      placeholder="e.g., 3.85"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">2. What is your weighted GPA (if available)?</label>
+                    <input 
+                      type="number" 
+                      step="0.01" 
+                      min="0" 
+                      max="5" 
+                      placeholder="e.g., 4.25"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">3. What is your SAT or ACT score?</label>
+                    <input 
+                      type="text" 
+                      placeholder="e.g., 1450 (SAT) or 32 (ACT)"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">4. How many AP or IB classes have you taken?</label>
+                    <input 
+                      type="number" 
+                      min="0" 
+                      placeholder="e.g., 6"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">5. How many AP test scores do you have?</label>
+                    <input 
+                      type="number" 
+                      min="0" 
+                      placeholder="e.g., 5"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">6. How many of those scores were 5s?</label>
+                    <input 
+                      type="number" 
+                      min="0" 
+                      placeholder="e.g., 2"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">7. How many were 4s?</label>
+                    <input 
+                      type="number" 
+                      min="0" 
+                      placeholder="e.g., 2"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-medium text-foreground">8. How many were 3s?</label>
+                    <input 
+                      type="number" 
+                      min="0" 
+                      placeholder="e.g., 1"
+                      className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+                    />
+                  </div>
+                </div>
+              </div>
+
+              {/* College Tier Benchmarks */}
+              <div>
+                <h3 className="text-xl font-semibold text-foreground mb-4">College Tier Benchmarks</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  {/* Tier 1 */}
+                  <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
+                    <h4 className="text-lg font-bold text-purple-800 mb-3">Tier 1 (Elite – Ivies, MIT, Stanford, etc.)</h4>
+                    <ul className="space-y-2 text-sm text-purple-700">
+                      <li><strong>Unweighted GPA:</strong> 3.9 – 4.0</li>
+                      <li><strong>SAT:</strong> 1500–1580 | <strong>ACT:</strong> 34–36</li>
+                      <li><strong>APs Taken:</strong> 8–12+</li>
+                      <li><strong>AP Scores:</strong> Mostly 5s and 4s</li>
+                    </ul>
+                  </div>
+
+                  {/* Tier 2 */}
+                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
+                    <h4 className="text-lg font-bold text-blue-800 mb-3">Tier 2 (Highly Selective – NYU, Emory, USC, etc.)</h4>
+                    <ul className="space-y-2 text-sm text-blue-700">
+                      <li><strong>Unweighted GPA:</strong> 3.7 – 3.9</li>
+                      <li><strong>SAT:</strong> 1400–1500 | <strong>ACT:</strong> 31–34</li>
+                      <li><strong>APs Taken:</strong> 6–10</li>
+                      <li><strong>AP Scores:</strong> Mostly 4s and some 5s</li>
+                    </ul>
+                  </div>
+
+                  {/* Tier 3 */}
+                  <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
+                    <h4 className="text-lg font-bold text-green-800 mb-3">Tier 3 (Competitive – UC Davis, Boston U, UMich)</h4>
+                    <ul className="space-y-2 text-sm text-green-700">
+                      <li><strong>Unweighted GPA:</strong> 3.5 – 3.8</li>
+                      <li><strong>SAT:</strong> 1300–1450 | <strong>ACT:</strong> 28–32</li>
+                      <li><strong>APs Taken:</strong> 4–8</li>
+                      <li><strong>AP Scores:</strong> Mix of 3s and 4s</li>
+                    </ul>
+                  </div>
+
+                  {/* Tier 4 */}
+                  <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200">
+                    <h4 className="text-lg font-bold text-orange-800 mb-3">Tier 4 (Broad Admission – ASU, UOregon, etc.)</h4>
+                    <ul className="space-y-2 text-sm text-orange-700">
+                      <li><strong>Unweighted GPA:</strong> 3.2 – 3.6</li>
+                      <li><strong>SAT:</strong> 1100–1300 | <strong>ACT:</strong> 22–28</li>
+                      <li><strong>APs Taken:</strong> 2–5</li>
+                      <li><strong>AP Scores:</strong> Mostly 3s or pass</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
         </div>
         )}
       </div>
