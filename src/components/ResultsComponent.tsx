@@ -93,6 +93,21 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
   const avatar = personalityAvatars[personality];
   const navigate = useNavigate();
 
+  // Parse the description to extract MBTI type and traits
+  const parseDescription = (description: string) => {
+    const mbtiMatch = description.match(/\(([A-Z]{4})\)/);
+    const traitsMatch = description.match(/"([^"]+)"/);
+    const cleanDescription = description.replace(/^🧠\s*/, '').replace(/\s*\([A-Z]{4}\)\s*–\s*"[^"]+"\s*/, '');
+    
+    return {
+      mbtiType: mbtiMatch ? mbtiMatch[1] : '',
+      traits: traitsMatch ? traitsMatch[1].split(' • ') : [],
+      cleanDescription: cleanDescription.trim()
+    };
+  };
+
+  const { mbtiType, traits, cleanDescription } = parseDescription(result.description);
+
   const handleViewCareers = () => {
     navigate('/detailed-results', { state: { personality, section: 'careers' } });
   };
@@ -122,11 +137,18 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 />
               </div>
             </div>
-            <CardTitle className="text-3xl font-bold text-primary mb-4">
-              {result.type}
+            <CardTitle className="text-3xl font-bold text-primary mb-2">
+              {result.type} {mbtiType && `(${mbtiType})`}
             </CardTitle>
+            {traits.length > 0 && (
+              <div className="mb-4">
+                <p className="text-xl font-semibold text-secondary">
+                  "{traits.join(' • ')}"
+                </p>
+              </div>
+            )}
             <p className="text-lg text-muted-foreground leading-relaxed mb-6">
-              {result.description}
+              {cleanDescription}
             </p>
             
             {/* Detailed Personality Explanation */}
