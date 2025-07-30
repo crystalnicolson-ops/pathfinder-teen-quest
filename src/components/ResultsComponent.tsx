@@ -229,21 +229,23 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               {result.traits.map((trait, index) => {
                 const isHigh = trait.percentage >= 70;
                 return (
-                  <div key={index} className="flex items-center gap-3 mb-3">
-                    <div className="w-24 text-right">
-                      <span className="text-xs font-medium text-foreground">
+                  <div key={index} className="mb-4">
+                    <div className="flex justify-between items-center mb-2">
+                      <span className="text-sm font-medium text-foreground">
                         {trait.name}
                       </span>
+                      <span className="text-sm font-bold text-foreground">
+                        {trait.percentage}%
+                      </span>
                     </div>
-                    <div className="flex-1 bg-gray-200 rounded h-6 flex items-center relative">
+                    <div className="relative">
+                      <div className="w-full h-2 bg-gray-200 rounded-full"></div>
                       <div 
-                        className={`h-6 rounded flex items-center justify-end pr-2 text-white text-xs font-bold transition-all duration-1000 ${
+                        className={`absolute top-0 w-4 h-4 rounded-full border-2 border-white shadow-md transform -translate-y-1 -translate-x-2 transition-all duration-1000 ${
                           isHigh ? 'bg-green-500' : 'bg-gray-400'
                         }`}
-                        style={{ width: `${trait.percentage}%` }}
-                      >
-                        {trait.percentage}%
-                      </div>
+                        style={{ left: `${trait.percentage}%` }}
+                      ></div>
                     </div>
                   </div>
                 );
