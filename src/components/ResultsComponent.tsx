@@ -211,42 +211,112 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
         </Card>
 
         {/* Personality Traits */}
-        <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-              <TrendingUp className="h-6 w-6 text-primary" />
-              Your Personality Breakdown
-            </CardTitle>
-            <p className="text-muted-foreground">
-              See how you score on key personality traits
-            </p>
+        <Card className="bg-white/95 backdrop-blur-sm shadow-card overflow-hidden">
+          <CardHeader className="relative">
+            {/* Background decoration */}
+            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 opacity-50"></div>
+            <div className="relative z-10">
+              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3 mb-2">
+                <div className="p-2 bg-gradient-to-br from-primary to-secondary rounded-lg shadow-lg">
+                  <TrendingUp className="h-6 w-6 text-white" />
+                </div>
+                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  Your Personality Breakdown
+                </span>
+              </CardTitle>
+              <p className="text-muted-foreground text-lg">
+                Discover your unique personality traits and strengths ✨
+              </p>
+            </div>
           </CardHeader>
-          <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+          <CardContent className="relative">
+            {/* Animated background elements */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-2xl animate-pulse"></div>
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-secondary/10 to-transparent rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
+            
+            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
               {result.traits.map((trait, index) => (
-                <div key={index} className="relative">
-                  <div className="flex items-center justify-between mb-2">
-                    <span className={`text-sm text-foreground ${trait.percentage >= 70 ? 'font-bold' : 'font-medium'}`}>
-                      {trait.name}
-                    </span>
-                    <span className="text-sm font-bold text-primary">{trait.percentage}%</span>
-                  </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2 mb-2">
-                    <div 
-                      className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all duration-700 ease-out"
-                      style={{ width: `${trait.percentage}%` }}
-                    ></div>
-                  </div>
-                  <div className="flex justify-center">
-                    <Badge 
-                      variant={trait.percentage >= 70 ? "default" : trait.percentage >= 40 ? "secondary" : "outline"}
-                      className="text-xs"
-                    >
-                      {trait.percentage >= 70 ? "High" : trait.percentage >= 40 ? "Moderate" : "Low"}
-                    </Badge>
+                <div 
+                  key={index} 
+                  className="group relative bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm rounded-xl p-5 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:rotate-1 animate-fade-in"
+                  style={{animationDelay: `${index * 150}ms`}}
+                >
+                  {/* Glow effect on hover */}
+                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
+                  
+                  <div className="relative z-10">
+                    {/* Trait name with enhanced styling */}
+                    <div className="flex items-center justify-between mb-4">
+                      <span className={`text-sm font-bold text-foreground group-hover:text-primary transition-colors duration-300 ${
+                        trait.percentage >= 70 ? 'text-lg' : 'text-base'
+                      }`}>
+                        {trait.name}
+                      </span>
+                      <div className="flex items-center gap-2">
+                        <span className="text-lg font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                          {trait.percentage}%
+                        </span>
+                        {trait.percentage >= 70 && (
+                          <Sparkles className="h-4 w-4 text-primary animate-bounce" />
+                        )}
+                      </div>
+                    </div>
+                    
+                    {/* Enhanced progress bar */}
+                    <div className="relative mb-4">
+                      <div className="w-full bg-gray-200/80 rounded-full h-3 overflow-hidden shadow-inner">
+                        <div 
+                          className={`h-3 rounded-full transition-all duration-1000 ease-out ${
+                            trait.percentage >= 70 
+                              ? 'bg-gradient-to-r from-primary via-secondary to-accent shadow-lg' 
+                              : trait.percentage >= 40 
+                                ? 'bg-gradient-to-r from-secondary to-primary/80' 
+                                : 'bg-gradient-to-r from-muted to-muted-foreground/60'
+                          }`}
+                          style={{ 
+                            width: `${trait.percentage}%`,
+                            animationDelay: `${index * 200 + 500}ms`,
+                            boxShadow: trait.percentage >= 70 ? '0 0 20px rgba(var(--primary-rgb), 0.4)' : undefined
+                          }}
+                        ></div>
+                      </div>
+                      {/* Percentage indicator */}
+                      <div 
+                        className="absolute top-0 h-3 w-1 bg-white rounded-full shadow-md transition-all duration-1000 ease-out"
+                        style={{ 
+                          left: `${Math.max(trait.percentage - 1, 0)}%`,
+                          animationDelay: `${index * 200 + 800}ms`
+                        }}
+                      ></div>
+                    </div>
+                    
+                    {/* Enhanced badge */}
+                    <div className="flex justify-center">
+                      <Badge 
+                        variant={trait.percentage >= 70 ? "default" : trait.percentage >= 40 ? "secondary" : "outline"}
+                        className={`text-xs font-semibold px-3 py-1 transition-all duration-300 group-hover:scale-110 ${
+                          trait.percentage >= 70 
+                            ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg animate-pulse-slow" 
+                            : trait.percentage >= 40 
+                              ? "bg-gradient-to-r from-secondary/80 to-secondary text-white" 
+                              : "border-2 hover:bg-muted"
+                        }`}
+                      >
+                        {trait.percentage >= 70 ? "🌟 Superpower" : trait.percentage >= 40 ? "💪 Strong" : "🌱 Growing"}
+                      </Badge>
+                    </div>
                   </div>
                 </div>
               ))}
+            </div>
+            
+            {/* Bottom decoration */}
+            <div className="mt-8 text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20">
+                <Star className="h-4 w-4 text-primary animate-spin" style={{animationDuration: '3s'}} />
+                <span className="text-sm font-medium text-primary">Your unique personality signature</span>
+                <Star className="h-4 w-4 text-secondary animate-spin" style={{animationDuration: '3s', animationDirection: 'reverse'}} />
+              </div>
             </div>
           </CardContent>
         </Card>
