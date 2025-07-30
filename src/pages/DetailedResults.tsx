@@ -264,7 +264,7 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-primary" />
-                 Tier 1 - Long Shot Legends
+                 Tier 1
               </CardTitle>
               <p className="text-muted-foreground mt-2">
                 Super competitive, for the bold and brilliant. Acceptance rates ≤5%.
@@ -332,7 +332,7 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-secondary" />
-                 Tier 2 - Big Reach Goals
+                 Tier 2
               </CardTitle>
               <p className="text-muted-foreground mt-2">
                 Competitive but possible with standout stats. Acceptance rates 5%–8%.
@@ -400,7 +400,7 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-blue-600" />
-                 Tier 3 - Target Zone
+                 Tier 3
               </CardTitle>
               <p className="text-muted-foreground mt-2">
                 High-quality, realistic choices for many students. Acceptance rates 8%–20%.
@@ -468,7 +468,7 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-purple-600" />
-                 Tier 4 - Smart Picks
+                 Tier 4
               </CardTitle>
               <p className="text-muted-foreground mt-2">
                 Great schools with solid chances of admission. Acceptance rates 20%–40%.
@@ -536,7 +536,7 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-green-600" />
-                 Tier 5 - Secure Stars
+                 Tier 5
               </CardTitle>
               <p className="text-muted-foreground mt-2">
                 Schools you're likely to get into and thrive at. Acceptance rates 40%–85%+.
