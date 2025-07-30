@@ -248,19 +248,19 @@ export default function AcademicWorksheet() {
                   <div className="grid gap-4">
                     {calculateTierFit().map((rec, index) => (
                       <div key={index} className={`
-                        ${rec.color === 'purple' ? 'bg-purple-600 text-white' : ''}
-                        ${rec.color === 'blue' ? 'bg-blue-600 text-white' : ''}
-                        ${rec.color === 'green' ? 'bg-green-600 text-white' : ''}
-                        ${rec.color === 'orange' ? 'bg-orange-600 text-white' : ''}
-                        p-6 rounded-lg shadow-lg
+                        ${rec.color === 'purple' ? 'bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600' : ''}
+                        ${rec.color === 'blue' ? 'bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600' : ''}
+                        ${rec.color === 'green' ? 'bg-gradient-to-r from-emerald-600 via-green-600 to-lime-600' : ''}
+                        ${rec.color === 'orange' ? 'bg-gradient-to-r from-orange-600 via-amber-600 to-yellow-600' : ''}
+                        text-white p-6 rounded-lg shadow-lg border border-white/20 backdrop-blur-sm
                       `}>
                         <div className="flex items-center justify-between mb-3">
                           <h4 className="text-lg font-bold text-white">{rec.tier}</h4>
-                          <Badge variant={rec.fit === 'Strong Match' ? 'default' : 'secondary'} className="bg-white/20 text-white border-white/30">
+                          <Badge variant="secondary" className="bg-white/20 text-white border-white/30 hover:bg-white/30">
                             {rec.fit}
                           </Badge>
                         </div>
-                        <p className="text-sm text-white/90">{rec.description}</p>
+                        <p className="text-sm text-white/95 leading-relaxed">{rec.description}</p>
                       </div>
                     ))}
                   </div>
