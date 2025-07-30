@@ -95,9 +95,12 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
 
   // Parse the description to extract MBTI type and traits
   const parseDescription = (description: string) => {
+    // Extract MBTI type: matches (INTJ) pattern
     const mbtiMatch = description.match(/\(([A-Z]{4})\)/);
+    // Extract traits: matches "Visionary • Independent • Analytical" pattern
     const traitsMatch = description.match(/"([^"]+)"/);
-    const cleanDescription = description.replace(/^🧠\s*/, '').replace(/\s*\([A-Z]{4}\)\s*–\s*"[^"]+"\s*/, '');
+    // Clean description: remove emoji, type name, MBTI, and traits part
+    const cleanDescription = description.replace(/^🧠\s*The\s+[A-Za-z\s]+\s*\([A-Z]{4}\)\s*–\s*"[^"]+"\s*/, '');
     
     return {
       mbtiType: mbtiMatch ? mbtiMatch[1] : '',
