@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Sparkles, Target, GraduationCap, TrendingUp } from 'lucide-react';
 import QuizComponent from '@/components/QuizComponent';
 import ResultsComponent from '@/components/ResultsComponent';
+import Header from '@/components/Header';
 import { PersonalityType } from '@/types/quiz';
 import heroImage from '@/assets/hero-careers.jpg';
 
@@ -31,15 +32,27 @@ const Index = () => {
   };
 
   if (appState === 'quiz') {
-    return <QuizComponent onComplete={handleQuizComplete} />;
+    return (
+      <>
+        <Header onHome={handleGoHome} />
+        <QuizComponent onComplete={handleQuizComplete} />
+      </>
+    );
   }
 
   if (appState === 'results' && personalityResult) {
-    return <ResultsComponent personality={personalityResult} onRetake={handleRetakeQuiz} onHome={handleGoHome} />;
+    return (
+      <>
+        <Header onHome={handleGoHome} />
+        <ResultsComponent personality={personalityResult} onRetake={handleRetakeQuiz} onHome={handleGoHome} />
+      </>
+    );
   }
 
   return (
-    <div className="min-h-screen bg-gradient-hero">
+    <>
+      <Header onHome={handleGoHome} showHomeButton={false} />
+      <div className="min-h-screen bg-gradient-hero">
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         
@@ -143,6 +156,7 @@ const Index = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

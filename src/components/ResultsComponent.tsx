@@ -102,7 +102,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
   };
 
   return (
-    <div className="min-h-screen bg-gradient-hero p-4">
+    <div className="min-h-screen bg-gradient-hero p-4 pt-20">
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center pt-8 pb-4">
