@@ -39,7 +39,7 @@ export default function AcademicWorksheet() {
       recommendations.push({
         tier: 'Tier 1 - Elite Universities',
         fit: 'Strong Match',
-        description: 'You have an excellent academic profile for the most selective universities like Ivies, MIT, and Stanford.',
+        description: '🎉 Incredible work! You have an outstanding academic profile that makes you competitive for the most prestigious universities like Ivies, MIT, and Stanford. Your dedication to excellence shows, and these top-tier schools would be lucky to have someone with your achievements!',
         color: 'purple'
       });
     }
@@ -49,7 +49,7 @@ export default function AcademicWorksheet() {
       recommendations.push({
         tier: 'Tier 2 - Highly Selective',
         fit: gpa >= 3.8 ? 'Strong Match' : 'Good Match',
-        description: 'Your profile aligns well with highly selective universities like NYU, Emory, and USC.',
+        description: '🌟 Fantastic achievement! Your academic record demonstrates real strength and you\'re well-positioned for highly selective universities like NYU, Emory, and USC. You\'ve clearly worked hard and it shows - these excellent schools would value your commitment to academic success!',
         color: 'blue'
       });
     }
@@ -59,7 +59,7 @@ export default function AcademicWorksheet() {
       recommendations.push({
         tier: 'Tier 3 - Competitive',
         fit: gpa >= 3.7 ? 'Strong Match' : 'Good Match',
-        description: 'You are competitive for schools like UC Davis, Boston University, and University of Michigan.',
+        description: '💪 Great job on building a solid academic foundation! You\'re competitive for excellent schools like UC Davis, Boston University, and University of Michigan. These are amazing institutions that will provide incredible opportunities for your future success!',
         color: 'green'
       });
     }
@@ -69,7 +69,7 @@ export default function AcademicWorksheet() {
       recommendations.push({
         tier: 'Tier 4 - Broad Admission',
         fit: 'Good Match',
-        description: 'You have a solid foundation for universities with broader admission criteria like ASU and University of Oregon.',
+        description: '🚀 You\'re on a great path! Your academic record shows dedication and growth, making you a strong candidate for quality universities like ASU and University of Oregon. These schools offer fantastic programs and will give you the platform to achieve your dreams!',
         color: 'orange'
       });
     }
@@ -267,8 +267,9 @@ export default function AcademicWorksheet() {
                 ) : (
                   <div className="bg-gray-50 p-6 rounded-lg border">
                     <p className="text-gray-700">
-                      Based on your academic profile, consider exploring a broader range of universities. 
-                      Focus on schools that value your unique strengths and experiences beyond just test scores and grades.
+                      🌟 Every student has unique strengths! While your current academic metrics might suggest exploring a broader range of universities, 
+                      remember that colleges value diverse experiences, leadership, creativity, and personal growth. Focus on schools that align with 
+                      your passions and goals - there are amazing opportunities waiting for you to discover!
                     </p>
                   </div>
                 )}
