@@ -17,10 +17,22 @@ const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | '
       tier4: ['georgia institute of technology', 'georgia tech', 'university of illinois', 'illinois', 'ucsd', 'san diego', 'purdue', 'umass', 'utah']
     };
     
-    return colleges.filter(college => {
+    // First try keyword matching
+    const filtered = colleges.filter(college => {
       const name = college.name.toLowerCase();
       return tierCollege[tier].some(keyword => name.includes(keyword));
     });
+    
+    // If no colleges match keywords, distribute evenly across tiers
+    if (filtered.length === 0) {
+      const collegesPerTier = Math.ceil(colleges.length / 4);
+      const tierIndex = { tier1: 0, tier2: 1, tier3: 2, tier4: 3 }[tier];
+      const startIndex = tierIndex * collegesPerTier;
+      const endIndex = startIndex + collegesPerTier;
+      return colleges.slice(startIndex, endIndex);
+    }
+    
+    return filtered;
   } else {
     // New tiered structure
     return colleges[tier] || [];
