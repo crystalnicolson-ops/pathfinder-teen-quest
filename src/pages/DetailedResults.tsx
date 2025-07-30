@@ -1,8 +1,9 @@
 import { useLocation, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft, Home } from 'lucide-react';
+import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft, Home, CheckCircle } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType, College, CollegeTiers } from '@/types/quiz';
 
@@ -32,6 +33,19 @@ export default function DetailedResults() {
   const location = useLocation();
   const navigate = useNavigate();
   const { personality, section } = location.state || {};
+  
+  // Academic worksheet state
+  const [academicData, setAcademicData] = useState({
+    unweightedGPA: '',
+    weightedGPA: '',
+    testScore: '',
+    apCourses: '',
+    apTests: '',
+    ap5s: '',
+    ap4s: '',
+    ap3s: ''
+  });
+  const [showResults, setShowResults] = useState(false);
 
   if (!personality) {
     navigate('/');
@@ -39,6 +53,68 @@ export default function DetailedResults() {
   }
 
   const result = personalityResults[personality as PersonalityType];
+  
+  // Calculate tier recommendations based on academic profile
+  const calculateTierFit = () => {
+    const gpa = parseFloat(academicData.unweightedGPA);
+    const satScore = parseInt(academicData.testScore);
+    const actScore = parseInt(academicData.testScore);
+    const apCourses = parseInt(academicData.apCourses);
+    const ap5s = parseInt(academicData.ap5s) || 0;
+    const ap4s = parseInt(academicData.ap4s) || 0;
+    
+    const recommendations = [];
+    
+    // Tier 1 (Elite)
+    if (gpa >= 3.9 && ((satScore >= 1500 && satScore <= 1600) || (actScore >= 34 && actScore <= 36)) && apCourses >= 8 && ap5s >= 4) {
+      recommendations.push({
+        tier: 'Tier 1 - Elite Universities',
+        fit: 'Strong Match',
+        description: 'You have an excellent academic profile for the most selective universities like Ivies, MIT, and Stanford.',
+        color: 'purple'
+      });
+    }
+    
+    // Tier 2 (Highly Selective)
+    if (gpa >= 3.7 && ((satScore >= 1400 && satScore <= 1550) || (actScore >= 31 && actScore <= 35)) && apCourses >= 6 && (ap4s + ap5s) >= 4) {
+      recommendations.push({
+        tier: 'Tier 2 - Highly Selective',
+        fit: gpa >= 3.8 ? 'Strong Match' : 'Good Match',
+        description: 'Your profile aligns well with highly selective universities like NYU, Emory, and USC.',
+        color: 'blue'
+      });
+    }
+    
+    // Tier 3 (Competitive)
+    if (gpa >= 3.5 && ((satScore >= 1300 && satScore <= 1500) || (actScore >= 28 && actScore <= 33)) && apCourses >= 4) {
+      recommendations.push({
+        tier: 'Tier 3 - Competitive',
+        fit: gpa >= 3.7 ? 'Strong Match' : 'Good Match',
+        description: 'You are competitive for schools like UC Davis, Boston University, and University of Michigan.',
+        color: 'green'
+      });
+    }
+    
+    // Tier 4 (Broad Admission)
+    if (gpa >= 3.2 && ((satScore >= 1100) || (actScore >= 22)) && apCourses >= 2) {
+      recommendations.push({
+        tier: 'Tier 4 - Broad Admission',
+        fit: 'Good Match',
+        description: 'You have a solid foundation for universities with broader admission criteria like ASU and University of Oregon.',
+        color: 'orange'
+      });
+    }
+    
+    return recommendations;
+  };
+  
+  const handleSubmit = () => {
+    if (academicData.unweightedGPA && academicData.testScore) {
+      setShowResults(true);
+    }
+  };
+  
+  const isFormComplete = academicData.unweightedGPA && academicData.testScore;
 
   return (
     <div className="min-h-screen bg-gradient-hero p-4">
@@ -524,6 +600,8 @@ export default function DetailedResults() {
                       min="0" 
                       max="4" 
                       placeholder="e.g., 3.85"
+                      value={academicData.unweightedGPA}
+                      onChange={(e) => setAcademicData({...academicData, unweightedGPA: e.target.value})}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
@@ -535,6 +613,8 @@ export default function DetailedResults() {
                       min="0" 
                       max="5" 
                       placeholder="e.g., 4.25"
+                      value={academicData.weightedGPA}
+                      onChange={(e) => setAcademicData({...academicData, weightedGPA: e.target.value})}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
@@ -543,6 +623,8 @@ export default function DetailedResults() {
                     <input 
                       type="text" 
                       placeholder="e.g., 1450 (SAT) or 32 (ACT)"
+                      value={academicData.testScore}
+                      onChange={(e) => setAcademicData({...academicData, testScore: e.target.value})}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
@@ -552,6 +634,8 @@ export default function DetailedResults() {
                       type="number" 
                       min="0" 
                       placeholder="e.g., 6"
+                      value={academicData.apCourses}
+                      onChange={(e) => setAcademicData({...academicData, apCourses: e.target.value})}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
@@ -561,6 +645,8 @@ export default function DetailedResults() {
                       type="number" 
                       min="0" 
                       placeholder="e.g., 5"
+                      value={academicData.apTests}
+                      onChange={(e) => setAcademicData({...academicData, apTests: e.target.value})}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
@@ -570,6 +656,8 @@ export default function DetailedResults() {
                       type="number" 
                       min="0" 
                       placeholder="e.g., 2"
+                      value={academicData.ap5s}
+                      onChange={(e) => setAcademicData({...academicData, ap5s: e.target.value})}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
@@ -579,6 +667,8 @@ export default function DetailedResults() {
                       type="number" 
                       min="0" 
                       placeholder="e.g., 2"
+                      value={academicData.ap4s}
+                      onChange={(e) => setAcademicData({...academicData, ap4s: e.target.value})}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
@@ -588,61 +678,57 @@ export default function DetailedResults() {
                       type="number" 
                       min="0" 
                       placeholder="e.g., 1"
+                      value={academicData.ap3s}
+                      onChange={(e) => setAcademicData({...academicData, ap3s: e.target.value})}
                       className="w-full p-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
                     />
                   </div>
                 </div>
-              </div>
-
-              {/* College Tier Benchmarks */}
-              <div>
-                <h3 className="text-xl font-semibold text-foreground mb-4">College Tier Benchmarks</h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  {/* Tier 1 */}
-                  <div className="bg-gradient-to-r from-purple-50 to-purple-100 p-6 rounded-lg border border-purple-200">
-                    <h4 className="text-lg font-bold text-purple-800 mb-3">Tier 1 (Elite – Ivies, MIT, Stanford, etc.)</h4>
-                    <ul className="space-y-2 text-sm text-purple-700">
-                      <li><strong>Unweighted GPA:</strong> 3.9 – 4.0</li>
-                      <li><strong>SAT:</strong> 1500–1580 | <strong>ACT:</strong> 34–36</li>
-                      <li><strong>APs Taken:</strong> 8–12+</li>
-                      <li><strong>AP Scores:</strong> Mostly 5s and 4s</li>
-                    </ul>
-                  </div>
-
-                  {/* Tier 2 */}
-                  <div className="bg-gradient-to-r from-blue-50 to-blue-100 p-6 rounded-lg border border-blue-200">
-                    <h4 className="text-lg font-bold text-blue-800 mb-3">Tier 2 (Highly Selective – NYU, Emory, USC, etc.)</h4>
-                    <ul className="space-y-2 text-sm text-blue-700">
-                      <li><strong>Unweighted GPA:</strong> 3.7 – 3.9</li>
-                      <li><strong>SAT:</strong> 1400–1500 | <strong>ACT:</strong> 31–34</li>
-                      <li><strong>APs Taken:</strong> 6–10</li>
-                      <li><strong>AP Scores:</strong> Mostly 4s and some 5s</li>
-                    </ul>
-                  </div>
-
-                  {/* Tier 3 */}
-                  <div className="bg-gradient-to-r from-green-50 to-green-100 p-6 rounded-lg border border-green-200">
-                    <h4 className="text-lg font-bold text-green-800 mb-3">Tier 3 (Competitive – UC Davis, Boston U, UMich)</h4>
-                    <ul className="space-y-2 text-sm text-green-700">
-                      <li><strong>Unweighted GPA:</strong> 3.5 – 3.8</li>
-                      <li><strong>SAT:</strong> 1300–1450 | <strong>ACT:</strong> 28–32</li>
-                      <li><strong>APs Taken:</strong> 4–8</li>
-                      <li><strong>AP Scores:</strong> Mix of 3s and 4s</li>
-                    </ul>
-                  </div>
-
-                  {/* Tier 4 */}
-                  <div className="bg-gradient-to-r from-orange-50 to-orange-100 p-6 rounded-lg border border-orange-200">
-                    <h4 className="text-lg font-bold text-orange-800 mb-3">Tier 4 (Broad Admission – ASU, UOregon, etc.)</h4>
-                    <ul className="space-y-2 text-sm text-orange-700">
-                      <li><strong>Unweighted GPA:</strong> 3.2 – 3.6</li>
-                      <li><strong>SAT:</strong> 1100–1300 | <strong>ACT:</strong> 22–28</li>
-                      <li><strong>APs Taken:</strong> 2–5</li>
-                      <li><strong>AP Scores:</strong> Mostly 3s or pass</li>
-                    </ul>
-                  </div>
+                
+                {/* Submit Button */}
+                <div className="mt-6 text-center">
+                  <Button 
+                    onClick={handleSubmit}
+                    disabled={!isFormComplete}
+                    className="bg-primary hover:bg-primary/90 text-white px-8 py-3 text-lg font-semibold"
+                  >
+                    Get My College Recommendations
+                  </Button>
                 </div>
               </div>
+
+              {/* Results */}
+              {showResults && (
+                <div className="space-y-4">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <CheckCircle className="h-6 w-6 text-green-600" />
+                    Your College Tier Recommendations
+                  </h3>
+                  
+                  {calculateTierFit().length > 0 ? (
+                    <div className="grid gap-4">
+                      {calculateTierFit().map((rec, index) => (
+                        <div key={index} className={`bg-gradient-to-r from-${rec.color}-50 to-${rec.color}-100 p-6 rounded-lg border border-${rec.color}-200`}>
+                          <div className="flex items-center justify-between mb-3">
+                            <h4 className={`text-lg font-bold text-${rec.color}-800`}>{rec.tier}</h4>
+                            <Badge variant={rec.fit === 'Strong Match' ? 'default' : 'secondary'}>
+                              {rec.fit}
+                            </Badge>
+                          </div>
+                          <p className={`text-sm text-${rec.color}-700`}>{rec.description}</p>
+                        </div>
+                      ))}
+                    </div>
+                  ) : (
+                    <div className="bg-gray-50 p-6 rounded-lg border">
+                      <p className="text-gray-700">
+                        Based on your academic profile, consider exploring a broader range of universities. 
+                        Focus on schools that value your unique strengths and experiences beyond just test scores and grades.
+                      </p>
+                    </div>
+                  )}
+                </div>
+              )}
             </CardContent>
           </Card>
         </div>
