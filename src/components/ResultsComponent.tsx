@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ArrowRight, Star, Sparkles, Rocket, GraduationCap, Briefcase, TrendingUp, Home } from 'lucide-react';
+import { Star, Sparkles, Rocket, GraduationCap, Briefcase, TrendingUp, Home } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
 import { useNavigate } from 'react-router-dom';
@@ -353,7 +353,6 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               
               <Briefcase className="h-6 w-6 mr-3 group-hover:animate-bounce" />
               <span className="relative z-10">Best Career Matches</span>
-              <ArrowRight className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
             
             {/* Glowing ring effect */}
@@ -377,7 +376,6 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               
               <GraduationCap className="h-6 w-6 mr-3 group-hover:animate-bounce" />
               <span className="relative z-10">Find Your Perfect College!</span>
-              <ArrowRight className="h-6 w-6 ml-3 group-hover:translate-x-1 transition-transform duration-300" />
             </Button>
             
             {/* Glowing ring effect */}
