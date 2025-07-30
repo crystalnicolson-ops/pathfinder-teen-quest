@@ -211,111 +211,147 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
         </Card>
 
         {/* Personality Traits */}
-        <Card className="bg-white/95 backdrop-blur-sm shadow-card overflow-hidden">
-          <CardHeader className="relative">
-            {/* Background decoration */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-secondary/5 to-accent/5 opacity-50"></div>
+        <Card className="bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-lg shadow-2xl border border-white/30 overflow-hidden">
+          <CardHeader className="text-center relative pb-8">
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
             <div className="relative z-10">
-              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3 mb-2">
-                <div className="p-2 bg-gradient-to-br from-primary to-secondary rounded-lg shadow-lg">
-                  <TrendingUp className="h-6 w-6 text-white" />
-                </div>
-                <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                  Your Personality Breakdown
+              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary via-secondary to-accent rounded-full shadow-xl mb-4 animate-pulse">
+                <TrendingUp className="h-8 w-8 text-white" />
+              </div>
+              <CardTitle className="text-3xl font-black mb-3">
+                <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                  Your Personality DNA
                 </span>
               </CardTitle>
-              <p className="text-muted-foreground text-lg">
-                Discover your unique personality traits and strengths ✨
+              <p className="text-lg text-muted-foreground font-medium">
+                The unique combination that makes you <span className="text-primary font-bold">extraordinary</span> ✨
               </p>
             </div>
           </CardHeader>
-          <CardContent className="relative">
-            {/* Animated background elements */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-primary/10 to-transparent rounded-full blur-2xl animate-pulse"></div>
-            <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-secondary/10 to-transparent rounded-full blur-xl animate-pulse" style={{animationDelay: '1s'}}></div>
-            
-            <div className="relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {result.traits.map((trait, index) => (
-                <div 
-                  key={index} 
-                  className="group relative bg-gradient-to-br from-white/80 to-white/40 backdrop-blur-sm rounded-xl p-5 border border-white/20 shadow-lg hover:shadow-xl transition-all duration-500 hover:scale-105 hover:rotate-1 animate-fade-in"
-                  style={{animationDelay: `${index * 150}ms`}}
-                >
-                  {/* Glow effect on hover */}
-                  <div className="absolute inset-0 rounded-xl bg-gradient-to-br from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 blur-xl"></div>
-                  
-                  <div className="relative z-10">
-                    {/* Trait name with enhanced styling */}
-                    <div className="flex items-center justify-between mb-4">
-                      <span className={`text-sm font-bold text-foreground group-hover:text-primary transition-colors duration-300 ${
-                        trait.percentage >= 70 ? 'text-lg' : 'text-base'
-                      }`}>
-                        {trait.name}
-                      </span>
-                      <div className="flex items-center gap-2">
-                        <span className="text-lg font-black bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                          {trait.percentage}%
-                        </span>
-                        {trait.percentage >= 70 && (
-                          <Sparkles className="h-4 w-4 text-primary animate-bounce" />
+
+          <CardContent className="px-8 pb-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {result.traits.map((trait, index) => {
+                const isHigh = trait.percentage >= 70;
+                const isMedium = trait.percentage >= 40;
+                
+                return (
+                  <div 
+                    key={index}
+                    className="group relative"
+                    style={{animationDelay: `${index * 100}ms`}}
+                  >
+                    {/* Main card */}
+                    <div className={`relative p-6 rounded-2xl border-2 transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer animate-fade-in ${
+                      isHigh 
+                        ? 'bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-primary/25' 
+                        : isMedium 
+                          ? 'bg-gradient-to-br from-secondary/8 to-muted/10 border-secondary/25 shadow-lg hover:shadow-xl hover:shadow-secondary/20'
+                          : 'bg-gradient-to-br from-muted/10 to-background/50 border-muted/30 shadow-md hover:shadow-lg'
+                    }`}>
+                      
+                      {/* Floating glow effect */}
+                      <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
+                        isHigh ? 'bg-gradient-to-br from-primary/20 to-secondary/20 blur-xl' : 'bg-gradient-to-br from-secondary/15 to-muted/15 blur-lg'
+                      }`}></div>
+                      
+                      {/* Top badge */}
+                      <div className="flex justify-between items-start mb-4">
+                        <div className={`px-3 py-1 rounded-full text-xs font-bold ${
+                          isHigh 
+                            ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg animate-pulse' 
+                            : isMedium 
+                              ? 'bg-secondary/20 text-secondary border border-secondary/30'
+                              : 'bg-muted/30 text-muted-foreground border border-muted/40'
+                        }`}>
+                          {isHigh ? '🔥 SUPERPOWER' : isMedium ? '💪 STRENGTH' : '🌱 POTENTIAL'}
+                        </div>
+                        
+                        {isHigh && (
+                          <div className="flex space-x-1">
+                            <Star className="h-4 w-4 text-primary animate-bounce" />
+                            <Star className="h-4 w-4 text-secondary animate-bounce" style={{animationDelay: '0.2s'}} />
+                            <Star className="h-4 w-4 text-accent animate-bounce" style={{animationDelay: '0.4s'}} />
+                          </div>
                         )}
                       </div>
-                    </div>
-                    
-                    {/* Enhanced progress bar */}
-                    <div className="relative mb-4">
-                      <div className="w-full bg-gray-200/80 rounded-full h-3 overflow-hidden shadow-inner">
-                        <div 
-                          className={`h-3 rounded-full transition-all duration-1000 ease-out ${
-                            trait.percentage >= 70 
-                              ? 'bg-gradient-to-r from-primary via-secondary to-accent shadow-lg' 
-                              : trait.percentage >= 40 
-                                ? 'bg-gradient-to-r from-secondary to-primary/80' 
-                                : 'bg-gradient-to-r from-muted to-muted-foreground/60'
-                          }`}
-                          style={{ 
-                            width: `${trait.percentage}%`,
-                            animationDelay: `${index * 200 + 500}ms`,
-                            boxShadow: trait.percentage >= 70 ? '0 0 20px rgba(var(--primary-rgb), 0.4)' : undefined
-                          }}
-                        ></div>
+
+                      {/* Trait name */}
+                      <h3 className={`text-lg font-bold mb-4 transition-colors duration-300 ${
+                        isHigh ? 'text-primary group-hover:text-secondary' : 'text-foreground group-hover:text-primary'
+                      }`}>
+                        {trait.name}
+                      </h3>
+
+                      {/* Circular progress */}
+                      <div className="relative w-24 h-24 mx-auto mb-4">
+                        {/* Background circle */}
+                        <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+                          <circle
+                            cx="50"
+                            cy="50"
+                            r="40"
+                            stroke="currentColor"
+                            strokeWidth="8"
+                            fill="transparent"
+                            className="text-muted/20"
+                          />
+                          {/* Progress circle */}
+                          <circle
+                            cx="50"
+                            cy="50"
+                            r="40"
+                            stroke="url(#gradient)"
+                            strokeWidth="8"
+                            fill="transparent"
+                            strokeDasharray={`${2 * Math.PI * 40}`}
+                            strokeDashoffset={`${2 * Math.PI * 40 * (1 - trait.percentage / 100)}`}
+                            strokeLinecap="round"
+                            className="transition-all duration-1000 ease-out"
+                            style={{animationDelay: `${index * 200 + 500}ms`}}
+                          />
+                          <defs>
+                            <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                              <stop offset="0%" stopColor={isHigh ? 'hsl(var(--primary))' : 'hsl(var(--secondary))'} />
+                              <stop offset="100%" stopColor={isHigh ? 'hsl(var(--secondary))' : 'hsl(var(--muted-foreground))'} />
+                            </linearGradient>
+                          </defs>
+                        </svg>
+                        
+                        {/* Percentage in center */}
+                        <div className="absolute inset-0 flex items-center justify-center">
+                          <span className={`text-2xl font-black ${
+                            isHigh ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent' : 'text-foreground'
+                          }`}>
+                            {trait.percentage}%
+                          </span>
+                        </div>
                       </div>
-                      {/* Percentage indicator */}
-                      <div 
-                        className="absolute top-0 h-3 w-1 bg-white rounded-full shadow-md transition-all duration-1000 ease-out"
-                        style={{ 
-                          left: `${Math.max(trait.percentage - 1, 0)}%`,
-                          animationDelay: `${index * 200 + 800}ms`
-                        }}
-                      ></div>
-                    </div>
-                    
-                    {/* Enhanced badge */}
-                    <div className="flex justify-center">
-                      <Badge 
-                        variant={trait.percentage >= 70 ? "default" : trait.percentage >= 40 ? "secondary" : "outline"}
-                        className={`text-xs font-semibold px-3 py-1 transition-all duration-300 group-hover:scale-110 ${
-                          trait.percentage >= 70 
-                            ? "bg-gradient-to-r from-primary to-secondary text-white shadow-lg animate-pulse-slow" 
-                            : trait.percentage >= 40 
-                              ? "bg-gradient-to-r from-secondary/80 to-secondary text-white" 
-                              : "border-2 hover:bg-muted"
-                        }`}
-                      >
-                        {trait.percentage >= 70 ? "🌟 Superpower" : trait.percentage >= 40 ? "💪 Strong" : "🌱 Growing"}
-                      </Badge>
+
+                      {/* Bottom decorative element */}
+                      <div className="text-center">
+                        <div className={`inline-block w-12 h-1 rounded-full ${
+                          isHigh 
+                            ? 'bg-gradient-to-r from-primary to-secondary shadow-lg' 
+                            : isMedium 
+                              ? 'bg-secondary/60' 
+                              : 'bg-muted/60'
+                        }`}></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
-            
-            {/* Bottom decoration */}
-            <div className="mt-8 text-center">
-              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 to-secondary/10 rounded-full border border-primary/20">
-                <Star className="h-4 w-4 text-primary animate-spin" style={{animationDuration: '3s'}} />
-                <span className="text-sm font-medium text-primary">Your unique personality signature</span>
-                <Star className="h-4 w-4 text-secondary animate-spin" style={{animationDuration: '3s', animationDirection: 'reverse'}} />
+
+            {/* Bottom CTA */}
+            <div className="mt-12 text-center">
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-full border border-primary/20 shadow-lg">
+                <Sparkles className="h-5 w-5 text-primary animate-spin" style={{animationDuration: '3s'}} />
+                <span className="text-base font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                  This is what makes you uniquely YOU!
+                </span>
+                <Rocket className="h-5 w-5 text-secondary animate-bounce" />
               </div>
             </div>
           </CardContent>
