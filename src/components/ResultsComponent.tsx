@@ -230,7 +230,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
           </CardHeader>
 
           <CardContent className="px-6 pb-6">
-            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            <div className="grid grid-cols-3 md:grid-cols-6 gap-3">
               {result.traits.map((trait, index) => {
                 const isHigh = trait.percentage >= 70;
                 const isMedium = trait.percentage >= 40;
@@ -242,48 +242,44 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                     style={{animationDelay: `${index * 100}ms`}}
                   >
                     {/* Main card */}
-                    <div className={`relative p-4 rounded-xl border transition-all duration-300 hover:scale-102 cursor-pointer animate-fade-in ${
+                    <div className={`relative p-3 rounded-lg border transition-all duration-300 hover:scale-105 cursor-pointer animate-fade-in ${
                       isHigh 
-                        ? 'bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 border-primary/30 shadow-lg hover:shadow-xl' 
+                        ? 'bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 border-primary/30 shadow-md hover:shadow-lg' 
                         : isMedium 
-                          ? 'bg-gradient-to-br from-secondary/8 to-muted/10 border-secondary/25 shadow-md hover:shadow-lg'
+                          ? 'bg-gradient-to-br from-secondary/8 to-muted/10 border-secondary/25 shadow-sm hover:shadow-md'
                           : 'bg-gradient-to-br from-muted/10 to-background/50 border-muted/30 shadow-sm hover:shadow-md'
                     }`}>
                       
                       {/* Top badge */}
-                      <div className="flex justify-between items-start mb-3">
-                        <div className={`px-2 py-1 rounded-full text-xs font-bold ${
+                      <div className="flex justify-center mb-2">
+                        <div className={`px-1.5 py-0.5 rounded-full text-xs font-bold ${
                           isHigh 
-                            ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-md' 
+                            ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-sm' 
                             : isMedium 
-                              ? 'bg-secondary/20 text-secondary border border-secondary/30'
-                              : 'bg-muted/30 text-muted-foreground border border-muted/40'
+                              ? 'bg-secondary/20 text-secondary'
+                              : 'bg-muted/30 text-muted-foreground'
                         }`}>
                           {isHigh ? '🔥' : isMedium ? '💪' : '🌱'}
                         </div>
-                        
-                        {isHigh && (
-                          <Star className="h-3 w-3 text-primary" />
-                        )}
                       </div>
 
                       {/* Trait name */}
-                      <h3 className={`text-sm font-bold mb-3 transition-colors duration-300 ${
+                      <h3 className={`text-xs font-semibold mb-2 text-center transition-colors duration-300 ${
                         isHigh ? 'text-primary group-hover:text-secondary' : 'text-foreground group-hover:text-primary'
                       }`}>
                         {trait.name}
                       </h3>
 
                       {/* Circular progress */}
-                      <div className="relative w-16 h-16 mx-auto mb-3">
+                      <div className="relative w-12 h-12 mx-auto mb-2">
                         {/* Background circle */}
-                        <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 100 100">
+                        <svg className="w-12 h-12 transform -rotate-90" viewBox="0 0 100 100">
                           <circle
                             cx="50"
                             cy="50"
-                            r="35"
+                            r="30"
                             stroke="currentColor"
-                            strokeWidth="6"
+                            strokeWidth="4"
                             fill="transparent"
                             className="text-muted/20"
                           />
@@ -291,12 +287,12 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                           <circle
                             cx="50"
                             cy="50"
-                            r="35"
+                            r="30"
                             stroke="url(#gradient)"
-                            strokeWidth="6"
+                            strokeWidth="4"
                             fill="transparent"
-                            strokeDasharray={`${2 * Math.PI * 35}`}
-                            strokeDashoffset={`${2 * Math.PI * 35 * (1 - trait.percentage / 100)}`}
+                            strokeDasharray={`${2 * Math.PI * 30}`}
+                            strokeDashoffset={`${2 * Math.PI * 30 * (1 - trait.percentage / 100)}`}
                             strokeLinecap="round"
                             className="transition-all duration-1000 ease-out"
                             style={{animationDelay: `${index * 200 + 500}ms`}}
@@ -311,23 +307,12 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                         
                         {/* Percentage in center */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className={`text-lg font-black ${
+                          <span className={`text-sm font-bold ${
                             isHigh ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent' : 'text-foreground'
                           }`}>
                             {trait.percentage}%
                           </span>
                         </div>
-                      </div>
-
-                      {/* Bottom decorative element */}
-                      <div className="text-center">
-                        <div className={`inline-block w-8 h-0.5 rounded-full ${
-                          isHigh 
-                            ? 'bg-gradient-to-r from-primary to-secondary' 
-                            : isMedium 
-                              ? 'bg-secondary/60' 
-                              : 'bg-muted/60'
-                        }`}></div>
                       </div>
                     </div>
                   </div>
