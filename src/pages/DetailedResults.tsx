@@ -6,6 +6,44 @@ import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType, College, CollegeTiers } from '@/types/quiz';
 
+// Import all personality avatars
+import avatarStrategist from '@/assets/avatar-strategist.jpg';
+import avatarInventor from '@/assets/avatar-inventor.jpg';
+import avatarBoss from '@/assets/avatar-boss.jpg';
+import avatarChallenger from '@/assets/avatar-challenger.jpg';
+import avatarVisionary from '@/assets/avatar-visionary.jpg';
+import avatarCreator from '@/assets/avatar-creator.jpg';
+import avatarCoach from '@/assets/avatar-coach.jpg';
+import avatarFreeSpirit from '@/assets/avatar-free-spirit.jpg';
+import avatarOrganizer from '@/assets/avatar-organizer.jpg';
+import avatarHelper from '@/assets/avatar-helper.jpg';
+import avatarManager from '@/assets/avatar-manager.jpg';
+import avatarHost from '@/assets/avatar-host.jpg';
+import avatarFixer from '@/assets/avatar-fixer.jpg';
+import avatarArtist from '@/assets/avatar-artist.jpg';
+import avatarAdventurer from '@/assets/avatar-adventurer.jpg';
+import avatarPerformer from '@/assets/avatar-performer.jpg';
+
+// Avatar mapping
+const personalityAvatars: Record<PersonalityType, string> = {
+  'The Strategist': avatarStrategist,
+  'The Inventor': avatarInventor,
+  'The Boss': avatarBoss,
+  'The Challenger': avatarChallenger,
+  'The Visionary': avatarVisionary,
+  'The Creator': avatarCreator,
+  'The Coach': avatarCoach,
+  'The Free Spirit': avatarFreeSpirit,
+  'The Organizer': avatarOrganizer,
+  'The Helper': avatarHelper,
+  'The Manager': avatarManager,
+  'The Host': avatarHost,
+  'The Fixer': avatarFixer,
+  'The Artist': avatarArtist,
+  'The Adventurer': avatarAdventurer,
+  'The Performer': avatarPerformer,
+};
+
 // Helper function to get colleges by tier
 const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | 'tier2' | 'tier3' | 'tier4'): College[] => {
   if (Array.isArray(colleges)) {
@@ -106,12 +144,23 @@ export default function DetailedResults() {
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold text-black mb-2">
-            {section === 'careers' ? 'Your Career Matches' : 
-             section === 'colleges' ? 'Your College Options' : 
-             'Career & College Details'}
-          </h1>
-          <p className="text-black/80 text-lg">For {result.type}</p>
+          <div className="flex items-center justify-center gap-4 mb-4">
+            <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
+              <img 
+                src={personalityAvatars[personality as PersonalityType]} 
+                alt={`${result.type} avatar`}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <h1 className="text-4xl font-bold text-black mb-2">
+                {section === 'careers' ? 'Your Career Matches' : 
+                 section === 'colleges' ? 'Your College Options' : 
+                 'Career & College Details'}
+              </h1>
+              <p className="text-black/80 text-lg">For {result.type}</p>
+            </div>
+          </div>
         </div>
 
         {/* Career Recommendations */}
