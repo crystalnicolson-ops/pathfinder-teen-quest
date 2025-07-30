@@ -239,10 +239,10 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                       </span>
                     </div>
                     <div className="relative">
-                      <div className="w-full h-2 bg-gray-200 rounded-full"></div>
+                      <div className="w-full h-2 bg-purple-200 rounded-full"></div>
                       <div 
                         className={`absolute top-0 w-4 h-4 rounded-full border-2 border-white shadow-md transform -translate-y-1 -translate-x-2 transition-all duration-1000 ${
-                          isHigh ? 'bg-green-500' : 'bg-gray-400'
+                          isHigh ? 'bg-blue-400' : 'bg-gray-400'
                         }`}
                         style={{ left: `${trait.percentage}%` }}
                       ></div>
