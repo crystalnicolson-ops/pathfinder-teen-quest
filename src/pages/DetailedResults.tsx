@@ -144,22 +144,20 @@ export default function DetailedResults() {
             </div>
           </div>
 
-          <div className="flex items-center justify-center gap-4 mb-4">
-            <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
+          <h1 className="text-4xl font-bold text-black mb-2">
+            {section === 'careers' ? 'Your Career Matches' : 
+             section === 'colleges' ? 'Your College Options' : 
+             'Career & College Details'}
+          </h1>
+          <div className="flex items-center justify-center gap-2">
+            <div className="w-8 h-8 rounded-full overflow-hidden shadow border-2 border-primary/20">
               <img 
                 src={personalityAvatars[personality as PersonalityType]} 
                 alt={`${result.type} avatar`}
                 className="w-full h-full object-cover"
               />
             </div>
-            <div>
-              <h1 className="text-4xl font-bold text-black mb-2">
-                {section === 'careers' ? 'Your Career Matches' : 
-                 section === 'colleges' ? 'Your College Options' : 
-                 'Career & College Details'}
-              </h1>
-              <p className="text-black/80 text-lg">For {result.type}</p>
-            </div>
+            <p className="text-black/80 text-lg">For {result.type}</p>
           </div>
         </div>
 
