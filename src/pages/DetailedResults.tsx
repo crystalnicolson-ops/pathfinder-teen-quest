@@ -49,7 +49,7 @@ export default function DetailedResults() {
             <Button 
               variant="outline" 
               onClick={() => navigate('/')}
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black"
             >
               <Home className="h-4 w-4 mr-2" />
               Home
@@ -57,7 +57,7 @@ export default function DetailedResults() {
             <Button 
               variant="outline" 
               onClick={() => navigate(-1)}
-              className="bg-white/10 border-white/20 text-white hover:bg-white/20"
+              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
               Back to Results
@@ -94,12 +94,12 @@ export default function DetailedResults() {
             </div>
           </div>
 
-          <h1 className="text-4xl font-bold text-white mb-2">
+          <h1 className="text-4xl font-bold text-black mb-2">
             {section === 'careers' ? 'Your Career Matches' : 
              section === 'colleges' ? 'Your College Options' : 
              'Career & College Details'}
           </h1>
-          <p className="text-white/80 text-lg">For {result.type}</p>
+          <p className="text-black/80 text-lg">For {result.type}</p>
         </div>
 
         {/* Career Recommendations */}

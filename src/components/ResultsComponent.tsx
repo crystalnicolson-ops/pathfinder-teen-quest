@@ -124,8 +124,8 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center pt-8 pb-4">
-          <h1 className="text-4xl font-bold text-purple-900 mb-2 animate-pulse">Your Results Are In!</h1>
-          <p className="text-white/80 text-lg">Discover your career path</p>
+          <h1 className="text-4xl font-bold text-black mb-2 animate-pulse">Your Results Are In!</h1>
+          <p className="text-black/80 text-lg">Discover your career path</p>
         </div>
 
         {/* Personality Type */}
@@ -309,7 +309,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               variant="outline" 
               onClick={onHome}
               size="lg"
-              className="bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/90 transition-all duration-300"
+              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black"
             >
               <Home className="h-4 w-4 mr-2" />
               Home
@@ -318,7 +318,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               variant="outline" 
               onClick={onRetake}
               size="lg"
-              className="bg-gray-800/80 border-gray-600 text-white hover:bg-gray-700/90 transition-all duration-300"
+              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black"
             >
               Retake Quiz
             </Button>
