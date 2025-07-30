@@ -26,16 +26,21 @@ export default function AcademicWorksheet() {
   // Calculate tier recommendations based on academic profile
   const calculateTierFit = () => {
     const gpa = parseFloat(academicData.unweightedGPA);
-    const satScore = parseInt(academicData.testScore);
-    const actScore = parseInt(academicData.testScore);
-    const apCourses = parseInt(academicData.apCourses);
+    const testScore = parseInt(academicData.testScore);
+    const apCourses = parseInt(academicData.apCourses) || 0;
     const ap5s = parseInt(academicData.ap5s) || 0;
     const ap4s = parseInt(academicData.ap4s) || 0;
     
     const recommendations = [];
     
+    // Determine if test score is SAT or ACT based on range
+    const isSAT = testScore >= 400 && testScore <= 1600;
+    const isACT = testScore >= 1 && testScore <= 36;
+    
     // Tier 1 (Elite)
-    if (gpa >= 3.9 && ((satScore >= 1500 && satScore <= 1600) || (actScore >= 34 && actScore <= 36)) && apCourses >= 8 && ap5s >= 4) {
+    if (gpa >= 3.9 && 
+        ((isSAT && testScore >= 1500) || (isACT && testScore >= 34)) && 
+        apCourses >= 8 && ap5s >= 4) {
       recommendations.push({
         tier: 'Tier 1 - Elite Universities',
         fit: 'Strong Match',
@@ -45,7 +50,9 @@ export default function AcademicWorksheet() {
     }
     
     // Tier 2 (Highly Selective)
-    if (gpa >= 3.7 && ((satScore >= 1400 && satScore <= 1550) || (actScore >= 31 && actScore <= 35)) && apCourses >= 6 && (ap4s + ap5s) >= 4) {
+    if (gpa >= 3.7 && 
+        ((isSAT && testScore >= 1400) || (isACT && testScore >= 31)) && 
+        apCourses >= 5 && (ap4s + ap5s) >= 3) {
       recommendations.push({
         tier: 'Tier 2 - Highly Selective',
         fit: gpa >= 3.8 ? 'Strong Match' : 'Good Match',
@@ -55,7 +62,9 @@ export default function AcademicWorksheet() {
     }
     
     // Tier 3 (Competitive)
-    if (gpa >= 3.5 && ((satScore >= 1300 && satScore <= 1500) || (actScore >= 28 && actScore <= 33)) && apCourses >= 4) {
+    if (gpa >= 3.5 && 
+        ((isSAT && testScore >= 1250) || (isACT && testScore >= 27)) && 
+        apCourses >= 3) {
       recommendations.push({
         tier: 'Tier 3 - Competitive',
         fit: gpa >= 3.7 ? 'Strong Match' : 'Good Match',
@@ -65,7 +74,9 @@ export default function AcademicWorksheet() {
     }
     
     // Tier 4 (Broad Admission)
-    if (gpa >= 3.2 && ((satScore >= 1100) || (actScore >= 22)) && apCourses >= 2) {
+    if (gpa >= 3.0 && 
+        ((isSAT && testScore >= 1100) || (isACT && testScore >= 22)) && 
+        apCourses >= 1) {
       recommendations.push({
         tier: 'Tier 4 - Broad Admission',
         fit: 'Good Match',
