@@ -114,35 +114,6 @@ export default function DetailedResults() {
             </Button>
           </div>
           
-          {/* Navigation Tabs */}
-          <div className="flex justify-center gap-4 mb-8">
-            <div 
-              className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
-                !section || section === 'careers' 
-                  ? 'bg-gradient-to-r from-purple-700 to-purple-800 text-white' 
-                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-purple-600 hover:to-purple-700'
-              }`}
-              onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
-            >
-              Career Matches
-            </div>
-            <div 
-              className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
-                section === 'colleges' 
-                  ? 'bg-gradient-secondary text-white' 
-                  : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:bg-secondary/80'
-              }`}
-              onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
-            >
-              College Options
-            </div>
-            <div 
-              className="px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white hover:from-indigo-600 hover:to-indigo-700"
-              onClick={() => navigate('/', { state: { showResults: true } })}
-            >
-              Personality Results
-            </div>
-          </div>
 
           <h1 className="text-4xl font-bold text-black mb-2">
             {section === 'careers' ? 'Your Career Matches' : 
@@ -582,6 +553,36 @@ export default function DetailedResults() {
           </Card>
         </div>
         )}
+
+        {/* Navigation Tabs at Bottom */}
+        <div className="flex justify-center gap-4 mt-8 pb-8">
+          <div 
+            className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
+              !section || section === 'careers' 
+                ? 'bg-gradient-to-r from-purple-700 to-purple-800 text-white' 
+                : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-purple-600 hover:to-purple-700'
+            }`}
+            onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
+          >
+            Career Matches
+          </div>
+          <div 
+            className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
+              section === 'colleges' 
+                ? 'bg-gradient-secondary text-white' 
+                : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:bg-secondary/80'
+            }`}
+            onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
+          >
+            College Options
+          </div>
+          <div 
+            className="px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white hover:from-indigo-600 hover:to-indigo-700"
+            onClick={() => navigate('/', { state: { showResults: true } })}
+          >
+            Personality Results
+          </div>
+        </div>
       </div>
     </div>
   );
