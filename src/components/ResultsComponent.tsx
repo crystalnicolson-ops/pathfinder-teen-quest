@@ -211,26 +211,26 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
         </Card>
 
         {/* Personality Traits */}
-        <Card className="bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-lg shadow-2xl border border-white/30 overflow-hidden">
-          <CardHeader className="text-center relative pb-8">
+        <Card className="bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-lg shadow-xl border border-white/30 overflow-hidden">
+          <CardHeader className="text-center relative pb-4">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
             <div className="relative z-10">
-              <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary via-secondary to-accent rounded-full shadow-xl mb-4 animate-pulse">
-                <TrendingUp className="h-8 w-8 text-white" />
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary via-secondary to-accent rounded-full shadow-lg mb-3">
+                <TrendingUp className="h-6 w-6 text-white" />
               </div>
-              <CardTitle className="text-3xl font-black mb-3">
+              <CardTitle className="text-2xl font-bold mb-2">
                 <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
                   Your Personality DNA
                 </span>
               </CardTitle>
-              <p className="text-lg text-muted-foreground font-medium">
+              <p className="text-sm text-muted-foreground">
                 The unique combination that makes you <span className="text-primary font-bold">extraordinary</span> ✨
               </p>
             </div>
           </CardHeader>
 
-          <CardContent className="px-8 pb-8">
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <CardContent className="px-6 pb-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
               {result.traits.map((trait, index) => {
                 const isHigh = trait.percentage >= 70;
                 const isMedium = trait.percentage >= 40;
@@ -242,57 +242,48 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                     style={{animationDelay: `${index * 100}ms`}}
                   >
                     {/* Main card */}
-                    <div className={`relative p-6 rounded-2xl border-2 transition-all duration-500 hover:scale-105 hover:-translate-y-2 cursor-pointer animate-fade-in ${
+                    <div className={`relative p-4 rounded-xl border transition-all duration-300 hover:scale-102 cursor-pointer animate-fade-in ${
                       isHigh 
-                        ? 'bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 border-primary/30 shadow-xl hover:shadow-2xl hover:shadow-primary/25' 
+                        ? 'bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 border-primary/30 shadow-lg hover:shadow-xl' 
                         : isMedium 
-                          ? 'bg-gradient-to-br from-secondary/8 to-muted/10 border-secondary/25 shadow-lg hover:shadow-xl hover:shadow-secondary/20'
-                          : 'bg-gradient-to-br from-muted/10 to-background/50 border-muted/30 shadow-md hover:shadow-lg'
+                          ? 'bg-gradient-to-br from-secondary/8 to-muted/10 border-secondary/25 shadow-md hover:shadow-lg'
+                          : 'bg-gradient-to-br from-muted/10 to-background/50 border-muted/30 shadow-sm hover:shadow-md'
                     }`}>
                       
-                      {/* Floating glow effect */}
-                      <div className={`absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 ${
-                        isHigh ? 'bg-gradient-to-br from-primary/20 to-secondary/20 blur-xl' : 'bg-gradient-to-br from-secondary/15 to-muted/15 blur-lg'
-                      }`}></div>
-                      
                       {/* Top badge */}
-                      <div className="flex justify-between items-start mb-4">
-                        <div className={`px-3 py-1 rounded-full text-xs font-bold ${
+                      <div className="flex justify-between items-start mb-3">
+                        <div className={`px-2 py-1 rounded-full text-xs font-bold ${
                           isHigh 
-                            ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-lg animate-pulse' 
+                            ? 'bg-gradient-to-r from-primary to-secondary text-white shadow-md' 
                             : isMedium 
                               ? 'bg-secondary/20 text-secondary border border-secondary/30'
                               : 'bg-muted/30 text-muted-foreground border border-muted/40'
                         }`}>
-                          {isHigh ? '🔥 SUPERPOWER' : isMedium ? '💪 STRENGTH' : '🌱 POTENTIAL'}
+                          {isHigh ? '🔥' : isMedium ? '💪' : '🌱'}
                         </div>
                         
                         {isHigh && (
-                          <div className="flex space-x-1">
-                            <Star className="h-4 w-4 text-primary animate-bounce" />
-                            <Star className="h-4 w-4 text-secondary animate-bounce" style={{animationDelay: '0.2s'}} />
-                            <Star className="h-4 w-4 text-accent animate-bounce" style={{animationDelay: '0.4s'}} />
-                          </div>
+                          <Star className="h-3 w-3 text-primary" />
                         )}
                       </div>
 
                       {/* Trait name */}
-                      <h3 className={`text-lg font-bold mb-4 transition-colors duration-300 ${
+                      <h3 className={`text-sm font-bold mb-3 transition-colors duration-300 ${
                         isHigh ? 'text-primary group-hover:text-secondary' : 'text-foreground group-hover:text-primary'
                       }`}>
                         {trait.name}
                       </h3>
 
                       {/* Circular progress */}
-                      <div className="relative w-24 h-24 mx-auto mb-4">
+                      <div className="relative w-16 h-16 mx-auto mb-3">
                         {/* Background circle */}
-                        <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+                        <svg className="w-16 h-16 transform -rotate-90" viewBox="0 0 100 100">
                           <circle
                             cx="50"
                             cy="50"
-                            r="40"
+                            r="35"
                             stroke="currentColor"
-                            strokeWidth="8"
+                            strokeWidth="6"
                             fill="transparent"
                             className="text-muted/20"
                           />
@@ -300,12 +291,12 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                           <circle
                             cx="50"
                             cy="50"
-                            r="40"
+                            r="35"
                             stroke="url(#gradient)"
-                            strokeWidth="8"
+                            strokeWidth="6"
                             fill="transparent"
-                            strokeDasharray={`${2 * Math.PI * 40}`}
-                            strokeDashoffset={`${2 * Math.PI * 40 * (1 - trait.percentage / 100)}`}
+                            strokeDasharray={`${2 * Math.PI * 35}`}
+                            strokeDashoffset={`${2 * Math.PI * 35 * (1 - trait.percentage / 100)}`}
                             strokeLinecap="round"
                             className="transition-all duration-1000 ease-out"
                             style={{animationDelay: `${index * 200 + 500}ms`}}
@@ -320,7 +311,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                         
                         {/* Percentage in center */}
                         <div className="absolute inset-0 flex items-center justify-center">
-                          <span className={`text-2xl font-black ${
+                          <span className={`text-lg font-black ${
                             isHigh ? 'bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent' : 'text-foreground'
                           }`}>
                             {trait.percentage}%
@@ -330,9 +321,9 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
 
                       {/* Bottom decorative element */}
                       <div className="text-center">
-                        <div className={`inline-block w-12 h-1 rounded-full ${
+                        <div className={`inline-block w-8 h-0.5 rounded-full ${
                           isHigh 
-                            ? 'bg-gradient-to-r from-primary to-secondary shadow-lg' 
+                            ? 'bg-gradient-to-r from-primary to-secondary' 
                             : isMedium 
                               ? 'bg-secondary/60' 
                               : 'bg-muted/60'
@@ -345,8 +336,8 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             </div>
 
             {/* Bottom CTA */}
-            <div className="mt-12 text-center">
-              <div className="inline-flex items-center gap-3 px-6 py-3 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-full border border-primary/20 shadow-lg">
+            <div className="mt-8 text-center">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-full border border-primary/20 shadow-md">
                 <Sparkles className="h-5 w-5 text-primary animate-spin" style={{animationDuration: '3s'}} />
                 <span className="text-base font-semibold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                   This is what makes you uniquely YOU!
