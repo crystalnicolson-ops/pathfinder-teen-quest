@@ -130,8 +130,15 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
         {/* Personality Type */}
         <Card className="bg-white/95 backdrop-blur-sm shadow-card">
           <CardHeader className="text-center">
-            <div className="mb-6">
-              <div className="w-32 h-32 mx-auto mb-4 rounded-lg overflow-hidden shadow-lg border-4 border-secondary/20">
+            <div className="mb-6 flex items-center justify-center gap-6">
+              <div className="w-32 h-32 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
+                <img 
+                  src={avatar} 
+                  alt={`${result.type} avatar`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="w-32 h-32 rounded-lg overflow-hidden shadow-lg border-4 border-secondary/20">
                 <img 
                   src={personalitySymbols[personality]} 
                   alt={`${result.type} symbol`}
