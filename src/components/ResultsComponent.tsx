@@ -1,7 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Star, Sparkles, Rocket, GraduationCap, Briefcase, TrendingUp, Home } from 'lucide-react';
+import { Star, Sparkles, Rocket, GraduationCap, Briefcase, Home } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
 import { useNavigate } from 'react-router-dom';
@@ -216,7 +216,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
             <div className="relative z-10">
               <div className="inline-flex items-center justify-center w-12 h-12 bg-gradient-to-br from-primary via-secondary to-accent rounded-full shadow-lg mb-3">
-                <TrendingUp className="h-6 w-6 text-white" />
+                <Sparkles className="h-6 w-6 text-white" />
               </div>
               <CardTitle className="text-2xl font-bold mb-2">
                 <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
