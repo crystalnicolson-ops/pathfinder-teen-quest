@@ -263,10 +263,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-primary" />
-                Tier 1 - Top Elite Universities
+                Tier 1 - Global Elite Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Extremely selective, world-renowned academic and research reputations. Acceptance rates ~3-5%.
+                Global elite, Ivy-caliber, top research and networking. Acceptance rates ~3–5%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
@@ -331,10 +331,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-secondary" />
-                Tier 2 - Highly Prestigious Universities
+                Tier 2 - Elite Private & Research Universities
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Still extremely selective, broad outcomes across STEM, humanities, business. Acceptance rates ~5-10%.
+                Elite private & research universities with wide discipline reach. Acceptance rates ~5–10%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
@@ -399,10 +399,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-purple-500" />
-                Tier 3 - High-Status Research Institutions
+                Tier 3 - Strong Flagship Publics & Respected Privates
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Competitive, strong across multiple fields, widely respected. Acceptance rates ~10-20%.
+                Strong flagship publics & respected privates — broad access. Acceptance rates ~10–20%.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
@@ -467,10 +467,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-purple-600" />
-                Tier 4 - Solid Universities
+                Tier 4 - Quality Institutions with Higher Acceptance
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Good academic reputations, broader admissions, quality programs. Acceptance rates ~20-40%+.
+                Quality institutions with higher acceptance; solid academics. Acceptance rates ~20–40%+.
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-1 gap-8">
