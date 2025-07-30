@@ -230,36 +230,24 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
           </CardHeader>
 
           <CardContent className="px-6 pb-6">
-            {/* Strengths Section */}
-            <div className="mb-6">
-              <h4 className="text-lg font-bold text-green-700 mb-3 flex items-center gap-2">
-                <Star className="h-5 w-5" />
-                Your Strengths (70%+)
-              </h4>
-              <div className="space-y-2">
-                {result.traits.filter(trait => trait.percentage >= 70).map((trait, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-green-50 rounded-lg border border-green-200">
-                    <span className="font-medium text-green-800">{trait.name}</span>
-                    <span className="text-green-700 font-bold">{trait.percentage}%</span>
+            <div className="space-y-2 mb-6">
+              {result.traits.map((trait, index) => {
+                const isHigh = trait.percentage >= 70;
+                return (
+                  <div key={index} className={`flex items-center justify-between p-3 rounded-lg border ${
+                    isHigh 
+                      ? 'bg-green-50 border-green-200' 
+                      : 'bg-gray-50 border-gray-200'
+                  }`}>
+                    <span className={`font-medium ${isHigh ? 'text-green-800' : 'text-gray-700'}`}>
+                      {trait.name}
+                    </span>
+                    <span className={`font-bold ${isHigh ? 'text-green-700' : 'text-gray-600'}`}>
+                      {trait.percentage}%
+                    </span>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Growth Areas Section */}
-            <div className="mb-6">
-              <h4 className="text-lg font-bold text-gray-600 mb-3 flex items-center gap-2">
-                <Rocket className="h-5 w-5" />
-                Growth Opportunities (Under 70%)
-              </h4>
-              <div className="space-y-2">
-                {result.traits.filter(trait => trait.percentage < 70).map((trait, index) => (
-                  <div key={index} className="flex items-center justify-between p-3 bg-gray-50 rounded-lg border border-gray-200">
-                    <span className="font-medium text-gray-700">{trait.name}</span>
-                    <span className="text-gray-600 font-bold">{trait.percentage}%</span>
-                  </div>
-                ))}
-              </div>
+                );
+              })}
             </div>
 
             {/* Bottom CTA */}
