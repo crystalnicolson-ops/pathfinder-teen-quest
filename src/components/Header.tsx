@@ -12,9 +12,8 @@ export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 py-3">
-        <div className="flex justify-between items-center">
-          <h1 className="text-xl font-bold text-black">Career Discovery</h1>
-          <Button 
+        <div className="flex justify-end items-center">
+          <Button
             variant="outline" 
             onClick={onHome}
             size="sm"
