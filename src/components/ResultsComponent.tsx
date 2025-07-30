@@ -216,7 +216,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
             <div className="relative z-10">
               <CardTitle className="text-2xl font-bold mb-2 text-foreground">
-                Your Personality Playlist
+                Your Personality Traits
               </CardTitle>
               <p className="text-sm text-muted-foreground">
                 The unique combination that makes you <span className="text-primary font-bold">extraordinary</span> ✨
