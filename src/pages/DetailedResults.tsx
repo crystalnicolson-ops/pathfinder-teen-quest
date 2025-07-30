@@ -285,11 +285,11 @@ export default function DetailedResults() {
 
                 {/* Website Link */}
                 <div 
-                  className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                  className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
                   onClick={() => window.open(college.website, '_blank')}
                 >
-                  <ExternalLink className="h-4 w-4" />
-                  Visit College Website
+                  <ExternalLink className="h-3 w-3" />
+                  Visit Website
                 </div>
                 </div>
               ))}
@@ -353,11 +353,11 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
                     onClick={() => window.open(college.website, '_blank')}
                   >
-                    <ExternalLink className="h-4 w-4" />
-                    Visit College Website
+                    <ExternalLink className="h-3 w-3" />
+                    Visit Website
                   </div>
                 </div>
               ))}
@@ -421,11 +421,11 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
                     onClick={() => window.open(college.website, '_blank')}
                   >
-                    <ExternalLink className="h-4 w-4" />
-                    Visit College Website
+                    <ExternalLink className="h-3 w-3" />
+                    Visit Website
                   </div>
                 </div>
               ))}
@@ -489,11 +489,11 @@ export default function DetailedResults() {
 
                   {/* Website Link */}
                   <div 
-                    className="w-full bg-gradient-to-r from-purple-500 to-purple-600 text-white p-3 rounded-lg cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-lg flex items-center justify-center gap-2"
+                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-2 text-sm"
                     onClick={() => window.open(college.website, '_blank')}
                   >
-                    <ExternalLink className="h-4 w-4" />
-                    Visit College Website
+                    <ExternalLink className="h-3 w-3" />
+                    Visit Website
                   </div>
                 </div>
               ))}
