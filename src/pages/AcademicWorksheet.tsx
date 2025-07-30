@@ -247,14 +247,20 @@ export default function AcademicWorksheet() {
                 {calculateTierFit().length > 0 ? (
                   <div className="grid gap-4">
                     {calculateTierFit().map((rec, index) => (
-                      <div key={index} className={`bg-gradient-to-r from-${rec.color}-50 to-${rec.color}-100 p-6 rounded-lg border border-${rec.color}-200`}>
+                      <div key={index} className={`
+                        ${rec.color === 'purple' ? 'bg-purple-600 text-white' : ''}
+                        ${rec.color === 'blue' ? 'bg-blue-600 text-white' : ''}
+                        ${rec.color === 'green' ? 'bg-green-600 text-white' : ''}
+                        ${rec.color === 'orange' ? 'bg-orange-600 text-white' : ''}
+                        p-6 rounded-lg shadow-lg
+                      `}>
                         <div className="flex items-center justify-between mb-3">
-                          <h4 className={`text-lg font-bold text-${rec.color}-800`}>{rec.tier}</h4>
-                          <Badge variant={rec.fit === 'Strong Match' ? 'default' : 'secondary'}>
+                          <h4 className="text-lg font-bold text-white">{rec.tier}</h4>
+                          <Badge variant={rec.fit === 'Strong Match' ? 'default' : 'secondary'} className="bg-white/20 text-white border-white/30">
                             {rec.fit}
                           </Badge>
                         </div>
-                        <p className={`text-sm text-${rec.color}-700`}>{rec.description}</p>
+                        <p className="text-sm text-white/90">{rec.description}</p>
                       </div>
                     ))}
                   </div>
