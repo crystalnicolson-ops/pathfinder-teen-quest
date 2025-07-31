@@ -63,7 +63,7 @@ const Index = () => {
           </Badge>
           
           <h1 className="text-5xl md:text-6xl font-bold text-black mb-6 animate-bounce-gentle">
-            Find Your Perfect Career Path
+            What's Your Personality Type?
           </h1>
           
           <p className="text-xl md:text-2xl text-black/80 mb-8 max-w-2xl mx-auto leading-relaxed">
