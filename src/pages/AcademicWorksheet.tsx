@@ -112,7 +112,7 @@ export default function AcademicWorksheet() {
             </Button>
             <Button 
               variant="outline" 
-              onClick={() => navigate(-1)}
+              onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
               className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black"
             >
               <ArrowLeft className="h-4 w-4 mr-2" />
