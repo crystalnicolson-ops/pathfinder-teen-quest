@@ -168,6 +168,12 @@ export default function DetailedResults() {
               return 'Your Complete Profile';
             })()}
           </h1>
+          
+          {/* Debug info */}
+          <div className="text-sm text-red-600 mb-2">
+            DEBUG: Current section = "{section || 'null'}" | Personality = "{personality}"
+          </div>
+          
           <div className="flex items-center justify-center gap-2">
             <div className="w-8 h-8 rounded-full overflow-hidden shadow border-2 border-primary/20">
               <img 
@@ -703,9 +709,10 @@ export default function DetailedResults() {
             variant={!section ? "default" : "outline"}
             size="lg"
             onClick={() => {
-              console.log('Clicking Personality Profile button, current section:', section);
-              console.log('About to navigate with personality:', personality);
-              navigate('/detailed-results', { state: { personality, section: null } });
+              console.log('=== PERSONALITY BUTTON CLICKED ===');
+              console.log('Current section before navigate:', section);
+              console.log('Personality value:', personality);
+              window.location.href = '/detailed-results?debug=personality';
             }}
             className="px-6 py-3"
           >
