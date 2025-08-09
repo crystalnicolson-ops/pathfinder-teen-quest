@@ -780,12 +780,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Timothée Chalamet", emoji: "🎭", description: "Abstract, thoughtful actor" }
     ],
     traits: [
-      { name: "🧠 Big Picture Thinker", percentage: 89 },
-      { name: "🔍 Logic Pro", percentage: 85 },
-      { name: "🚶 Goes Their Own Way", percentage: 82 },
-      { name: "🧩 Problem Solver", percentage: 87 },
-      { name: "📅 Future Planner", percentage: 84 },
-      { name: "🎨 Creative Spark", percentage: 52 }
+      { name: "Complex Problem Solving", percentage: 89 },
+      { name: "Independent Learning", percentage: 85 },
+      { name: "Logical Analysis", percentage: 82 },
+      { name: "Creative Innovation", percentage: 87 },
+      { name: "Abstract Thinking", percentage: 84 },
+      { name: "Future-Focused", percentage: 52 }
     ]
   },
 
@@ -898,12 +898,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Noah Schnapp", emoji: "🎯", description: "Focused, ambitious" }
     ],
     traits: [
-      { name: "🧠 Big Picture Thinker", percentage: 92 },
-      { name: "📅 Future Planner", percentage: 88 },
-      { name: "🔍 Logic Pro", percentage: 90 },
-      { name: "🚶 Goes Their Own Way", percentage: 86 },
-      { name: "🧩 Problem Solver", percentage: 89 },
-      { name: "🎨 Creative Spark", percentage: 38 }
+      { name: "Natural Leadership", percentage: 92 },
+      { name: "Strategic Planning", percentage: 88 },
+      { name: "Results-Driven", percentage: 90 },
+      { name: "Confident Decision Making", percentage: 86 },
+      { name: "Long-term Vision", percentage: 89 },
+      { name: "Team Building", percentage: 38 }
     ]
   },
 
@@ -1016,12 +1016,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Finn Wolfhard", emoji: "🎭", description: "Multi-talented challenger" }
     ],
     traits: [
-      { name: "🧩 Problem Solver", percentage: 91 },
-      { name: "🔍 Logic Pro", percentage: 87 },
-      { name: "🚶 Goes Their Own Way", percentage: 89 },
-      { name: "🧠 Big Picture Thinker", percentage: 83 },
-      { name: "📅 Future Planner", percentage: 85 },
-      { name: "🎨 Creative Spark", percentage: 72 }
+      { name: "Innovation & Ideas", percentage: 91 },
+      { name: "Strategic Thinking", percentage: 87 },
+      { name: "Debate Skills", percentage: 89 },
+      { name: "Adaptability", percentage: 83 },
+      { name: "Big Picture Vision", percentage: 85 },
+      { name: "Social Confidence", percentage: 72 }
     ]
   },
 
@@ -1134,12 +1134,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Maddie Ziegler", emoji: "🎨", description: "Creative, empathetic artist" }
     ],
     traits: [
-      { name: "🧠 Big Picture Thinker", percentage: 93 },
-      { name: "🚶 Goes Their Own Way", percentage: 91 },
-      { name: "🎨 Creative Spark", percentage: 88 },
-      { name: "🧩 Problem Solver", percentage: 85 },
-      { name: "📅 Future Planner", percentage: 89 },
-      { name: "🔍 Logic Pro", percentage: 81 }
+      { name: "Intuitive Insight", percentage: 93 },
+      { name: "Long-term Vision", percentage: 91 },
+      { name: "Empathetic Understanding", percentage: 88 },
+      { name: "Creative Problem Solving", percentage: 85 },
+      { name: "Value-Based Decisions", percentage: 89 },
+      { name: "Future Planning", percentage: 81 }
     ]
   },
 
@@ -1252,12 +1252,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Billie Eilish", emoji: "🎵", description: "Creative, value-driven musician" }
     ],
     traits: [
-      { name: "🎨 Creative Spark", percentage: 94 },
-      { name: "🚶 Goes Their Own Way", percentage: 92 },
-      { name: "🧠 Big Picture Thinker", percentage: 88 },
-      { name: "📅 Future Planner", percentage: 86 },
-      { name: "🧩 Problem Solver", percentage: 90 },
-      { name: "🔍 Logic Pro", percentage: 96 }
+      { name: "Creative Expression", percentage: 94 },
+      { name: "Authentic Values", percentage: 92 },
+      { name: "Empathetic Understanding", percentage: 88 },
+      { name: "Flexible Thinking", percentage: 86 },
+      { name: "Personal Growth", percentage: 90 },
+      { name: "Artistic Vision", percentage: 96 }
     ]
   },
 
@@ -1488,12 +1488,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Finn Wolfhard", emoji: "✨", description: "Enthusiastic, spontaneous creator" }
     ],
     traits: [
-      { name: "🎨 Creative Spark", percentage: 93 },
-      { name: "🧠 Big Picture Thinker", percentage: 88 },
-      { name: "🚶 Goes Their Own Way", percentage: 91 },
-      { name: "🧩 Problem Solver", percentage: 89 },
-      { name: "📅 Future Planner", percentage: 86 },
-      { name: "🔍 Logic Pro", percentage: 79 }
+      { name: "Creative Energy", percentage: 93 },
+      { name: "People Connection", percentage: 88 },
+      { name: "Inspirational Communication", percentage: 91 },
+      { name: "Adaptable Thinking", percentage: 89 },
+      { name: "Value-Driven Decisions", percentage: 86 },
+      { name: "Enthusiastic Leadership", percentage: 79 }
     ]
   },
 
@@ -1606,12 +1606,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Maddie Ziegler", emoji: "📋", description: "Detail-oriented, structured" }
     ],
     traits: [
-      { name: "📅 Future Planner", percentage: 94 },
-      { name: "🔍 Logic Pro", percentage: 92 },
-      { name: "🧩 Problem Solver", percentage: 89 },
-      { name: "🧠 Big Picture Thinker", percentage: 87 },
-      { name: "🚶 Goes Their Own Way", percentage: 91 },
-      { name: "🎨 Creative Spark", percentage: 32 }
+      { name: "Detailed Planning", percentage: 94 },
+      { name: "Reliable Execution", percentage: 92 },
+      { name: "Systematic Thinking", percentage: 89 },
+      { name: "Practical Problem Solving", percentage: 87 },
+      { name: "Quality Focus", percentage: 91 },
+      { name: "Traditional Values", percentage: 32 }
     ]
   },
 
@@ -1724,12 +1724,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Sadie Sink", emoji: "🤗", description: "Nurturing, service-oriented" }
     ],
     traits: [
-      { name: "🧠 Big Picture Thinker", percentage: 95 },
-      { name: "🚶 Goes Their Own Way", percentage: 91 },
-      { name: "🧩 Problem Solver", percentage: 93 },
-      { name: "📅 Future Planner", percentage: 88 },
-      { name: "🔍 Logic Pro", percentage: 86 },
-      { name: "🎨 Creative Spark", percentage: 58 }
+      { name: "Supportive Care", percentage: 95 },
+      { name: "Detail-Oriented Planning", percentage: 91 },
+      { name: "Loyal Dedication", percentage: 93 },
+      { name: "Practical Service", percentage: 88 },
+      { name: "Harmony Building", percentage: 86 },
+      { name: "Reliable Support", percentage: 58 }
     ]
   },
 
@@ -1842,12 +1842,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Zendaya", emoji: "👑", description: "Natural manager, goal-oriented" }
     ],
     traits: [
-      { name: "🧠 Big Picture Thinker", percentage: 91 },
-      { name: "📅 Future Planner", percentage: 89 },
-      { name: "🔍 Logic Pro", percentage: 92 },
-      { name: "🧩 Problem Solver", percentage: 87 },
-      { name: "🚶 Goes Their Own Way", percentage: 88 },
-      { name: "🎨 Creative Spark", percentage: 35 }
+      { name: "Leadership Skills", percentage: 91 },
+      { name: "Organizational Planning", percentage: 89 },
+      { name: "Results-Focused", percentage: 92 },
+      { name: "Practical Decision Making", percentage: 87 },
+      { name: "Team Coordination", percentage: 88 },
+      { name: "Systematic Execution", percentage: 35 }
     ]
   },
 
@@ -1960,12 +1960,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Sabrina Carpenter", emoji: "🎪", description: "People-focused, welcoming" }
     ],
     traits: [
-      { name: "🧠 Big Picture Thinker", percentage: 94 },
-      { name: "🧩 Problem Solver", percentage: 92 },
-      { name: "🚶 Goes Their Own Way", percentage: 89 },
-      { name: "📅 Future Planner", percentage: 88 },
-      { name: "🔍 Logic Pro", percentage: 90 },
-      { name: "🎨 Creative Spark", percentage: 67 }
+      { name: "People-Centered Leadership", percentage: 94 },
+      { name: "Emotional Support", percentage: 92 },
+      { name: "Social Harmony", percentage: 89 },
+      { name: "Practical Organization", percentage: 88 },
+      { name: "Team Collaboration", percentage: 90 },
+      { name: "Service-Oriented", percentage: 67 }
     ]
   },
 
@@ -2078,12 +2078,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Noah Schnapp", emoji: "⚙️", description: "Independent, technical fixer" }
     ],
     traits: [
-      { name: "🧩 Problem Solver", percentage: 91 },
-      { name: "🚶 Goes Their Own Way", percentage: 89 },
-      { name: "🔍 Logic Pro", percentage: 94 },
-      { name: "🧠 Big Picture Thinker", percentage: 87 },
-      { name: "📅 Future Planner", percentage: 85 },
-      { name: "🎨 Creative Spark", percentage: 41 }
+      { name: "Hands-On Problem Solving", percentage: 91 },
+      { name: "Mechanical Skills", percentage: 89 },
+      { name: "Independent Work Style", percentage: 94 },
+      { name: "Practical Solutions", percentage: 87 },
+      { name: "Adaptable Thinking", percentage: 85 },
+      { name: "Tool Mastery", percentage: 41 }
     ]
   },
 
@@ -2196,12 +2196,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Sadie Sink", emoji: "🌙", description: "Expressive, artistic performer" }
     ],
     traits: [
-      { name: "🎨 Creative Spark", percentage: 96 },
-      { name: "🚶 Goes Their Own Way", percentage: 93 },
-      { name: "🧠 Big Picture Thinker", percentage: 88 },
-      { name: "🧩 Problem Solver", percentage: 91 },
-      { name: "📅 Future Planner", percentage: 89 },
-      { name: "🔍 Logic Pro", percentage: 97 }
+      { name: "Creative Expression", percentage: 96 },
+      { name: "Aesthetic Sensitivity", percentage: 93 },
+      { name: "Value-Based Decisions", percentage: 88 },
+      { name: "Flexible Approach", percentage: 91 },
+      { name: "Empathetic Understanding", percentage: 89 },
+      { name: "Artistic Skills", percentage: 97 }
     ]
   },
 
@@ -2314,12 +2314,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Finn Wolfhard", emoji: "🌟", description: "Action-oriented, dynamic performer" }
     ],
     traits: [
-      { name: "🧩 Problem Solver", percentage: 94 },
-      { name: "🚶 Goes Their Own Way", percentage: 91 },
-      { name: "🧠 Big Picture Thinker", percentage: 89 },
-      { name: "🔍 Logic Pro", percentage: 87 },
-      { name: "📅 Future Planner", percentage: 85 },
-      { name: "🎨 Creative Spark", percentage: 56 }
+      { name: "Action-Oriented", percentage: 94 },
+      { name: "Quick Decision Making", percentage: 91 },
+      { name: "Social Energy", percentage: 89 },
+      { name: "Practical Problem Solving", percentage: 87 },
+      { name: "Adaptable Skills", percentage: 85 },
+      { name: "Risk-Taking", percentage: 56 }
     ]
   },
 
@@ -2432,12 +2432,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Maddie Ziegler", emoji: "💃", description: "Fun-loving, expressive artist" }
     ],
     traits: [
-      { name: "🎨 Creative Spark", percentage: 95 },
-      { name: "🚶 Goes Their Own Way", percentage: 92 },
-      { name: "🧠 Big Picture Thinker", percentage: 90 },
-      { name: "🧩 Problem Solver", percentage: 88 },
-      { name: "📅 Future Planner", percentage: 91 },
-      { name: "🔍 Logic Pro", percentage: 94 }
+      { name: "Entertainment Skills", percentage: 95 },
+      { name: "Social Connection", percentage: 92 },
+      { name: "Creative Expression", percentage: 90 },
+      { name: "Adaptable Energy", percentage: 88 },
+      { name: "People-Focused", percentage: 91 },
+      { name: "Spontaneous Leadership", percentage: 94 }
     ]
   }
 };
