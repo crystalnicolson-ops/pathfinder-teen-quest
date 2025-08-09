@@ -119,6 +119,10 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
     navigate('/detailed-results', { state: { personality, section: 'colleges' } });
   };
 
+  const handleViewFullProfile = () => {
+    navigate('/detailed-results', { state: { personality, section: null } });
+  };
+
   return (
     <div className="min-h-screen bg-gradient-hero p-4 pt-20">
       <div className="max-w-4xl mx-auto space-y-6">
@@ -311,6 +315,29 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             
             {/* Glowing ring effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-secondary opacity-30 group-hover:opacity-50 blur-xl transition-opacity duration-300 -z-10"></div>
+          </div>
+
+          {/* View Full Profile Button */}
+          <div className="relative group">
+            <Button 
+              onClick={handleViewFullProfile}
+              size="lg"
+              className="relative bg-gradient-to-r from-blue-600 via-cyan-600 to-teal-600 text-white rounded-full border-2 border-transparent hover:from-blue-700 hover:via-cyan-700 hover:to-teal-700 transform transition-all duration-300 hover:scale-105 hover:shadow-2xl px-8 py-6 text-lg font-bold overflow-hidden"
+            >
+              {/* Animated background effect */}
+              <div className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-full"></div>
+              
+              {/* Sparkle effect */}
+              <div className="absolute -top-1 -right-1">
+                <Sparkles className="h-4 w-4 text-yellow-300 animate-bounce" style={{animationDelay: '1s'}} />
+              </div>
+              
+              <Star className="h-6 w-6 mr-3 group-hover:animate-bounce" />
+              <span className="relative z-10">View Full Profile</span>
+            </Button>
+            
+            {/* Glowing ring effect */}
+            <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-600 to-teal-600 opacity-30 group-hover:opacity-50 blur-xl transition-opacity duration-300 -z-10"></div>
           </div>
 
           {/* Home and Retake Buttons */}
