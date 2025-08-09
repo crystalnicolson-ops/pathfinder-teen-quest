@@ -161,9 +161,12 @@ export default function DetailedResults() {
           </div>
 
           <h1 className="text-4xl font-bold text-black mb-2">
-            {section === 'careers' ? 'Your Career Matches' : 
-             section === 'colleges' ? 'Your College Options' : 
-             'Your Complete Profile'}
+            {(() => {
+              console.log('Current section:', section);
+              if (section === 'careers') return 'Your Career Matches';
+              if (section === 'colleges') return 'Your College Options';
+              return 'Your Complete Profile';
+            })()}
           </h1>
           <div className="flex items-center justify-center gap-2">
             <div className="w-8 h-8 rounded-full overflow-hidden shadow border-2 border-primary/20">
@@ -178,31 +181,34 @@ export default function DetailedResults() {
         </div>
 
         {/* Personality Section */}
-        <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-          <CardHeader>
-            <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-              <Star className="h-6 w-6 text-primary" />
-              {result.type}
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-center gap-6 mb-6">
-              <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
-                <img 
-                  src={personalityAvatars[personality as PersonalityType]} 
-                  alt={`${result.type} avatar`}
-                  className="w-full h-full object-cover"
-                />
+        {!section && (
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+                <Star className="h-6 w-6 text-primary" />
+                {result.type}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center gap-6 mb-6">
+                <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
+                  <img 
+                    src={personalityAvatars[personality as PersonalityType]} 
+                    alt={`${result.type} avatar`}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h2 className="text-2xl font-bold text-foreground mb-2">{result.type}</h2>
+                  <p className="text-muted-foreground leading-relaxed">{result.description}</p>
+                </div>
               </div>
-              <div className="flex-1">
-                <h2 className="text-2xl font-bold text-foreground mb-2">{result.type}</h2>
-                <p className="text-muted-foreground leading-relaxed">{result.description}</p>
-              </div>
-            </div>
-          </CardContent>
-        </Card>
+            </CardContent>
+          </Card>
+        )}
 
         {/* Career Recommendations */}
+        {(section === 'careers' || !section) && (
         <div className="space-y-6">
             {/* Entry Level Careers */}
             <Card className="bg-white/95 backdrop-blur-sm shadow-card">
@@ -322,8 +328,10 @@ export default function DetailedResults() {
               </CardContent>
             </Card>
           </div>
+        )}
 
         {/* College Recommendations */}
+        {(section === 'colleges' || !section) && (
         <div className="space-y-6">
           {/* Tier 1 Colleges */}
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
@@ -687,6 +695,7 @@ export default function DetailedResults() {
             </CardContent>
           </Card>
         </div>
+        )}
 
         {/* Navigation Tabs at Bottom */}
         <div className="flex justify-center gap-4 mt-8 pb-8">
