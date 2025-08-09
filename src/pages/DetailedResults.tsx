@@ -703,7 +703,8 @@ export default function DetailedResults() {
             variant={!section ? "default" : "outline"}
             size="lg"
             onClick={() => {
-              console.log('Clicking Personality Profile button');
+              console.log('Clicking Personality Profile button, current section:', section);
+              console.log('About to navigate with personality:', personality);
               navigate('/detailed-results', { state: { personality, section: null } });
             }}
             className="px-6 py-3"
