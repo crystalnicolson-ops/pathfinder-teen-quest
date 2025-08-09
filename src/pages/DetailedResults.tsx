@@ -134,9 +134,36 @@ export default function DetailedResults() {
               Back to Results
             </Button>
           </div>
+          
+          {/* Section Navigation Tabs */}
+          <div className="flex gap-2 justify-center mb-6">
+            <Button 
+              variant={!section ? "default" : "outline"}
+              onClick={() => navigate('/detailed-results', { state: { personality, section: null } })}
+              className="text-sm"
+            >
+              Personality
+            </Button>
+            <Button 
+              variant={section === 'careers' ? "default" : "outline"}
+              onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
+              className="text-sm"
+            >
+              Career Matches
+            </Button>
+            <Button 
+              variant={section === 'colleges' ? "default" : "outline"}
+              onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
+              className="text-sm"
+            >
+              College Options
+            </Button>
+          </div>
 
           <h1 className="text-4xl font-bold text-black mb-2">
-            Your Complete Profile
+            {section === 'careers' ? 'Your Career Matches' : 
+             section === 'colleges' ? 'Your College Options' : 
+             'Your Complete Profile'}
           </h1>
           <div className="flex items-center justify-center gap-2">
             <div className="w-8 h-8 rounded-full overflow-hidden shadow border-2 border-primary/20">
