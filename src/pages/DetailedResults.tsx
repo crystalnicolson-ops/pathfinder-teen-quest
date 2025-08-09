@@ -138,8 +138,8 @@ export default function DetailedResults() {
           {/* Section Navigation Tabs */}
           <div className="flex gap-2 justify-center mb-6">
             <Button 
-              variant={!section ? "default" : "outline"}
-              onClick={() => navigate('/detailed-results', { state: { personality, section: null } })}
+              variant={section === 'personality' ? "default" : "outline"}
+              onClick={() => navigate('/detailed-results', { state: { personality, section: 'personality' } })}
               className="text-sm"
             >
               Personality
@@ -165,14 +165,10 @@ export default function DetailedResults() {
               console.log('Current section:', section);
               if (section === 'careers') return 'Your Career Matches';
               if (section === 'colleges') return 'Your College Options';
+              if (section === 'personality') return 'Your Personality Profile';
               return 'Your Complete Profile';
             })()}
           </h1>
-          
-          {/* Debug info */}
-          <div className="text-sm text-red-600 mb-2">
-            DEBUG: Current section = "{section || 'null'}" | Personality = "{personality}"
-          </div>
           
           <div className="flex items-center justify-center gap-2">
             <div className="w-8 h-8 rounded-full overflow-hidden shadow border-2 border-primary/20">
@@ -187,7 +183,7 @@ export default function DetailedResults() {
         </div>
 
         {/* Personality Section */}
-        {!section && (
+        {section === 'personality' && (
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
@@ -209,12 +205,35 @@ export default function DetailedResults() {
                   <p className="text-muted-foreground leading-relaxed">{result.description}</p>
                 </div>
               </div>
+              
+              {/* Personality Traits */}
+              {result.traits && result.traits.length > 0 && (
+                <div className="mt-6">
+                  <h3 className="text-lg font-semibold text-foreground mb-4">Your Key Traits</h3>
+                  <div className="grid gap-4">
+                    {result.traits.map((trait) => (
+                      <div key={trait.name} className="space-y-2">
+                        <div className="flex justify-between">
+                          <span className="text-sm font-medium text-foreground">{trait.name}</span>
+                          <span className="text-sm text-muted-foreground">{trait.percentage}%</span>
+                        </div>
+                        <div className="w-full bg-gray-200 rounded-full h-2">
+                          <div 
+                            className="bg-gradient-to-r from-primary to-secondary h-2 rounded-full transition-all duration-300"
+                            style={{ width: `${trait.percentage}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
             </CardContent>
           </Card>
         )}
 
         {/* Career Recommendations */}
-        {(section === 'careers' || !section) && (
+        {section === 'careers' && (
         <div className="space-y-6">
             {/* Entry Level Careers */}
             <Card className="bg-white/95 backdrop-blur-sm shadow-card">
@@ -337,7 +356,7 @@ export default function DetailedResults() {
         )}
 
         {/* College Recommendations */}
-        {(section === 'colleges' || !section) && (
+        {section === 'colleges' && (
         <div className="space-y-6">
           {/* Tier 1 Colleges */}
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
@@ -706,13 +725,11 @@ export default function DetailedResults() {
         {/* Navigation Tabs at Bottom */}
         <div className="flex justify-center gap-4 mt-8 pb-8">
           <Button
-            variant={!section ? "default" : "outline"}
+            variant={section === 'personality' ? "default" : "outline"}
             size="lg"
             onClick={() => {
               console.log('=== PERSONALITY BUTTON CLICKED ===');
-              console.log('Current section before navigate:', section);
-              console.log('Personality value:', personality);
-              window.location.href = '/detailed-results?debug=personality';
+              navigate('/detailed-results', { state: { personality, section: 'personality' } });
             }}
             className="px-6 py-3"
           >
