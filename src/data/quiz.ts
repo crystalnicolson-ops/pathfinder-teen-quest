@@ -313,9 +313,13 @@ export function calculateMBTI(responses: { traits: string[] }[]): PersonalityTyp
 
   for (const response of responses) {
     for (const trait of response.traits) {
-      traitCounts[trait as keyof typeof traitCounts]++;
+      if (traitCounts.hasOwnProperty(trait)) {
+        traitCounts[trait as keyof typeof traitCounts]++;
+      }
     }
   }
+
+  console.log('Trait counts:', traitCounts);
 
   const mbtiCode = [
     traitCounts.E > traitCounts.I ? 'E' : 'I',
@@ -323,6 +327,8 @@ export function calculateMBTI(responses: { traits: string[] }[]): PersonalityTyp
     traitCounts.T > traitCounts.F ? 'T' : 'F',
     traitCounts.J > traitCounts.P ? 'J' : 'P'
   ].join('');
+
+  console.log('MBTI Code:', mbtiCode);
 
   const mbtiToPersonality: Record<string, PersonalityType> = {
     'INTJ': 'The Strategist',
@@ -343,7 +349,10 @@ export function calculateMBTI(responses: { traits: string[] }[]): PersonalityTyp
     'ESFP': 'The Performer'
   };
 
-  return mbtiToPersonality[mbtiCode] || 'The Strategist';
+  const result = mbtiToPersonality[mbtiCode] || 'The Strategist';
+  console.log('Final personality result:', result);
+  
+  return result;
 }
 
 export const personalityResults: Record<string, PersonalityResult> = {
