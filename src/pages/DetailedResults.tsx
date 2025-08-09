@@ -114,36 +114,9 @@ export default function DetailedResults() {
               Back to Results
             </Button>
           </div>
-          
-          {/* Section Navigation */}
-          <div className="flex gap-2 justify-center mb-6">
-            <Button 
-              variant={!section ? "default" : "outline"}
-              onClick={() => navigate('/detailed-results', { state: { personality, section: null } })}
-              className="text-sm"
-            >
-              Personality
-            </Button>
-            <Button 
-              variant={section === 'careers' ? "default" : "outline"}
-              onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
-              className="text-sm"
-            >
-              Career Matches
-            </Button>
-            <Button 
-              variant={section === 'colleges' ? "default" : "outline"}
-              onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
-              className="text-sm"
-            >
-              College Options
-            </Button>
-          </div>
 
           <h1 className="text-4xl font-bold text-black mb-2">
-            {section === 'careers' ? 'Your Career Matches' : 
-             section === 'colleges' ? 'Your College Options' : 
-             'Your Personality Profile'}
+            Your Complete Profile
           </h1>
           <div className="flex items-center justify-center gap-2">
             <div className="w-8 h-8 rounded-full overflow-hidden shadow border-2 border-primary/20">
@@ -158,56 +131,32 @@ export default function DetailedResults() {
         </div>
 
         {/* Personality Section */}
-        {!section && (
-          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <Star className="h-6 w-6 text-primary" />
-                {result.type}
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <div className="flex items-center gap-6 mb-6">
-                <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
-                  <img 
-                    src={personalityAvatars[personality as PersonalityType]} 
-                    alt={`${result.type} avatar`}
-                    className="w-full h-full object-cover"
-                  />
-                </div>
-                <div className="flex-1">
-                  <h2 className="text-2xl font-bold text-foreground mb-2">{result.type}</h2>
-                  <p className="text-muted-foreground leading-relaxed">{result.description}</p>
-                </div>
+        <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+          <CardHeader>
+            <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
+              <Star className="h-6 w-6 text-primary" />
+              {result.type}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <div className="flex items-center gap-6 mb-6">
+              <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
+                <img 
+                  src={personalityAvatars[personality as PersonalityType]} 
+                  alt={`${result.type} avatar`}
+                  className="w-full h-full object-cover"
+                />
               </div>
-              
-              <div className="grid md:grid-cols-2 gap-6 mt-6">
-                <Button 
-                  variant="outline"
-                  onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
-                  className="h-auto p-4 flex-col gap-2"
-                >
-                  <Users className="h-6 w-6 text-primary" />
-                  <span className="font-semibold">View Career Matches</span>
-                  <span className="text-sm text-muted-foreground">Discover perfect job opportunities</span>
-                </Button>
-                <Button 
-                  variant="outline"
-                  onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
-                  className="h-auto p-4 flex-col gap-2"
-                >
-                  <GraduationCap className="h-6 w-6 text-primary" />
-                  <span className="font-semibold">View College Options</span>
-                  <span className="text-sm text-muted-foreground">Find your ideal educational path</span>
-                </Button>
+              <div className="flex-1">
+                <h2 className="text-2xl font-bold text-foreground mb-2">{result.type}</h2>
+                <p className="text-muted-foreground leading-relaxed">{result.description}</p>
               </div>
-            </CardContent>
-          </Card>
-        )}
+            </div>
+          </CardContent>
+        </Card>
 
         {/* Career Recommendations */}
-        {section === 'careers' && (
-          <div className="space-y-6">
+        <div className="space-y-6">
             {/* Entry Level Careers */}
             <Card className="bg-white/95 backdrop-blur-sm shadow-card">
               <CardHeader>
@@ -326,10 +275,8 @@ export default function DetailedResults() {
               </CardContent>
             </Card>
           </div>
-        )}
 
         {/* College Recommendations */}
-        {section === 'colleges' && (
         <div className="space-y-6">
           {/* Tier 1 Colleges */}
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
@@ -693,7 +640,6 @@ export default function DetailedResults() {
             </CardContent>
           </Card>
         </div>
-        )}
 
         {/* Navigation Tabs at Bottom */}
         <div className="flex justify-center gap-4 mt-8 pb-8">
