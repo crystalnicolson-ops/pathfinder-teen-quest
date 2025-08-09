@@ -1,4 +1,5 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -12,8 +13,17 @@ import heroImage from '@/assets/hero-careers.jpg';
 type AppState = 'landing' | 'quiz' | 'results';
 
 const Index = () => {
+  const location = useLocation();
   const [appState, setAppState] = useState<AppState>('results');
   const [personalityResult, setPersonalityResult] = useState<PersonalityType | null>('The Strategist');
+
+  // Check for incoming state from DetailedResults navigation
+  useEffect(() => {
+    if (location.state?.showResults && location.state?.personality) {
+      setPersonalityResult(location.state.personality);
+      setAppState('results');
+    }
+  }, [location.state]);
 
   const handleStartQuiz = () => setAppState('quiz');
   

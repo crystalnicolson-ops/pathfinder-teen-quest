@@ -138,13 +138,6 @@ export default function DetailedResults() {
           {/* Section Navigation Tabs */}
           <div className="flex gap-2 justify-center mb-6">
             <Button 
-              variant={section === 'personality' ? "default" : "outline"}
-              onClick={() => navigate('/detailed-results', { state: { personality, section: 'personality' } })}
-              className="text-sm"
-            >
-              Personality
-            </Button>
-            <Button 
               variant={section === 'careers' ? "default" : "outline"}
               onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
               className="text-sm"
@@ -165,7 +158,6 @@ export default function DetailedResults() {
               console.log('Current section:', section);
               if (section === 'careers') return 'Your Career Matches';
               if (section === 'colleges') return 'Your College Options';
-              if (section === 'personality') return 'Your Personality Profile';
               return 'Your Complete Profile';
             })()}
           </h1>
@@ -725,11 +717,11 @@ export default function DetailedResults() {
         {/* Navigation Tabs at Bottom */}
         <div className="flex justify-center gap-4 mt-8 pb-8">
           <Button
-            variant={section === 'personality' ? "default" : "outline"}
+            variant="outline"
             size="lg"
             onClick={() => {
               console.log('=== PERSONALITY BUTTON CLICKED ===');
-              navigate('/detailed-results', { state: { personality, section: 'personality' } });
+              navigate('/', { state: { showResults: true, personality } });
             }}
             className="px-6 py-3"
           >
