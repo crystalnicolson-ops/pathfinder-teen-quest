@@ -690,36 +690,39 @@ export default function DetailedResults() {
 
         {/* Navigation Tabs at Bottom */}
         <div className="flex justify-center gap-4 mt-8 pb-8">
-          <div 
-            className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
-              !section 
-                ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white' 
-                : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-blue-600 hover:to-blue-700'
-            }`}
-            onClick={() => navigate('/detailed-results', { state: { personality, section: null } })}
+          <Button
+            variant={!section ? "default" : "outline"}
+            size="lg"
+            onClick={() => {
+              console.log('Clicking Personality Profile button');
+              navigate('/detailed-results', { state: { personality, section: null } });
+            }}
+            className="px-6 py-3"
           >
             Personality Profile
-          </div>
-          <div 
-            className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
-              section === 'careers' 
-                ? 'bg-gradient-to-r from-purple-700 to-purple-800 text-white' 
-                : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-purple-600 hover:to-purple-700'
-            }`}
-            onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
+          </Button>
+          <Button
+            variant={section === 'careers' ? "default" : "outline"}
+            size="lg"
+            onClick={() => {
+              console.log('Clicking Career Matches button');
+              navigate('/detailed-results', { state: { personality, section: 'careers' } });
+            }}
+            className="px-6 py-3"
           >
             Career Matches
-          </div>
-          <div 
-            className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
-              section === 'colleges' 
-                ? 'bg-gradient-secondary text-white' 
-                : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:bg-secondary/80'
-            }`}
-            onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
+          </Button>
+          <Button
+            variant={section === 'colleges' ? "default" : "outline"}
+            size="lg"
+            onClick={() => {
+              console.log('Clicking College Options button');
+              navigate('/detailed-results', { state: { personality, section: 'colleges' } });
+            }}
+            className="px-6 py-3"
           >
             College Options
-          </div>
+          </Button>
         </div>
       </div>
     </div>
