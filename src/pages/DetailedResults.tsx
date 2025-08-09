@@ -692,7 +692,17 @@ export default function DetailedResults() {
         <div className="flex justify-center gap-4 mt-8 pb-8">
           <div 
             className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
-              !section || section === 'careers' 
+              !section 
+                ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white' 
+                : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-blue-600 hover:to-blue-700'
+            }`}
+            onClick={() => navigate('/detailed-results', { state: { personality, section: null } })}
+          >
+            Personality Profile
+          </div>
+          <div 
+            className={`px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold ${
+              section === 'careers' 
                 ? 'bg-gradient-to-r from-purple-700 to-purple-800 text-white' 
                 : 'bg-gradient-to-r from-gray-500 to-gray-600 text-white hover:from-purple-600 hover:to-purple-700'
             }`}
@@ -709,12 +719,6 @@ export default function DetailedResults() {
             onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
           >
             College Options
-          </div>
-          <div 
-            className="px-6 py-3 rounded-lg cursor-pointer transition-all duration-300 transform hover:scale-105 shadow-lg font-semibold bg-gradient-to-r from-indigo-500 to-indigo-600 text-white hover:from-indigo-600 hover:to-indigo-700"
-            onClick={() => navigate('/', { state: { showResults: true } })}
-          >
-            Personality Results
           </div>
         </div>
       </div>
