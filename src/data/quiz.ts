@@ -1370,12 +1370,12 @@ export const personalityResults: Record<string, PersonalityResult> = {
       { name: "Tom Holland", emoji: "🎭", description: "Supportive, team-oriented" }
     ],
     traits: [
-      { name: "🧠 Big Picture Thinker", percentage: 91 },
-      { name: "🧩 Problem Solver", percentage: 89 },
-      { name: "📅 Future Planner", percentage: 87 },
-      { name: "🔍 Logic Pro", percentage: 85 },
-      { name: "🚶 Goes Their Own Way", percentage: 93 },
-      { name: "🎨 Creative Spark", percentage: 65 }
+      { name: "Strategic Thinking", percentage: 91 },
+      { name: "Independence", percentage: 89 },
+      { name: "Analytical Skills", percentage: 87 },
+      { name: "Long-term Planning", percentage: 85 },
+      { name: "Problem Solving", percentage: 93 },
+      { name: "Artistic", percentage: 65 }
     ]
   },
 

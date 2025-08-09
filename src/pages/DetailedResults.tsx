@@ -45,8 +45,16 @@ const personalityAvatars: Record<PersonalityType, string> = {
 };
 
 // Helper function to get colleges by tier
+// Global variable to track assigned colleges across all tier calls
+let globalAssignedColleges = new Set<string>();
+
 const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | 'tier2' | 'tier3' | 'tier4' | 'tier5'): College[] => {
   if (Array.isArray(colleges)) {
+    // Reset global tracking for the first tier
+    if (tier === 'tier1') {
+      globalAssignedColleges.clear();
+    }
+    
     // Legacy structure - filter by college names with no overlaps
     const tierCollege = {
       tier1: ['harvard', 'stanford', 'columbia', 'massachusetts institute of technology', 'mit', 'yale', 'princeton', 'california institute of technology', 'caltech', 'university of chicago'],
@@ -56,15 +64,12 @@ const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | '
       tier5: ['university of california davis', 'uc davis', 'university of california irvine', 'uc irvine', 'university of california santa barbara', 'ucsb', 'university of florida', 'university of illinois', 'illinois', 'university of washington', 'purdue', 'texas a&m', 'university of colorado', 'university of maryland', 'university of arizona', 'university of oregon', 'university of kansas', 'university of alabama', 'west virginia', 'louisiana state', 'lsu']
     };
     
-    // Track which colleges have already been assigned to prevent duplicates
-    const assignedColleges = new Set<string>();
-    
     // First try keyword matching for current tier only
     const filtered = colleges.filter(college => {
       const name = college.name.toLowerCase();
       
-      // Skip if already assigned to a higher priority tier
-      if (assignedColleges.has(name)) {
+      // Skip if already assigned to a previous tier
+      if (globalAssignedColleges.has(name)) {
         return false;
       }
       
@@ -72,7 +77,7 @@ const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | '
       const matches = tierCollege[tier].some(keyword => name.includes(keyword));
       
       if (matches) {
-        assignedColleges.add(name);
+        globalAssignedColleges.add(name);
         return true;
       }
       
@@ -82,13 +87,20 @@ const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | '
     // If no colleges match keywords, distribute evenly across tiers (only unassigned ones)
     if (filtered.length === 0) {
       const unassignedColleges = colleges.filter(college => 
-        !assignedColleges.has(college.name.toLowerCase())
+        !globalAssignedColleges.has(college.name.toLowerCase())
       );
       const collegesPerTier = Math.ceil(unassignedColleges.length / 5);
       const tierIndex = { tier1: 0, tier2: 1, tier3: 2, tier4: 3, tier5: 4 }[tier];
       const startIndex = tierIndex * collegesPerTier;
       const endIndex = startIndex + collegesPerTier;
-      return unassignedColleges.slice(startIndex, endIndex);
+      const tierColleges = unassignedColleges.slice(startIndex, endIndex);
+      
+      // Mark these as assigned
+      tierColleges.forEach(college => {
+        globalAssignedColleges.add(college.name.toLowerCase());
+      });
+      
+      return tierColleges;
     }
     
     return filtered;
