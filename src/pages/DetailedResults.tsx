@@ -49,8 +49,8 @@ const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | '
   if (Array.isArray(colleges)) {
     // Legacy structure - filter by college names
     const tierCollege = {
-      tier1: ['harvard', 'stanford', 'columbia', 'massachusetts institute of technology', 'mit', 'yale', 'princeton', 'california institute of technology', 'caltech', 'university of chicago', 'brown'],
-      tier2: ['dartmouth', 'duke', 'university of pennsylvania', 'penn', 'johns hopkins', 'northwestern', 'cornell'],
+      tier1: ['harvard', 'stanford', 'columbia', 'massachusetts institute of technology', 'mit', 'yale', 'princeton', 'california institute of technology', 'caltech', 'university of chicago'],
+      tier2: ['brown', 'dartmouth', 'duke', 'university of pennsylvania', 'penn', 'johns hopkins', 'northwestern', 'cornell'],
       tier3: ['vanderbilt', 'university of notre dame', 'notre dame', 'rice', 'georgetown', 'washington university', 'berkeley', 'ucla'],
       tier4: ['university of michigan', 'michigan', 'georgia institute of technology', 'georgia tech', 'emory', 'new york university', 'nyu', 'boston university', 'university of virginia', 'michigan state', 'indiana university', 'university of pittsburgh', 'university of minnesota', 'university of connecticut', 'temple'],
       tier5: ['university of california davis', 'uc davis', 'university of california irvine', 'uc irvine', 'university of california santa barbara', 'ucsb', 'university of florida', 'university of illinois', 'illinois', 'university of washington', 'purdue', 'texas a&m', 'university of colorado', 'university of maryland', 'university of arizona', 'university of oregon', 'university of kansas', 'university of alabama', 'west virginia', 'louisiana state', 'lsu']
