@@ -144,6 +144,50 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Personality Types Section */}
+      <div className="max-w-6xl mx-auto px-4 py-16">
+        <h2 className="text-3xl font-bold text-black text-center mb-4">
+          16 Unique Personality Types
+        </h2>
+        <p className="text-black/80 text-center mb-12 max-w-2xl mx-auto">
+          Discover which of these personality types matches your unique strengths and preferences
+        </p>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+          {[
+            { type: 'The Strategist', symbol: '/src/assets/symbol-strategist.jpg' },
+            { type: 'The Inventor', symbol: '/src/assets/symbol-inventor.jpg' },
+            { type: 'The Boss', symbol: '/src/assets/symbol-boss.jpg' },
+            { type: 'The Challenger', symbol: '/src/assets/symbol-challenger.jpg' },
+            { type: 'The Visionary', symbol: '/src/assets/symbol-visionary.jpg' },
+            { type: 'The Creator', symbol: '/src/assets/symbol-creator.jpg' },
+            { type: 'The Coach', symbol: '/src/assets/symbol-coach.jpg' },
+            { type: 'The Free Spirit', symbol: '/src/assets/symbol-free-spirit.jpg' },
+            { type: 'The Organizer', symbol: '/src/assets/symbol-organizer.jpg' },
+            { type: 'The Helper', symbol: '/src/assets/symbol-helper.jpg' },
+            { type: 'The Manager', symbol: '/src/assets/symbol-manager.jpg' },
+            { type: 'The Host', symbol: '/src/assets/symbol-host.jpg' },
+            { type: 'The Fixer', symbol: '/src/assets/symbol-fixer.jpg' },
+            { type: 'The Artist', symbol: '/src/assets/symbol-artist.jpg' },
+            { type: 'The Adventurer', symbol: '/src/assets/symbol-adventurer.jpg' },
+            { type: 'The Performer', symbol: '/src/assets/symbol-performer.jpg' },
+          ].map((personality) => (
+            <div key={personality.type} className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden bg-white/20 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <img 
+                  src={personality.symbol} 
+                  alt={`${personality.type} symbol`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="text-sm font-medium text-black/90 leading-tight">
+                {personality.type}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* CTA Section */}
       <div className="text-center pb-16">
         <div className="max-w-2xl mx-auto px-4">
