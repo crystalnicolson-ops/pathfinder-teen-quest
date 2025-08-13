@@ -113,7 +113,7 @@ const Index = () => {
 
       {/* Personality Types Section */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold text-white text-center mb-4">
+        <h2 className="text-3xl font-bold text-black text-center mb-4">
           16 Unique Personality Types
         </h2>
         <p className="text-white/80 text-center mb-12 max-w-2xl mx-auto">
