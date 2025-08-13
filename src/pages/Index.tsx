@@ -112,7 +112,7 @@ const Index = () => {
       </div>
 
       {/* Features Section */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
+      <div className="max-w-6xl mx-auto px-4 pt-8 pb-16">
         <h2 className="text-3xl font-bold text-black text-center mb-12">
           What You'll Discover
         </h2>
