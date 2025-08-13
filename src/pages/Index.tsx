@@ -111,6 +111,50 @@ const Index = () => {
         </div>
       </div>
 
+      {/* Personality Types Section */}
+      <div className="max-w-6xl mx-auto px-4 py-8">
+        <h2 className="text-3xl font-bold text-black text-center mb-4">
+          16 Unique Personality Types
+        </h2>
+        <p className="text-black/80 text-center mb-12 max-w-2xl mx-auto">
+          Discover which of these personality types matches your unique strengths and preferences
+        </p>
+        
+        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
+          {[
+            { type: 'The Strategist', avatar: avatarStrategist },
+            { type: 'The Inventor', avatar: avatarInventor },
+            { type: 'The Boss', avatar: avatarBoss },
+            { type: 'The Challenger', avatar: avatarChallenger },
+            { type: 'The Visionary', avatar: avatarVisionary },
+            { type: 'The Creator', avatar: avatarCreator },
+            { type: 'The Coach', avatar: avatarCoach },
+            { type: 'The Free Spirit', avatar: avatarFreeSpirit },
+            { type: 'The Organizer', avatar: avatarOrganizer },
+            { type: 'The Helper', avatar: avatarHelper },
+            { type: 'The Manager', avatar: avatarManager },
+            { type: 'The Host', avatar: avatarHost },
+            { type: 'The Fixer', avatar: avatarFixer },
+            { type: 'The Artist', avatar: avatarArtist },
+            { type: 'The Adventurer', avatar: avatarAdventurer },
+            { type: 'The Performer', avatar: avatarPerformer },
+          ].map((personality) => (
+            <div key={personality.type} className="text-center group">
+              <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden bg-white/20 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-300">
+                <img 
+                  src={personality.avatar} 
+                  alt={`${personality.type} avatar`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <p className="text-sm font-medium text-black/90 leading-tight">
+                {personality.type}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+
       {/* Features Section */}
       <div className="max-w-6xl mx-auto px-4 pt-8 pb-16">
         <h2 className="text-3xl font-bold text-black text-center mb-12">
@@ -162,49 +206,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Personality Types Section */}
-      <div className="max-w-6xl mx-auto px-4 py-16">
-        <h2 className="text-3xl font-bold text-black text-center mb-4">
-          16 Unique Personality Types
-        </h2>
-        <p className="text-black/80 text-center mb-12 max-w-2xl mx-auto">
-          Discover which of these personality types matches your unique strengths and preferences
-        </p>
-        
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
-          {[
-            { type: 'The Strategist', avatar: avatarStrategist },
-            { type: 'The Inventor', avatar: avatarInventor },
-            { type: 'The Boss', avatar: avatarBoss },
-            { type: 'The Challenger', avatar: avatarChallenger },
-            { type: 'The Visionary', avatar: avatarVisionary },
-            { type: 'The Creator', avatar: avatarCreator },
-            { type: 'The Coach', avatar: avatarCoach },
-            { type: 'The Free Spirit', avatar: avatarFreeSpirit },
-            { type: 'The Organizer', avatar: avatarOrganizer },
-            { type: 'The Helper', avatar: avatarHelper },
-            { type: 'The Manager', avatar: avatarManager },
-            { type: 'The Host', avatar: avatarHost },
-            { type: 'The Fixer', avatar: avatarFixer },
-            { type: 'The Artist', avatar: avatarArtist },
-            { type: 'The Adventurer', avatar: avatarAdventurer },
-            { type: 'The Performer', avatar: avatarPerformer },
-          ].map((personality) => (
-            <div key={personality.type} className="text-center group">
-              <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden bg-white/20 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-300">
-                <img 
-                  src={personality.avatar} 
-                  alt={`${personality.type} avatar`}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <p className="text-sm font-medium text-black/90 leading-tight">
-                {personality.type}
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* CTA Section */}
       <div className="text-center pb-16">
