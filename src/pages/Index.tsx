@@ -85,10 +85,6 @@ const Index = () => {
       <div className="relative overflow-hidden">
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 py-16 text-center">
-          <Badge variant="secondary" className="mb-6 text-base px-4 py-2 text-white rounded-none">
-            <Sparkles className="h-4 w-4 mr-2" />
-            Discover Your Future
-          </Badge>
           
           <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-bounce-gentle">
             What's Your Personality Type?
