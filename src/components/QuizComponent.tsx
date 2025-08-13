@@ -31,7 +31,7 @@ export default function QuizComponent({ onComplete }: QuizComponentProps) {
   const question = questions[currentQuestion];
 
   return (
-    <div className="min-h-screen bg-gradient-hero flex items-center justify-center p-4 pt-20">
+    <div className="min-h-screen flex items-center justify-center p-4 pt-20" style={{ background: 'radial-gradient(circle at 20% 30%, #DDA0DD 0%, #D8BFD8 15%, #87CEEB 40%, #4682B4 100%)' }}>
       <Card className="w-full max-w-2xl p-8 bg-white/95 backdrop-blur-sm shadow-card">
         <div className="mb-6">
           <div className="flex justify-between items-center mb-4">
