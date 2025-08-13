@@ -162,7 +162,7 @@ const Index = () => {
           <Card className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             <CardHeader className="text-center">
               <div className="mx-auto bg-gradient-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Sparkles className="h-8 w-8 text-white" />
+                <Sparkles className="h-8 w-8" color="#DDA0DD" />
               </div>
               <CardTitle className="text-xl">Your Personality Type</CardTitle>
             </CardHeader>
@@ -176,7 +176,7 @@ const Index = () => {
           <Card className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             <CardHeader className="text-center">
               <div className="mx-auto bg-gradient-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Target className="h-8 w-8 text-white" />
+                <Target className="h-8 w-8" color="#DDA0DD" />
               </div>
               <CardTitle className="text-xl">Perfect Career Matches</CardTitle>
             </CardHeader>
@@ -190,7 +190,7 @@ const Index = () => {
           <Card className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             <CardHeader className="text-center">
               <div className="mx-auto bg-gradient-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <GraduationCap className="h-8 w-8 text-white" />
+                <GraduationCap className="h-8 w-8" color="#DDA0DD" />
               </div>
               <CardTitle className="text-xl">Top College Options</CardTitle>
             </CardHeader>
