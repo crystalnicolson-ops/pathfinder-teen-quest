@@ -80,9 +80,9 @@ const Index = () => {
   return (
     <>
       <Header onHome={handleGoHome} showHomeButton={false} />
-      <div className="min-h-screen" style={{ background: 'conic-gradient(from 45deg at center, #D8BFD8 0deg, #DDA0DD 90deg, #E0F6FF 180deg, #C8A2C8 270deg, #D8BFD8 360deg)' }}>
+      <div className="min-h-screen" style={{ background: 'radial-gradient(circle at 20% 30%, #DDA0DD 0%, #D8BFD8 15%, #E0F6FF 40%, #B0E0E6 100%)' }}>
       {/* Hero Section */}
-      <div className="relative overflow-hidden" style={{ background: 'conic-gradient(from 45deg at center, #D8BFD8 0deg, #DDA0DD 90deg, #E0F6FF 180deg, #C8A2C8 270deg, #D8BFD8 360deg)', opacity: 0.9 }}>
+      <div className="relative overflow-hidden" style={{ background: 'radial-gradient(circle at 20% 30%, #DDA0DD 0%, #D8BFD8 15%, #E0F6FF 40%, #B0E0E6 100%)', opacity: 0.9 }}>
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 py-16 text-center">
           <Badge variant="secondary" className="mb-6 text-base px-4 py-2 text-black rounded-none">
