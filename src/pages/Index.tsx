@@ -101,7 +101,7 @@ const Index = () => {
             onClick={handleStartQuiz}
             className="text-lg px-8 py-6 animate-pulse-slow rounded-full"
           >
-            <Target className="h-6 w-6 mr-2" />
+            <Target className="h-6 w-6 mr-2" color="#DDA0DD" />
             Start Your Journey
           </Button>
         </div>
