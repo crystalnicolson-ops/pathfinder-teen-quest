@@ -161,8 +161,8 @@ const Index = () => {
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             <CardHeader className="text-center">
-              <div className="mx-auto bg-gradient-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Sparkles className="h-8 w-8" color="#DDA0DD" />
+              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#DDA0DD' }}>
+                <Sparkles className="h-8 w-8 text-white" />
               </div>
               <CardTitle className="text-xl">Your Personality Type</CardTitle>
             </CardHeader>
@@ -175,8 +175,8 @@ const Index = () => {
 
           <Card className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             <CardHeader className="text-center">
-              <div className="mx-auto bg-gradient-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <Target className="h-8 w-8" color="#DDA0DD" />
+              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#DDA0DD' }}>
+                <Target className="h-8 w-8 text-white" />
               </div>
               <CardTitle className="text-xl">Perfect Career Matches</CardTitle>
             </CardHeader>
@@ -189,8 +189,8 @@ const Index = () => {
 
           <Card className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             <CardHeader className="text-center">
-              <div className="mx-auto bg-gradient-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
-                <GraduationCap className="h-8 w-8" color="#DDA0DD" />
+              <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#DDA0DD' }}>
+                <GraduationCap className="h-8 w-8 text-white" />
               </div>
               <CardTitle className="text-xl">Top College Options</CardTitle>
             </CardHeader>
