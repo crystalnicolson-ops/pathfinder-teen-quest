@@ -99,7 +99,8 @@ const Index = () => {
             variant="secondary" 
             size="lg" 
             onClick={handleStartQuiz}
-            className="text-lg px-8 py-6 animate-pulse-slow rounded-full bg-primary hover:bg-primary/90 text-white border-primary"
+            className="text-lg px-8 py-6 animate-pulse-slow rounded-full text-white border-[#DDA0DD]"
+            style={{ backgroundColor: '#DDA0DD', borderColor: '#DDA0DD' }}
           >
             <Target className="h-6 w-6 mr-2" color="white" />
             Start Your Journey
