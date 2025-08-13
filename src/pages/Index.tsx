@@ -80,7 +80,7 @@ const Index = () => {
   return (
     <>
       <Header onHome={handleGoHome} showHomeButton={false} />
-      <div className="min-h-screen" style={{ background: 'radial-gradient(circle at 20% 30%, #DDA0DD 0%, #D8BFD8 15%, #E0F6FF 40%, #B0E0E6 100%)' }}>
+      <div className="min-h-screen" style={{ background: 'radial-gradient(circle at 20% 30%, #DDA0DD 0%, #D8BFD8 15%, #87CEEB 40%, #4682B4 100%)' }}>
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         
