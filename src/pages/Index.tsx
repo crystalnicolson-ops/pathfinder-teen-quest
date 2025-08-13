@@ -109,10 +109,10 @@ const Index = () => {
 
       {/* Personality Types Section */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold text-black text-center mb-4">
+        <h2 className="text-3xl font-bold text-white text-center mb-4">
           Find Your Match
         </h2>
-        <p className="text-black/80 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-white/80 text-center mb-12 max-w-2xl mx-auto">
           Discover which of these personality types matches your unique strengths and preferences
         </p>
         
