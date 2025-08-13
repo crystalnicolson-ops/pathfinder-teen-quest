@@ -99,9 +99,9 @@ const Index = () => {
             variant="secondary" 
             size="lg" 
             onClick={handleStartQuiz}
-            className="text-lg px-8 py-6 animate-pulse-slow rounded-full"
+            className="text-lg px-8 py-6 animate-pulse-slow rounded-full bg-purple-500 hover:bg-purple-600 text-white border-purple-500"
           >
-            <Target className="h-6 w-6 mr-2" color="#DDA0DD" />
+            <Target className="h-6 w-6 mr-2" color="white" />
             Start Your Journey
           </Button>
         </div>
