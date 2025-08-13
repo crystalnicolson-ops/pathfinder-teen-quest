@@ -19,7 +19,7 @@ export default {
 		},
 		extend: {
 			fontFamily: {
-				'cormorant': ['Cormorant Garamond', 'serif'],
+				'jost': ['Jost', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
