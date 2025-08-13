@@ -155,28 +155,28 @@ const Index = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
           {[
-            { type: 'The Strategist', symbol: '/src/assets/symbol-strategist.jpg' },
-            { type: 'The Inventor', symbol: '/src/assets/symbol-inventor.jpg' },
-            { type: 'The Boss', symbol: '/src/assets/symbol-boss.jpg' },
-            { type: 'The Challenger', symbol: '/src/assets/symbol-challenger.jpg' },
-            { type: 'The Visionary', symbol: '/src/assets/symbol-visionary.jpg' },
-            { type: 'The Creator', symbol: '/src/assets/symbol-creator.jpg' },
-            { type: 'The Coach', symbol: '/src/assets/symbol-coach.jpg' },
-            { type: 'The Free Spirit', symbol: '/src/assets/symbol-free-spirit.jpg' },
-            { type: 'The Organizer', symbol: '/src/assets/symbol-organizer.jpg' },
-            { type: 'The Helper', symbol: '/src/assets/symbol-helper.jpg' },
-            { type: 'The Manager', symbol: '/src/assets/symbol-manager.jpg' },
-            { type: 'The Host', symbol: '/src/assets/symbol-host.jpg' },
-            { type: 'The Fixer', symbol: '/src/assets/symbol-fixer.jpg' },
-            { type: 'The Artist', symbol: '/src/assets/symbol-artist.jpg' },
-            { type: 'The Adventurer', symbol: '/src/assets/symbol-adventurer.jpg' },
-            { type: 'The Performer', symbol: '/src/assets/symbol-performer.jpg' },
+            { type: 'The Strategist', avatar: '/src/assets/avatar-strategist.jpg' },
+            { type: 'The Inventor', avatar: '/src/assets/avatar-inventor.jpg' },
+            { type: 'The Boss', avatar: '/src/assets/avatar-boss.jpg' },
+            { type: 'The Challenger', avatar: '/src/assets/avatar-challenger.jpg' },
+            { type: 'The Visionary', avatar: '/src/assets/avatar-visionary.jpg' },
+            { type: 'The Creator', avatar: '/src/assets/avatar-creator.jpg' },
+            { type: 'The Coach', avatar: '/src/assets/avatar-coach.jpg' },
+            { type: 'The Free Spirit', avatar: '/src/assets/avatar-free-spirit.jpg' },
+            { type: 'The Organizer', avatar: '/src/assets/avatar-organizer.jpg' },
+            { type: 'The Helper', avatar: '/src/assets/avatar-helper.jpg' },
+            { type: 'The Manager', avatar: '/src/assets/avatar-manager.jpg' },
+            { type: 'The Host', avatar: '/src/assets/avatar-host.jpg' },
+            { type: 'The Fixer', avatar: '/src/assets/avatar-fixer.jpg' },
+            { type: 'The Artist', avatar: '/src/assets/avatar-artist.jpg' },
+            { type: 'The Adventurer', avatar: '/src/assets/avatar-adventurer.jpg' },
+            { type: 'The Performer', avatar: '/src/assets/avatar-performer.jpg' },
           ].map((personality) => (
             <div key={personality.type} className="text-center group">
               <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden bg-white/20 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-300">
                 <img 
-                  src={personality.symbol} 
-                  alt={`${personality.type} symbol`}
+                  src={personality.avatar} 
+                  alt={`${personality.type} avatar`}
                   className="w-full h-full object-cover"
                 />
               </div>
