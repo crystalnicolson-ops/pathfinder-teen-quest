@@ -116,7 +116,7 @@ const Index = () => {
         <h2 className="text-3xl font-bold text-black text-center mb-4">
           16 Unique Personality Types
         </h2>
-        <p className="text-white/80 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-black/80 text-center mb-12 max-w-2xl mx-auto">
           Discover which of these personality types matches your unique strengths and preferences
         </p>
         
