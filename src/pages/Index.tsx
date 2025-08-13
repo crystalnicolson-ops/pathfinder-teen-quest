@@ -174,7 +174,7 @@ const Index = () => {
 
           <Card className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105">
             <CardHeader className="text-center">
-              <div className="mx-auto bg-gradient-secondary w-16 h-16 rounded-full flex items-center justify-center mb-4">
+              <div className="mx-auto bg-gradient-primary w-16 h-16 rounded-full flex items-center justify-center mb-4">
                 <Target className="h-8 w-8 text-white" />
               </div>
               <CardTitle className="text-xl">Perfect Career Matches</CardTitle>
