@@ -85,16 +85,16 @@ const Index = () => {
       <div className="relative overflow-hidden">
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 py-16 text-center">
-          <Badge variant="secondary" className="mb-6 text-base px-4 py-2 text-black rounded-none">
+          <Badge variant="secondary" className="mb-6 text-base px-4 py-2 text-white rounded-none">
             <Sparkles className="h-4 w-4 mr-2" />
             Discover Your Future
           </Badge>
           
-          <h1 className="text-5xl md:text-6xl font-bold text-black mb-6 animate-bounce-gentle">
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-bounce-gentle">
             What's Your Personality Type?
           </h1>
           
-          <p className="text-xl md:text-2xl text-black/80 mb-8 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
             Take our quick personality quiz and discover careers that match your unique strengths, 
             plus colleges that can get you there!
           </p>
@@ -113,10 +113,10 @@ const Index = () => {
 
       {/* Personality Types Section */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold text-black text-center mb-4">
+        <h2 className="text-3xl font-bold text-white text-center mb-4">
           16 Unique Personality Types
         </h2>
-        <p className="text-black/80 text-center mb-12 max-w-2xl mx-auto">
+        <p className="text-white/80 text-center mb-12 max-w-2xl mx-auto">
           Discover which of these personality types matches your unique strengths and preferences
         </p>
         
@@ -147,7 +147,7 @@ const Index = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              <p className="text-sm font-medium text-black/90 leading-tight">
+              <p className="text-sm font-medium text-white/90 leading-tight">
                 {personality.type}
               </p>
             </div>
@@ -157,7 +157,7 @@ const Index = () => {
 
       {/* Features Section */}
       <div className="max-w-6xl mx-auto px-4 pt-8 pb-16">
-        <h2 className="text-3xl font-bold text-black text-center mb-12">
+        <h2 className="text-3xl font-bold text-white text-center mb-12">
           What You'll Discover
         </h2>
         
@@ -210,10 +210,10 @@ const Index = () => {
       {/* CTA Section */}
       <div className="text-center pb-16">
         <div className="max-w-2xl mx-auto px-4">
-          <h3 className="text-2xl font-bold text-black mb-4">
+          <h3 className="text-2xl font-bold text-white mb-4">
             Ready to Shape Your Future?
           </h3>
-          <p className="text-black/80 mb-8">
+          <p className="text-white/80 mb-8">
             Join thousands of teens who have discovered their perfect career path. 
             It only takes 5 minutes!
           </p>
