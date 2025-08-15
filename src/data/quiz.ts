@@ -975,6 +975,16 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Great for Bosses who want innovation focus and entrepreneurship programs. ASU's business programs provide strong foundation for leadership.",
         relevantMajors: ["Business", "Engineering", "Innovation", "Economics"],
         averageGPA: "3.5-3.6"
+      },
+      {
+        name: "University of Florida",
+        location: "Gainesville, FL",
+        programs: ["Business", "Engineering", "Liberal Arts"],
+        ranking: "#28 overall",
+        website: "https://www.ufl.edu/",
+        whyGoodFit: "Excellent for Bosses seeking strong business programs with excellent value. UF's Fisher School of Business provides solid leadership foundation at an affordable cost.",
+        relevantMajors: ["Business Administration", "Economics", "Industrial & Systems Engineering", "Political Science"],
+        averageGPA: "3.7-3.8"
       }
     ],
     celebrities: [
