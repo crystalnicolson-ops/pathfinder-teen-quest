@@ -587,6 +587,27 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Excellent for Strategists interested in cutting-edge technology and research. UCSD's strong STEM programs provide ideal conditions for strategic innovation.",
         relevantMajors: ["Computer Science", "Data Science", "Electrical Engineering", "Applied Mathematics"],
         averageGPA: "3.8-3.9"
+      },
+      // Tier 5: State Schools and Regional Universities
+      {
+        name: "University of Washington",
+        location: "Seattle, WA",
+        programs: ["Computer Science", "Engineering", "Information Systems"],
+        ranking: "#55 overall",
+        website: "https://www.washington.edu/",
+        whyGoodFit: "Great for Strategists who want strong technical programs in a tech hub. UW's research opportunities and industry connections provide excellent strategic development.",
+        relevantMajors: ["Computer Science", "Information Systems", "Applied Mathematics", "Engineering"],
+        averageGPA: "3.7-3.8"
+      },
+      {
+        name: "University of Texas at Austin",
+        location: "Austin, TX",
+        programs: ["Computer Science", "Business", "Engineering"],
+        ranking: "#32 overall",
+        website: "https://www.utexas.edu/",
+        whyGoodFit: "Excellent for Strategists who want to combine technical skills with business acumen. UT Austin's strong programs provide diverse strategic opportunities.",
+        relevantMajors: ["Computer Science", "Business Administration", "Engineering", "Applied Mathematics"],
+        averageGPA: "3.7-3.8"
       }
     ],
     celebrities: [
@@ -773,6 +794,25 @@ export const personalityResults: Record<string, PersonalityResult> = {
         website: "https://www.utah.edu/",
         whyGoodFit: "Excellent for Inventors interested in technology and innovation. Utah's growing tech scene and research programs provide great opportunities for exploration.",
         relevantMajors: ["Computer Science", "Physics", "Applied Mathematics", "Engineering", "Games"]
+      },
+      // Tier 5: Additional Universities
+      {
+        name: "Virginia Tech",
+        location: "Blacksburg, VA",
+        programs: ["Engineering", "Computer Science", "Mathematics"],
+        ranking: "#62 overall",
+        website: "https://www.vt.edu/",
+        whyGoodFit: "Perfect for Inventors who want hands-on research experience. Virginia Tech's strong engineering programs provide excellent foundation for innovation.",
+        relevantMajors: ["Computer Science", "Engineering", "Applied Mathematics", "Physics"]
+      },
+      {
+        name: "University of Minnesota",
+        location: "Minneapolis, MN",
+        programs: ["Computer Science", "Engineering", "Mathematics"],
+        ranking: "#68 overall",
+        website: "https://www.umn.edu/",
+        whyGoodFit: "Great for Inventors interested in research and theoretical exploration. Strong programs in sciences and engineering.",
+        relevantMajors: ["Computer Science", "Physics", "Applied Mathematics", "Engineering"]
       }
     ],
     celebrities: [
@@ -891,6 +931,50 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Excellent for Bosses who want to combine leadership with intellectual rigor. Yale's strong liberal arts foundation develops well-rounded leaders.",
         relevantMajors: ["Economics", "Political Science", "History", "Psychology", "Global Affairs"],
         averageGPA: "3.95"
+      },
+      // Tier 2: Northwestern, Duke, Dartmouth
+      {
+        name: "Northwestern University",
+        location: "Evanston, IL",
+        programs: ["Business", "Economics", "Management"],
+        ranking: "#9 overall",
+        website: "https://www.northwestern.edu/",
+        whyGoodFit: "Great for Bosses who want strong business programs with leadership focus. Northwestern's management programs align with ENTJ natural leadership.",
+        relevantMajors: ["Economics", "Industrial Engineering", "Psychology", "Political Science"],
+        averageGPA: "3.93"
+      },
+      // Tier 3: University of Virginia, Georgetown, Rice
+      {
+        name: "University of Virginia",
+        location: "Charlottesville, VA",
+        programs: ["Business", "Economics", "Public Policy"],
+        ranking: "#25 overall",
+        website: "https://www.virginia.edu/",
+        whyGoodFit: "Excellent for Bosses interested in business and leadership. UVA's strong programs develop strategic thinking and management skills.",
+        relevantMajors: ["Commerce", "Economics", "Politics", "Systems Engineering"],
+        averageGPA: "3.89"
+      },
+      // Tier 4: NYU, Boston University, University of Michigan
+      {
+        name: "New York University",
+        location: "New York, NY",
+        programs: ["Business", "Economics", "Public Administration"],
+        ranking: "#25 overall",
+        website: "https://www.nyu.edu/",
+        whyGoodFit: "Perfect for Bosses who want to be in the heart of business and finance. NYU's location and programs provide excellent networking opportunities.",
+        relevantMajors: ["Business", "Economics", "Politics", "Psychology"],
+        averageGPA: "3.7-3.8"
+      },
+      // Tier 5: Arizona State, University of Florida
+      {
+        name: "Arizona State University",
+        location: "Tempe, AZ",
+        programs: ["Business", "Engineering", "Innovation"],
+        ranking: "#121 overall",
+        website: "https://www.asu.edu/",
+        whyGoodFit: "Great for Bosses who want innovation focus and entrepreneurship programs. ASU's business programs provide strong foundation for leadership.",
+        relevantMajors: ["Business", "Engineering", "Innovation", "Economics"],
+        averageGPA: "3.5-3.6"
       }
     ],
     celebrities: [
@@ -1009,6 +1093,50 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Excellent for Challengers who want academic freedom. Brown's open curriculum allows ENTPs to explore diverse interests and create unique combinations.",
         relevantMajors: ["Computer Science", "Business Economics", "Philosophy", "Cognitive Science", "International Relations"],
         averageGPA: "3.94"
+      },
+      // Tier 2: Northwestern, Duke
+      {
+        name: "Northwestern University", 
+        location: "Evanston, IL",
+        programs: ["Economics", "Psychology", "Journalism"],
+        ranking: "#9 overall",
+        website: "https://www.northwestern.edu/",
+        whyGoodFit: "Perfect for Challengers who want to question and innovate. Northwestern's diverse programs allow ENTPs to explore multiple interests.",
+        relevantMajors: ["Economics", "Psychology", "Journalism", "Political Science"],
+        averageGPA: "3.93"
+      },
+      // Tier 3: UC Berkeley, Vanderbilt  
+      {
+        name: "University of California, Berkeley",
+        location: "Berkeley, CA", 
+        programs: ["Business", "Economics", "Computer Science"],
+        ranking: "#20 overall",
+        website: "https://www.berkeley.edu/",
+        whyGoodFit: "Excellent for Challengers who thrive in intellectually stimulating environments. Berkeley's innovation culture matches ENTP creativity.",
+        relevantMajors: ["Business Administration", "Economics", "Computer Science", "Psychology"],
+        averageGPA: "3.90"
+      },
+      // Tier 4: Boston University, University of Southern California
+      {
+        name: "University of Southern California",
+        location: "Los Angeles, CA",
+        programs: ["Business", "Communications", "Engineering"],
+        ranking: "#25 overall", 
+        website: "https://www.usc.edu/",
+        whyGoodFit: "Great for Challengers interested in media, innovation, and entrepreneurship. USC's diverse programs encourage creative thinking.",
+        relevantMajors: ["Business Administration", "Communications", "Computer Science", "Psychology"],
+        averageGPA: "3.7-3.8"
+      },
+      // Tier 5: University of Colorado, University of Oregon
+      {
+        name: "University of Colorado Boulder",
+        location: "Boulder, CO",
+        programs: ["Business", "Engineering", "Media Studies"],
+        ranking: "#99 overall",
+        website: "https://www.colorado.edu/",
+        whyGoodFit: "Perfect for Challengers who want innovation and entrepreneurship focus. Colorado's startup culture aligns with ENTP creativity.",
+        relevantMajors: ["Business", "Engineering", "Media Studies", "Psychology"],
+        averageGPA: "3.6-3.7"
       }
     ],
     celebrities: [
@@ -1127,6 +1255,50 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Excellent for Visionaries who want strong academic programs with a focus on human development and social change.",
         relevantMajors: ["Psychology", "Human & Organizational Development", "Public Policy", "Sociology", "Philosophy"],
         averageGPA: "3.91"
+      },
+      // Tier 1: Harvard, Yale
+      {
+        name: "Harvard University",
+        location: "Cambridge, MA",
+        programs: ["Psychology", "Social Studies", "Philosophy"],
+        ranking: "#3 overall",
+        website: "https://www.harvard.edu/",
+        whyGoodFit: "Perfect for Visionaries who want to create lasting social impact. Harvard's resources and network provide platforms for meaningful change.",
+        relevantMajors: ["Psychology", "Social Studies", "Philosophy", "Government"],
+        averageGPA: "4.18"
+      },
+      // Tier 2: Duke, Brown
+      {
+        name: "Duke University",
+        location: "Durham, NC",
+        programs: ["Psychology", "Public Policy", "Sociology"],
+        ranking: "#7 overall",
+        website: "https://www.duke.edu/",
+        whyGoodFit: "Excellent for Visionaries interested in policy and social change. Duke's programs combine academic rigor with service focus.",
+        relevantMajors: ["Psychology", "Public Policy Studies", "Sociology", "Philosophy"],
+        averageGPA: "3.94"
+      },
+      // Tier 4: University of Michigan, Boston University
+      {
+        name: "University of Michigan",
+        location: "Ann Arbor, MI",
+        programs: ["Psychology", "Social Work", "Public Policy"],
+        ranking: "#21 overall",
+        website: "https://www.umich.edu/",
+        whyGoodFit: "Great for Visionaries who want strong social science programs. Michigan's diverse opportunities align with INFJ desire to help others.",
+        relevantMajors: ["Psychology", "Social Work", "Public Policy", "Sociology"],
+        averageGPA: "3.8-3.9"
+      },
+      // Tier 5: University of Washington, Penn State
+      {
+        name: "Penn State University",
+        location: "University Park, PA",
+        programs: ["Psychology", "Human Development", "Communications"],
+        ranking: "#63 overall",
+        website: "https://www.psu.edu/",
+        whyGoodFit: "Excellent for Visionaries who want comprehensive programs in human services. Penn State's programs provide solid foundation for helping others.",
+        relevantMajors: ["Psychology", "Human Development", "Communications", "Sociology"],
+        averageGPA: "3.6-3.7"
       }
     ],
     celebrities: [
@@ -1245,6 +1417,61 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Excellent for Creators who want practical artistic skills. SCAD's comprehensive programs prepare INFPs for creative careers while honoring their values.",
         relevantMajors: ["Graphic Design", "Illustration", "Film & Television", "Writing", "Art Therapy"],
         averageGPA: "3.4"
+      },
+      // Tier 1: Yale, Brown
+      {
+        name: "Yale University",
+        location: "New Haven, CT",
+        programs: ["Art", "Art History", "English"],
+        ranking: "#5 overall",
+        website: "https://www.yale.edu/",
+        whyGoodFit: "Perfect for Creators who want to combine artistic expression with academic excellence. Yale's arts programs honor INFP authenticity and creative values.",
+        relevantMajors: ["Art", "Art History", "English", "Film & Media Studies", "Theater Studies"],
+        averageGPA: "3.95"
+      },
+      // Tier 2: Brown, Vassar
+      {
+        name: "Brown University",
+        location: "Providence, RI",
+        programs: ["Visual Arts", "English", "Liberal Arts"],
+        ranking: "#13 overall",
+        website: "https://www.brown.edu/",
+        whyGoodFit: "Excellent for Creators who want academic freedom. Brown's open curriculum allows INFPs to explore diverse creative interests.",
+        relevantMajors: ["Visual Arts", "English", "Literary Arts", "Modern Culture & Media"],
+        averageGPA: "3.94"
+      },
+      // Tier 3: University of Rochester, Wesleyan
+      {
+        name: "University of Rochester",
+        location: "Rochester, NY",
+        programs: ["Studio Arts", "English", "Film & Media Studies"],
+        ranking: "#34 overall",
+        website: "https://www.rochester.edu/",
+        whyGoodFit: "Great for Creators who want strong liberal arts foundation. Rochester's programs support INFP artistic development and self-expression.",
+        relevantMajors: ["Studio Arts", "English", "Film & Media Studies", "Psychology"],
+        averageGPA: "3.8"
+      },
+      // Tier 4: Syracuse, VCU
+      {
+        name: "Syracuse University",
+        location: "Syracuse, NY",
+        programs: ["Visual & Performing Arts", "Communications"],
+        ranking: "#62 overall",
+        website: "https://www.syracuse.edu/",
+        whyGoodFit: "Perfect for Creators who want comprehensive arts programs. Syracuse's strong creative programs align with INFP artistic expression.",
+        relevantMajors: ["Art", "Communications Design", "Film", "Writing", "Psychology"],
+        averageGPA: "3.6-3.7"
+      },
+      // Tier 5: VCU, University of Oregon
+      {
+        name: "Virginia Commonwealth University",
+        location: "Richmond, VA",
+        programs: ["Arts", "Design", "Liberal Arts"],
+        ranking: "#133 overall",
+        website: "https://www.vcu.edu/",
+        whyGoodFit: "Excellent for Creators seeking strong arts programs. VCU's School of the Arts provides comprehensive creative education for INFPs.",
+        relevantMajors: ["Art", "Graphic Design", "Creative Writing", "Psychology", "Art Education"],
+        averageGPA: "3.4-3.5"
       }
     ],
     celebrities: [
@@ -1363,6 +1590,61 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Excellent for Coaches who want to combine education with research. Peabody's focus on human development aligns with ENFJ values.",
         relevantMajors: ["Human & Organizational Development", "Education", "Psychology", "Child Studies", "Special Education"],
         averageGPA: "3.91"
+      },
+      // Tier 1: Harvard, Stanford
+      {
+        name: "Harvard University",
+        location: "Cambridge, MA",
+        programs: ["Education", "Psychology", "Social Studies"],
+        ranking: "#3 overall",
+        website: "https://www.harvard.edu/",
+        whyGoodFit: "Perfect for Coaches who want to lead educational transformation. Harvard's resources provide platforms for ENFJs to create systemic change.",
+        relevantMajors: ["Psychology", "Social Studies", "Human Developmental & Regenerative Biology"],
+        averageGPA: "4.18"
+      },
+      // Tier 2: Northwestern, Duke
+      {
+        name: "Northwestern University",
+        location: "Evanston, IL",
+        programs: ["Education", "Psychology", "Communications"],
+        ranking: "#9 overall",
+        website: "https://www.northwestern.edu/",
+        whyGoodFit: "Excellent for Coaches who want research-backed education programs. Northwestern's approach aligns with ENFJ development focus.",
+        relevantMajors: ["Education & Social Policy", "Psychology", "Human Development", "Communication Studies"],
+        averageGPA: "3.93"
+      },
+      // Tier 3: University of Virginia, Georgetown
+      {
+        name: "Georgetown University",
+        location: "Washington, DC",
+        programs: ["Education", "Psychology", "Public Policy"],
+        ranking: "#22 overall",
+        website: "https://www.georgetown.edu/",
+        whyGoodFit: "Great for Coaches interested in policy and educational leadership. Georgetown's service focus matches ENFJ values.",
+        relevantMajors: ["Education", "Psychology", "Public Policy", "Human Science"],
+        averageGPA: "3.89"
+      },
+      // Tier 4: Boston University, Ohio State
+      {
+        name: "Ohio State University",
+        location: "Columbus, OH",
+        programs: ["Education", "Psychology", "Human Sciences"],
+        ranking: "#49 overall",
+        website: "https://www.osu.edu/",
+        whyGoodFit: "Excellent for Coaches who want comprehensive education programs. Ohio State's diverse offerings support ENFJ development goals.",
+        relevantMajors: ["Education", "Psychology", "Human Development", "Social Work"],
+        averageGPA: "3.7-3.8"
+      },
+      // Tier 5: Arizona State, University of Alabama
+      {
+        name: "University of Alabama",
+        location: "Tuscaloosa, AL",
+        programs: ["Education", "Psychology", "Human Sciences"],
+        ranking: "#148 overall",
+        website: "https://www.ua.edu/",
+        whyGoodFit: "Great for Coaches seeking strong education programs. Alabama's focus on teacher preparation aligns with ENFJ coaching nature.",
+        relevantMajors: ["Education", "Psychology", "Human Development", "Social Work"],
+        averageGPA: "3.5-3.6"
       }
     ],
     celebrities: [
@@ -1481,6 +1763,61 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Excellent for Free Spirits who want urban energy and diverse opportunities. BU's programs provide perfect foundation for ENFP career paths.",
         relevantMajors: ["Communications", "Business Administration", "Public Relations", "Psychology", "International Relations"],
         averageGPA: "3.7"
+      },
+      // Tier 1: Stanford, Brown
+      {
+        name: "Stanford University", 
+        location: "Stanford, CA",
+        programs: ["Communications", "Psychology", "Human Biology"],
+        ranking: "#6 overall",
+        website: "https://www.stanford.edu/",
+        whyGoodFit: "Perfect for Free Spirits who want innovation and creativity. Stanford's entrepreneurial culture matches ENFP energy and possibility thinking.",
+        relevantMajors: ["Communications", "Psychology", "Human Biology", "Product Design"],
+        averageGPA: "3.96"
+      },
+      // Tier 2: Northwestern, Duke
+      {
+        name: "Northwestern University",
+        location: "Evanston, IL", 
+        programs: ["Communications", "Journalism", "Psychology"],
+        ranking: "#9 overall",
+        website: "https://www.northwestern.edu/",
+        whyGoodFit: "Excellent for Free Spirits interested in media and communication. Northwestern's programs align with ENFP people focus and creativity.",
+        relevantMajors: ["Communication Studies", "Journalism", "Psychology", "Radio/TV/Film"],
+        averageGPA: "3.93"
+      },
+      // Tier 3: Boston University, Emory
+      {
+        name: "Emory University",
+        location: "Atlanta, GA",
+        programs: ["Business", "Liberal Arts", "Psychology"],
+        ranking: "#22 overall", 
+        website: "https://www.emory.edu/",
+        whyGoodFit: "Great for Free Spirits who want liberal arts foundation. Emory's diverse programs support ENFP exploration and people connection.",
+        relevantMajors: ["Business", "Psychology", "English", "Film Studies"],
+        averageGPA: "3.78"
+      },
+      // Tier 4: University of Miami, Syracuse
+      {
+        name: "University of Miami",
+        location: "Coral Gables, FL",
+        programs: ["Communications", "Business", "Liberal Arts"],
+        ranking: "#67 overall",
+        website: "https://www.miami.edu/",
+        whyGoodFit: "Perfect for Free Spirits who want vibrant campus life. Miami's programs and culture align with ENFP enthusiasm and networking.",
+        relevantMajors: ["Communications", "Business", "Psychology", "Public Relations"],
+        averageGPA: "3.6-3.7"
+      },
+      // Tier 5: University of Colorado, San Diego State
+      {
+        name: "San Diego State University",
+        location: "San Diego, CA",
+        programs: ["Communications", "Business", "Liberal Arts"],
+        ranking: "#143 overall",
+        website: "https://www.sdsu.edu/",
+        whyGoodFit: "Excellent for Free Spirits seeking strong programs in great location. SDSU's diverse offerings support ENFP creativity and social connection.",
+        relevantMajors: ["Communications", "Business", "Psychology", "Journalism & Media Studies"],
+        averageGPA: "3.4-3.5"
       }
     ],
     celebrities: [
@@ -1717,6 +2054,50 @@ export const personalityResults: Record<string, PersonalityResult> = {
         whyGoodFit: "Excellent for Helpers who want faith-based education. Baylor's emphasis on service and caring professions aligns with ISFJ values.",
         relevantMajors: ["Nursing", "Education", "Social Work", "Psychology", "Child & Family Studies"],
         averageGPA: "3.7"
+      },
+      // Tier 1: Johns Hopkins, Emory
+      {
+        name: "Johns Hopkins University",
+        location: "Baltimore, MD",
+        programs: ["Nursing", "Public Health", "Medicine"],
+        ranking: "#9 overall",
+        website: "https://www.jhu.edu/",
+        whyGoodFit: "Perfect for Helpers who want world-class healthcare education. JHU's medical focus aligns with ISFJ caring nature.",
+        relevantMajors: ["Nursing", "Public Health", "Psychology", "Social Work"],
+        averageGPA: "3.74"
+      },
+      // Tier 2: Emory, Wake Forest
+      {
+        name: "Emory University",
+        location: "Atlanta, GA",
+        programs: ["Nursing", "Public Health", "Liberal Arts"],
+        ranking: "#22 overall",
+        website: "https://www.emory.edu/",
+        whyGoodFit: "Excellent for Helpers interested in healthcare and service. Emory's strong programs in caring professions match ISFJ values.",
+        relevantMajors: ["Nursing", "Human Health", "Psychology", "Anthropology"],
+        averageGPA: "3.78"
+      },
+      // Tier 4: University of Georgia, Texas A&M
+      {
+        name: "University of Georgia",
+        location: "Athens, GA",
+        programs: ["Education", "Social Work", "Health Sciences"],
+        ranking: "#50 overall",
+        website: "https://www.uga.edu/",
+        whyGoodFit: "Great for Helpers who want comprehensive service programs. UGA's focus on education and social services aligns with ISFJ goals.",
+        relevantMajors: ["Education", "Social Work", "Family & Consumer Sciences", "Psychology"],
+        averageGPA: "3.7-3.8"
+      },
+      // Tier 5: University of Alabama, Auburn
+      {
+        name: "Auburn University",
+        location: "Auburn, AL",
+        programs: ["Education", "Human Sciences", "Nursing"],
+        ranking: "#97 overall",
+        website: "https://www.auburn.edu/",
+        whyGoodFit: "Perfect for Helpers seeking strong education and human services programs. Auburn's caring culture matches ISFJ nature.",
+        relevantMajors: ["Education", "Human Development", "Nursing", "Social Work"],
+        averageGPA: "3.5-3.6"
       }
     ],
     celebrities: [
