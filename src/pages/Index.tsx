@@ -32,8 +32,8 @@ type AppState = 'landing' | 'quiz' | 'results';
 
 const Index = () => {
   const location = useLocation();
-  const [appState, setAppState] = useState<AppState>('results');
-  const [personalityResult, setPersonalityResult] = useState<PersonalityType | null>('The Strategist');
+  const [appState, setAppState] = useState<AppState>('landing');
+  const [personalityResult, setPersonalityResult] = useState<PersonalityType | null>(null);
 
   // Check for incoming state from DetailedResults navigation
   useEffect(() => {
