@@ -156,14 +156,20 @@ export default function DetailedResults() {
           <div className="flex gap-2 justify-center mb-6">
             <Button 
               variant={section === 'careers' ? "default" : "outline"}
-              onClick={() => navigate('/detailed-results', { state: { personality, section: 'careers' } })}
+              onClick={() => {
+                navigate('/detailed-results', { state: { personality, section: 'careers' } });
+                setTimeout(() => window.scrollTo(0, 0), 50);
+              }}
               className="text-sm"
             >
               Career Matches
             </Button>
             <Button 
               variant={section === 'colleges' ? "default" : "outline"}
-              onClick={() => navigate('/detailed-results', { state: { personality, section: 'colleges' } })}
+              onClick={() => {
+                navigate('/detailed-results', { state: { personality, section: 'colleges' } });
+                setTimeout(() => window.scrollTo(0, 0), 50);
+              }}
               className="text-sm"
             >
               College Options
@@ -750,6 +756,7 @@ export default function DetailedResults() {
             onClick={() => {
               console.log('Clicking Career Matches button');
               navigate('/detailed-results', { state: { personality, section: 'careers' } });
+              setTimeout(() => window.scrollTo(0, 0), 50);
             }}
             className="px-6 py-3"
           >
@@ -761,6 +768,7 @@ export default function DetailedResults() {
             onClick={() => {
               console.log('Clicking College Options button');
               navigate('/detailed-results', { state: { personality, section: 'colleges' } });
+              setTimeout(() => window.scrollTo(0, 0), 50);
             }}
             className="px-6 py-3"
           >
