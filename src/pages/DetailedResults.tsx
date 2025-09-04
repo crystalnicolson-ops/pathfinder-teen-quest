@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -115,6 +116,10 @@ export default function DetailedResults() {
   const location = useLocation();
   const navigate = useNavigate();
   const { personality, section } = location.state || {};
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [section]);
 
   if (!personality) {
     navigate('/');
