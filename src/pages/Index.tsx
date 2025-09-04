@@ -43,20 +43,26 @@ const Index = () => {
     }
   }, [location.state]);
 
-  const handleStartQuiz = () => setAppState('quiz');
+  const handleStartQuiz = () => {
+    window.scrollTo(0, 0);
+    setAppState('quiz');
+  };
   
   const handleQuizComplete = (personality: PersonalityType) => {
     setPersonalityResult(personality);
     setAppState('results');
+    window.scrollTo(0, 0);
   };
 
   const handleRetakeQuiz = () => {
     setPersonalityResult(null);
     setAppState('landing');
+    window.scrollTo(0, 0);
   };
 
   const handleGoHome = () => {
     setAppState('landing');
+    window.scrollTo(0, 0);
   };
 
   if (appState === 'quiz') {
