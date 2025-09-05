@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useLocation, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
@@ -229,6 +229,11 @@ const Index = () => {
             <TrendingUp className="h-6 w-6 mr-2" />
             Begin Assessment
           </Button>
+          <div className="mt-6">
+            <Button variant="link" asChild>
+              <Link to="/downloads">Download website screenshots</Link>
+            </Button>
+          </div>
         </div>
       </div>
     </div>
