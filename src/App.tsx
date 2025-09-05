@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import DetailedResults from "./pages/DetailedResults";
 import AcademicWorksheet from "./pages/AcademicWorksheet";
+import Downloads from "./pages/Downloads";
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
@@ -22,6 +23,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/detailed-results" element={<DetailedResults />} />
           <Route path="/academic-worksheet" element={<AcademicWorksheet />} />
+          <Route path="/downloads" element={<Downloads />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
