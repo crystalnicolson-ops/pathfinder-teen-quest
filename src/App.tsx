@@ -9,17 +9,17 @@ import AcademicWorksheet from "./pages/AcademicWorksheet";
 
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
+import { useGoogleAnalytics } from "./hooks/useGoogleAnalytics";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <ScrollToTop />
-        <Routes>
+const AppContent = () => {
+  useGoogleAnalytics();
+  
+  return (
+    <>
+      <ScrollToTop />
+      <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/detailed-results" element={<DetailedResults />} />
           <Route path="/academic-worksheet" element={<AcademicWorksheet />} />
@@ -27,6 +27,17 @@ const App = () => (
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
+      </>
+  );
+};
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <AppContent />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
