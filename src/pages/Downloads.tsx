@@ -33,7 +33,8 @@ const Downloads: React.FC = () => {
               <img
                 src="/landing-screenshot.png"
                 alt="Homepage screenshot - Personality Traits"
-                className="w-full rounded-md border border-border"
+                className="max-w-md mx-auto block rounded-md border border-border"
+                style={{ aspectRatio: '9/16' }}
                 loading="lazy"
               />
               <Button asChild>
@@ -52,7 +53,8 @@ const Downloads: React.FC = () => {
               <img
                 src="/website-screenshot.png"
                 alt="Homepage screenshot (generated) - Personality Traits"
-                className="w-full rounded-md border border-border"
+                className="max-w-md mx-auto block rounded-md border border-border"
+                style={{ aspectRatio: '9/16' }}
                 loading="lazy"
               />
               <Button asChild variant="secondary">
