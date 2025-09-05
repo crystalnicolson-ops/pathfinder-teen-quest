@@ -14,7 +14,7 @@ export const useGoogleAnalytics = () => {
     // Check if gtag is available
     if (typeof window.gtag === 'function') {
       // Track page view
-      window.gtag('config', 'GA_MEASUREMENT_ID', {
+      window.gtag('config', 'G-MPL1M94Y56', {
         page_path: location.pathname + location.search,
       });
     }
