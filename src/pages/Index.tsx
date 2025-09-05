@@ -111,11 +111,6 @@ const Index = () => {
             <Target className="h-6 w-6 mr-2" color="white" />
             Start Your Journey
           </Button>
-          <div className="mt-4">
-            <Button variant="link" asChild>
-              <Link to="/downloads">Download website screenshots</Link>
-            </Button>
-          </div>
         </div>
       </div>
 
@@ -234,11 +229,6 @@ const Index = () => {
             <TrendingUp className="h-6 w-6 mr-2" />
             Begin Assessment
           </Button>
-          <div className="mt-6">
-            <Button variant="link" asChild>
-              <Link to="/downloads">Download website screenshots</Link>
-            </Button>
-          </div>
         </div>
       </div>
     </div>
