@@ -14,7 +14,7 @@ export const useGoogleAnalytics = () => {
     // Check if gtag is available
     if (typeof window.gtag === 'function') {
       // Track page view
-      window.gtag('config', 'G-MPL1M94Y56', {
+      window.gtag('config', 'G-Z8NLDG4ERY', {
         page_path: location.pathname + location.search,
       });
     }
