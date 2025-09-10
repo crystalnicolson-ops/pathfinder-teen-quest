@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Sparkles, Target, GraduationCap, TrendingUp } from 'lucide-react';
+import { Sparkles, Target, GraduationCap, TrendingUp, Crown } from 'lucide-react';
 import QuizComponent from '@/components/QuizComponent';
 import ResultsComponent from '@/components/ResultsComponent';
 import Header from '@/components/Header';
@@ -101,16 +101,28 @@ const Index = () => {
             plus colleges that can get you there!
           </p>
           
-          <Button 
-            variant="secondary" 
-            size="lg" 
-            onClick={handleStartQuiz}
-            className="text-lg px-8 py-6 animate-pulse-slow rounded-full text-white border-[#DDA0DD]"
-            style={{ backgroundColor: '#DDA0DD', borderColor: '#DDA0DD' }}
-          >
-            <Target className="h-6 w-6 mr-2" color="white" />
-            Start Your Journey
-          </Button>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Button 
+              variant="secondary" 
+              size="lg" 
+              onClick={handleStartQuiz}
+              className="text-lg px-8 py-6 animate-pulse-slow rounded-full text-white border-[#DDA0DD]"
+              style={{ backgroundColor: '#DDA0DD', borderColor: '#DDA0DD' }}
+            >
+              <Target className="h-6 w-6 mr-2" color="white" />
+              Quick Assessment (Free)
+            </Button>
+            <Link to="/detailed-quiz">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="text-lg px-8 py-6 rounded-full bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-transform shadow-lg"
+              >
+                <Crown className="h-6 w-6 mr-2" />
+                Premium Assessment
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
 

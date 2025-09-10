@@ -1,0 +1,196 @@
+import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Progress } from '@/components/ui/progress';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
+import { Label } from '@/components/ui/label';
+import { ArrowLeft, ArrowRight, Crown, BookOpen } from 'lucide-react';
+import Header from '@/components/Header';
+import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion } from '@/data/detailedQuiz';
+
+type AnswerType = 'Strongly Agree' | 'Agree' | 'Neutral' | 'Disagree' | 'Strongly Disagree';
+
+const DetailedQuiz = () => {
+  const navigate = useNavigate();
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [answers, setAnswers] = useState<{ question: DetailedQuestion; answer: AnswerType }[]>([]);
+  const [currentAnswer, setCurrentAnswer] = useState<AnswerType | ''>('');
+
+  const handleGoHome = () => {
+    navigate('/');
+  };
+
+  const handleAnswerSelect = (answer: AnswerType) => {
+    setCurrentAnswer(answer);
+  };
+
+  const handleNext = () => {
+    if (!currentAnswer) return;
+
+    const newAnswers = [...answers];
+    newAnswers[currentQuestion] = {
+      question: detailedQuestions[currentQuestion],
+      answer: currentAnswer
+    };
+    setAnswers(newAnswers);
+
+    if (currentQuestion < detailedQuestions.length - 1) {
+      setCurrentQuestion(currentQuestion + 1);
+      setCurrentAnswer(newAnswers[currentQuestion + 1]?.answer || '');
+    } else {
+      // Quiz complete - calculate results
+      const result = calculateDetailedMBTI(newAnswers);
+      navigate('/detailed-results', { 
+        state: { 
+          personality: result.personality,
+          learningStyle: result.learningStyle,
+          strengths: result.strengths,
+          isDetailed: true
+        }
+      });
+    }
+  };
+
+  const handlePrevious = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion(currentQuestion - 1);
+      setCurrentAnswer(answers[currentQuestion - 1]?.answer || '');
+    }
+  };
+
+  const progress = ((currentQuestion + 1) / detailedQuestions.length) * 100;
+  const currentSection = detailedQuestions[currentQuestion].section;
+  
+  // Get section info
+  const sectionIcons = {
+    "Social Energy & Communication Style": "👥",
+    "Decision-Making & Emotional Style": "🎯", 
+    "Learning Style & Study Habits": "🧠",
+    "Work Habits & Time Management": "🛠️",
+    "Creative vs Practical Thinking": "🌈"
+  };
+
+  return (
+    <>
+      <Header onHome={handleGoHome} />
+      <div className="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 py-8">
+        <div className="max-w-4xl mx-auto px-4">
+          {/* Header */}
+          <div className="text-center mb-8">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Crown className="h-6 w-6 text-primary" />
+              <h1 className="text-3xl font-bold text-foreground">Premium Career Assessment</h1>
+              <Crown className="h-6 w-6 text-primary" />
+            </div>
+            <p className="text-muted-foreground">
+              Deep dive into your personality with our comprehensive 50-question assessment
+            </p>
+          </div>
+
+          {/* Progress */}
+          <div className="mb-8">
+            <div className="flex justify-between items-center mb-2">
+              <span className="text-sm font-medium text-muted-foreground">
+                Question {currentQuestion + 1} of {detailedQuestions.length}
+              </span>
+              <span className="text-sm font-medium text-primary">
+                {Math.round(progress)}% Complete
+              </span>
+            </div>
+            <Progress value={progress} className="h-3" />
+          </div>
+
+          {/* Section Indicator */}
+          <div className="mb-6">
+            <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-4 py-2 rounded-lg">
+              <BookOpen className="h-4 w-4" />
+              <span className="font-medium">
+                {sectionIcons[currentSection as keyof typeof sectionIcons]} {currentSection}
+              </span>
+            </div>
+          </div>
+
+          {/* Question Card */}
+          <Card className="mb-8 shadow-lg border-0 bg-background/80 backdrop-blur-sm">
+            <CardHeader>
+              <CardTitle className="text-xl text-center font-semibold">
+                {detailedQuestions[currentQuestion].text}
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <RadioGroup value={currentAnswer} onValueChange={handleAnswerSelect}>
+                <div className="space-y-4">
+                  {[
+                    { value: 'Strongly Agree', label: 'Strongly Agree', color: 'bg-green-100 border-green-300 text-green-800' },
+                    { value: 'Agree', label: 'Agree', color: 'bg-green-50 border-green-200 text-green-700' },
+                    { value: 'Neutral', label: 'Neutral', color: 'bg-gray-50 border-gray-200 text-gray-700' },
+                    { value: 'Disagree', label: 'Disagree', color: 'bg-red-50 border-red-200 text-red-700' },
+                    { value: 'Strongly Disagree', label: 'Strongly Disagree', color: 'bg-red-100 border-red-300 text-red-800' }
+                  ].map((option) => (
+                    <div key={option.value} className="flex items-center space-x-3">
+                      <RadioGroupItem 
+                        value={option.value} 
+                        id={option.value}
+                        className="border-2"
+                      />
+                      <Label 
+                        htmlFor={option.value} 
+                        className={`flex-1 p-4 rounded-lg border-2 cursor-pointer transition-all hover:shadow-md ${
+                          currentAnswer === option.value 
+                            ? `${option.color} shadow-md scale-[1.02]` 
+                            : 'bg-background border-border hover:border-border/60'
+                        }`}
+                      >
+                        {option.label}
+                      </Label>
+                    </div>
+                  ))}
+                </div>
+              </RadioGroup>
+            </CardContent>
+          </Card>
+
+          {/* Navigation */}
+          <div className="flex justify-between items-center">
+            <Button
+              variant="outline"
+              onClick={handlePrevious}
+              disabled={currentQuestion === 0}
+              className="flex items-center gap-2"
+            >
+              <ArrowLeft className="h-4 w-4" />
+              Previous
+            </Button>
+
+            <div className="flex items-center gap-2 text-muted-foreground">
+              <div className="flex gap-1">
+                {Array.from({ length: Math.ceil(detailedQuestions.length / 10) }).map((_, i) => (
+                  <div
+                    key={i}
+                    className={`w-2 h-2 rounded-full ${
+                      Math.floor(currentQuestion / 10) === i 
+                        ? 'bg-primary' 
+                        : 'bg-muted'
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+
+            <Button
+              onClick={handleNext}
+              disabled={!currentAnswer}
+              className="flex items-center gap-2"
+            >
+              {currentQuestion === detailedQuestions.length - 1 ? 'Get Results' : 'Next'}
+              <ArrowRight className="h-4 w-4" />
+            </Button>
+          </div>
+        </div>
+      </div>
+    </>
+  );
+};
+
+export default DetailedQuiz;

@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
+import DetailedQuiz from "./pages/DetailedQuiz";
 import DetailedResults from "./pages/DetailedResults";
 import AcademicWorksheet from "./pages/AcademicWorksheet";
 
@@ -19,8 +20,9 @@ const AppContent = () => {
   return (
     <>
       <ScrollToTop />
-      <Routes>
+        <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/detailed-quiz" element={<DetailedQuiz />} />
           <Route path="/detailed-results" element={<DetailedResults />} />
           <Route path="/academic-worksheet" element={<AcademicWorksheet />} />
           
