@@ -277,7 +277,7 @@ const DetailedQuiz = () => {
           </div>
 
           {/* Question Card */}
-          <Card className="mb-8 shadow-lg border-0 bg-background/80 backdrop-blur-sm">
+          <Card className="mb-8 shadow-lg border-0 bg-background">
             <CardHeader>
               <CardTitle className="text-xl text-center font-semibold">
                 {detailedQuestions[currentQuestion].text}
