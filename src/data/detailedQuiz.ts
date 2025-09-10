@@ -8,87 +8,82 @@ export interface DetailedQuestion {
 
 export type AnswerType = 'Strongly Agree' | 'Agree' | 'Disagree' | 'Strongly Disagree';
 
-// 50-Question Personality + Learning Style Test
+// 50-Question MBTI Personality + Learning Style Test
 export const detailedQuestions: DetailedQuestion[] = [
-  { text: "You prefer working alone over working in groups.", section: "Personality + Learning Style", category: "introvert" },
-  { text: "You like imagining future possibilities more than focusing on details.", section: "Personality + Learning Style", category: "intuitive" },
-  { text: "You plan your day carefully and stick to the schedule.", section: "Personality + Learning Style", category: "planner" },
-  { text: "You like helping others and giving emotional support.", section: "Personality + Learning Style", category: "helper" },
-  { text: "You enjoy brainstorming new ideas without worrying about rules.", section: "Personality + Learning Style", category: "creative" },
-  { text: "You notice patterns quickly in things like numbers, shapes, or puzzles.", section: "Personality + Learning Style", category: "analytical" },
-  { text: "You often take charge when others aren't sure what to do.", section: "Personality + Learning Style", category: "leader" },
-  { text: "You need quiet time to recharge after hanging out with friends.", section: "Personality + Learning Style", category: "introvert" },
-  { text: "You like debating and challenging people's opinions.", section: "Personality + Learning Style", category: "challenger" },
-  { text: "You often feel more comfortable following instructions than creating your own.", section: "Personality + Learning Style", category: "follower" },
-  { text: "You enjoy turning your thoughts into art, poetry, or music.", section: "Personality + Learning Style", category: "creative" },
-  { text: "You prefer learning by doing rather than listening or reading.", section: "Personality + Learning Style", category: "kinesthetic" },
-  { text: "You often double-check your work to make sure it's right.", section: "Personality + Learning Style", category: "careful" },
-  { text: "You are curious about how things work behind the scenes.", section: "Personality + Learning Style", category: "analytical" },
-  { text: "You like helping organize school events or team projects.", section: "Personality + Learning Style", category: "organizer" },
-  { text: "You'd rather watch a documentary than a reality show.", section: "Personality + Learning Style", category: "analytical" },
-  { text: "You express your feelings through creative writing or journaling.", section: "Personality + Learning Style", category: "reading_writing" },
-  { text: "You enjoy solving riddles or logic puzzles.", section: "Personality + Learning Style", category: "analytical" },
-  { text: "You're known as the 'responsible' friend.", section: "Personality + Learning Style", category: "planner" },
-  { text: "You sometimes act before thinking things through.", section: "Personality + Learning Style", category: "spontaneous" },
-  { text: "You love giving advice and helping others work through problems.", section: "Personality + Learning Style", category: "helper" },
-  { text: "You focus more on the 'big picture' than tiny details.", section: "Personality + Learning Style", category: "intuitive" },
-  { text: "You keep your room, folders, and digital files organized.", section: "Personality + Learning Style", category: "planner" },
-  { text: "You like spontaneous plans over structured ones.", section: "Personality + Learning Style", category: "spontaneous" },
-  { text: "You're energized by spending time with lots of people.", section: "Personality + Learning Style", category: "extrovert" },
-  { text: "You prefer using charts, graphs, or pictures to understand things.", section: "Personality + Learning Style", category: "visual" },
-  { text: "You enjoy listening to audiobooks or podcasts more than reading.", section: "Personality + Learning Style", category: "auditory" },
-  { text: "You like writing summaries or lists to study for a test.", section: "Personality + Learning Style", category: "reading_writing" },
-  { text: "You learn best when you can move around or act things out.", section: "Personality + Learning Style", category: "kinesthetic" },
-  { text: "You can picture stories vividly when reading.", section: "Personality + Learning Style", category: "visual" },
-  { text: "You enjoy explaining things to others when they don't get it.", section: "Personality + Learning Style", category: "auditory" },
-  { text: "You like rereading instructions before starting something new.", section: "Personality + Learning Style", category: "reading_writing" },
-  { text: "You'd rather figure things out by tinkering than reading a manual.", section: "Personality + Learning Style", category: "kinesthetic" },
-  { text: "You take notes using drawings, colors, or symbols.", section: "Personality + Learning Style", category: "visual" },
-  { text: "You'd rather listen to someone explain than read the directions.", section: "Personality + Learning Style", category: "auditory" },
-  { text: "You prefer quiet time with a book over a loud party.", section: "Personality + Learning Style", category: "introvert" },
-  { text: "You feel proud when solving a hard math or logic problem.", section: "Personality + Learning Style", category: "analytical" },
-  { text: "You enjoy playing music, painting, or designing things.", section: "Personality + Learning Style", category: "creative" },
-  { text: "You imagine how you'd handle situations before they happen.", section: "Personality + Learning Style", category: "planner" },
-  { text: "You get bored easily if you have to follow strict routines.", section: "Personality + Learning Style", category: "spontaneous" },
-  { text: "You often see multiple patterns, faces, or objects in a complex image before anyone else does.", section: "Personality + Learning Style", category: "visual" },
-  { text: "When shown a picture or diagram, you naturally imagine how you would interact with it physically.", section: "Personality + Learning Style", category: "kinesthetic" },
-  { text: "You like reflecting on your thoughts or emotions before reacting.", section: "Personality + Learning Style", category: "introvert" },
-  { text: "You enjoy being in leadership roles even in casual settings.", section: "Personality + Learning Style", category: "leader" },
-  { text: "You get excited thinking about changing the world someday.", section: "Personality + Learning Style", category: "visionary" },
-  { text: "You'd rather fix things than replace them.", section: "Personality + Learning Style", category: "practical" },
-  { text: "You are motivated by rewards like grades or recognition.", section: "Personality + Learning Style", category: "achiever" },
-  { text: "You love trying new things even if they seem weird at first.", section: "Personality + Learning Style", category: "adventurous" },
-  { text: "You often act as the peacekeeper among your friends.", section: "Personality + Learning Style", category: "helper" },
-  { text: "You like creating plans and checking things off when done.", section: "Personality + Learning Style", category: "planner" }
+  // Questions 1-32: MBTI Personality Focus
+  { text: "You get energy from being around other people rather than being alone.", section: "Personality", category: "E" },
+  { text: "You focus more on facts and details than possibilities and meanings.", section: "Personality", category: "S" },
+  { text: "You make decisions based on logic rather than personal values.", section: "Personality", category: "T" },
+  { text: "You prefer to have things decided rather than keep options open.", section: "Personality", category: "J" },
+  { text: "You feel comfortable being the center of attention.", section: "Personality", category: "E" },
+  { text: "You trust your experience more than your imagination.", section: "Personality", category: "S" },
+  { text: "You think it's worse to be too emotional than too cold.", section: "Personality", category: "T" },
+  { text: "You like to plan your activities in advance.", section: "Personality", category: "J" },
+  { text: "You start conversations easily with strangers.", section: "Personality", category: "E" },
+  { text: "You are more interested in what is actual than what is possible.", section: "Personality", category: "S" },
+  { text: "You believe being fair is more important than being compassionate.", section: "Personality", category: "T" },
+  { text: "You prefer to finish one project before starting another.", section: "Personality", category: "J" },
+  { text: "You feel drained after spending time in large groups.", section: "Personality", category: "I" },
+  { text: "You like to think about future possibilities and innovations.", section: "Personality", category: "N" },
+  { text: "You consider people's feelings when making important decisions.", section: "Personality", category: "F" },
+  { text: "You enjoy having a flexible schedule that can change.", section: "Personality", category: "P" },
+  { text: "You think out loud when processing information.", section: "Personality", category: "E" },
+  { text: "You prefer concrete information over abstract theories.", section: "Personality", category: "S" },
+  { text: "You value truth over diplomacy in difficult situations.", section: "Personality", category: "T" },
+  { text: "You like to keep your options open as long as possible.", section: "Personality", category: "P" },
+  { text: "You need quiet time to recharge after social activities.", section: "Personality", category: "I" },
+  { text: "You enjoy exploring theoretical concepts and big ideas.", section: "Personality", category: "N" },
+  { text: "You try to avoid hurting people's feelings when possible.", section: "Personality", category: "F" },
+  { text: "You work better with deadlines and structure.", section: "Personality", category: "J" },
+  { text: "You prefer working in teams rather than alone.", section: "Personality", category: "E" },
+  { text: "You focus on practical applications rather than theoretical concepts.", section: "Personality", category: "S" },
+  { text: "You make decisions quickly based on objective criteria.", section: "Personality", category: "T" },
+  { text: "You adapt easily when plans change unexpectedly.", section: "Personality", category: "P" },
+  { text: "You prefer small gatherings over large parties.", section: "Personality", category: "I" },
+  { text: "You see patterns and connections others might miss.", section: "Personality", category: "N" },
+  { text: "You consider how decisions will affect people emotionally.", section: "Personality", category: "F" },
+  { text: "You like having things settled and decided.", section: "Personality", category: "J" },
+
+  // Questions 33-50: Learning Style Focus
+  { text: "You remember information better when you see it in charts, graphs, or diagrams.", section: "Learning Style", category: "V" },
+  { text: "You learn best when someone explains concepts verbally to you.", section: "Learning Style", category: "A" },
+  { text: "You prefer to read instructions carefully before starting a task.", section: "Learning Style", category: "R" },
+  { text: "You understand concepts better when you can physically manipulate objects.", section: "Learning Style", category: "K" },
+  { text: "You take notes using colors, symbols, and visual organization.", section: "Learning Style", category: "V" },
+  { text: "You enjoy learning through discussions and verbal explanations.", section: "Learning Style", category: "A" },
+  { text: "You prefer detailed written instructions over verbal directions.", section: "Learning Style", category: "R" },
+  { text: "You learn better when you can move around while studying.", section: "Learning Style", category: "K" },
+  { text: "You can easily visualize scenes when reading stories.", section: "Learning Style", category: "V" },
+  { text: "You benefit from repeating information out loud to yourself.", section: "Learning Style", category: "A" },
+  { text: "You like to write summaries and lists to organize information.", section: "Learning Style", category: "R" },
+  { text: "You prefer hands-on activities over lectures or reading.", section: "Learning Style", category: "K" },
+  { text: "You use visual aids like mind maps to organize your thoughts.", section: "Learning Style", category: "V" },
+  { text: "You remember spoken instructions better than written ones.", section: "Learning Style", category: "A" },
+  { text: "You enjoy expressing your ideas through writing.", section: "Learning Style", category: "R" },
+  { text: "You learn best through trial and error and direct experience.", section: "Learning Style", category: "K" },
+  { text: "You notice visual details that others often miss.", section: "Learning Style", category: "V" },
+  { text: "You process information by talking through problems with others.", section: "Learning Style", category: "A" }
 ];
 
 export const calculateDetailedMBTI = (answers: { question: DetailedQuestion; answer: AnswerType }[]) => {
-  const scores = {
-    visual: 0,
-    auditory: 0,
-    reading_writing: 0,
-    kinesthetic: 0,
-    introvert: 0,
-    extrovert: 0,
-    planner: 0,
-    spontaneous: 0,
-    creative: 0,
-    analytical: 0,
-    helper: 0,
-    leader: 0,
-    intuitive: 0,
-    practical: 0,
-    challenger: 0,
-    follower: 0,
-    careful: 0,
-    organizer: 0,
-    visionary: 0,
-    achiever: 0,
-    adventurous: 0
+  // MBTI trait scores
+  const mbtiScores = {
+    E: 0, I: 0,  // Extroversion vs Introversion
+    S: 0, N: 0,  // Sensing vs Intuition  
+    T: 0, F: 0,  // Thinking vs Feeling
+    J: 0, P: 0   // Judging vs Perceiving
+  };
+
+  // Learning style scores
+  const learningScores = {
+    V: 0,  // Visual
+    A: 0,  // Auditory
+    R: 0,  // Reading/Writing
+    K: 0   // Kinesthetic
   };
 
   // Calculate scores based on answers (0-3 points)
-  answers.forEach(({ question, answer }) => {
+  answers.forEach(({ question, answer }, index) => {
     let points = 0;
     switch (answer) {
       case 'Strongly Agree': points = 3; break;
@@ -97,46 +92,60 @@ export const calculateDetailedMBTI = (answers: { question: DetailedQuestion; ans
       case 'Strongly Disagree': points = 0; break;
     }
 
-    if (scores.hasOwnProperty(question.category)) {
-      scores[question.category as keyof typeof scores] += points;
+    console.log(`Q${index + 1}: "${question.text}" - Answer: ${answer} (${points} points) - Category: ${question.category}`);
+
+    // Questions 1-32: MBTI Personality traits
+    if (index < 32) {
+      if (question.category === 'E' || question.category === 'I') {
+        mbtiScores[question.category as 'E' | 'I'] += points;
+      } else if (question.category === 'S' || question.category === 'N') {
+        mbtiScores[question.category as 'S' | 'N'] += points;
+      } else if (question.category === 'T' || question.category === 'F') {
+        mbtiScores[question.category as 'T' | 'F'] += points;
+      } else if (question.category === 'J' || question.category === 'P') {
+        mbtiScores[question.category as 'J' | 'P'] += points;
+      }
+    } 
+    
+    // Questions 33-50: Learning styles
+    if (index >= 32) {
+      if (question.category === 'V' || question.category === 'A' || 
+          question.category === 'R' || question.category === 'K') {
+        learningScores[question.category as 'V' | 'A' | 'R' | 'K'] += points;
+      }
     }
   });
 
-  // Determine dominant learning style based on specific questions
-  const learningStyles = {
-    visual: scores.visual,
-    auditory: scores.auditory,
-    reading_writing: scores.reading_writing,
-    kinesthetic: scores.kinesthetic
+  console.log('MBTI Scores:', mbtiScores);
+  console.log('Learning Style Scores:', learningScores);
+
+  // Determine MBTI type
+  const energyType = mbtiScores.E > mbtiScores.I ? 'E' : 'I';
+  const perceptionType = mbtiScores.S > mbtiScores.N ? 'S' : 'N';
+  const decisionType = mbtiScores.T > mbtiScores.F ? 'T' : 'F';
+  const lifestyleType = mbtiScores.J > mbtiScores.P ? 'J' : 'P';
+
+  const mbtiCode = energyType + perceptionType + decisionType + lifestyleType;
+
+  // Determine dominant learning style
+  const learningStyleEntries = Object.entries(learningScores) as [keyof typeof learningScores, number][];
+  const dominantLearningStyleEntry = learningStyleEntries.reduce((a, b) => 
+    learningScores[a[0]] > learningScores[b[0]] ? a : b
+  );
+  
+  const learningStyleMap = {
+    'V': 'Visual',
+    'A': 'Auditory', 
+    'R': 'Reading/Writing',
+    'K': 'Kinesthetic'
   };
-
-  const dominantLearningStyle = Object.entries(learningStyles).reduce((a, b) => 
-    learningStyles[a[0] as keyof typeof learningStyles] > learningStyles[b[0] as keyof typeof learningStyles] ? a : b
-  )[0];
-
-  // Determine personality traits
-  const personalityType = {
-    energy: scores.extrovert > scores.introvert ? 'Extrovert' : 'Introvert',
-    organization: scores.planner > scores.spontaneous ? 'Planner' : 'Spontaneous',
-    thinking: scores.analytical > scores.creative ? 'Analytical' : 'Creative',
-    social: scores.helper > scores.leader ? 'Helper' : 'Leader'
-  };
-
-  // Create MBTI-like code from personality traits
-  const energyCode = personalityType.energy === 'Introvert' ? 'I' : 'E';
-  const organizationCode = personalityType.organization === 'Planner' ? 'J' : 'P';
-  const thinkingCode = personalityType.thinking === 'Analytical' ? 'T' : 'F';
   
-  // For the second letter (N/S), use a combination of traits
-  const intuitionCode = scores.visionary > scores.practical ? 'N' : 'S';
-  
-  const personalityCode = energyCode + intuitionCode + thinkingCode + organizationCode;
-  
-  console.log('Calculated personality code:', personalityCode);
-  console.log('Personality traits:', personalityType);
-  console.log('Scores:', scores);
+  const dominantLearningStyle = learningStyleMap[dominantLearningStyleEntry[0]];
 
-  // Map personality code to PersonalityType
+  console.log('MBTI Code:', mbtiCode);
+  console.log('Dominant Learning Style:', dominantLearningStyle);
+
+  // Map MBTI code to PersonalityType
   const personalityMap: { [key: string]: PersonalityType } = {
     'INTJ': 'The Strategist',
     'INTP': 'The Inventor', 
@@ -156,14 +165,41 @@ export const calculateDetailedMBTI = (answers: { question: DetailedQuestion; ans
     'ESFP': 'The Performer'
   };
 
-  const finalPersonality = personalityMap[personalityCode] || 'The Strategist';
+  const finalPersonality = personalityMap[mbtiCode] || 'The Strategist';
   console.log('Final personality result:', finalPersonality);
+
+  // Create personality traits for compatibility
+  const personalityTraits = {
+    energy: energyType === 'E' ? 'Extrovert' : 'Introvert',
+    organization: lifestyleType === 'J' ? 'Planner' : 'Spontaneous',
+    thinking: decisionType === 'T' ? 'Analytical' : 'Creative',
+    social: decisionType === 'F' ? 'Helper' : 'Leader'
+  };
+
+  // Create combined scores object for compatibility
+  const combinedScores = {
+    // Learning styles
+    visual: learningScores.V,
+    auditory: learningScores.A,
+    reading_writing: learningScores.R,
+    kinesthetic: learningScores.K,
+    // MBTI traits converted to old format for compatibility
+    introvert: mbtiScores.I,
+    extrovert: mbtiScores.E,
+    planner: mbtiScores.J,
+    spontaneous: mbtiScores.P,
+    creative: mbtiScores.F,
+    analytical: mbtiScores.T,
+    helper: mbtiScores.F,
+    leader: mbtiScores.T
+  };
 
   return {
     learningStyle: dominantLearningStyle,
     personality: finalPersonality,
-    personalityTraits: personalityType,
-    scores,
+    personalityTraits,
+    scores: combinedScores,
+    mbtiCode,
     totalQuestions: answers.length
   };
 };
