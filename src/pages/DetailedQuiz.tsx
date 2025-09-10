@@ -89,6 +89,7 @@ const DetailedQuiz = () => {
     } else {
       // Quiz completed - check if user already has premium access
       const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
+      console.log('[DETAILED QUIZ] Completed. hasPaidPremium =', hasPaid);
       if (hasPaid) {
         // Premium user - go directly to results
         setTimeout(() => {
@@ -104,7 +105,18 @@ const DetailedQuiz = () => {
         }, 300);
       } else {
         // Free user - show payment prompt
-        setShowPaymentPrompt(true);
+        setTimeout(() => {
+          const results = calculateDetailedMBTI(newAnswers);
+          localStorage.setItem('pendingQuizResults', JSON.stringify({
+            results,
+            answers: newAnswers.map(a => ({
+              question: a.question.text,
+              answer: a.answer
+            }))
+          }));
+          console.log('[DETAILED QUIZ] Showing payment prompt');
+          setShowPaymentPrompt(true);
+        }, 300);
       }
     }
   };

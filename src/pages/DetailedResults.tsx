@@ -155,20 +155,9 @@ export default function DetailedResults() {
           showSamplePremiumData();
         }
       } else {
-        // Free user - prefer their actual quiz results if available; otherwise show sample preview
-        const pending = localStorage.getItem('pendingQuizResults');
-        if (pending) {
-          try {
-            const { results } = JSON.parse(pending);
-            setPersonality(results.personality);
-            setHasAccess(true);
-          } catch (e) {
-            console.error('Error parsing quiz results', e);
-            showSamplePremiumData();
-          }
-        } else {
-          showSamplePremiumData();
-        }
+        // Free user - lock premium content until payment is completed
+        setHasAccess(false);
+        setPersonality(null as any);
       }
     };
 
