@@ -123,6 +123,24 @@ const Index = () => {
               </Button>
             </Link>
           </div>
+          
+          <div className="mt-8 max-w-3xl mx-auto">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
+              <div className="flex items-start gap-4">
+                <Crown className="h-8 w-8 text-yellow-400 flex-shrink-0 mt-1" />
+                <div className="text-left">
+                  <h3 className="text-xl font-semibold text-white mb-2">Premium Assessment Benefits</h3>
+                  <ul className="text-white/90 space-y-2 text-sm">
+                    <li>• <strong>50 detailed questions</strong> for maximum accuracy</li>
+                    <li>• <strong>Precise career matching</strong> with entry-level and advanced positions</li>
+                    <li>• <strong>Personalized learning style analysis</strong> to optimize your study approach</li>
+                    <li>• <strong>Comprehensive strength assessment</strong> with actionable insights</li>
+                    <li>• <strong>Detailed college recommendations</strong> by tier and program</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
