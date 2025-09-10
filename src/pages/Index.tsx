@@ -123,24 +123,6 @@ const Index = () => {
               </Button>
             </Link>
           </div>
-          
-          <div className="mt-8 max-w-3xl mx-auto">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6 border border-white/20">
-              <div className="flex items-start gap-4">
-                <Crown className="h-8 w-8 text-yellow-400 flex-shrink-0 mt-1" />
-                <div className="text-left">
-                  <h3 className="text-xl font-semibold text-white mb-2">Premium Assessment Benefits</h3>
-                  <ul className="text-white/90 space-y-2 text-sm">
-                    <li>• <strong>50 detailed questions</strong> for maximum accuracy</li>
-                    <li>• <strong>Precise career matching</strong> with entry-level and advanced positions</li>
-                    <li>• <strong>Personalized learning style analysis</strong> to optimize your study approach</li>
-                    <li>• <strong>Comprehensive strength assessment</strong> with actionable insights</li>
-                    <li>• <strong>Detailed college recommendations</strong> by tier and program</li>
-                  </ul>
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -241,7 +223,7 @@ const Index = () => {
 
 
       {/* CTA Section */}
-      <div className="text-center pb-16">
+      <div className="text-center pb-8">
         <div className="max-w-2xl mx-auto px-4">
           <h3 className="text-2xl font-bold text-white mb-4">
             Ready to Shape Your Future?
@@ -259,6 +241,76 @@ const Index = () => {
             <TrendingUp className="h-6 w-6 mr-2" />
             Begin Assessment
           </Button>
+        </div>
+      </div>
+
+      {/* Premium Section */}
+      <div className="max-w-4xl mx-auto px-4 pb-16">
+        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
+          <div className="text-center mb-6">
+            <div className="flex items-center justify-center gap-2 mb-4">
+              <Crown className="h-8 w-8 text-yellow-400" />
+              <h3 className="text-3xl font-bold text-white">Premium Assessment</h3>
+              <Crown className="h-8 w-8 text-yellow-400" />
+            </div>
+            <p className="text-white/90 text-lg mb-6">
+              Unlock deeper insights with our comprehensive 50-question assessment
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 gap-6 mb-8">
+            <div className="text-left">
+              <h4 className="text-xl font-semibold text-white mb-4">What You Get:</h4>
+              <ul className="text-white/90 space-y-3">
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 font-bold">•</span>
+                  <span><strong>50 detailed questions</strong> for maximum accuracy</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 font-bold">•</span>
+                  <span><strong>Precise career matching</strong> with entry-level and advanced positions</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 font-bold">•</span>
+                  <span><strong>Personalized learning style analysis</strong> to optimize your study approach</span>
+                </li>
+              </ul>
+            </div>
+            <div className="text-left">
+              <h4 className="text-xl font-semibold text-white mb-4">Plus:</h4>
+              <ul className="text-white/90 space-y-3">
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 font-bold">•</span>
+                  <span><strong>Comprehensive strength assessment</strong> with actionable insights</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 font-bold">•</span>
+                  <span><strong>Detailed college recommendations</strong> by tier and program</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-yellow-400 font-bold">•</span>
+                  <span><strong>In-depth personality analysis</strong> with 16 MBTI types</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="text-center">
+            <div className="mb-6">
+              <span className="text-3xl font-bold text-white">$9.97</span>
+              <span className="text-white/70 ml-2">one-time payment</span>
+            </div>
+            <Link to="/detailed-quiz">
+              <Button 
+                variant="hero" 
+                size="lg" 
+                className="text-xl px-12 py-8 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0 hover:scale-105 transition-transform shadow-xl hover:shadow-2xl"
+              >
+                <Crown className="h-6 w-6 mr-3" />
+                Get Premium Assessment
+              </Button>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
