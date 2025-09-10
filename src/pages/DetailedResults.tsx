@@ -220,6 +220,82 @@ export default function DetailedResults() {
 
   const result = personalityResults[personality as PersonalityType];
 
+  // Get quiz results from localStorage for detailed analysis
+  const getDetailedResults = () => {
+    const pendingResults = localStorage.getItem('pendingQuizResults');
+    if (pendingResults) {
+      const { results } = JSON.parse(pendingResults);
+      return results;
+    }
+    return null;
+  };
+
+  const detailedResults = getDetailedResults();
+  const learningStyle = detailedResults?.learningStyle || 'Visual';
+  const strengths = detailedResults?.strengths || [];
+
+  // Learning Style Details
+  const learningStyleDetails = {
+    Visual: {
+      description: "Prefers charts, graphs, and visual instructions. Learns best through diagrams, colors, mind maps, and videos.",
+      studyMethods: ["Flashcards", "Color-coded notes", "Watching demonstrations", "Mind maps", "Diagrams and charts"],
+      careers: ["Graphic Designer", "Architect", "Filmmaker", "UI/UX Designer"],
+      icon: "👁️"
+    },
+    Auditory: {
+      description: "Remembers information from discussions, lectures, and music. Learns best by listening, reading aloud, or using mnemonic songs.",
+      studyMethods: ["Podcasts", "Group study", "Verbal repetition", "Recording lectures", "Discussion groups"],
+      careers: ["Musician", "Therapist", "Broadcaster", "Teacher"],
+      icon: "👂"
+    },
+    "Reading/Writing": {
+      description: "Prefers words, both written and spoken. Learns best through books, journaling, note-taking, and lists.",
+      studyMethods: ["Rewriting notes", "Creating summaries", "Textbooks", "Written lists", "Journaling"],
+      careers: ["Author", "Researcher", "Lawyer", "Editor"],
+      icon: "📝"
+    },
+    Kinesthetic: {
+      description: "Prefers hands-on experiences and real-world application. Learns best through movement, touch, and practice.",
+      studyMethods: ["Lab work", "Building projects", "Acting things out", "Physical models", "Field trips"],
+      careers: ["Engineer", "Athlete", "Surgeon", "Chef", "Mechanic"],
+      icon: "🤲"
+    }
+  };
+
+  // Personality Factor Insights
+  const personalityFactors = [
+    {
+      name: "Strategic Thinking",
+      description: "Strong long-term planning, logical organization, and seeing the big picture.",
+      icon: "🎯"
+    },
+    {
+      name: "Independence", 
+      description: "Self-direction, preference for working solo, and initiating tasks without help.",
+      icon: "🚀"
+    },
+    {
+      name: "Analytical Skills",
+      description: "Enjoying solving problems and using logic or research to find answers.",
+      icon: "🔍"
+    },
+    {
+      name: "Creativity",
+      description: "Originality, artistic interests, and openness to new ideas or aesthetics.",
+      icon: "🎨"
+    },
+    {
+      name: "Judgment",
+      description: "Decisiveness, forming opinions quickly, and having a clear internal compass.", 
+      icon: "⚖️"
+    },
+    {
+      name: "Adaptability",
+      description: "Flexibility in routine, openness to change, and comfort with the unexpected.",
+      icon: "🔄"
+    }
+  ];
+
   return (
     <div className="min-h-screen p-4" style={{ background: 'radial-gradient(circle at 20% 30%, #DDA0DD 0%, #D8BFD8 15%, #87CEEB 40%, #4682B4 100%)' }}>
       <div className="max-w-4xl mx-auto space-y-6">
@@ -245,34 +321,43 @@ export default function DetailedResults() {
           </div>
           
           {/* Section Navigation Tabs */}
-          <div className="flex gap-2 justify-center mb-6">
+          <div className="flex flex-wrap gap-2 justify-center mb-6">
+            <Button 
+              variant={section === 'learning-style' ? "default" : "outline"}
+              onClick={() => setSection('learning-style')}
+              className="text-sm"
+            >
+              Learning Style
+            </Button>
+            <Button 
+              variant={section === 'personality' ? "default" : "outline"}
+              onClick={() => setSection('personality')}
+              className="text-sm"
+            >
+              Personality Insights
+            </Button>
             <Button 
               variant={section === 'careers' ? "default" : "outline"}
-              onClick={() => {
-                navigate('/detailed-results', { state: { personality, section: 'careers' } });
-                setTimeout(() => window.scrollTo(0, 0), 50);
-              }}
+              onClick={() => setSection('careers')}
               className="text-sm"
             >
               Career Matches
             </Button>
             <Button 
-              variant={section === 'colleges' ? "default" : "outline"}
-              onClick={() => {
-                navigate('/detailed-results', { state: { personality, section: 'colleges' } });
-                setTimeout(() => window.scrollTo(0, 0), 50);
-              }}
+              variant={section === 'study-methods' ? "default" : "outline"}
+              onClick={() => setSection('study-methods')}
               className="text-sm"
             >
-              College Options
+              Study Methods
             </Button>
           </div>
 
           <h1 className="text-4xl font-bold text-black mb-2">
             {(() => {
-              console.log('Current section:', section);
-              if (section === 'careers') return 'Your Career Matches';
-              if (section === 'colleges') return 'Your College Options';
+              if (section === 'learning-style') return 'Your Learning Style';
+              if (section === 'personality') return 'Personality Insights';
+              if (section === 'careers') return 'Career Matches';
+              if (section === 'study-methods') return 'Recommended Study Methods';
               return 'Your Complete Profile';
             })()}
           </h1>
@@ -289,8 +374,196 @@ export default function DetailedResults() {
           </div>
         </div>
 
-        {/* Personality Section */}
+        {/* Learning Style Section */}
+        {section === 'learning-style' && (
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
+                <span className="text-4xl">{learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.icon}</span>
+                {learningStyle} Learner
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="text-lg text-muted-foreground leading-relaxed">
+                {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.description}
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-primary" />
+                    How You Learn Best
+                  </h3>
+                  <p className="text-muted-foreground mb-4">
+                    Your learning style indicates you absorb information most effectively through:
+                  </p>
+                  <ul className="space-y-2">
+                    {learningStyle === 'Visual' && (
+                      <>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Charts, graphs, and diagrams</li>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Visual instructions and demonstrations</li>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Colors, mind maps, and videos</li>
+                      </>
+                    )}
+                    {learningStyle === 'Auditory' && (
+                      <>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Discussions and lectures</li>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Reading aloud and verbal repetition</li>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Music and mnemonic songs</li>
+                      </>
+                    )}
+                    {learningStyle === 'Reading/Writing' && (
+                      <>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Books and written materials</li>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Note-taking and journaling</li>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Lists and written summaries</li>
+                      </>
+                    )}
+                    {learningStyle === 'Kinesthetic' && (
+                      <>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Hands-on experiences</li>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Movement and physical practice</li>
+                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Real-world application</li>
+                      </>
+                    )}
+                  </ul>
+                </div>
+
+                <div className="bg-secondary/5 p-6 rounded-lg border border-secondary/20">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <Users className="h-5 w-5 text-secondary" />
+                    Career Alignment
+                  </h3>
+                  <p className="text-muted-foreground mb-4">
+                    Your learning style naturally aligns with these career paths:
+                  </p>
+                  <div className="grid grid-cols-2 gap-2">
+                    {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.careers.map((career, index) => (
+                      <Badge key={index} variant="secondary" className="justify-center py-2">
+                        {career}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Study Methods Section */}
+        {section === 'study-methods' && (
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
+                <GraduationCap className="h-8 w-8 text-primary" />
+                Personalized Study Methods
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="text-lg text-muted-foreground">
+                Based on your {learningStyle} learning style, these study methods will help you learn most effectively:
+              </div>
+              
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.studyMethods.map((method, index) => (
+                  <div key={index} className="bg-gradient-to-br from-primary/10 to-secondary/10 p-4 rounded-lg border border-primary/20 hover:shadow-md transition-shadow">
+                    <div className="flex items-center gap-3">
+                      <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
+                        <span className="text-primary font-bold">{index + 1}</span>
+                      </div>
+                      <span className="font-medium text-foreground">{method}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                <h3 className="text-xl font-semibold text-foreground mb-4">💡 Pro Tips for {learningStyle} Learners</h3>
+                <div className="space-y-3 text-muted-foreground">
+                  {learningStyle === 'Visual' && (
+                    <>
+                      <p>• Use different colors for different subjects or topics</p>
+                      <p>• Create visual summaries at the end of each study session</p>
+                      <p>• Find or create diagrams to represent complex concepts</p>
+                    </>
+                  )}
+                  {learningStyle === 'Auditory' && (
+                    <>
+                      <p>• Record yourself reading notes and listen back while commuting</p>
+                      <p>• Form study groups to discuss and debate topics</p>
+                      <p>• Use rhythm and rhymes to memorize important information</p>
+                    </>
+                  )}
+                  {learningStyle === 'Reading/Writing' && (
+                    <>
+                      <p>• Rewrite your notes in your own words after each class</p>
+                      <p>• Create detailed outlines before writing essays or reports</p>
+                      <p>• Use flashcards with written questions and answers</p>
+                    </>
+                  )}
+                  {learningStyle === 'Kinesthetic' && (
+                    <>
+                      <p>• Take frequent breaks to move around during study sessions</p>
+                      <p>• Use physical objects or models to understand abstract concepts</p>
+                      <p>• Study in different locations to create physical memory associations</p>
+                    </>
+                  )}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Personality Insights Section */}
         {section === 'personality' && (
+          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+            <CardHeader>
+              <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
+                <Star className="h-8 w-8 text-primary" />
+                Personality Factor Analysis
+              </CardTitle>
+            </CardHeader>
+            <CardContent className="space-y-6">
+              <div className="text-lg text-muted-foreground mb-6">
+                Your assessment reveals key personality factors that influence how you work, learn, and interact with others.
+              </div>
+              
+              <div className="grid md:grid-cols-2 gap-6">
+                {personalityFactors.map((factor, index) => (
+                  <div key={index} className="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg border border-primary/20 hover:shadow-md transition-all">
+                    <div className="flex items-start gap-4">
+                      <div className="text-3xl">{factor.icon}</div>
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold text-foreground mb-2">{factor.name}</h3>
+                        <p className="text-muted-foreground leading-relaxed">{factor.description}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {strengths.length > 0 && (
+                <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
+                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <TrendingUp className="h-5 w-5 text-primary" />
+                    Your Key Strengths
+                  </h3>
+                  <div className="grid md:grid-cols-2 gap-3">
+                    {strengths.map((strength: string, index: number) => (
+                      <div key={index} className="flex items-center gap-2">
+                        <span className="text-primary">✓</span>
+                        <span className="text-muted-foreground">{strength}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
+            </CardContent>
+          </Card>
+        )}
+
+        {/* Personality Section */}
+        {section === 'personality-old' && (
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
