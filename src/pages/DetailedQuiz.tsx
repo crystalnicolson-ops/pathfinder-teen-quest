@@ -37,6 +37,26 @@ const DetailedQuiz = () => {
 
   const handleAnswerSelect = (answer: AnswerType) => {
     setCurrentAnswer(answer);
+    
+    // Automatically advance to next question
+    const newAnswers = [...answers];
+    newAnswers[currentQuestion] = {
+      question: detailedQuestions[currentQuestion],
+      answer: answer
+    };
+    setAnswers(newAnswers);
+
+    if (currentQuestion < detailedQuestions.length - 1) {
+      setTimeout(() => {
+        setCurrentQuestion(currentQuestion + 1);
+        setCurrentAnswer(newAnswers[currentQuestion + 1]?.answer || '');
+      }, 300); // Small delay for better UX
+    } else {
+      // Quiz completed - show payment prompt
+      setTimeout(() => {
+        setShowPaymentPrompt(true);
+      }, 300);
+    }
   };
 
   const handleNext = () => {
@@ -268,16 +288,10 @@ const DetailedQuiz = () => {
                   />
                 ))}
               </div>
+              <span className="text-sm">Select an answer to continue</span>
             </div>
 
-            <Button
-              onClick={handleNext}
-              disabled={!currentAnswer}
-              className="flex items-center gap-2"
-            >
-              {currentQuestion === detailedQuestions.length - 1 ? 'Get Results' : 'Next'}
-              <ArrowRight className="h-4 w-4" />
-            </Button>
+            <div className="w-[100px]"></div> {/* Spacer to maintain layout balance */}
           </div>
         </div>
       </div>
