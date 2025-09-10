@@ -8,17 +8,8 @@ import { Label } from '@/components/ui/label';
 import { ArrowLeft, ArrowRight, Crown, BookOpen, CreditCard } from 'lucide-react';
 import Header from '@/components/Header';
 import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion, AnswerType } from '@/data/detailedQuiz';
-import { createClient } from '@supabase/supabase-js';
 import { useToast } from '@/components/ui/use-toast';
-
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co',
-  import.meta.env.VITE_SUPABASE_ANON_KEY || 'placeholder-key'
-);
-
-// Add debug logging
-console.log('Supabase URL:', import.meta.env.VITE_SUPABASE_URL);
-console.log('Supabase Anon Key exists:', !!import.meta.env.VITE_SUPABASE_ANON_KEY);
+import { PAYMENT_LINK_URL } from '@/config/payments';
 
 const DetailedQuiz = () => {
   const navigate = useNavigate();
@@ -79,37 +70,32 @@ const DetailedQuiz = () => {
   const handlePayment = async () => {
     setIsProcessingPayment(true);
     try {
-      // Check if Supabase is properly configured
-      if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
-        throw new Error("Supabase not configured. Please connect your project to Supabase first.");
+      // Store quiz data in localStorage before redirecting
+      const results = calculateDetailedMBTI(answers);
+      localStorage.setItem('pendingQuizResults', JSON.stringify({
+        results,
+        answers: answers.map(a => ({
+          question: a.question.text,
+          answer: a.answer
+        }))
+      }));
+
+      if (!PAYMENT_LINK_URL) {
+        throw new Error('Payment link not set. Please add your Stripe Payment Link in src/config/payments.ts');
       }
 
-      const { data, error } = await supabase.functions.invoke('create-payment', {
-        body: { email: 'guest@example.com' } // For guest checkout
+      // Open Stripe checkout in a new tab
+      window.open(PAYMENT_LINK_URL, '_blank');
+      toast({
+        title: 'Payment Opened',
+        description: 'Complete the payment, then return to view your results.',
       });
-
-      if (error) throw error;
-
-      if (data?.url) {
-        // Store quiz data in localStorage before redirecting
-        const results = calculateDetailedMBTI(answers);
-        localStorage.setItem('pendingQuizResults', JSON.stringify({
-          results,
-          answers: answers.map(a => ({
-            question: a.question.text,
-            answer: a.answer
-          }))
-        }));
-        
-        // Open Stripe checkout in new tab
-        window.open(data.url, '_blank');
-      }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Payment error:', error);
       toast({
-        title: "Payment Error", 
-        description: error.message || "Failed to initiate payment. Please try again.",
-        variant: "destructive",
+        title: 'Payment Error',
+        description: error.message || 'Failed to open payment link.',
+        variant: 'destructive',
       });
     } finally {
       setIsProcessingPayment(false);
@@ -173,6 +159,13 @@ const DetailedQuiz = () => {
                   className="w-full"
                 >
                   Back to Quiz
+                </Button>
+                <Button 
+                  variant="ghost"
+                  className="w-full"
+                  onClick={() => navigate('/detailed-results')}
+                >
+                  Already paid? Open Results
                 </Button>
               </div>
             </CardContent>

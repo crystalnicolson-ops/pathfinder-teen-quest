@@ -6,8 +6,9 @@ import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft, Home, Lock } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType, College, CollegeTiers } from '@/types/quiz';
-import { createClient } from '@supabase/supabase-js';
+
 import { useToast } from '@/components/ui/use-toast';
+import { PAYMENT_LINK_URL, PAYMENT_SUCCESS_PARAM, PAYMENT_SUCCESS_VALUE } from '@/config/payments';
 
 // Import all personality avatars
 import avatarStrategist from '@/assets/avatar-strategist.jpg';
@@ -114,10 +115,6 @@ const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | '
 };
 
 
-const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co',
-  import.meta.env.VITE_SUPABASE_ANON_KEY || 'placeholder-key'
-);
 
 export default function DetailedResults() {
   const location = useLocation();
@@ -129,62 +126,45 @@ export default function DetailedResults() {
   const [personality, setPersonality] = useState(null);
   const [section, setSection] = useState('personality');
   
-  const sessionId = searchParams.get('session_id');
-
+  // Payment Link flow: grant access via URL param or stored flag
   useEffect(() => {
-    const verifyPaymentAndShowResults = async () => {
-      // Check if coming from payment success
-      if (sessionId) {
-        setIsVerifying(true);
-        try {
-          const { data, error } = await supabase.functions.invoke('verify-payment', {
-            body: { sessionId }
-          });
+    const init = () => {
+      const paidParam = searchParams.get(PAYMENT_SUCCESS_PARAM);
+      if (paidParam === PAYMENT_SUCCESS_VALUE) {
+        localStorage.setItem('hasPaidPremium', 'true');
+      }
 
-          if (error) throw error;
-
-          if (data?.paid) {
-            // Payment verified, get quiz data from localStorage
-            const pendingResults = localStorage.getItem('pendingQuizResults');
-            if (pendingResults) {
-              const { results } = JSON.parse(pendingResults);
-              setPersonality(results.personality);
-              setHasAccess(true);
-              localStorage.removeItem('pendingQuizResults');
-              toast({
-                title: "Payment Successful!",
-                description: "Your detailed results are now available.",
-              });
-            }
-          } else {
-            throw new Error("Payment not verified");
+      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
+      if (hasPaid) {
+        const pending = localStorage.getItem('pendingQuizResults');
+        if (pending) {
+          try {
+            const { results } = JSON.parse(pending);
+            setPersonality(results.personality);
+            setHasAccess(true);
+          } catch (e) {
+            console.error('Error parsing pending results', e);
+            toast({
+              title: 'Results not found',
+              description: 'Please retake the assessment to regenerate your results.',
+            });
+            navigate('/detailed-quiz');
           }
-        } catch (error) {
-          console.error('Payment verification error:', error);
+        } else {
           toast({
-            title: "Access Denied",
-            description: "Payment verification failed. Please complete payment first.",
-            variant: "destructive",
+            title: 'Results not found',
+            description: 'Please retake the assessment to regenerate your results.',
           });
           navigate('/detailed-quiz');
-        } finally {
-          setIsVerifying(false);
         }
-      } 
-      // Check if results passed from quiz (shouldn't happen without payment now)
-      else if (location.state?.personality) {
-        // This should not happen in the new flow
-        navigate('/detailed-quiz');
-      }
-      // No session ID and no results - redirect to quiz
-      else {
+      } else {
         navigate('/detailed-quiz');
       }
     };
 
-    verifyPaymentAndShowResults();
+    init();
     window.scrollTo(0, 0);
-  }, [sessionId, location.state, navigate, toast, section]);
+  }, [searchParams, navigate, toast]);
 
   if (isVerifying) {
     return (
