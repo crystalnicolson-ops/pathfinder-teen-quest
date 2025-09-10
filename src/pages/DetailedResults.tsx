@@ -993,9 +993,9 @@ export default function DetailedResults() {
               <CardContent className="pt-0 pb-4">
                 <ul className="grid md:grid-cols-2 gap-0">
                   {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.careerAlignment.map((career, index) => (
-                    <li key={index} className="text-sm text-foreground flex items-start gap-1">
+                    <li key={index} className="text-sm flex items-start gap-1">
                       <span className="text-primary mt-[2px]">•</span>
-                      <span>{career}</span>
+                      <span className="text-muted-foreground">{career}</span>
                     </li>
                   ))}
                 </ul>
