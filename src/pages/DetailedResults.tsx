@@ -155,8 +155,20 @@ export default function DetailedResults() {
           showSamplePremiumData();
         }
       } else {
-        // Free user - show sample data for preview (current behavior)
-        showSamplePremiumData();
+        // Free user - prefer their actual quiz results if available; otherwise show sample preview
+        const pending = localStorage.getItem('pendingQuizResults');
+        if (pending) {
+          try {
+            const { results } = JSON.parse(pending);
+            setPersonality(results.personality);
+            setHasAccess(true);
+          } catch (e) {
+            console.error('Error parsing quiz results', e);
+            showSamplePremiumData();
+          }
+        } else {
+          showSamplePremiumData();
+        }
       }
     };
 
@@ -181,10 +193,6 @@ export default function DetailedResults() {
         },
         totalQuestions: 50,
       } as any;
-      localStorage.setItem('pendingQuizResults', JSON.stringify({ 
-        results: sampleResults, 
-        answers: Array(50).fill({ question: 'Sample question', answer: 'Agree' })
-      }));
       setPersonality(sampleResults.personality);
       setHasAccess(true);
     };
