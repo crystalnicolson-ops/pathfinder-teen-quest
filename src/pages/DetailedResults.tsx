@@ -150,11 +150,17 @@ export default function DetailedResults() {
           navigate('/detailed-quiz');
         }
       } else {
-        toast({
-          title: 'Results not found',
-          description: 'Please retake the assessment to regenerate your results.',
-        });
-        navigate('/detailed-quiz');
+        // Preview mode: allow access without payment by showing sample results
+        const sampleResults = {
+          learningStyle: 'Visual',
+          personality: 'The Strategist',
+          personalityTraits: { energy: 'Introvert', organization: 'Planner', thinking: 'Analytical', social: 'Helper' },
+          scores: {},
+          totalQuestions: 0,
+        } as any;
+        localStorage.setItem('pendingQuizResults', JSON.stringify({ results: sampleResults, answers: [] }));
+        setPersonality(sampleResults.personality);
+        setHasAccess(true);
       }
     };
 
