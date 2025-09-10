@@ -613,25 +613,6 @@ export default function DetailedResults() {
                   </div>
                 </div>
 
-                <div className="bg-secondary/5 p-6 rounded-lg border border-secondary/20">
-                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <Users className="h-5 w-5 text-secondary" />
-                    Career Alignment
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Your learning style naturally aligns with these career paths:
-                  </p>
-                  <div className="grid gap-2">
-                    {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.careerAlignment.map((career, index) => (
-                      <div key={index} className="flex items-center gap-2 p-2 bg-white rounded-md border border-secondary/20 hover:shadow-sm transition-all duration-200">
-                        <div className="w-6 h-6 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
-                          <TrendingUp className="h-3 w-3 text-secondary" />
-                        </div>
-                        <span className="text-sm font-medium text-foreground">{career}</span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
               </CardContent>
             </Card>
 
@@ -1002,6 +983,24 @@ export default function DetailedResults() {
         {/* Career Recommendations */}
         {section === 'careers' && (
         <div className="space-y-6">
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground">
+                  Career Alignment (Based on your learning style)
+                </CardTitle>
+                <p className="text-muted-foreground mt-1">These paths naturally fit how you learn.</p>
+              </CardHeader>
+              <CardContent>
+                <ul className="grid md:grid-cols-2 gap-2">
+                  {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.careerAlignment.map((career, index) => (
+                    <li key={index} className="text-sm text-foreground flex items-start gap-2">
+                      <span className="text-primary mt-[2px]">•</span>
+                      <span>{career}</span>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
             {/* Entry Level Careers */}
             <Card className="bg-white/95 backdrop-blur-sm shadow-card">
               <CardHeader>
