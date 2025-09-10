@@ -190,7 +190,6 @@ export default function DetailedResults() {
     };
 
     init();
-    window.scrollTo(0, 0);
   }, [searchParams, navigate, toast]);
 
   if (isVerifying) {
@@ -1542,7 +1541,6 @@ export default function DetailedResults() {
             onClick={() => {
               console.log('Clicking Career Matches button');
               navigate('/detailed-results', { state: { personality, section: 'careers' } });
-              setTimeout(() => window.scrollTo(0, 0), 50);
             }}
             className="px-6 py-3"
           >
@@ -1554,7 +1552,6 @@ export default function DetailedResults() {
             onClick={() => {
               console.log('Clicking College Options button');
               navigate('/detailed-results', { state: { personality, section: 'colleges' } });
-              setTimeout(() => window.scrollTo(0, 0), 50);
             }}
             className="px-6 py-3"
           >

@@ -116,27 +116,22 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
 
   const handleViewCareers = () => {
     navigate('/detailed-results', { state: { personality, section: 'careers' } });
-    setTimeout(() => window.scrollTo(0, 0), 100);
   };
 
   const handleViewColleges = () => {
     navigate('/detailed-results', { state: { personality, section: 'colleges' } });
-    setTimeout(() => window.scrollTo(0, 0), 100);
   };
 
   const handleViewLearningStyle = () => {
     navigate('/detailed-results', { state: { personality, section: 'learning-style' } });
-    setTimeout(() => window.scrollTo(0, 0), 100);
   };
 
   const handleViewPersonality = () => {
     navigate('/detailed-results', { state: { personality, section: 'personality' } });
-    setTimeout(() => window.scrollTo(0, 0), 100);
   };
 
   const handleViewStudyMethods = () => {
     navigate('/detailed-results', { state: { personality, section: 'study-methods' } });
-    setTimeout(() => window.scrollTo(0, 0), 100);
   };
 
   return (
