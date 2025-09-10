@@ -41,18 +41,35 @@ const DetailedQuiz = () => {
         setCurrentAnswer(newAnswers[currentQuestion + 1]?.answer || '');
       }, 300); // Small delay for better UX
     } else {
-      // Quiz completed - bypass payment and go directly to results
-      setTimeout(() => {
-        const results = calculateDetailedMBTI(newAnswers);
-        localStorage.setItem('pendingQuizResults', JSON.stringify({
-          results,
-          answers: newAnswers.map(a => ({
-            question: a.question.text,
-            answer: a.answer
-          }))
-        }));
-        navigate('/detailed-results');
-      }, 300);
+      // Quiz completed - check if user already has premium access
+      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
+      if (hasPaid) {
+        // Premium user - go directly to results
+        setTimeout(() => {
+          const results = calculateDetailedMBTI(newAnswers);
+          localStorage.setItem('pendingQuizResults', JSON.stringify({
+            results,
+            answers: newAnswers.map(a => ({
+              question: a.question.text,
+              answer: a.answer
+            }))
+          }));
+          navigate('/detailed-results');
+        }, 300);
+      } else {
+        // Free user - show payment prompt
+        setTimeout(() => {
+          const results = calculateDetailedMBTI(newAnswers);
+          localStorage.setItem('pendingQuizResults', JSON.stringify({
+            results,
+            answers: newAnswers.map(a => ({
+              question: a.question.text,
+              answer: a.answer
+            }))
+          }));
+          setShowPaymentPrompt(true);
+        }, 300);
+      }
     }
   };
 
