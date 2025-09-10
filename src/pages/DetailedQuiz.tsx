@@ -41,9 +41,17 @@ const DetailedQuiz = () => {
         setCurrentAnswer(newAnswers[currentQuestion + 1]?.answer || '');
       }, 300); // Small delay for better UX
     } else {
-      // Quiz completed - show payment prompt
+      // Quiz completed - bypass payment and go directly to results
       setTimeout(() => {
-        setShowPaymentPrompt(true);
+        const results = calculateDetailedMBTI(newAnswers);
+        localStorage.setItem('pendingQuizResults', JSON.stringify({
+          results,
+          answers: newAnswers.map(a => ({
+            question: a.question.text,
+            answer: a.answer
+          }))
+        }));
+        navigate('/detailed-results');
       }, 300);
     }
   };
