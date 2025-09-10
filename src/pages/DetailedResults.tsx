@@ -539,36 +539,38 @@ export default function DetailedResults() {
             </div>
           )}
           
-          {/* Section Navigation Tabs */}
-          <div className="flex flex-wrap gap-2 justify-center mb-6">
-            <Button 
-              variant={section === 'learning-style' ? "default" : "outline"}
-              onClick={() => setSection('learning-style')}
-              className="text-sm"
-            >
-              Learning Style
-            </Button>
-            <Button 
-              variant={section === 'personality' ? "default" : "outline"}
-              onClick={() => setSection('personality')}
-              className="text-sm"
-            >
-              Personality Insights
-            </Button>
-            <Button 
-              variant={section === 'careers' ? "default" : "outline"}
-              onClick={() => setSection('careers')}
-              className="text-sm"
-            >
-              Career Matches
-            </Button>
-            <Button 
-              variant={section === 'study-methods' ? "default" : "outline"}
-              onClick={() => setSection('study-methods')}
-              className="text-sm"
-            >
-              Study Methods
-            </Button>
+          {/* Section Navigation Tabs (Sticky) */}
+          <div className="sticky top-0 z-30 -mx-4 px-4 py-3 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
+            <div className="flex flex-wrap gap-2 justify-center">
+              <Button 
+                variant={section === 'learning-style' ? "default" : "outline"}
+                onClick={() => setSection('learning-style')}
+                className="text-sm"
+              >
+                Learning Style
+              </Button>
+              <Button 
+                variant={section === 'personality' ? "default" : "outline"}
+                onClick={() => setSection('personality')}
+                className="text-sm"
+              >
+                Personality Insights
+              </Button>
+              <Button 
+                variant={section === 'careers' ? "default" : "outline"}
+                onClick={() => setSection('careers')}
+                className="text-sm"
+              >
+                Career Matches
+              </Button>
+              <Button 
+                variant={section === 'study-methods' ? "default" : "outline"}
+                onClick={() => setSection('study-methods')}
+                className="text-sm"
+              >
+                Study Methods
+              </Button>
+            </div>
           </div>
 
           <h1 className="text-4xl font-bold text-black mb-2">
