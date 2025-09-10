@@ -215,67 +215,271 @@ export default function DetailedResults() {
   const learningStyle = detailedResults?.learningStyle || 'Visual';
   const strengths = detailedResults?.strengths || [];
 
-  // Learning Style Details
+  // Comprehensive Learning Style Details
   const learningStyleDetails = {
     Visual: {
-      description: "Prefers charts, graphs, and visual instructions. Learns best through diagrams, colors, mind maps, and videos.",
-      studyMethods: ["Flashcards", "Color-coded notes", "Watching demonstrations", "Mind maps", "Diagrams and charts"],
-      careers: ["Graphic Designer", "Architect", "Filmmaker", "UI/UX Designer"],
-      icon: "👁️"
+      description: "You process information most effectively through visual channels - seeing patterns, spatial relationships, and graphic representations helps you understand and remember concepts.",
+      detailedDescription: "Visual learners like you have a strong preference for information presented in charts, graphs, maps, diagrams, and other visual formats. You likely think in pictures and mental images, making connections through visual patterns and spatial relationships.",
+      strengths: [
+        "Excellent spatial awareness and ability to visualize concepts",
+        "Strong pattern recognition and design sense", 
+        "Ability to quickly grasp complex relationships through diagrams",
+        "Good at organizing information visually",
+        "Strong memory for faces, places, and visual details"
+      ],
+      challenges: [
+        "May struggle with purely verbal instructions",
+        "Difficulty following long lectures without visual aids",
+        "Can be distracted by visual clutter or competing images",
+        "May need extra time to process written information without visuals"
+      ],
+      studyStrategies: [
+        "Create colorful mind maps and concept webs for complex topics",
+        "Use highlighters and color-coding systems for notes and textbooks",
+        "Draw diagrams, flowcharts, and timelines to organize information",
+        "Watch educational videos and visual demonstrations",
+        "Use flashcards with images, symbols, and visual cues",
+        "Sit where you can see the board/screen clearly in class",
+        "Create visual study guides with charts and graphics"
+      ],
+      careerAlignment: ["Graphic Designer", "Architect", "Interior Designer", "Photographer", "Filmmaker", "UI/UX Designer", "Art Director", "Web Developer"],
+      icon: "👁️",
+      academicTips: [
+        "Request visual materials from professors when available",
+        "Take courses that include labs, demonstrations, or visual components",
+        "Form study groups where you can draw concepts on whiteboards",
+        "Use online resources with infographics and visual explanations"
+      ]
     },
     Auditory: {
-      description: "Remembers information from discussions, lectures, and music. Learns best by listening, reading aloud, or using mnemonic songs.",
-      studyMethods: ["Podcasts", "Group study", "Verbal repetition", "Recording lectures", "Discussion groups"],
-      careers: ["Musician", "Therapist", "Broadcaster", "Teacher"],
-      icon: "👂"
+      description: "You learn most effectively through listening, discussion, and verbal processing - hearing information helps you understand and retain concepts better than reading alone.",
+      detailedDescription: "As an auditory learner, you excel at processing information through your ears. You likely remember conversations well, enjoy discussions, and may find yourself talking through problems to understand them better.",
+      strengths: [
+        "Excellent listening skills and verbal communication",
+        "Strong ability to learn from lectures and discussions",
+        "Good at remembering spoken instructions and conversations",
+        "Natural talent for languages and verbal expression",
+        "Ability to pick up on tone, inflection, and verbal nuances"
+      ],
+      challenges: [
+        "May struggle with silent reading comprehension",
+        "Difficulty learning from purely visual materials",
+        "Can be distracted by background noise",
+        "May have trouble organizing thoughts without talking them through"
+      ],
+      studyStrategies: [
+        "Read textbooks and notes aloud to yourself",
+        "Join or form study groups for discussion-based learning",
+        "Record lectures and listen to them multiple times",
+        "Use podcasts and audiobooks to supplement reading",
+        "Explain concepts out loud to solidify understanding",
+        "Use mnemonic devices and verbal repetition",
+        "Study in a quiet environment or with background music you find helpful"
+      ],
+      careerAlignment: ["Teacher", "Therapist", "Radio/TV Host", "Musician", "Sales Representative", "Lawyer", "Counselor", "Public Speaker"],
+      icon: "👂",
+      academicTips: [
+        "Participate actively in class discussions",
+        "Attend office hours to discuss concepts verbally with professors",
+        "Use speech-to-text software for note-taking if helpful",
+        "Form verbal study partnerships with classmates"
+      ]
     },
     "Reading/Writing": {
-      description: "Prefers words, both written and spoken. Learns best through books, journaling, note-taking, and lists.",
-      studyMethods: ["Rewriting notes", "Creating summaries", "Textbooks", "Written lists", "Journaling"],
-      careers: ["Author", "Researcher", "Lawyer", "Editor"],
-      icon: "📝"
+      description: "You learn best through written language - reading, writing, and text-based activities are your primary channels for processing and retaining information.",
+      detailedDescription: "Reading/Writing learners like you have a strong affinity for the written word. You likely excel at taking detailed notes, enjoy reading for pleasure, and find that writing helps clarify your thoughts and deepen understanding.",
+      strengths: [
+        "Excellent written communication and note-taking skills",
+        "Strong reading comprehension and vocabulary",
+        "Ability to organize thoughts clearly in writing",
+        "Good at research and working with text-based materials",
+        "Natural inclination toward detailed documentation"
+      ],
+      challenges: [
+        "May struggle with purely visual or hands-on learning",
+        "Difficulty processing information from lectures without good notes",
+        "Can become overwhelmed by too much verbal information at once",
+        "May prefer working alone over group discussions"
+      ],
+      studyStrategies: [
+        "Take comprehensive, organized notes in your own words",
+        "Rewrite and reorganize notes after class to reinforce learning",
+        "Create detailed outlines and bullet-point summaries",
+        "Use lists, definitions, and written exercises extensively",
+        "Keep a learning journal to reflect on concepts in writing",
+        "Seek out textbooks and written supplementary materials",
+        "Write practice essays and responses to test understanding"
+      ],
+      careerAlignment: ["Writer", "Editor", "Researcher", "Lawyer", "Journalist", "Librarian", "Technical Writer", "Academic"],
+      icon: "📝",
+      academicTips: [
+        "Develop a consistent note-taking system that works for you",
+        "Use campus writing centers for feedback and support",
+        "Choose courses with substantial reading and writing components",
+        "Engage with course materials by annotating and highlighting text"
+      ]
     },
     Kinesthetic: {
-      description: "Prefers hands-on experiences and real-world application. Learns best through movement, touch, and practice.",
-      studyMethods: ["Lab work", "Building projects", "Acting things out", "Physical models", "Field trips"],
-      careers: ["Engineer", "Athlete", "Surgeon", "Chef", "Mechanic"],
-      icon: "🤲"
+      description: "You learn most effectively through physical movement, hands-on experiences, and real-world application - you need to 'do' in order to truly understand.",
+      detailedDescription: "Kinesthetic learners like you process information best through physical engagement and practical application. You likely prefer active learning environments, learn by trying things yourself, and may find it difficult to sit still for long periods.",
+      strengths: [
+        "Excellent hands-on problem-solving abilities",
+        "Strong physical coordination and motor skills",
+        "Ability to learn through trial and error effectively",
+        "Good at applying theoretical knowledge to real situations",
+        "Natural inclination toward building and creating"
+      ],
+      challenges: [
+        "Difficulty sitting still for long lectures or study sessions",
+        "May struggle with abstract concepts without practical application",
+        "Can find traditional classroom settings restrictive",
+        "May need more time to process purely theoretical information"
+      ],
+      studyStrategies: [
+        "Incorporate movement into study sessions - walk while reviewing notes",
+        "Use manipulatives, models, and hands-on materials when possible",
+        "Take frequent breaks during study sessions to move around",
+        "Act out concepts or use role-playing to understand material",
+        "Seek out lab courses, internships, and experiential learning opportunities",
+        "Use gesture and movement while memorizing information",
+        "Create physical study spaces with room to move and work with materials"
+      ],
+      careerAlignment: ["Engineer", "Surgeon", "Chef", "Mechanic", "Athletic Trainer", "Physical Therapist", "Carpenter", "Laboratory Technician"],
+      icon: "🤲",
+      academicTips: [
+        "Prioritize courses with lab components and practical applications",
+        "Seek internships and co-op opportunities in your field",
+        "Use study techniques that involve physical activity",
+        "Consider trade schools or technical programs alongside traditional academics"
+      ]
     }
   };
 
-  // Personality Factor Insights
-  const personalityFactors = [
-    {
-      name: "Strategic Thinking",
-      description: "Strong long-term planning, logical organization, and seeing the big picture.",
-      icon: "🎯"
+  // Comprehensive Personality Factor Insights with detailed trait dimensions
+  const personalityTraitDetails = detailedResults?.personalityTraits || { energy: 'Introvert', organization: 'Planner', thinking: 'Analytical', social: 'Helper' };
+  
+  const traitDimensions = {
+    energy: {
+      Introvert: {
+        title: "Introverted Energy Style",
+        description: "You tend to direct your energy inward and gain energy from solitude and reflection.",
+        characteristics: [
+          "Prefer working independently or in small groups",
+          "Need quiet time to recharge and process information",
+          "Think before speaking and prefer deeper conversations",
+          "Focus intensely on tasks and projects",
+          "Value privacy and personal space"
+        ],
+        workStyle: "You likely excel in roles that allow for independent work, deep focus, and minimal interruptions.",
+        studyTips: ["Schedule regular quiet study time", "Choose less crowded study spaces", "Take breaks for solitary reflection"],
+        icon: "🧘"
+      },
+      Extrovert: {
+        title: "Extroverted Energy Style", 
+        description: "You tend to direct your energy outward and gain energy from social interaction.",
+        characteristics: [
+          "Enjoy collaborating and working with others",
+          "Energized by social interactions and group activities",
+          "Think out loud and process ideas through discussion",
+          "Comfortable being the center of attention",
+          "Seek variety and external stimulation"
+        ],
+        workStyle: "You likely thrive in collaborative environments with plenty of social interaction and teamwork.",
+        studyTips: ["Form study groups", "Discuss concepts with classmates", "Study in social environments"],
+        icon: "🎯"
+      }
     },
-    {
-      name: "Independence", 
-      description: "Self-direction, preference for working solo, and initiating tasks without help.",
-      icon: "🚀"
+    organization: {
+      Planner: {
+        title: "Structured Planning Style",
+        description: "You prefer structure, schedules, and organized approaches to tasks and life.",
+        characteristics: [
+          "Create detailed plans and follow schedules",
+          "Prefer clear deadlines and expectations",
+          "Organize information systematically",
+          "Feel comfortable with routines and predictability",
+          "Value punctuality and reliability"
+        ],
+        workStyle: "You excel in structured environments with clear processes and defined timelines.",
+        studyTips: ["Create detailed study schedules", "Use planners and organizational tools", "Break large projects into smaller tasks"],
+        icon: "📅"
+      },
+      Spontaneous: {
+        title: "Flexible Spontaneous Style",
+        description: "You prefer flexibility, adaptability, and keeping options open.",
+        characteristics: [
+          "Adapt easily to changing circumstances",
+          "Prefer to keep options open and decide in the moment",
+          "Work well under pressure and tight deadlines",
+          "Enjoy variety and new experiences",
+          "Value freedom and flexibility over rigid structure"
+        ],
+        workStyle: "You thrive in dynamic environments that allow for flexibility and creative problem-solving.",
+        studyTips: ["Use flexible study methods", "Study in different locations", "Allow for spontaneous learning opportunities"],
+        icon: "🌀"
+      }
     },
-    {
-      name: "Analytical Skills",
-      description: "Enjoying solving problems and using logic or research to find answers.",
-      icon: "🔍"
+    thinking: {
+      Analytical: {
+        title: "Analytical thinking Style",
+        description: "You approach problems systematically using logic, data, and structured analysis.",
+        characteristics: [
+          "Break down complex problems into components",
+          "Rely on facts, data, and logical reasoning",
+          "Prefer systematic, step-by-step approaches",
+          "Value accuracy and precision",
+          "Enjoy research and detailed analysis"
+        ],
+        workStyle: "You excel in roles requiring problem-solving, research, and data-driven decision making.",
+        studyTips: ["Use logical frameworks", "Create detailed notes and outlines", "Focus on understanding underlying principles"],
+        icon: "🔍"
+      },
+      Creative: {
+        title: "Creative Thinking Style",
+        description: "You approach problems with imagination, innovation, and original thinking.",
+        characteristics: [
+          "Generate novel ideas and creative solutions",
+          "Think outside conventional boundaries",
+          "Enjoy brainstorming and exploring possibilities",
+          "Value originality and artistic expression",
+          "Comfortable with ambiguity and open-ended problems"
+        ],
+        workStyle: "You thrive in innovative environments that encourage creative problem-solving and original thinking.",
+        studyTips: ["Use visual and creative study methods", "Connect concepts to personal interests", "Allow time for creative exploration"],
+        icon: "🎨"
+      }
     },
-    {
-      name: "Creativity",
-      description: "Originality, artistic interests, and openness to new ideas or aesthetics.",
-      icon: "🎨"
-    },
-    {
-      name: "Judgment",
-      description: "Decisiveness, forming opinions quickly, and having a clear internal compass.", 
-      icon: "⚖️"
-    },
-    {
-      name: "Adaptability",
-      description: "Flexibility in routine, openness to change, and comfort with the unexpected.",
-      icon: "🔄"
+    social: {
+      Helper: {
+        title: "Collaborative Helper Style",
+        description: "You are motivated by helping others and working collaboratively toward shared goals.",
+        characteristics: [
+          "Naturally supportive and encouraging to others",
+          "Motivated by making a positive impact",
+          "Excellent at building relationships and trust",
+          "Value harmony and cooperation",
+          "Skilled at understanding others' perspectives"
+        ],
+        workStyle: "You excel in service-oriented roles and collaborative team environments.",
+        studyTips: ["Study with others to help reinforce learning", "Connect learning to how it helps others", "Use peer tutoring"],
+        icon: "🤝"
+      },
+      Leader: {
+        title: "Natural Leader Style",
+        description: "You are motivated by taking charge, making decisions, and guiding others toward goals.",
+        characteristics: [
+          "Comfortable taking initiative and making decisions",
+          "Naturally take charge in group situations",
+          "Motivated by achievement and results",
+          "Good at organizing and directing others",
+          "Value efficiency and goal accomplishment"
+        ],
+        workStyle: "You thrive in leadership roles with responsibility for directing projects and teams.",
+        studyTips: ["Take leadership roles in group projects", "Set ambitious learning goals", "Organize study groups"],
+        icon: "👑"
+      }
     }
-  ];
+  };
 
   return (
     <div className="min-h-screen p-4" style={{ background: 'radial-gradient(circle at 20% 30%, #DDA0DD 0%, #D8BFD8 15%, #87CEEB 40%, #4682B4 100%)' }}>
@@ -357,57 +561,56 @@ export default function DetailedResults() {
 
         {/* Learning Style Section */}
         {section === 'learning-style' && (
-          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
-                <span className="text-4xl">{learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.icon}</span>
-                {learningStyle} Learner
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="text-lg text-muted-foreground leading-relaxed">
-                {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.description}
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-6">
+          <div className="space-y-6">
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
+                  <span className="text-4xl">{learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.icon}</span>
+                  {learningStyle} Learner
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="text-lg text-muted-foreground leading-relaxed">
+                  {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.description}
+                </div>
+                
                 <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
-                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-primary" />
-                    How You Learn Best
-                  </h3>
-                  <p className="text-muted-foreground mb-4">
-                    Your learning style indicates you absorb information most effectively through:
+                  <h3 className="text-xl font-semibold text-foreground mb-3">Deep Dive: What This Means for You</h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.detailedDescription}
                   </p>
-                  <ul className="space-y-2">
-                    {learningStyle === 'Visual' && (
-                      <>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Charts, graphs, and diagrams</li>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Visual instructions and demonstrations</li>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Colors, mind maps, and videos</li>
-                      </>
-                    )}
-                    {learningStyle === 'Auditory' && (
-                      <>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Discussions and lectures</li>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Reading aloud and verbal repetition</li>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Music and mnemonic songs</li>
-                      </>
-                    )}
-                    {learningStyle === 'Reading/Writing' && (
-                      <>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Books and written materials</li>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Note-taking and journaling</li>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Lists and written summaries</li>
-                      </>
-                    )}
-                    {learningStyle === 'Kinesthetic' && (
-                      <>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Hands-on experiences</li>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Movement and physical practice</li>
-                        <li className="flex items-center gap-2"><span className="text-primary">•</span> Real-world application</li>
-                      </>
-                    )}
-                  </ul>
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+                    <h3 className="text-xl font-semibold text-green-800 mb-4 flex items-center gap-2">
+                      <Star className="h-5 w-5 text-green-600" />
+                      Your Learning Strengths
+                    </h3>
+                    <ul className="space-y-2">
+                      {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.strengths.map((strength, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <span className="text-green-600 mt-1">✓</span>
+                          <span className="text-green-700">{strength}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  <div className="bg-amber-50 p-6 rounded-lg border border-amber-200">
+                    <h3 className="text-xl font-semibold text-amber-800 mb-4 flex items-center gap-2">
+                      <TrendingUp className="h-5 w-5 text-amber-600" />
+                      Areas to Watch
+                    </h3>
+                    <ul className="space-y-2">
+                      {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.challenges.map((challenge, index) => (
+                        <li key={index} className="flex items-start gap-2">
+                          <span className="text-amber-600 mt-1">⚠</span>
+                          <span className="text-amber-700">{challenge}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
 
                 <div className="bg-secondary/5 p-6 rounded-lg border border-secondary/20">
@@ -419,16 +622,62 @@ export default function DetailedResults() {
                     Your learning style naturally aligns with these career paths:
                   </p>
                   <div className="grid grid-cols-2 gap-2">
-                    {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.careers.map((career, index) => (
+                    {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.careerAlignment.map((career, index) => (
                       <Badge key={index} variant="secondary" className="justify-center py-2">
                         {career}
                       </Badge>
                     ))}
                   </div>
                 </div>
-              </div>
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+
+            {/* Study Strategies Card */}
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
+                  <GraduationCap className="h-7 w-7 text-primary" />
+                  Your Personalized Study Strategies
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="grid gap-4">
+                  {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.studyStrategies.map((strategy, index) => (
+                    <div key={index} className="bg-gradient-to-r from-primary/5 to-secondary/5 p-4 rounded-lg border border-primary/10">
+                      <div className="flex items-start gap-3">
+                        <div className="w-8 h-8 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0">
+                          {index + 1}
+                        </div>
+                        <p className="text-foreground font-medium">{strategy}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Academic Success Tips */}
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
+                  <Users className="h-7 w-7 text-primary" />
+                  Academic Success Tips
+                </CardTitle>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.academicTips.map((tip, index) => (
+                    <div key={index} className="flex items-start gap-3 p-3 bg-blue-50 rounded-lg border border-blue-200">
+                      <div className="w-6 h-6 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold flex-shrink-0">
+                        💡
+                      </div>
+                      <p className="text-blue-800">{tip}</p>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         )}
 
         {/* Study Methods Section */}
@@ -446,7 +695,7 @@ export default function DetailedResults() {
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.studyMethods.map((method, index) => (
+                {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.studyStrategies.map((method, index) => (
                   <div key={index} className="bg-gradient-to-br from-primary/10 to-secondary/10 p-4 rounded-lg border border-primary/20 hover:shadow-md transition-shadow">
                     <div className="flex items-center gap-3">
                       <div className="w-8 h-8 bg-primary/20 rounded-full flex items-center justify-center">
@@ -497,50 +746,204 @@ export default function DetailedResults() {
 
         {/* Personality Insights Section */}
         {section === 'personality' && (
-          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-            <CardHeader>
-              <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
-                <Star className="h-8 w-8 text-primary" />
-                Personality Factor Analysis
-              </CardTitle>
-            </CardHeader>
-            <CardContent className="space-y-6">
-              <div className="text-lg text-muted-foreground mb-6">
-                Your assessment reveals key personality factors that influence how you work, learn, and interact with others.
-              </div>
-              
-              <div className="grid md:grid-cols-2 gap-6">
-                {personalityFactors.map((factor, index) => (
-                  <div key={index} className="bg-gradient-to-br from-primary/5 to-secondary/5 p-6 rounded-lg border border-primary/20 hover:shadow-md transition-all">
-                    <div className="flex items-start gap-4">
-                      <div className="text-3xl">{factor.icon}</div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-semibold text-foreground mb-2">{factor.name}</h3>
-                        <p className="text-muted-foreground leading-relaxed">{factor.description}</p>
-                      </div>
-                    </div>
+          <div className="space-y-6">
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
+                  <Star className="h-8 w-8 text-primary" />
+                  Your Personality Profile: {result.type}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="flex items-center gap-6 mb-6">
+                  <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
+                    <img 
+                      src={personalityAvatars[personality as PersonalityType]} 
+                      alt={`${result.type} avatar`}
+                      className="w-full h-full object-cover"
+                    />
                   </div>
-                ))}
-              </div>
-
-              {strengths.length > 0 && (
-                <div className="mt-8 p-6 bg-primary/5 rounded-lg border border-primary/20">
-                  <h3 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
-                    <TrendingUp className="h-5 w-5 text-primary" />
-                    Your Key Strengths
-                  </h3>
-                  <div className="grid md:grid-cols-2 gap-3">
-                    {strengths.map((strength: string, index: number) => (
-                      <div key={index} className="flex items-center gap-2">
-                        <span className="text-primary">✓</span>
-                        <span className="text-muted-foreground">{strength}</span>
-                      </div>
-                    ))}
+                  <div className="flex-1">
+                    <p className="text-lg text-muted-foreground leading-relaxed">{result.description}</p>
                   </div>
                 </div>
-              )}
-            </CardContent>
-          </Card>
+              </CardContent>
+            </Card>
+
+            {/* Detailed Personality Trait Analysis */}
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
+                  <span className="text-3xl">{personalityTraitDetails.energy === 'Introvert' ? '🧘' : '🎯'}</span>
+                  {personalityTraitDetails.energy === 'Introvert' ? 'Introverted Energy Style' : 'Extroverted Energy Style'}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="text-lg text-muted-foreground leading-relaxed">
+                  {personalityTraitDetails.energy === 'Introvert' 
+                    ? 'You tend to direct your energy inward and gain energy from solitude and reflection.'
+                    : 'You tend to direct your energy outward and gain energy from social interaction.'
+                  }
+                </div>
+                
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-blue-50 p-6 rounded-lg border border-blue-200">
+                    <h3 className="text-xl font-semibold text-blue-800 mb-4">Key Characteristics</h3>
+                    <ul className="space-y-2">
+                      {personalityTraitDetails.energy === 'Introvert' ? (
+                        <>
+                          <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">•</span><span className="text-blue-700">Prefer working independently or in small groups</span></li>
+                          <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">•</span><span className="text-blue-700">Need quiet time to recharge and process information</span></li>
+                          <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">•</span><span className="text-blue-700">Think before speaking and prefer deeper conversations</span></li>
+                          <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">•</span><span className="text-blue-700">Focus intensely on tasks and projects</span></li>
+                        </>
+                      ) : (
+                        <>
+                          <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">•</span><span className="text-blue-700">Enjoy collaborating and working with others</span></li>
+                          <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">•</span><span className="text-blue-700">Energized by social interactions and group activities</span></li>
+                          <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">•</span><span className="text-blue-700">Think out loud and process ideas through discussion</span></li>
+                          <li className="flex items-start gap-2"><span className="text-blue-600 mt-1">•</span><span className="text-blue-700">Comfortable being the center of attention</span></li>
+                        </>
+                      )}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                      <h4 className="font-semibold text-purple-800 mb-2">Work Style</h4>
+                      <p className="text-purple-700 text-sm">
+                        {personalityTraitDetails.energy === 'Introvert'
+                          ? 'You likely excel in roles that allow for independent work, deep focus, and minimal interruptions.'
+                          : 'You likely thrive in collaborative environments with plenty of social interaction and teamwork.'
+                        }
+                      </p>
+                    </div>
+
+                    <div className="bg-emerald-50 p-4 rounded-lg border border-emerald-200">
+                      <h4 className="font-semibold text-emerald-800 mb-2">Study Tips</h4>
+                      <ul className="space-y-1">
+                        {personalityTraitDetails.energy === 'Introvert' ? (
+                          <>
+                            <li className="text-emerald-700 text-sm">• Schedule regular quiet study time</li>
+                            <li className="text-emerald-700 text-sm">• Choose less crowded study spaces</li>
+                            <li className="text-emerald-700 text-sm">• Take breaks for solitary reflection</li>
+                          </>
+                        ) : (
+                          <>
+                            <li className="text-emerald-700 text-sm">• Form study groups</li>
+                            <li className="text-emerald-700 text-sm">• Discuss concepts with classmates</li>
+                            <li className="text-emerald-700 text-sm">• Study in social environments</li>
+                          </>
+                        )}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Organization Style */}
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
+                  <span className="text-3xl">{personalityTraitDetails.organization === 'Planner' ? '📅' : '🌀'}</span>
+                  {personalityTraitDetails.organization === 'Planner' ? 'Structured Planning Style' : 'Flexible Spontaneous Style'}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="text-lg text-muted-foreground leading-relaxed">
+                  {personalityTraitDetails.organization === 'Planner'
+                    ? 'You prefer structure, schedules, and organized approaches to tasks and life.'
+                    : 'You prefer flexibility, adaptability, and keeping options open.'
+                  }
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-green-50 p-6 rounded-lg border border-green-200">
+                    <h3 className="text-xl font-semibold text-green-800 mb-4">Key Characteristics</h3>
+                    <ul className="space-y-2">
+                      {personalityTraitDetails.organization === 'Planner' ? (
+                        <>
+                          <li className="flex items-start gap-2"><span className="text-green-600 mt-1">•</span><span className="text-green-700">Create detailed plans and follow schedules</span></li>
+                          <li className="flex items-start gap-2"><span className="text-green-600 mt-1">•</span><span className="text-green-700">Prefer clear deadlines and expectations</span></li>
+                          <li className="flex items-start gap-2"><span className="text-green-600 mt-1">•</span><span className="text-green-700">Organize information systematically</span></li>
+                          <li className="flex items-start gap-2"><span className="text-green-600 mt-1">•</span><span className="text-green-700">Value punctuality and reliability</span></li>
+                        </>
+                      ) : (
+                        <>
+                          <li className="flex items-start gap-2"><span className="text-green-600 mt-1">•</span><span className="text-green-700">Adapt easily to changing circumstances</span></li>
+                          <li className="flex items-start gap-2"><span className="text-green-600 mt-1">•</span><span className="text-green-700">Prefer to keep options open</span></li>
+                          <li className="flex items-start gap-2"><span className="text-green-600 mt-1">•</span><span className="text-green-700">Work well under pressure</span></li>
+                          <li className="flex items-start gap-2"><span className="text-green-600 mt-1">•</span><span className="text-green-700">Value freedom and flexibility</span></li>
+                        </>
+                      )}
+                    </ul>
+                  </div>
+
+                  <div className="space-y-4">
+                    <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
+                      <h4 className="font-semibold text-purple-800 mb-2">Study Approach</h4>
+                      <p className="text-purple-700 text-sm">
+                        {personalityTraitDetails.organization === 'Planner'
+                          ? 'Create detailed study schedules and break large projects into smaller, manageable tasks.'
+                          : 'Use flexible study methods and allow for spontaneous learning opportunities.'
+                        }
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Thinking Style */}
+            <Card className="bg-white/95 backdrop-blur-sm shadow-card">
+              <CardHeader>
+                <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
+                  <span className="text-3xl">{personalityTraitDetails.thinking === 'Analytical' ? '🔍' : '🎨'}</span>
+                  {personalityTraitDetails.thinking === 'Analytical' ? 'Analytical Thinking Style' : 'Creative Thinking Style'}
+                </CardTitle>
+              </CardHeader>
+              <CardContent className="space-y-6">
+                <div className="text-lg text-muted-foreground leading-relaxed">
+                  {personalityTraitDetails.thinking === 'Analytical'
+                    ? 'You approach problems systematically using logic, data, and structured analysis.'
+                    : 'You approach problems with imagination, innovation, and original thinking.'
+                  }
+                </div>
+
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-indigo-50 p-6 rounded-lg border border-indigo-200">
+                    <h3 className="text-xl font-semibold text-indigo-800 mb-4">Key Strengths</h3>
+                    <ul className="space-y-2">
+                      {personalityTraitDetails.thinking === 'Analytical' ? (
+                        <>
+                          <li className="flex items-start gap-2"><span className="text-indigo-600 mt-1">•</span><span className="text-indigo-700">Break down complex problems systematically</span></li>
+                          <li className="flex items-start gap-2"><span className="text-indigo-600 mt-1">•</span><span className="text-indigo-700">Excel at research and data analysis</span></li>
+                          <li className="flex items-start gap-2"><span className="text-indigo-600 mt-1">•</span><span className="text-indigo-700">Value accuracy and logical reasoning</span></li>
+                        </>
+                      ) : (
+                        <>
+                          <li className="flex items-start gap-2"><span className="text-indigo-600 mt-1">•</span><span className="text-indigo-700">Generate innovative and original solutions</span></li>
+                          <li className="flex items-start gap-2"><span className="text-indigo-600 mt-1">•</span><span className="text-indigo-700">Think outside conventional boundaries</span></li>
+                          <li className="flex items-start gap-2"><span className="text-indigo-600 mt-1">•</span><span className="text-indigo-700">Excel at brainstorming and exploring possibilities</span></li>
+                        </>
+                      )}
+                    </ul>
+                  </div>
+
+                  <div className="bg-orange-50 p-4 rounded-lg border border-orange-200">
+                    <h4 className="font-semibold text-orange-800 mb-2">Learning Approach</h4>
+                    <p className="text-orange-700 text-sm">
+                      {personalityTraitDetails.thinking === 'Analytical'
+                        ? 'Use logical frameworks, detailed notes, and focus on understanding underlying principles.'
+                        : 'Connect concepts to personal interests, use visual methods, and allow time for creative exploration.'
+                      }
+                    </p>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          </div>
         )}
 
         {/* Personality Section */}
