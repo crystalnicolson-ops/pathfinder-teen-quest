@@ -621,16 +621,13 @@ export default function DetailedResults() {
                   <p className="text-muted-foreground mb-4">
                     Your learning style naturally aligns with these career paths:
                   </p>
-                  <div className="grid gap-3">
+                  <div className="grid gap-2">
                     {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.careerAlignment.map((career, index) => (
-                      <div key={index} className="flex items-center gap-3 p-3 bg-white rounded-lg border border-secondary/30 hover:shadow-md transition-all duration-200 hover-scale">
-                        <div className="w-10 h-10 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full flex items-center justify-center">
-                          <span className="text-lg">💼</span>
+                      <div key={index} className="flex items-center gap-2 p-2 bg-white rounded-md border border-secondary/20 hover:shadow-sm transition-all duration-200">
+                        <div className="w-6 h-6 bg-gradient-to-br from-secondary/20 to-primary/20 rounded-full flex items-center justify-center flex-shrink-0">
+                          <TrendingUp className="h-3 w-3 text-secondary" />
                         </div>
-                        <div className="flex-1">
-                          <h4 className="font-medium text-foreground">{career}</h4>
-                        </div>
-                        <ExternalLink className="h-4 w-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <span className="text-sm font-medium text-foreground">{career}</span>
                       </div>
                     ))}
                   </div>
