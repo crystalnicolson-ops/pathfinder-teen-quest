@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button';
+import { Badge } from '@/components/ui/badge';
 import { Home } from 'lucide-react';
 
 interface HeaderProps {
@@ -9,19 +10,28 @@ interface HeaderProps {
 export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
   if (!showHomeButton) return null;
 
+  const hasPremium = typeof window !== 'undefined' && localStorage.getItem('hasPaidPremium') === 'true';
+
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 py-3">
-        <div className="flex justify-end items-center">
-          <Button
-            variant="outline" 
-            onClick={onHome}
-            size="sm"
-            className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black transition-all duration-300"
-          >
-            <Home className="h-4 w-4 mr-2" />
-            Home
-          </Button>
+        <div className="flex justify-between items-center">
+          {hasPremium && (
+            <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 text-xs">
+              ✨ Premium
+            </Badge>
+          )}
+          <div className={hasPremium ? '' : 'ml-auto'}>
+            <Button
+              variant="outline" 
+              onClick={onHome}
+              size="sm"
+              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black transition-all duration-300"
+            >
+              <Home className="h-4 w-4 mr-2" />
+              Home
+            </Button>
+          </div>
         </div>
       </div>
     </div>

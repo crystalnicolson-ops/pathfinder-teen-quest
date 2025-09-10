@@ -126,7 +126,7 @@ export default function DetailedResults() {
   const [personality, setPersonality] = useState(null);
   const [section, setSection] = useState('personality');
   
-  // Bypass payment verification for preview
+  // Check payment status and provide appropriate access
   useEffect(() => {
     const init = () => {
       const paidParam = searchParams.get(PAYMENT_SUCCESS_PARAM);
@@ -134,7 +134,33 @@ export default function DetailedResults() {
         localStorage.setItem('hasPaidPremium', 'true');
       }
 
-      // Always show premium preview with sample data
+      // Check if user has already paid for premium access
+      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
+      
+      if (hasPaid) {
+        // Premium user - show their actual results or sample data if no quiz taken
+        const pending = localStorage.getItem('pendingQuizResults');
+        if (pending) {
+          try {
+            const { results } = JSON.parse(pending);
+            setPersonality(results.personality);
+            setHasAccess(true);
+          } catch (e) {
+            console.error('Error parsing quiz results', e);
+            // If parsing fails, show sample premium data
+            showSamplePremiumData();
+          }
+        } else {
+          // No quiz results but user has paid - show sample premium data
+          showSamplePremiumData();
+        }
+      } else {
+        // Free user - show sample data for preview (current behavior)
+        showSamplePremiumData();
+      }
+    };
+
+    const showSamplePremiumData = () => {
       const sampleResults = {
         learningStyle: 'Visual',
         personality: 'The Strategist',
@@ -504,6 +530,15 @@ export default function DetailedResults() {
               Back to Results
             </Button>
           </div>
+
+          {/* Premium Status Indicator */}
+          {localStorage.getItem('hasPaidPremium') === 'true' && (
+            <div className="mb-4">
+              <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-1">
+                ✨ Premium Access Activated
+              </Badge>
+            </div>
+          )}
           
           {/* Section Navigation Tabs */}
           <div className="flex flex-wrap gap-2 justify-center mb-6">

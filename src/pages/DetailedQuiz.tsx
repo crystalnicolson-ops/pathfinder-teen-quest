@@ -70,8 +70,25 @@ const DetailedQuiz = () => {
       setCurrentQuestion(currentQuestion + 1);
       setCurrentAnswer(newAnswers[currentQuestion + 1]?.answer || '');
     } else {
-      // Quiz completed - show payment prompt
-      setShowPaymentPrompt(true);
+      // Quiz completed - check if user already has premium access
+      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
+      if (hasPaid) {
+        // Premium user - go directly to results
+        setTimeout(() => {
+          const results = calculateDetailedMBTI(newAnswers);
+          localStorage.setItem('pendingQuizResults', JSON.stringify({
+            results,
+            answers: newAnswers.map(a => ({
+              question: a.question.text,
+              answer: a.answer
+            }))
+          }));
+          navigate('/detailed-results');
+        }, 300);
+      } else {
+        // Free user - show payment prompt
+        setShowPaymentPrompt(true);
+      }
     }
   };
 
