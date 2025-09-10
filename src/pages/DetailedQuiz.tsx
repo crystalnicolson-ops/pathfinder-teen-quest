@@ -10,10 +10,17 @@ import Header from '@/components/Header';
 import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion, AnswerType } from '@/data/detailedQuiz';
 import { useToast } from '@/components/ui/use-toast';
 import { PAYMENT_LINK_URL } from '@/config/payments';
+import { createClient } from '@supabase/supabase-js';
 
 const DetailedQuiz = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  
+  // Initialize Supabase client
+  const supabase = createClient(
+    import.meta.env.VITE_SUPABASE_URL,
+    import.meta.env.VITE_SUPABASE_ANON_KEY
+  );
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ question: DetailedQuestion; answer: AnswerType }[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState<AnswerType | ''>('');
@@ -140,12 +147,19 @@ const DetailedQuiz = () => {
         }))
       }));
 
-      if (!PAYMENT_LINK_URL) {
-        throw new Error('Payment link not set. Please add your Stripe Payment Link in src/config/payments.ts');
+      // Create dynamic Stripe checkout session for Apple Pay support
+      const { data, error } = await supabase.functions.invoke('create-payment');
+      
+      if (error) {
+        throw new Error(error.message || 'Failed to create payment session');
+      }
+
+      if (!data?.url) {
+        throw new Error('No payment URL received');
       }
 
       // Open Stripe checkout in a new tab
-      window.open(PAYMENT_LINK_URL, '_blank');
+      window.open(data.url, '_blank');
       toast({
         title: 'Payment Opened',
         description: 'Complete the payment, then return to view your results.',
@@ -154,7 +168,7 @@ const DetailedQuiz = () => {
       console.error('Payment error:', error);
       toast({
         title: 'Payment Error',
-        description: error.message || 'Failed to open payment link.',
+        description: error.message || 'Failed to create payment session.',
         variant: 'destructive',
       });
     } finally {
