@@ -25,6 +25,7 @@ const DetailedQuiz = () => {
   };
 
   const handleAnswerSelect = (answer: AnswerType) => {
+    console.log(`[QUIZ DEBUG] Question ${currentQuestion + 1}/${detailedQuestions.length} answered: ${answer}`);
     setCurrentAnswer(answer);
     
     // Automatically advance to next question
@@ -43,8 +44,11 @@ const DetailedQuiz = () => {
     } else {
       // Quiz completed - check if user already has premium access
       const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
+      console.log('[QUIZ COMPLETE] Quiz finished! hasPaidPremium =', hasPaid);
+      console.log('[QUIZ COMPLETE] Total answers collected:', newAnswers.length);
       if (hasPaid) {
         // Premium user - go directly to results
+        console.log('[QUIZ COMPLETE] User has paid, going to results');
         setTimeout(() => {
           const results = calculateDetailedMBTI(newAnswers);
           localStorage.setItem('pendingQuizResults', JSON.stringify({
@@ -58,6 +62,7 @@ const DetailedQuiz = () => {
         }, 300);
       } else {
         // Free user - show payment prompt
+        console.log('[QUIZ COMPLETE] User has NOT paid, showing payment prompt');
         setTimeout(() => {
           const results = calculateDetailedMBTI(newAnswers);
           localStorage.setItem('pendingQuizResults', JSON.stringify({
@@ -67,6 +72,7 @@ const DetailedQuiz = () => {
               answer: a.answer
             }))
           }));
+          console.log('[QUIZ COMPLETE] About to set showPaymentPrompt to true');
           setShowPaymentPrompt(true);
         }, 300);
       }
@@ -176,6 +182,7 @@ const DetailedQuiz = () => {
   };
 
   if (showPaymentPrompt) {
+    console.log('[PAYMENT PROMPT] Rendering payment prompt screen');
     return (
       <>
         <Header onHome={handleGoHome} />
