@@ -93,6 +93,9 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
   const avatar = personalityAvatars[personality];
   const navigate = useNavigate();
 
+  // Check if user has premium access
+  const hasPremium = typeof window !== 'undefined' && localStorage.getItem('hasPaidPremium') === 'true';
+
   // Parse the description to extract MBTI type and traits
   const parseDescription = (description: string) => {
     // Extract MBTI type: matches (INTJ) pattern
@@ -118,6 +121,21 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
 
   const handleViewColleges = () => {
     navigate('/detailed-results', { state: { personality, section: 'colleges' } });
+    setTimeout(() => window.scrollTo(0, 0), 100);
+  };
+
+  const handleViewLearningStyle = () => {
+    navigate('/detailed-results', { state: { personality, section: 'learning-style' } });
+    setTimeout(() => window.scrollTo(0, 0), 100);
+  };
+
+  const handleViewPersonality = () => {
+    navigate('/detailed-results', { state: { personality, section: 'personality' } });
+    setTimeout(() => window.scrollTo(0, 0), 100);
+  };
+
+  const handleViewStudyMethods = () => {
+    navigate('/detailed-results', { state: { personality, section: 'study-methods' } });
     setTimeout(() => window.scrollTo(0, 0), 100);
   };
 
@@ -269,6 +287,53 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
 
         {/* Action Buttons */}
         <div className="flex flex-col gap-6 items-center">
+          {/* Premium Status Badge */}
+          {hasPremium && (
+            <div className="mb-2">
+              <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2">
+                ✨ Premium Access Active - Explore All Features!
+              </Badge>
+            </div>
+          )}
+
+          {/* Premium Learning Style Button - Only for Premium Users */}
+          {hasPremium && (
+            <div className="relative group">
+              <Button 
+                onClick={handleViewLearningStyle}
+                size="lg"
+                className="relative bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full border-2 border-transparent hover:from-purple-600 hover:to-pink-600 transform transition-all duration-300 hover:scale-105 hover:shadow-lg px-8 py-6 text-lg font-bold overflow-hidden"
+              >
+                {/* Sparkle effect */}
+                <div className="absolute -top-1 -right-1">
+                  <Sparkles className="h-4 w-4 text-yellow-300 animate-bounce" />
+                </div>
+                
+                <Star className="h-6 w-6 mr-3 group-hover:animate-bounce" />
+                <span className="relative z-10">My Learning Style Analysis</span>
+              </Button>
+            </div>
+          )}
+
+          {/* Premium Personality Insights - Only for Premium Users */}
+          {hasPremium && (
+            <div className="relative group">
+              <Button 
+                onClick={handleViewPersonality}
+                size="lg"
+                className="relative bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full border-2 border-transparent hover:from-indigo-600 hover:to-purple-600 transform transition-all duration-300 hover:scale-105 hover:shadow-lg px-8 py-6 text-lg font-bold overflow-hidden"
+              >
+                {/* Sparkle effect */}
+                <div className="absolute -top-1 -left-1">
+                  <Sparkles className="h-4 w-4 text-yellow-300 animate-bounce" style={{animationDelay: '0.3s'}} />
+                </div>
+                
+                <Rocket className="h-6 w-6 mr-3 group-hover:animate-bounce" />
+                <span className="relative z-10">Deep Personality Insights</span>
+              </Button>
+            </div>
+          )}
+
           {/* Career Button */}
           <div className="relative group">
             <Button 
@@ -291,6 +356,25 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             {/* Glowing ring effect */}
             <div className="absolute inset-0 rounded-full bg-gradient-secondary opacity-30 group-hover:opacity-50 blur-xl transition-opacity duration-300 -z-10"></div>
           </div>
+
+          {/* Premium Study Methods - Only for Premium Users */}
+          {hasPremium && (
+            <div className="relative group">
+              <Button 
+                onClick={handleViewStudyMethods}
+                size="lg"
+                className="relative bg-gradient-to-r from-green-500 to-teal-500 text-white rounded-full border-2 border-transparent hover:from-green-600 hover:to-teal-600 transform transition-all duration-300 hover:scale-105 hover:shadow-lg px-8 py-6 text-lg font-bold overflow-hidden"
+              >
+                {/* Sparkle effect */}
+                <div className="absolute -top-1 -right-1">
+                  <Sparkles className="h-4 w-4 text-yellow-300 animate-bounce" style={{animationDelay: '0.7s'}} />
+                </div>
+                
+                <GraduationCap className="h-6 w-6 mr-3 group-hover:animate-bounce" />
+                <span className="relative z-10">Personalized Study Methods</span>
+              </Button>
+            </div>
+          )}
 
           {/* College Button */}
           <div className="relative group">
