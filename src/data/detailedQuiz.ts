@@ -122,17 +122,46 @@ export const calculateDetailedMBTI = (answers: { question: DetailedQuestion; ans
     social: scores.helper > scores.leader ? 'Helper' : 'Leader'
   };
 
-  // Map to PersonalityType for compatibility
+  // Create MBTI-like code from personality traits
+  const energyCode = personalityType.energy === 'Introvert' ? 'I' : 'E';
+  const organizationCode = personalityType.organization === 'Planner' ? 'J' : 'P';
+  const thinkingCode = personalityType.thinking === 'Analytical' ? 'T' : 'F';
+  
+  // For the second letter (N/S), use a combination of traits
+  const intuitionCode = scores.visionary > scores.practical ? 'N' : 'S';
+  
+  const personalityCode = energyCode + intuitionCode + thinkingCode + organizationCode;
+  
+  console.log('Calculated personality code:', personalityCode);
+  console.log('Personality traits:', personalityType);
+  console.log('Scores:', scores);
+
+  // Map personality code to PersonalityType
   const personalityMap: { [key: string]: PersonalityType } = {
-    visual: "The Strategist",
-    auditory: "The Coach",
-    reading_writing: "The Organizer", 
-    kinesthetic: "The Adventurer"
+    'INTJ': 'The Strategist',
+    'INTP': 'The Inventor', 
+    'ENTJ': 'The Boss',
+    'ENTP': 'The Challenger',
+    'INFJ': 'The Visionary',
+    'INFP': 'The Creator',
+    'ENFJ': 'The Coach',
+    'ENFP': 'The Free Spirit',
+    'ISTJ': 'The Organizer',
+    'ISFJ': 'The Helper',
+    'ESTJ': 'The Manager',
+    'ESFJ': 'The Host',
+    'ISTP': 'The Fixer',
+    'ISFP': 'The Artist',
+    'ESTP': 'The Adventurer',
+    'ESFP': 'The Performer'
   };
+
+  const finalPersonality = personalityMap[personalityCode] || 'The Strategist';
+  console.log('Final personality result:', finalPersonality);
 
   return {
     learningStyle: dominantLearningStyle,
-    personality: personalityMap[dominantLearningStyle] || "The Strategist",
+    personality: finalPersonality,
     personalityTraits: personalityType,
     scores,
     totalQuestions: answers.length
