@@ -20,6 +20,7 @@ export default {
 		extend: {
 			fontFamily: {
 				'jost': ['Jost', 'sans-serif'],
+				'inter': ['Inter', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',

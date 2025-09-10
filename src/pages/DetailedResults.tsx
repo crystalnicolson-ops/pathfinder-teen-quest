@@ -1030,7 +1030,7 @@ export default function DetailedResults() {
                   {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.careerAlignment.map((career, index) => (
                     <li key={index} className="text-sm flex items-start gap-1">
                       <span className="text-primary mt-[2px]">•</span>
-                      <span className="text-gray-600">{career}</span>
+                      <span className="text-gray-600 font-inter font-medium">{career}</span>
                     </li>
                   ))}
                 </ul>
