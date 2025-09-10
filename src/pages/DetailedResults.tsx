@@ -134,34 +134,33 @@ export default function DetailedResults() {
         localStorage.setItem('hasPaidPremium', 'true');
       }
 
-      // Always allow access for preview - bypass payment check
-      const pending = localStorage.getItem('pendingQuizResults');
-      if (pending) {
-        try {
-          const { results } = JSON.parse(pending);
-          setPersonality(results.personality);
-          setHasAccess(true);
-        } catch (e) {
-          console.error('Error parsing pending results', e);
-          toast({
-            title: 'Results not found',
-            description: 'Please retake the assessment to regenerate your results.',
-          });
-          navigate('/detailed-quiz');
-        }
-      } else {
-        // Preview mode: allow access without payment by showing sample results
-        const sampleResults = {
-          learningStyle: 'Visual',
-          personality: 'The Strategist',
-          personalityTraits: { energy: 'Introvert', organization: 'Planner', thinking: 'Analytical', social: 'Helper' },
-          scores: {},
-          totalQuestions: 0,
-        } as any;
-        localStorage.setItem('pendingQuizResults', JSON.stringify({ results: sampleResults, answers: [] }));
-        setPersonality(sampleResults.personality);
-        setHasAccess(true);
-      }
+      // Always show premium preview with sample data
+      const sampleResults = {
+        learningStyle: 'Visual',
+        personality: 'The Strategist',
+        personalityTraits: { energy: 'Introvert', organization: 'Planner', thinking: 'Analytical', social: 'Helper' },
+        scores: {
+          visual: 15,
+          auditory: 8,
+          reading_writing: 12,
+          kinesthetic: 10,
+          introvert: 18,
+          extrovert: 7,
+          planner: 16,
+          spontaneous: 9,
+          creative: 11,
+          analytical: 17,
+          helper: 14,
+          leader: 11
+        },
+        totalQuestions: 50,
+      } as any;
+      localStorage.setItem('pendingQuizResults', JSON.stringify({ 
+        results: sampleResults, 
+        answers: Array(50).fill({ question: 'Sample question', answer: 'Agree' })
+      }));
+      setPersonality(sampleResults.personality);
+      setHasAccess(true);
     };
 
     init();

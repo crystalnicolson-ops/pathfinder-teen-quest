@@ -24,6 +24,7 @@ const AppContent = () => {
           <Route path="/" element={<Index />} />
           <Route path="/detailed-quiz" element={<DetailedQuiz />} />
           <Route path="/detailed-results" element={<DetailedResults />} />
+          <Route path="/premium-preview" element={<DetailedResults />} />
           <Route path="/academic-worksheet" element={<AcademicWorksheet />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
