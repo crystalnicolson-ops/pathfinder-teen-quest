@@ -14,9 +14,13 @@ import { useToast } from '@/components/ui/use-toast';
 type AnswerType = 'Strongly Agree' | 'Agree' | 'Neutral' | 'Disagree' | 'Strongly Disagree';
 
 const supabase = createClient(
-  import.meta.env.VITE_SUPABASE_URL,
-  import.meta.env.VITE_SUPABASE_ANON_KEY
+  import.meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co',
+  import.meta.env.VITE_SUPABASE_ANON_KEY || 'placeholder-key'
 );
+
+// Add debug logging
+console.log('Supabase URL:', import.meta.env.VITE_SUPABASE_URL);
+console.log('Supabase Anon Key exists:', !!import.meta.env.VITE_SUPABASE_ANON_KEY);
 
 const DetailedQuiz = () => {
   const navigate = useNavigate();
@@ -57,6 +61,11 @@ const DetailedQuiz = () => {
   const handlePayment = async () => {
     setIsProcessingPayment(true);
     try {
+      // Check if Supabase is properly configured
+      if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
+        throw new Error("Supabase not configured. Please connect your project to Supabase first.");
+      }
+
       const { data, error } = await supabase.functions.invoke('create-payment', {
         body: { email: 'guest@example.com' } // For guest checkout
       });
@@ -80,8 +89,8 @@ const DetailedQuiz = () => {
     } catch (error) {
       console.error('Payment error:', error);
       toast({
-        title: "Payment Error",
-        description: "Failed to initiate payment. Please try again.",
+        title: "Payment Error", 
+        description: error.message || "Failed to initiate payment. Please try again.",
         variant: "destructive",
       });
     } finally {
