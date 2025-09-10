@@ -1,11 +1,13 @@
-import { useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useLocation, useNavigate, useSearchParams } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft, Home } from 'lucide-react';
+import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft, Home, Lock } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
 import { PersonalityType, College, CollegeTiers } from '@/types/quiz';
+import { createClient } from '@supabase/supabase-js';
+import { useToast } from '@/components/ui/use-toast';
 
 // Import all personality avatars
 import avatarStrategist from '@/assets/avatar-strategist.jpg';
@@ -112,18 +114,108 @@ const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | '
 };
 
 
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
+
 export default function DetailedResults() {
   const location = useLocation();
   const navigate = useNavigate();
-  const { personality, section } = location.state || {};
+  const { toast } = useToast();
+  const [searchParams] = useSearchParams();
+  const [isVerifying, setIsVerifying] = useState(false);
+  const [hasAccess, setHasAccess] = useState(false);
+  const [personality, setPersonality] = useState(null);
+  const [section, setSection] = useState('personality');
+  
+  const sessionId = searchParams.get('session_id');
 
   useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [section]);
+    const verifyPaymentAndShowResults = async () => {
+      // Check if coming from payment success
+      if (sessionId) {
+        setIsVerifying(true);
+        try {
+          const { data, error } = await supabase.functions.invoke('verify-payment', {
+            body: { sessionId }
+          });
 
-  if (!personality) {
-    navigate('/');
-    return null;
+          if (error) throw error;
+
+          if (data?.paid) {
+            // Payment verified, get quiz data from localStorage
+            const pendingResults = localStorage.getItem('pendingQuizResults');
+            if (pendingResults) {
+              const { results } = JSON.parse(pendingResults);
+              setPersonality(results.personality);
+              setHasAccess(true);
+              localStorage.removeItem('pendingQuizResults');
+              toast({
+                title: "Payment Successful!",
+                description: "Your detailed results are now available.",
+              });
+            }
+          } else {
+            throw new Error("Payment not verified");
+          }
+        } catch (error) {
+          console.error('Payment verification error:', error);
+          toast({
+            title: "Access Denied",
+            description: "Payment verification failed. Please complete payment first.",
+            variant: "destructive",
+          });
+          navigate('/detailed-quiz');
+        } finally {
+          setIsVerifying(false);
+        }
+      } 
+      // Check if results passed from quiz (shouldn't happen without payment now)
+      else if (location.state?.personality) {
+        // This should not happen in the new flow
+        navigate('/detailed-quiz');
+      }
+      // No session ID and no results - redirect to quiz
+      else {
+        navigate('/detailed-quiz');
+      }
+    };
+
+    verifyPaymentAndShowResults();
+    window.scrollTo(0, 0);
+  }, [sessionId, location.state, navigate, toast, section]);
+
+  if (isVerifying) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-primary/20 via-background to-secondary/20 flex items-center justify-center">
+        <Card className="max-w-md mx-auto">
+          <CardContent className="text-center py-8">
+            <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+            <p>Verifying payment...</p>
+          </CardContent>
+        </Card>
+      </div>
+    );
+  }
+
+  if (!hasAccess || !personality) {
+    return (
+      <div className="min-h-screen bg-gradient-to-br from-primary/20 via-background to-secondary/20 flex items-center justify-center">
+        <Card className="max-w-md mx-auto">
+          <CardContent className="text-center py-8">
+            <Lock className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
+            <h2 className="text-xl font-semibold mb-2">Premium Content</h2>
+            <p className="text-muted-foreground mb-4">
+              Complete payment to access your detailed personality results.
+            </p>
+            <Button onClick={() => navigate('/detailed-quiz')}>
+              Take Assessment
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    );
   }
 
   const result = personalityResults[personality as PersonalityType];

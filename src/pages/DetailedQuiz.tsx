@@ -5,17 +5,27 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import { ArrowLeft, ArrowRight, Crown, BookOpen } from 'lucide-react';
+import { ArrowLeft, ArrowRight, Crown, BookOpen, CreditCard } from 'lucide-react';
 import Header from '@/components/Header';
 import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion } from '@/data/detailedQuiz';
+import { createClient } from '@supabase/supabase-js';
+import { useToast } from '@/components/ui/use-toast';
 
 type AnswerType = 'Strongly Agree' | 'Agree' | 'Neutral' | 'Disagree' | 'Strongly Disagree';
 
+const supabase = createClient(
+  import.meta.env.VITE_SUPABASE_URL,
+  import.meta.env.VITE_SUPABASE_ANON_KEY
+);
+
 const DetailedQuiz = () => {
   const navigate = useNavigate();
+  const { toast } = useToast();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ question: DetailedQuestion; answer: AnswerType }[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState<AnswerType | ''>('');
+  const [showPaymentPrompt, setShowPaymentPrompt] = useState(false);
+  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
   const handleGoHome = () => {
     navigate('/');
@@ -39,16 +49,43 @@ const DetailedQuiz = () => {
       setCurrentQuestion(currentQuestion + 1);
       setCurrentAnswer(newAnswers[currentQuestion + 1]?.answer || '');
     } else {
-      // Quiz complete - calculate results
-      const result = calculateDetailedMBTI(newAnswers);
-      navigate('/detailed-results', { 
-        state: { 
-          personality: result.personality,
-          learningStyle: result.learningStyle,
-          strengths: result.strengths,
-          isDetailed: true
-        }
+      // Quiz completed - show payment prompt
+      setShowPaymentPrompt(true);
+    }
+  };
+
+  const handlePayment = async () => {
+    setIsProcessingPayment(true);
+    try {
+      const { data, error } = await supabase.functions.invoke('create-payment', {
+        body: { email: 'guest@example.com' } // For guest checkout
       });
+
+      if (error) throw error;
+
+      if (data?.url) {
+        // Store quiz data in localStorage before redirecting
+        const results = calculateDetailedMBTI(answers);
+        localStorage.setItem('pendingQuizResults', JSON.stringify({
+          results,
+          answers: answers.map(a => ({
+            question: a.question.text,
+            answer: a.answer
+          }))
+        }));
+        
+        // Open Stripe checkout in new tab
+        window.open(data.url, '_blank');
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+      toast({
+        title: "Payment Error",
+        description: "Failed to initiate payment. Please try again.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsProcessingPayment(false);
     }
   };
 
@@ -70,6 +107,53 @@ const DetailedQuiz = () => {
     "Work Habits & Time Management": "🛠️",
     "Creative vs Practical Thinking": "🌈"
   };
+
+  if (showPaymentPrompt) {
+    return (
+      <>
+        <Header onHome={handleGoHome} />
+        <div className="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 flex items-center justify-center">
+          <Card className="max-w-md mx-auto">
+            <CardHeader>
+              <CardTitle className="text-center">Complete Your Assessment</CardTitle>
+            </CardHeader>
+            <CardContent className="text-center space-y-6">
+              <div className="space-y-2">
+                <p className="text-lg font-medium">Unlock Your Detailed Results</p>
+                <p className="text-muted-foreground">
+                  Get comprehensive insights into your personality, learning style, and career recommendations.
+                </p>
+              </div>
+              
+              <div className="bg-primary/10 p-4 rounded-lg">
+                <p className="text-2xl font-bold text-primary">$9.97</p>
+                <p className="text-sm text-muted-foreground">One-time payment</p>
+              </div>
+
+              <div className="space-y-2">
+                <Button 
+                  onClick={handlePayment}
+                  disabled={isProcessingPayment}
+                  className="w-full"
+                  size="lg"
+                >
+                  <CreditCard className="mr-2 h-4 w-4" />
+                  {isProcessingPayment ? 'Processing...' : 'Get My Results'}
+                </Button>
+                <Button 
+                  variant="outline" 
+                  onClick={() => setShowPaymentPrompt(false)}
+                  className="w-full"
+                >
+                  Back to Quiz
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        </div>
+      </>
+    );
+  }
 
   return (
     <>
