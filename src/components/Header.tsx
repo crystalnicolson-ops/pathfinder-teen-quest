@@ -13,7 +13,7 @@ export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
   const hasPremium = typeof window !== 'undefined' && localStorage.getItem('hasPaidPremium') === 'true';
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-white/10 backdrop-blur-md border-b border-white/20">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           {hasPremium && (
