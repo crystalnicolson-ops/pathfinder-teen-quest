@@ -126,7 +126,7 @@ export default function DetailedResults() {
   const [personality, setPersonality] = useState(null);
   const [section, setSection] = useState('personality');
   
-  // Payment Link flow: grant access via URL param or stored flag
+  // Bypass payment verification for preview
   useEffect(() => {
     const init = () => {
       const paidParam = searchParams.get(PAYMENT_SUCCESS_PARAM);
@@ -134,23 +134,15 @@ export default function DetailedResults() {
         localStorage.setItem('hasPaidPremium', 'true');
       }
 
-      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
-      if (hasPaid) {
-        const pending = localStorage.getItem('pendingQuizResults');
-        if (pending) {
-          try {
-            const { results } = JSON.parse(pending);
-            setPersonality(results.personality);
-            setHasAccess(true);
-          } catch (e) {
-            console.error('Error parsing pending results', e);
-            toast({
-              title: 'Results not found',
-              description: 'Please retake the assessment to regenerate your results.',
-            });
-            navigate('/detailed-quiz');
-          }
-        } else {
+      // Always allow access for preview - bypass payment check
+      const pending = localStorage.getItem('pendingQuizResults');
+      if (pending) {
+        try {
+          const { results } = JSON.parse(pending);
+          setPersonality(results.personality);
+          setHasAccess(true);
+        } catch (e) {
+          console.error('Error parsing pending results', e);
           toast({
             title: 'Results not found',
             description: 'Please retake the assessment to regenerate your results.',
@@ -158,6 +150,10 @@ export default function DetailedResults() {
           navigate('/detailed-quiz');
         }
       } else {
+        toast({
+          title: 'Results not found',
+          description: 'Please retake the assessment to regenerate your results.',
+        });
         navigate('/detailed-quiz');
       }
     };
