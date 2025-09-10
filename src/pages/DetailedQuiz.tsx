@@ -11,7 +11,7 @@ import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion } from '@/da
 import { createClient } from '@supabase/supabase-js';
 import { useToast } from '@/components/ui/use-toast';
 
-type AnswerType = 'Strongly Agree' | 'Agree' | 'Neutral' | 'Disagree' | 'Strongly Disagree';
+type AnswerType = 'Strongly Agree' | 'Agree' | 'Disagree' | 'Strongly Disagree';
 
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co',
@@ -173,11 +173,11 @@ const DetailedQuiz = () => {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Crown className="h-6 w-6 text-primary" />
-              <h1 className="text-3xl font-bold text-foreground">Premium Career Assessment</h1>
+              <h1 className="text-3xl font-bold text-foreground">Learning Style & Personality Assessment</h1>
               <Crown className="h-6 w-6 text-primary" />
             </div>
             <p className="text-muted-foreground">
-              Deep dive into your personality with our comprehensive 50-question assessment
+              50-Question Assessment using Likert Scale - Select how much you agree with each statement
             </p>
           </div>
 
@@ -199,7 +199,7 @@ const DetailedQuiz = () => {
             <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-4 py-2 rounded-lg">
               <BookOpen className="h-4 w-4" />
               <span className="font-medium">
-                {sectionIcons[currentSection as keyof typeof sectionIcons]} {currentSection}
+                📚 Learning Style Assessment
               </span>
             </div>
           </div>
@@ -215,11 +215,10 @@ const DetailedQuiz = () => {
               <RadioGroup value={currentAnswer} onValueChange={handleAnswerSelect}>
                 <div className="space-y-4">
                   {[
-                    { value: 'Strongly Agree', label: 'Strongly Agree', color: 'bg-green-100 border-green-300 text-green-800' },
-                    { value: 'Agree', label: 'Agree', color: 'bg-green-50 border-green-200 text-green-700' },
-                    { value: 'Neutral', label: 'Neutral', color: 'bg-gray-50 border-gray-200 text-gray-700' },
-                    { value: 'Disagree', label: 'Disagree', color: 'bg-red-50 border-red-200 text-red-700' },
-                    { value: 'Strongly Disagree', label: 'Strongly Disagree', color: 'bg-red-100 border-red-300 text-red-800' }
+                    { value: 'Strongly Agree', label: 'A. Strongly Agree', color: 'bg-green-100 border-green-300 text-green-800' },
+                    { value: 'Agree', label: 'B. Agree', color: 'bg-green-50 border-green-200 text-green-700' },
+                    { value: 'Disagree', label: 'C. Disagree', color: 'bg-red-50 border-red-200 text-red-700' },
+                    { value: 'Strongly Disagree', label: 'D. Strongly Disagree', color: 'bg-red-100 border-red-300 text-red-800' }
                   ].map((option) => (
                     <div key={option.value} className="flex items-center space-x-3">
                       <RadioGroupItem 
