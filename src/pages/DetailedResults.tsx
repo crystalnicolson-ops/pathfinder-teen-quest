@@ -984,16 +984,16 @@ export default function DetailedResults() {
         {section === 'careers' && (
         <div className="space-y-6">
             <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-              <CardHeader className="pb-4">
-                <CardTitle className="text-xl font-bold text-foreground">
+              <CardHeader className="pb-2">
+                <CardTitle className="text-lg font-bold text-foreground">
                   Career Alignment (Based on your learning style)
                 </CardTitle>
-                <p className="text-muted-foreground text-sm mt-1">These paths naturally fit how you learn.</p>
+                <p className="text-muted-foreground text-xs">These paths naturally fit how you learn.</p>
               </CardHeader>
-              <CardContent className="pt-0">
-                <ul className="grid md:grid-cols-2 gap-1">
+              <CardContent className="pt-0 pb-4">
+                <ul className="grid md:grid-cols-2 gap-0">
                   {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.careerAlignment.map((career, index) => (
-                    <li key={index} className="text-sm text-foreground flex items-start gap-2 py-1">
+                    <li key={index} className="text-sm text-foreground flex items-start gap-1">
                       <span className="text-primary mt-[2px]">•</span>
                       <span>{career}</span>
                     </li>
