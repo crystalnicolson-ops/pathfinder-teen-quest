@@ -7,11 +7,9 @@ import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { ArrowLeft, ArrowRight, Crown, BookOpen, CreditCard } from 'lucide-react';
 import Header from '@/components/Header';
-import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion } from '@/data/detailedQuiz';
+import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion, AnswerType } from '@/data/detailedQuiz';
 import { createClient } from '@supabase/supabase-js';
 import { useToast } from '@/components/ui/use-toast';
-
-type AnswerType = 'Strongly Agree' | 'Agree' | 'Disagree' | 'Strongly Disagree';
 
 const supabase = createClient(
   import.meta.env.VITE_SUPABASE_URL || 'https://placeholder.supabase.co',
@@ -193,11 +191,11 @@ const DetailedQuiz = () => {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Crown className="h-6 w-6 text-primary" />
-              <h1 className="text-3xl font-bold text-foreground">Learning Style & Personality Assessment</h1>
+              📊 Learning Style & Personality Test Results
               <Crown className="h-6 w-6 text-primary" />
             </div>
             <p className="text-muted-foreground">
-              50-Question Assessment using Likert Scale - Select how much you agree with each statement
+              50-Question Personality + Learning Style Test - Select how much you agree with each statement
             </p>
           </div>
 
