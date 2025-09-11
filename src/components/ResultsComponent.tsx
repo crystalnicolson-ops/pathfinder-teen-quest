@@ -255,7 +255,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                   <div key={index} className="mb-4">
                     <div className="flex justify-between items-center mb-2">
                       <span className="text-sm font-medium text-foreground">
-                        {trait.name}
+                        {rt(`trait_${trait.name.toLowerCase().replace(/[^a-z]/g, '_')}`) || trait.name}
                       </span>
                       <span className="text-sm font-bold text-foreground">
                         {trait.percentage}%

@@ -19,6 +19,19 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'study_methods': 'Personalized Study Methods',
     'academic_worksheet': 'Academic Worksheet',
     
+    // Trait names
+    'trait_strategic_thinking': 'Strategic Thinking',
+    'trait_independence': 'Independence',
+    'trait_analytical_skills': 'Analytical Skills',
+    'trait_long_term_planning': 'Long-term Planning',
+    'trait_problem_solving': 'Problem Solving',
+    'trait_artistic': 'Artistic',
+    'trait_creativity': 'Creativity',
+    'trait_empathy': 'Empathy',
+    'trait_social_skills': 'Social Skills',
+    'trait_adaptability': 'Adaptability',
+    'trait_leadership': 'Leadership',
+    
     // Navigation
     'retake_quiz': 'Retake Quiz',
     'home': 'Home',
@@ -138,6 +151,19 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'perfect_college_matches': 'Universidades Perfectas',
     'study_methods': 'Métodos de Estudio Personalizados',
     'academic_worksheet': 'Hoja de Trabajo Académica',
+    
+    // Trait names
+    'trait_strategic_thinking': 'Pensamiento Estratégico',
+    'trait_independence': 'Independencia',
+    'trait_analytical_skills': 'Habilidades Analíticas',
+    'trait_long_term_planning': 'Planificación a Largo Plazo',
+    'trait_problem_solving': 'Resolución de Problemas',
+    'trait_artistic': 'Artístico',
+    'trait_creativity': 'Creatividad',
+    'trait_empathy': 'Empatía',
+    'trait_social_skills': 'Habilidades Sociales',
+    'trait_adaptability': 'Adaptabilidad',
+    'trait_leadership': 'Liderazgo',
     
     // Navigation
     'retake_quiz': 'Repetir Evaluación',
@@ -277,6 +303,19 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'study_methods': 'Méthodes d\'Étude Personnalisées',
     'academic_worksheet': 'Feuille de Travail Académique',
     
+    // Trait names
+    'trait_strategic_thinking': 'Pensée Stratégique',
+    'trait_independence': 'Indépendance',
+    'trait_analytical_skills': 'Compétences Analytiques',
+    'trait_long_term_planning': 'Planification à Long Terme',
+    'trait_problem_solving': 'Résolution de Problèmes',
+    'trait_artistic': 'Artistique',
+    'trait_creativity': 'Créativité',
+    'trait_empathy': 'Empathie',
+    'trait_social_skills': 'Compétences Sociales',
+    'trait_adaptability': 'Adaptabilité',
+    'trait_leadership': 'Leadership',
+    
     // Navigation
     'retake_quiz': 'Refaire le Quiz',
     'home': 'Accueil',
@@ -414,6 +453,19 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'perfect_college_matches': 'Perfekte Universitäten',
     'study_methods': 'Personalisierte Lernmethoden',
     'academic_worksheet': 'Akademisches Arbeitsblatt',
+    
+    // Trait names
+    'trait_strategic_thinking': 'Strategisches Denken',
+    'trait_independence': 'Unabhängigkeit',
+    'trait_analytical_skills': 'Analytische Fähigkeiten',
+    'trait_long_term_planning': 'Langfristige Planung',
+    'trait_problem_solving': 'Problemlösung',
+    'trait_artistic': 'Künstlerisch',
+    'trait_creativity': 'Kreativität',
+    'trait_empathy': 'Empathie',
+    'trait_social_skills': 'Soziale Fähigkeiten',
+    'trait_adaptability': 'Anpassungsfähigkeit',
+    'trait_leadership': 'Führung',
     
     // Navigation
     'retake_quiz': 'Quiz Wiederholen',
@@ -553,6 +605,19 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'study_methods': '个性化学习方法',
     'academic_worksheet': '学术工作表',
     
+    // Trait names
+    'trait_strategic_thinking': '战略思维',
+    'trait_independence': '独立性',
+    'trait_analytical_skills': '分析技能',
+    'trait_long_term_planning': '长期规划',
+    'trait_problem_solving': '问题解决',
+    'trait_artistic': '艺术性',
+    'trait_creativity': '创造力',
+    'trait_empathy': '同理心',
+    'trait_social_skills': '社交技能',
+    'trait_adaptability': '适应性',
+    'trait_leadership': '领导力',
+    
     // Navigation
     'retake_quiz': '重做测评',
     'home': '首页',
@@ -672,6 +737,19 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'perfect_college_matches': '完璧な大学マッチ',
     'study_methods': 'パーソナライズされた学習方法',
     'academic_worksheet': 'アカデミックワークシート',
+    
+    // Trait names
+    'trait_strategic_thinking': '戦略的思考',
+    'trait_independence': '独立性',
+    'trait_analytical_skills': '分析スキル',
+    'trait_long_term_planning': '長期計画',
+    'trait_problem_solving': '問題解決',
+    'trait_artistic': '芸術的',
+    'trait_creativity': '創造性',
+    'trait_empathy': '共感力',
+    'trait_social_skills': '社会的スキル',
+    'trait_adaptability': '適応性',
+    'trait_leadership': 'リーダーシップ',
     
     // Navigation
     'retake_quiz': 'クイズを再受験',

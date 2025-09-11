@@ -1060,7 +1060,7 @@ export default function DetailedResults() {
                     {result.traits.map((trait) => (
                       <div key={trait.name} className="space-y-2">
                         <div className="flex justify-between">
-                          <span className="text-sm font-medium text-foreground">{trait.name}</span>
+                          <span className="text-sm font-medium text-foreground">{rt(`trait_${trait.name.toLowerCase().replace(/[^a-z]/g, '_')}`) || trait.name}</span>
                           <span className="text-sm text-muted-foreground">{trait.percentage}%</span>
                         </div>
                         <div className="w-full bg-gray-200 rounded-full h-2">
