@@ -10,6 +10,7 @@ import { PersonalityType, College, CollegeTiers } from '@/types/quiz';
 import { useToast } from '@/components/ui/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { PAYMENT_LINK_URL, PAYMENT_SUCCESS_PARAM, PAYMENT_SUCCESS_VALUE } from '@/config/payments';
+import { resultsTranslations } from '@/i18n/results';
 
 // Import all personality avatars
 import avatarStrategist from '@/assets/avatar-strategist.jpg';
@@ -127,7 +128,12 @@ export default function DetailedResults() {
   const [personality, setPersonality] = useState(null);
   const [section, setSection] = useState('personality');
   const [freeAssessmentAccess, setFreeAssessmentAccess] = useState(false);
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
+  
+  // Get translations for results
+  const rt = (key: string) => {
+    return resultsTranslations[currentLanguage.code]?.[key] || resultsTranslations.en[key] || key;
+  };
   
   // Scroll to top when section changes
   useEffect(() => {
@@ -224,7 +230,7 @@ export default function DetailedResults() {
         <Card className="max-w-md mx-auto">
           <CardContent className="text-center py-8">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-            <p>{t('quiz.verifying_payment')}</p>
+            <p>{rt('verifying_payment')}</p>
           </CardContent>
         </Card>
       </div>
@@ -237,12 +243,12 @@ export default function DetailedResults() {
         <Card className="max-w-md mx-auto">
           <CardContent className="text-center py-8">
             <Lock className="h-16 w-16 text-muted-foreground mx-auto mb-4" />
-            <h2 className="text-xl font-semibold mb-2">Premium Content</h2>
+            <h2 className="text-xl font-semibold mb-2">{rt('premium_content')}</h2>
             <p className="text-muted-foreground mb-4">
-              Complete payment to access your detailed personality results.
+              {rt('premium_content_desc')}
             </p>
             <Button onClick={() => navigate('/detailed-quiz')}>
-              Take Assessment
+              {rt('take_assessment')}
             </Button>
           </CardContent>
         </Card>
@@ -269,7 +275,7 @@ export default function DetailedResults() {
   // Comprehensive Learning Style Details
   const learningStyleDetails = {
     Visual: {
-      description: "You process information most effectively through visual channels - seeing patterns, spatial relationships, and graphic representations helps you understand and remember concepts.",
+      description: rt('visual_description'),
       detailedDescription: "Visual learners like you have a strong preference for information presented in charts, graphs, maps, diagrams, and other visual formats. You likely think in pictures and mental images, making connections through visual patterns and spatial relationships.",
       strengths: [
         "Excellent spatial awareness and ability to visualize concepts",
@@ -303,7 +309,7 @@ export default function DetailedResults() {
       ]
     },
     Auditory: {
-      description: "You learn most effectively through listening, discussion, and verbal processing - hearing information helps you understand and retain concepts better than reading alone.",
+      description: rt('auditory_description'),
       detailedDescription: "As an auditory learner, you excel at processing information through your ears. You likely remember conversations well, enjoy discussions, and may find yourself talking through problems to understand them better.",
       strengths: [
         "Excellent listening skills and verbal communication",
@@ -337,7 +343,7 @@ export default function DetailedResults() {
       ]
     },
     "Reading/Writing": {
-      description: "You learn best through written language - reading, writing, and text-based activities are your primary channels for processing and retaining information.",
+      description: rt('reading_writing_description'),
       detailedDescription: "Reading/Writing learners like you have a strong affinity for the written word. You likely excel at taking detailed notes, enjoy reading for pleasure, and find that writing helps clarify your thoughts and deepen understanding.",
       strengths: [
         "Excellent written communication and note-taking skills",
@@ -371,7 +377,7 @@ export default function DetailedResults() {
       ]
     },
     Kinesthetic: {
-      description: "You learn most effectively through physical movement, hands-on experiences, and real-world application - you need to 'do' in order to truly understand.",
+      description: rt('kinesthetic_description'),
       detailedDescription: "Kinesthetic learners like you process information best through physical engagement and practical application. You likely prefer active learning environments, learn by trying things yourself, and may find it difficult to sit still for long periods.",
       strengths: [
         "Excellent hands-on problem-solving abilities",

@@ -1,5 +1,6 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
 import { quickQuizTranslations } from '@/i18n/quickQuiz';
+import { resultsTranslations } from '@/i18n/results';
 
 export type Language = {
   code: string;
