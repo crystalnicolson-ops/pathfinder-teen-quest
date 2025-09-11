@@ -130,22 +130,22 @@ const Index = () => {
         
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
           {[
-            { type: 'The Strategist', avatar: avatarStrategist },
-            { type: 'The Inventor', avatar: avatarInventor },
-            { type: 'The Boss', avatar: avatarBoss },
-            { type: 'The Challenger', avatar: avatarChallenger },
-            { type: 'The Visionary', avatar: avatarVisionary },
-            { type: 'The Creator', avatar: avatarCreator },
-            { type: 'The Coach', avatar: avatarCoach },
-            { type: 'The Free Spirit', avatar: avatarFreeSpirit },
-            { type: 'The Organizer', avatar: avatarOrganizer },
-            { type: 'The Helper', avatar: avatarHelper },
-            { type: 'The Manager', avatar: avatarManager },
-            { type: 'The Host', avatar: avatarHost },
-            { type: 'The Fixer', avatar: avatarFixer },
-            { type: 'The Artist', avatar: avatarArtist },
-            { type: 'The Adventurer', avatar: avatarAdventurer },
-            { type: 'The Performer', avatar: avatarPerformer },
+            { type: 'The Strategist', key: 'personality.the_strategist', avatar: avatarStrategist },
+            { type: 'The Inventor', key: 'personality.the_inventor', avatar: avatarInventor },
+            { type: 'The Boss', key: 'personality.the_boss', avatar: avatarBoss },
+            { type: 'The Challenger', key: 'personality.the_challenger', avatar: avatarChallenger },
+            { type: 'The Visionary', key: 'personality.the_visionary', avatar: avatarVisionary },
+            { type: 'The Creator', key: 'personality.the_creator', avatar: avatarCreator },
+            { type: 'The Coach', key: 'personality.the_coach', avatar: avatarCoach },
+            { type: 'The Free Spirit', key: 'personality.the_free_spirit', avatar: avatarFreeSpirit },
+            { type: 'The Organizer', key: 'personality.the_organizer', avatar: avatarOrganizer },
+            { type: 'The Helper', key: 'personality.the_helper', avatar: avatarHelper },
+            { type: 'The Manager', key: 'personality.the_manager', avatar: avatarManager },
+            { type: 'The Host', key: 'personality.the_host', avatar: avatarHost },
+            { type: 'The Fixer', key: 'personality.the_fixer', avatar: avatarFixer },
+            { type: 'The Artist', key: 'personality.the_artist', avatar: avatarArtist },
+            { type: 'The Adventurer', key: 'personality.the_adventurer', avatar: avatarAdventurer },
+            { type: 'The Performer', key: 'personality.the_performer', avatar: avatarPerformer },
           ].map((personality) => (
             <div key={personality.type} className="text-center group">
               <div className="w-16 h-16 mx-auto mb-3 rounded-full overflow-hidden bg-white/20 backdrop-blur-sm shadow-lg group-hover:scale-110 transition-transform duration-300">
@@ -156,7 +156,7 @@ const Index = () => {
                 />
               </div>
               <p className="text-sm font-medium text-white/90 leading-tight">
-                {personality.type}
+                {t(personality.key)}
               </p>
             </div>
           ))}
