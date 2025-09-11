@@ -205,7 +205,10 @@ const Index = () => {
             </CardContent>
           </Card>
 
-          <Card className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105">
+          <Card 
+            className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105 cursor-pointer"
+            onClick={handleStartQuiz}
+          >
             <CardHeader className="text-center">
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#DDA0DD' }}>
                 <GraduationCap className="h-8 w-8 text-white" />
@@ -216,6 +219,11 @@ const Index = () => {
               <p className="text-muted-foreground text-center">
                 Discover the best colleges and universities for your chosen career path, with relevant program details.
               </p>
+              <div className="mt-4 text-center">
+                <Button variant="outline" size="sm">
+                  Start Quiz to See Colleges
+                </Button>
+              </div>
             </CardContent>
           </Card>
         </div>
