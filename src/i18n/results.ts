@@ -32,6 +32,24 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'trait_adaptability': 'Adaptability',
     'trait_leadership': 'Leadership',
     
+    // Personality descriptions
+    'desc_the_strategist': '🧠 The Strategist (INTJ) – "Visionary • Independent • Analytical" You love strategic thinking and long-term planning.',
+    'desc_the_inventor': '🧪 The Inventor (INTP) – "Curious • Unconventional • Logical" You love exploring ideas and theoretical concepts.',
+    'desc_the_boss': '🧑‍💼 The Boss (ENTJ) – "Decisive • Natural Leader • Strategic" You thrive on leadership and turning visions into reality.',
+    'desc_the_challenger': '🎯 The Challenger (ENTP) – "Innovative • Energetic • Idea-Driven" You excel at generating creative solutions.',
+    'desc_the_visionary': '🔮 The Visionary (INFJ) – "Insightful • Idealistic • Purpose-Driven" You\'re motivated by helping others reach their potential.',
+    'desc_the_creator': '🎨 The Creator (INFP) – "Imaginative • Values-Driven • Authentic" You\'re passionate about expressing your unique perspective.',
+    'desc_the_coach': '🌟 The Coach (ENFJ) – "Inspiring • Empathetic • Natural Mentor" You love helping others grow and succeed.',
+    'desc_the_free_spirit': '🌈 The Free Spirit (ENFP) – "Enthusiastic • Spontaneous • People-Loving" You\'re energized by possibilities and connecting with others.',
+    'desc_the_organizer': '📋 The Organizer (ISTJ) – "Reliable • Detail-Oriented • Traditional" You excel at creating structure and following through.',
+    'desc_the_helper': '🤝 The Helper (ISFJ) – "Caring • Supportive • Service-Oriented" You find fulfillment in supporting and caring for others.',
+    'desc_the_manager': '💼 The Manager (ESTJ) – "Efficient • Leadership-Oriented • Results-Focused" You thrive in managing people and processes.',
+    'desc_the_host': '🎉 The Host (ESFJ) – "Warm • Sociable • Harmony-Seeking" You excel at bringing people together and creating positive environments.',
+    'desc_the_fixer': '🔧 The Fixer (ISTP) – "Practical • Independent • Problem-Solver" You love working with your hands and fixing things.',
+    'desc_the_artist': '🖌️ The Artist (ISFP) – "Creative • Gentle • Aesthetically-Minded" You express yourself through artistic and creative pursuits.',
+    'desc_the_adventurer': '🏔️ The Adventurer (ESTP) – "Bold • Spontaneous • Action-Oriented" You thrive on excitement and real-world experiences.',
+    'desc_the_performer': '🎭 The Performer (ESFP) – "Energetic • Fun-Loving • People-Focused" You love entertaining others and being the center of attention.',
+    
     // Navigation
     'retake_quiz': 'Retake Quiz',
     'home': 'Home',
@@ -164,6 +182,24 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'trait_social_skills': 'Habilidades Sociales',
     'trait_adaptability': 'Adaptabilidad',
     'trait_leadership': 'Liderazgo',
+    
+    // Personality descriptions
+    'desc_the_strategist': '🧠 El Estratega (INTJ) – "Visionario • Independiente • Analítico" Te encanta el pensamiento estratégico y la planificación a largo plazo.',
+    'desc_the_inventor': '🧪 El Inventor (INTP) – "Curioso • No Convencional • Lógico" Te encanta explorar ideas y conceptos teóricos.',
+    'desc_the_boss': '🧑‍💼 El Jefe (ENTJ) – "Decisivo • Líder Natural • Estratégico" Prosperas liderando y convirtiendo visiones en realidad.',
+    'desc_the_challenger': '🎯 El Retador (ENTP) – "Innovador • Enérgico • Impulsado por Ideas" Sobresales generando soluciones creativas.',
+    'desc_the_visionary': '🔮 El Visionario (INFJ) – "Perspicaz • Idealista • Impulsado por un Propósito" Te motiva ayudar a otros a alcanzar su potencial.',
+    'desc_the_creator': '🎨 El Creador (INFP) – "Imaginativo • Impulsado por Valores • Auténtico" Te apasiona expresar tu perspectiva única.',
+    'desc_the_coach': '🌟 El Entrenador (ENFJ) – "Inspirador • Empático • Mentor Natural" Te encanta ayudar a otros a crecer y tener éxito.',
+    'desc_the_free_spirit': '🌈 El Espíritu Libre (ENFP) – "Entusiasta • Espontáneo • Amante de las Personas" Te energizas con las posibilidades y conectar con otros.',
+    'desc_the_organizer': '📋 El Organizador (ISTJ) – "Confiable • Orientado a los Detalles • Tradicional" Sobresales creando estructura y siguiendo adelante.',
+    'desc_the_helper': '🤝 El Ayudante (ISFJ) – "Cariñoso • Solidario • Orientado al Servicio" Encuentras satisfacción apoyando y cuidando a otros.',
+    'desc_the_manager': '💼 El Gerente (ESTJ) – "Eficiente • Orientado al Liderazgo • Enfocado en Resultados" Prosperas manejando personas y procesos.',
+    'desc_the_host': '🎉 El Anfitrión (ESFJ) – "Cálido • Sociable • Buscador de Armonía" Sobresales reuniendo a las personas y creando ambientes positivos.',
+    'desc_the_fixer': '🔧 El Reparador (ISTP) – "Práctico • Independiente • Solucionador de Problemas" Te encanta trabajar con las manos y arreglar cosas.',
+    'desc_the_artist': '🖌️ El Artista (ISFP) – "Creativo • Gentil • Con Mentalidad Estética" Te expresas a través de actividades artísticas y creativas.',
+    'desc_the_adventurer': '🏔️ El Aventurero (ESTP) – "Audaz • Espontáneo • Orientado a la Acción" Prosperas con la emoción y las experiencias del mundo real.',
+    'desc_the_performer': '🎭 El Artista (ESFP) – "Enérgico • Amante de la Diversión • Enfocado en las Personas" Te encanta entretener a otros y ser el centro de atención.',
     
     // Navigation
     'retake_quiz': 'Repetir Evaluación',

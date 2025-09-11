@@ -106,21 +106,26 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
 
   // Parse the description to extract MBTI type and traits
   const parseDescription = (description: string) => {
+    // Get translated description
+    const personalityKey = `desc_${result.type.toLowerCase().replace(/\s+/g, '_')}`;
+    const translatedDescription = rt(personalityKey) || description;
+    
     // Extract MBTI type: matches (INTJ) pattern
-    const mbtiMatch = description.match(/\(([A-Z]{4})\)/);
+    const mbtiMatch = translatedDescription.match(/\(([A-Z]{4})\)/);
     // Extract traits: matches "Visionary • Independent • Analytical" pattern
-    const traitsMatch = description.match(/"([^"]+)"/);
-    // Clean description: remove emoji, type name, MBTI, and traits part
-    const cleanDescription = description.replace(/^🧠\s*The\s+[A-Za-z\s]+\s*\([A-Z]{4}\)\s*–\s*"[^"]+"\s*/, '');
+    const traitsMatch = translatedDescription.match(/"([^"]+)"/);
+    // Clean description: remove emoji, type name, MBTI, and traits part - make pattern more flexible
+    const cleanDescription = translatedDescription.replace(/^[🧠🧪🧑‍💼🎯🔮🎨🌟🌈📋🤝💼🎉🔧🖌️🏔️🎭]\s*[^–]+–\s*"[^"]+"\s*/, '');
     
     return {
       mbtiType: mbtiMatch ? mbtiMatch[1] : '',
       traits: traitsMatch ? traitsMatch[1].split(' • ') : [],
-      cleanDescription: cleanDescription.trim()
+      cleanDescription: cleanDescription.trim(),
+      fullDescription: translatedDescription
     };
   };
 
-  const { mbtiType, traits, cleanDescription } = parseDescription(result.description);
+  const { mbtiType, traits, cleanDescription, fullDescription } = parseDescription(result.description);
 
   const handleViewCareers = () => {
     navigate('/detailed-results', { state: { personality, section: 'careers', fromFreeAssessment: true } });
@@ -163,7 +168,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               </div>
             </div>
             <CardTitle className="text-3xl font-bold text-primary mb-2">
-              {result.type} {mbtiType && `(${mbtiType})`}
+              {t(`personality.${result.type.toLowerCase().replace(/\s+/g, '_')}`) || result.type} {mbtiType && `(${mbtiType})`}
             </CardTitle>
             {traits.length > 0 && (
               <div className="mb-4">
