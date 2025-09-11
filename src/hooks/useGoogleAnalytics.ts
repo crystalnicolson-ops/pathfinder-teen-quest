@@ -14,9 +14,15 @@ export const useGoogleAnalytics = () => {
     // Check if gtag is available
     if (typeof window.gtag === 'function') {
       // Track page view
-      window.gtag('config', 'G-Z8NLDG4ERY', {
+      window.gtag('event', 'page_view', {
+        page_location: window.location.href,
         page_path: location.pathname + location.search,
+        page_title: document.title
       });
+      
+      console.log('GA page view tracked:', location.pathname + location.search);
+    } else {
+      console.warn('Google Analytics (gtag) not available');
     }
   }, [location]);
 };
