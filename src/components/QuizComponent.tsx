@@ -48,22 +48,38 @@ export default function QuizComponent({ onComplete }: QuizComponentProps) {
         </div>
 
         <h2 className="text-2xl font-bold mb-8 text-center text-foreground">
-          {question.text}
+          {(() => {
+            const key = `quick_quiz.q${currentQuestion + 1}`;
+            const translated = t(key);
+            return translated !== key ? translated : question.text;
+          })()}
         </h2>
 
         <div className="space-y-3">
-          {Object.entries(question.options).map(([key, option]) => (
-            <Button
-              key={key}
-              variant="card"
-              size="lg"
-              className="w-full text-left justify-start h-auto p-4 text-wrap"
-              onClick={() => handleAnswer(option.traits)}
-            >
-              <span className="font-medium mr-2">{key}.</span>
-              {option.text}
-            </Button>
-          ))}
+          {Object.entries(question.options).map(([key, option]) => {
+            const translateOption = (text: string) => {
+              const map: Record<string, string> = {
+                'Strongly Agree': t('option.strongly_agree'),
+                'Agree': t('option.agree'),
+                'Neutral': t('option.neutral'),
+                'Disagree': t('option.disagree'),
+                'Strongly Disagree': t('option.strongly_disagree'),
+              };
+              return map[text] || text;
+            };
+            return (
+              <Button
+                key={key}
+                variant="card"
+                size="lg"
+                className="w-full text-left justify-start h-auto p-4 text-wrap"
+                onClick={() => handleAnswer(option.traits)}
+              >
+                <span className="font-medium mr-2">{key}.</span>
+                {translateOption(option.text)}
+              </Button>
+            );
+          })}
         </div>
       </Card>
     </div>

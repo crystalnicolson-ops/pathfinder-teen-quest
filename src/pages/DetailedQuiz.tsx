@@ -259,10 +259,12 @@ const DetailedQuiz = () => {
           <div className="mb-8">
             <div className="flex justify-between items-center mb-2">
               <span className="text-sm font-medium text-muted-foreground">
-                Question {currentQuestion + 1} of {detailedQuestions.length}
+                {t('quiz.question_counter')
+                  .replace('{{current}}', (currentQuestion + 1).toString())
+                  .replace('{{total}}', detailedQuestions.length.toString())}
               </span>
               <span className="text-sm font-medium text-primary">
-                {Math.round(progress)}% Complete
+                {t('quiz.percent_complete').replace('{{percent}}', Math.round(progress).toString())}
               </span>
             </div>
             <Progress value={progress} className="h-3" />
@@ -273,7 +275,7 @@ const DetailedQuiz = () => {
             <div className="flex items-center gap-2 text-sm text-muted-foreground bg-muted/50 px-4 py-2 rounded-lg">
               <BookOpen className="h-4 w-4" />
               <span className="font-medium">
-                📚 Learning Style Assessment
+                📚 {t('detailed_quiz.section.learning_style')}
               </span>
             </div>
           </div>
@@ -289,10 +291,10 @@ const DetailedQuiz = () => {
               <RadioGroup value={currentAnswer} onValueChange={handleAnswerSelect}>
                 <div className="space-y-4">
                   {[
-                    { value: 'Strongly Agree', label: 'A. Strongly Agree', color: 'bg-green-100 border-green-300 text-green-800' },
-                    { value: 'Agree', label: 'B. Agree', color: 'bg-green-50 border-green-200 text-green-700' },
-                    { value: 'Disagree', label: 'C. Disagree', color: 'bg-red-50 border-red-200 text-red-700' },
-                    { value: 'Strongly Disagree', label: 'D. Strongly Disagree', color: 'bg-red-100 border-red-300 text-red-800' }
+                    { value: 'Strongly Agree', label: `A. ${t('option.strongly_agree')}`, color: 'bg-green-100 border-green-300 text-green-800' },
+                    { value: 'Agree', label: `B. ${t('option.agree')}`, color: 'bg-green-50 border-green-200 text-green-700' },
+                    { value: 'Disagree', label: `C. ${t('option.disagree')}`, color: 'bg-red-50 border-red-200 text-red-700' },
+                    { value: 'Strongly Disagree', label: `D. ${t('option.strongly_disagree')}`, color: 'bg-red-100 border-red-300 text-red-800' }
                   ].map((option) => (
                     <div key={option.value} className="flex items-center space-x-3">
                       <RadioGroupItem 
@@ -326,7 +328,7 @@ const DetailedQuiz = () => {
               className="flex items-center gap-2"
             >
               <ArrowLeft className="h-4 w-4" />
-              Previous
+              {t('common.previous')}
             </Button>
 
             <div className="flex items-center gap-2 text-muted-foreground">
@@ -342,7 +344,7 @@ const DetailedQuiz = () => {
                   />
                 ))}
               </div>
-              <span className="text-sm">Select an answer to continue</span>
+              <span className="text-sm">{t('detailed_quiz.select_to_continue')}</span>
             </div>
 
             <div className="w-[100px]"></div> {/* Spacer to maintain layout balance */}

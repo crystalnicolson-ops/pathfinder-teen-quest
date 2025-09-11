@@ -73,6 +73,20 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         'best.environments': 'Best Environments',
         'personality.traits': 'Your Personality Traits',
 
+        // Options
+        'option.strongly_agree': 'Strongly Agree',
+        'option.agree': 'Agree',
+        'option.neutral': 'Neutral',
+        'option.disagree': 'Disagree',
+        'option.strongly_disagree': 'Strongly Disagree',
+
+        // Common
+        'common.previous': 'Previous',
+
+        // Sections
+        'detailed_quiz.section.learning_style': 'Learning Style Assessment',
+        'detailed_quiz.select_to_continue': 'Select an answer to continue',
+
         'home.hero.title': "What's Your Personality Type?",
         'home.hero.subtitle': 'Take our quick personality quiz and discover careers that match your unique strengths, plus colleges that can get you there!',
         'home.hero.quick': 'Quick Assessment (Free)',
@@ -217,6 +231,20 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         // Detailed quiz translations
         'detailed_quiz.title': 'Evaluación Integral de Personalidad',
         'detailed_quiz.subtitle': 'Descubre tu perfil completo de personalidad',
+
+        // Options
+        'option.strongly_agree': 'Totalmente de acuerdo',
+        'option.agree': 'De acuerdo',
+        'option.neutral': 'Neutral',
+        'option.disagree': 'En desacuerdo',
+        'option.strongly_disagree': 'Totalmente en desacuerdo',
+
+        // Common
+        'common.previous': 'Anterior',
+
+        // Sections
+        'detailed_quiz.section.learning_style': 'Evaluación de estilo de aprendizaje',
+        'detailed_quiz.select_to_continue': 'Selecciona una respuesta para continuar',
       },
       fr: {
         'personality.quiz': 'Quiz de Personnalité',
@@ -299,6 +327,20 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         // Detailed quiz translations
         'detailed_quiz.title': 'Évaluation Complète de Personnalité',
         'detailed_quiz.subtitle': 'Découvrez votre profil de personnalité complet',
+
+        // Options
+        'option.strongly_agree': 'Tout à fait d\'accord',
+        'option.agree': 'D\'accord',
+        'option.neutral': 'Neutre',
+        'option.disagree': 'Pas d\'accord',
+        'option.strongly_disagree': 'Pas du tout d\'accord',
+
+        // Common
+        'common.previous': 'Précédent',
+
+        // Sections
+        'detailed_quiz.section.learning_style': 'Évaluation du style d’apprentissage',
+        'detailed_quiz.select_to_continue': 'Sélectionnez une réponse pour continuer',
       },
       de: {
         'personality.quiz': 'Persönlichkeitstest',
@@ -381,6 +423,20 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         // Detailed quiz translations
         'detailed_quiz.title': 'Umfassende Persönlichkeitsbewertung',
         'detailed_quiz.subtitle': 'Entdecken Sie Ihr komplettes Persönlichkeitsprofil',
+
+        // Options
+        'option.strongly_agree': 'Stimme voll zu',
+        'option.agree': 'Stimme zu',
+        'option.neutral': 'Neutral',
+        'option.disagree': 'Stimme nicht zu',
+        'option.strongly_disagree': 'Stimme überhaupt nicht zu',
+
+        // Common
+        'common.previous': 'Zurück',
+
+        // Sections
+        'detailed_quiz.section.learning_style': 'Bewertung des Lernstils',
+        'detailed_quiz.select_to_continue': 'Wählen Sie eine Antwort, um fortzufahren',
       },
       zh: {
         'personality.quiz': '性格测试',
@@ -463,6 +519,20 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         // Detailed quiz translations
         'detailed_quiz.title': '综合性格评估',
         'detailed_quiz.subtitle': '发现你完整的性格档案',
+
+        // Options
+        'option.strongly_agree': '非常同意',
+        'option.agree': '同意',
+        'option.neutral': '中立',
+        'option.disagree': '不同意',
+        'option.strongly_disagree': '非常不同意',
+
+        // Common
+        'common.previous': '上一题',
+
+        // Sections
+        'detailed_quiz.section.learning_style': '学习风格评估',
+        'detailed_quiz.select_to_continue': '选择一个答案以继续',
       },
       ja: {
         'personality.quiz': '性格診断',
