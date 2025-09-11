@@ -605,28 +605,28 @@ export default function DetailedResults() {
                     onClick={() => setSection('learning-style')}
                     className="text-sm"
                   >
-                    Learning Style
+                    {rt('learning_style')}
                   </Button>
                   <Button 
                     variant={section === 'personality' ? "default" : "outline"}
                     onClick={() => setSection('personality')}
                     className="text-sm"
                   >
-                    Personality Insights
+                    {rt('personality_insights')}
                   </Button>
                   <Button 
                     variant={section === 'careers' ? "default" : "outline"}
                     onClick={() => setSection('careers')}
                     className="text-sm"
                   >
-                    Career Matches
+                    {rt('career_matches')}
                   </Button>
                   <Button 
                     variant={section === 'study-methods' ? "default" : "outline"}
                     onClick={() => setSection('study-methods')}
                     className="text-sm"
                   >
-                    Study Methods
+                    {rt('study_methods_title')}
                   </Button>
                 </>
               )}
@@ -636,12 +636,12 @@ export default function DetailedResults() {
 
           <h1 className="text-4xl font-bold text-black mb-2">
             {(() => {
-              if (section === 'learning-style') return 'Your Learning Style';
-              if (section === 'personality') return 'Personality Insights';
-              if (section === 'careers') return 'Career Matches';
-              if (section === 'colleges') return 'College Options';
-              if (section === 'study-methods') return 'Recommended Study Methods';
-              return 'Your Complete Profile';
+              if (section === 'learning-style') return rt('your_learning_style');
+              if (section === 'personality') return rt('personality_insights');
+              if (section === 'careers') return rt('career_matches');
+              if (section === 'colleges') return rt('college_options');
+              if (section === 'study-methods') return rt('recommended_study_methods');
+              return rt('your_complete_profile');
             })()}
           </h1>
           
@@ -653,7 +653,7 @@ export default function DetailedResults() {
                 className="w-full h-full object-cover"
               />
             </div>
-            <p className="text-black/80 text-lg">For {result.type}</p>
+            <p className="text-black/80 text-lg">{rt('for_personality').replace('{type}', result.type)}</p>
           </div>
         </div>
 
@@ -664,7 +664,7 @@ export default function DetailedResults() {
               <CardHeader>
                 <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
                   <span className="text-4xl">{learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.icon}</span>
-                  {learningStyle} Learner
+                  {rt('learner').replace('{style}', learningStyle)}
                 </CardTitle>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -673,7 +673,7 @@ export default function DetailedResults() {
                 </div>
                 
                 <div className="bg-primary/5 p-6 rounded-lg border border-primary/20">
-                  <h3 className="text-xl font-semibold text-foreground mb-3">Deep Dive: What This Means for You</h3>
+                  <h3 className="text-xl font-semibold text-foreground mb-3">{rt('deep_dive_meaning')}</h3>
                   <p className="text-muted-foreground leading-relaxed">
                     {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.detailedDescription}
                   </p>
@@ -683,7 +683,7 @@ export default function DetailedResults() {
                   <div className="bg-green-50 p-6 rounded-lg border border-green-200">
                     <h3 className="text-xl font-semibold text-green-800 mb-4 flex items-center gap-2">
                       <Star className="h-5 w-5 text-green-600" />
-                      Your Learning Strengths
+                      {rt('your_learning_strengths')}
                     </h3>
                     <ul className="space-y-2">
                       {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.strengths.map((strength, index) => (
@@ -698,7 +698,7 @@ export default function DetailedResults() {
                   <div className="bg-amber-50 p-6 rounded-lg border border-amber-200">
                     <h3 className="text-xl font-semibold text-amber-800 mb-4 flex items-center gap-2">
                       <TrendingUp className="h-5 w-5 text-amber-600" />
-                      Areas to Watch
+                      {rt('areas_to_watch')}
                     </h3>
                     <ul className="space-y-2">
                       {learningStyleDetails[learningStyle as keyof typeof learningStyleDetails]?.challenges.map((challenge, index) => (
@@ -719,7 +719,7 @@ export default function DetailedResults() {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
                   <GraduationCap className="h-7 w-7 text-primary" />
-                  Your Personalized Study Strategies
+                  {rt('your_personalized_study_strategies')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -743,7 +743,7 @@ export default function DetailedResults() {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
                   <Users className="h-7 w-7 text-primary" />
-                  Academic Success Tips
+                  {rt('academic_success_tips')}
                 </CardTitle>
               </CardHeader>
               <CardContent>
@@ -768,12 +768,12 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
                 <GraduationCap className="h-8 w-8 text-primary" />
-                Personalized Study Methods
+                {rt('personalized_study_methods')}
               </CardTitle>
             </CardHeader>
             <CardContent className="space-y-6">
               <div className="text-lg text-muted-foreground">
-                Based on your {learningStyle} learning style, these study methods will help you learn most effectively:
+                {rt('based_on_learning_style').replace('{style}', learningStyle)}
               </div>
               
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
@@ -1055,7 +1055,7 @@ export default function DetailedResults() {
               {/* Personality Traits */}
               {result.traits && result.traits.length > 0 && (
                 <div className="mt-6">
-                  <h3 className="text-lg font-semibold text-foreground mb-4">Your Key Traits</h3>
+                  <h3 className="text-lg font-semibold text-foreground mb-4">{rt('your_key_traits')}</h3>
                   <div className="grid gap-4">
                     {result.traits.map((trait) => (
                       <div key={trait.name} className="space-y-2">
@@ -1084,9 +1084,9 @@ export default function DetailedResults() {
             <Card className="bg-white/95 backdrop-blur-sm shadow-card">
               <CardHeader className="pb-2">
                 <CardTitle className="text-lg font-bold text-foreground">
-                  Career Alignment (Based on your learning style)
+                  {rt('career_alignment_learning')}
                 </CardTitle>
-                <p className="text-muted-foreground text-xs">These paths naturally fit how you learn.</p>
+                <p className="text-muted-foreground text-xs">{rt('career_alignment_desc')}</p>
               </CardHeader>
               <CardContent className="pt-0 pb-4">
                 <ul className="grid md:grid-cols-2 gap-0">
@@ -1104,11 +1104,10 @@ export default function DetailedResults() {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                   <Users className="h-6 w-6 text-primary" />
-                  Entry Level Career Matches
+                  {rt('entry_level_career_matches')}
                 </CardTitle>
                 <p className="text-muted-foreground mt-2">
-                  Start your career journey with these entry-level positions that match your personality and provide 
-                  a strong foundation for future growth.
+                  {rt('entry_level_desc')}
                 </p>
               </CardHeader>
               <CardContent className="grid md:grid-cols-2 gap-6">
@@ -1116,18 +1115,18 @@ export default function DetailedResults() {
                   <div key={index} className="border rounded-lg p-4 bg-gradient-card">
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
-                      <Badge variant="secondary" className="ml-2">Entry Level</Badge>
+                      <Badge variant="secondary" className="ml-2">{rt('entry_level_badge')}</Badge>
                     </div>
                     <p className="text-muted-foreground mb-4">{career.description}</p>
                     
                     {/* Why it's perfect section */}
                     <div className="bg-primary/5 p-3 rounded-md mb-4">
-                      <h4 className="text-sm font-semibold text-primary mb-2">🎯 Why Start Here:</h4>
+                      <h4 className="text-sm font-semibold text-primary mb-2">{rt('why_start_here')}</h4>
                       <ul className="text-xs text-muted-foreground space-y-1">
-                        <li>• Perfect introduction to your field of interest</li>
-                        <li>• Builds foundational skills and experience</li>
-                        <li>• Provides mentorship and learning opportunities</li>
-                        <li>• Clear progression path to advanced roles</li>
+                        <li>{rt('perfect_intro')}</li>
+                        <li>{rt('builds_skills')}</li>
+                        <li>{rt('provides_mentorship')}</li>
+                        <li>{rt('clear_progression')}</li>
                       </ul>
                     </div>
                     
@@ -1135,13 +1134,13 @@ export default function DetailedResults() {
                       <div className="flex items-center gap-2">
                         <TrendingUp className="h-4 w-4 text-secondary" />
                         <span className="text-sm">
-                          <strong>Starting Salary:</strong> {career.averageSalary}
+                          <strong>{rt('starting_salary')}:</strong> {career.averageSalary}
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <TrendingUp className="h-4 w-4 text-secondary" />
                         <span className="text-sm">
-                          <strong>Job Growth:</strong> {career.jobGrowth}
+                          <strong>{rt('job_growth')}:</strong> {career.jobGrowth}
                         </span>
                       </div>
                     </div>
@@ -1151,7 +1150,7 @@ export default function DetailedResults() {
                       onClick={() => window.open(career.indeedLink, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4" />
-                      View Entry Jobs on Indeed
+                      {rt('view_entry_jobs')}
                     </div>
                   </div>
                 ))}
@@ -1163,11 +1162,10 @@ export default function DetailedResults() {
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                   <Star className="h-6 w-6 text-primary" />
-                  Advanced Career Opportunities
+                  {rt('advanced_career_opportunities')}
                 </CardTitle>
                 <p className="text-muted-foreground mt-2">
-                  With experience and expertise, you can advance to these leadership and specialized roles that 
-                  maximize your strategic thinking abilities.
+                  {rt('advanced_desc')}
                 </p>
               </CardHeader>
               <CardContent className="grid md:grid-cols-2 gap-6">
@@ -1175,18 +1173,18 @@ export default function DetailedResults() {
                   <div key={index} className="border rounded-lg p-4 bg-gradient-card border-primary/20">
                     <div className="flex items-start justify-between mb-2">
                       <h3 className="text-xl font-semibold text-foreground">{career.title}</h3>
-                      <Badge variant="default" className="ml-2 bg-primary">Advanced</Badge>
+                      <Badge variant="default" className="ml-2 bg-primary">{rt('advanced_badge')}</Badge>
                     </div>
                     <p className="text-muted-foreground mb-4">{career.description}</p>
                     
                     {/* Why it's perfect section */}
                     <div className="bg-primary/10 p-3 rounded-md mb-4 border border-primary/20">
-                      <h4 className="text-sm font-semibold text-primary mb-2">🚀 Advanced Impact:</h4>
+                      <h4 className="text-sm font-semibold text-primary mb-2">{rt('advanced_impact')}</h4>
                       <ul className="text-xs text-muted-foreground space-y-1">
-                        <li>• Lead strategic initiatives and complex projects</li>
-                        <li>• Utilize advanced analytical and planning skills</li>
-                        <li>• Mentor others and shape organizational direction</li>
-                        <li>• Maximum autonomy and intellectual challenge</li>
+                        <li>{rt('lead_strategic')}</li>
+                        <li>{rt('utilize_advanced')}</li>
+                        <li>{rt('mentor_others')}</li>
+                        <li>{rt('maximum_autonomy')}</li>
                       </ul>
                     </div>
                     
@@ -1194,13 +1192,13 @@ export default function DetailedResults() {
                       <div className="flex items-center gap-2">
                         <TrendingUp className="h-4 w-4 text-secondary" />
                         <span className="text-sm">
-                          <strong>Senior Salary:</strong> {career.averageSalary}
+                          <strong>{rt('senior_salary')}:</strong> {career.averageSalary}
                         </span>
                       </div>
                       <div className="flex items-center gap-2">
                         <TrendingUp className="h-4 w-4 text-secondary" />
                         <span className="text-sm">
-                          <strong>Job Growth:</strong> {career.jobGrowth}
+                          <strong>{rt('job_growth')}:</strong> {career.jobGrowth}
                         </span>
                       </div>
                     </div>
@@ -1210,7 +1208,7 @@ export default function DetailedResults() {
                       onClick={() => window.open(career.indeedLink, '_blank')}
                     >
                       <ExternalLink className="h-4 w-4" />
-                      View Senior Roles on Indeed
+                      {rt('view_senior_roles')}
                     </div>
                   </div>
                 ))}
@@ -1227,10 +1225,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-primary" />
-                 Tier 1
+                 {rt('tier_1')}
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Super competitive, for the bold and brilliant. Acceptance rates ≤5%.
+                {rt('tier_1_desc')}
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
@@ -1251,18 +1249,18 @@ export default function DetailedResults() {
                     <div className="mb-4">
                       <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
                         <Star className="h-3 w-3 text-primary" />
-                        Perfect Match for {result.type}
+                        {rt('perfect_match_for').replace('{type}', result.type)}
                       </h4>
                       <div className="space-y-2">
                         {college.whyGoodFit && (
                           <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-3 rounded-lg border border-primary/20">
-                            <h5 className="font-medium text-primary mb-1 text-xs">Why This Is A Great Fit:</h5>
+                            <h5 className="font-medium text-primary mb-1 text-xs">{rt('why_great_fit')}</h5>
                             <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                          </div>
                        )}
                         {college.relevantMajors && college.relevantMajors.length > 0 && (
                           <div className="bg-secondary/30 p-3 rounded-lg">
-                            <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
+                            <h5 className="font-medium text-foreground mb-2 text-xs">{rt('recommended_majors')}</h5>
                             <div className="flex flex-wrap gap-1">
                               {college.relevantMajors.map((major, index) => (
                                 <span key={index} className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium border border-primary/20">
@@ -1283,7 +1281,7 @@ export default function DetailedResults() {
                   onClick={() => window.open(college.website, '_blank')}
                 >
                   <ExternalLink className="h-3 w-3" />
-                  Visit Website
+                  {rt('visit_website')}
                 </div>
                 </div>
               ))}
@@ -1295,10 +1293,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-secondary" />
-                 Tier 2
+                 {rt('tier_2')}
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Competitive but possible with standout stats. Acceptance rates 5%–8%.
+                {rt('tier_2_desc')}
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
@@ -1319,18 +1317,18 @@ export default function DetailedResults() {
                     <div className="mb-4">
                       <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
                         <Star className="h-3 w-3 text-secondary" />
-                        Great Match for {result.type}
+                        {rt('perfect_match_for').replace('{type}', result.type)}
                       </h4>
                       <div className="space-y-2">
                         {college.whyGoodFit && (
                           <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 p-3 rounded-lg border border-secondary/20">
-                            <h5 className="font-medium text-secondary mb-1 text-xs">Why This Is A Great Fit:</h5>
+                            <h5 className="font-medium text-secondary mb-1 text-xs">{rt('why_great_fit')}</h5>
                             <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                           </div>
                         )}
                         {college.relevantMajors && college.relevantMajors.length > 0 && (
                           <div className="bg-secondary/30 p-3 rounded-lg">
-                            <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
+                            <h5 className="font-medium text-foreground mb-2 text-xs">{rt('recommended_majors')}</h5>
                             <div className="flex flex-wrap gap-1">
                               {college.relevantMajors.map((major, index) => (
                                 <span key={index} className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium border border-secondary/20">
@@ -1351,7 +1349,7 @@ export default function DetailedResults() {
                     onClick={() => window.open(college.website, '_blank')}
                   >
                     <ExternalLink className="h-3 w-3" />
-                    Visit Website
+                    {rt('visit_website')}
                   </div>
                 </div>
               ))}
@@ -1363,10 +1361,10 @@ export default function DetailedResults() {
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-blue-600" />
-                 Tier 3
+                 {rt('tier_3')}
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                High-quality, realistic choices for many students. Acceptance rates 8%–20%.
+                {rt('tier_3_desc')}
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
