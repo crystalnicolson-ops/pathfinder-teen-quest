@@ -10,10 +10,12 @@ import Header from '@/components/Header';
 import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion, AnswerType } from '@/data/detailedQuiz';
 import { useToast } from '@/components/ui/use-toast';
 import { PAYMENT_LINK_URL } from '@/config/payments';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 const DetailedQuiz = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
+  const { t } = useLanguage();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ question: DetailedQuestion; answer: AnswerType }[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState<AnswerType | ''>('');
@@ -141,19 +143,19 @@ const DetailedQuiz = () => {
       }));
 
       if (!PAYMENT_LINK_URL) {
-        throw new Error('Payment link not set. Please add your Stripe Payment Link in src/config/payments.ts');
+        throw new Error(t('quiz.error_payment_link'));
       }
 
       // Open Stripe checkout in a new tab
       window.open(PAYMENT_LINK_URL, '_blank');
       toast({
-        title: 'Payment Opened',
-        description: 'Complete the payment, then return to view your results.',
+        title: t('quiz.payment_opened'),
+        description: t('quiz.payment_opened_desc'),
       });
     } catch (error: any) {
       console.error('Payment error:', error);
       toast({
-        title: 'Payment Error',
+        title: t('quiz.payment_error'),
         description: error.message || 'Failed to open payment link.',
         variant: 'destructive',
       });
@@ -189,19 +191,19 @@ const DetailedQuiz = () => {
         <div className="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 flex items-center justify-center">
           <Card className="max-w-md mx-auto">
             <CardHeader>
-              <CardTitle className="text-center">Complete Your Assessment</CardTitle>
+              <CardTitle className="text-center">{t('payment.congratulations')}</CardTitle>
             </CardHeader>
             <CardContent className="text-center space-y-6">
               <div className="space-y-2">
-                <p className="text-lg font-medium">Unlock Your Detailed Results</p>
+                <p className="text-lg font-medium">{t('payment.quiz_complete')}</p>
                 <p className="text-muted-foreground">
-                  Get comprehensive insights into your personality, learning style, and career recommendations.
+                  {t('payment.unlock_results')}
                 </p>
               </div>
               
               <div className="bg-primary/10 p-4 rounded-lg">
                 <p className="text-2xl font-bold text-primary">$9.97</p>
-                <p className="text-sm text-muted-foreground">One-time payment</p>
+                <p className="text-sm text-muted-foreground">{t('payment.one_time')}</p>
               </div>
 
               <div className="space-y-2">
@@ -212,14 +214,14 @@ const DetailedQuiz = () => {
                   size="lg"
                 >
                   <CreditCard className="mr-2 h-4 w-4" />
-                  {isProcessingPayment ? 'Processing...' : 'Get My Results'}
+                  {isProcessingPayment ? t('quiz.processing') : t('payment.get_results')}
                 </Button>
                 <Button 
                   variant="outline" 
                   onClick={() => setShowPaymentPrompt(false)}
                   className="w-full"
                 >
-                  Back to Quiz
+                  {t('payment.back_to_quiz')}
                 </Button>
                 <Button 
                   variant="ghost"
@@ -245,11 +247,11 @@ const DetailedQuiz = () => {
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Crown className="h-6 w-6 text-primary" />
-              📊 Learning Style & Personality Test Results
+              📊 {t('detailed_quiz.title')}
               <Crown className="h-6 w-6 text-primary" />
             </div>
             <p className="text-muted-foreground">
-              50-Question Personality + Learning Style Test - Select how much you agree with each statement
+              {t('detailed_quiz.subtitle')}
             </p>
           </div>
 

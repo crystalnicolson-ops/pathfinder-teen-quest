@@ -4,6 +4,7 @@ import { Card } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { questions, calculateMBTI } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface QuizComponentProps {
   onComplete: (personality: PersonalityType) => void;
@@ -12,6 +13,7 @@ interface QuizComponentProps {
 export default function QuizComponent({ onComplete }: QuizComponentProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ traits: string[] }[]>([]);
+  const { t } = useLanguage();
 
   const progress = ((currentQuestion + 1) / questions.length) * 100;
 
@@ -36,10 +38,10 @@ export default function QuizComponent({ onComplete }: QuizComponentProps) {
         <div className="mb-6">
           <div className="flex justify-between items-center mb-4">
             <span className="text-sm font-medium text-muted-foreground">
-              Question {currentQuestion + 1} of {questions.length}
+              {t('quiz.question_counter').replace('{{current}}', (currentQuestion + 1).toString()).replace('{{total}}', questions.length.toString())}
             </span>
             <span className="text-sm font-medium text-primary">
-              {Math.round(progress)}% Complete
+              {t('quiz.percent_complete').replace('{{percent}}', Math.round(progress).toString())}
             </span>
           </div>
           <Progress value={progress} className="h-2" />

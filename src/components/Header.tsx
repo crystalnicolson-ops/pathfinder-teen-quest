@@ -2,6 +2,7 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Home } from 'lucide-react';
 import LanguageSelector from './LanguageSelector';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface HeaderProps {
   onHome: () => void;
@@ -10,6 +11,7 @@ interface HeaderProps {
 
 export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
   const hasPremium = typeof window !== 'undefined' && localStorage.getItem('hasPaidPremium') === 'true';
+  const { t } = useLanguage();
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-white/20">
@@ -32,8 +34,8 @@ export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
                 size="sm"
                 className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black transition-all duration-300"
               >
-                <Home className="h-4 w-4 mr-2" />
-                Home
+              <Home className="h-4 w-4 mr-2" />
+              {t('home')}
               </Button>
             )}
           </div>

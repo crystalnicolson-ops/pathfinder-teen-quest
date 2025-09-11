@@ -8,6 +8,7 @@ import { personalityResults } from '@/data/quiz';
 import { PersonalityType, College, CollegeTiers } from '@/types/quiz';
 
 import { useToast } from '@/components/ui/use-toast';
+import { useLanguage } from '@/contexts/LanguageContext';
 import { PAYMENT_LINK_URL, PAYMENT_SUCCESS_PARAM, PAYMENT_SUCCESS_VALUE } from '@/config/payments';
 
 // Import all personality avatars
@@ -126,6 +127,7 @@ export default function DetailedResults() {
   const [personality, setPersonality] = useState(null);
   const [section, setSection] = useState('personality');
   const [freeAssessmentAccess, setFreeAssessmentAccess] = useState(false);
+  const { t } = useLanguage();
   
   // Scroll to top when section changes
   useEffect(() => {
@@ -222,7 +224,7 @@ export default function DetailedResults() {
         <Card className="max-w-md mx-auto">
           <CardContent className="text-center py-8">
             <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-            <p>Verifying payment...</p>
+            <p>{t('quiz.verifying_payment')}</p>
           </CardContent>
         </Card>
       </div>

@@ -127,6 +127,28 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         'personality.the_artist': 'The Artist',
         'personality.the_adventurer': 'The Adventurer',
         'personality.the_performer': 'The Performer',
+
+        // Quiz interface translations
+        'quiz.question_counter': 'Question {{current}} of {{total}}',
+        'quiz.percent_complete': '{{percent}}% Complete',
+        'quiz.processing': 'Processing...',
+        'quiz.verifying_payment': 'Verifying payment...',
+        'quiz.payment_error': 'Payment Error',
+        'quiz.payment_opened': 'Payment Opened',
+        'quiz.payment_opened_desc': 'Complete the payment, then return to view your results.',
+        'quiz.error_payment_link': 'Payment link not set. Please add your Stripe Payment Link.',
+
+        // Payment screen translations
+        'payment.congratulations': 'Congratulations! 🎉',
+        'payment.quiz_complete': 'Your comprehensive assessment is complete!',
+        'payment.unlock_results': 'Unlock your detailed personality analysis with career recommendations and college matches.',
+        'payment.one_time': 'One-time payment',
+        'payment.get_results': 'Get My Results',
+        'payment.back_to_quiz': 'Back to Quiz',
+        
+        // Detailed quiz translations
+        'detailed_quiz.title': 'Comprehensive Personality Assessment',
+        'detailed_quiz.subtitle': 'Discover your complete personality profile',
       },
       es: {
         'personality.quiz': 'Quiz de Personalidad',
@@ -187,6 +209,28 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         'personality.the_artist': 'El Artista',
         'personality.the_adventurer': 'El Aventurero',
         'personality.the_performer': 'El Artista',
+
+        // Quiz interface translations
+        'quiz.question_counter': 'Pregunta {{current}} de {{total}}',
+        'quiz.percent_complete': '{{percent}}% Completo',
+        'quiz.processing': 'Procesando...',
+        'quiz.verifying_payment': 'Verificando pago...',
+        'quiz.payment_error': 'Error de Pago',
+        'quiz.payment_opened': 'Pago Abierto',
+        'quiz.payment_opened_desc': 'Completa el pago, luego regresa para ver tus resultados.',
+        'quiz.error_payment_link': 'Enlace de pago no configurado. Por favor añade tu enlace de pago de Stripe.',
+
+        // Payment screen translations
+        'payment.congratulations': '¡Felicitaciones! 🎉',
+        'payment.quiz_complete': '¡Tu evaluación integral está completa!',
+        'payment.unlock_results': 'Desbloquea tu análisis detallado de personalidad con recomendaciones de carrera y opciones universitarias.',
+        'payment.one_time': 'Pago único',
+        'payment.get_results': 'Obtener Mis Resultados',
+        'payment.back_to_quiz': 'Volver al Quiz',
+        
+        // Detailed quiz translations
+        'detailed_quiz.title': 'Evaluación Integral de Personalidad',
+        'detailed_quiz.subtitle': 'Descubre tu perfil completo de personalidad',
       },
       fr: {
         'personality.quiz': 'Quiz de Personnalité',
@@ -247,6 +291,28 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         'personality.the_artist': 'L\'Artiste',
         'personality.the_adventurer': 'L\'Aventurier',
         'personality.the_performer': 'L\'Artiste',
+
+        // Quiz interface translations
+        'quiz.question_counter': 'Question {{current}} sur {{total}}',
+        'quiz.percent_complete': '{{percent}}% Terminé',
+        'quiz.processing': 'Traitement...',
+        'quiz.verifying_payment': 'Vérification du paiement...',
+        'quiz.payment_error': 'Erreur de Paiement',
+        'quiz.payment_opened': 'Paiement Ouvert',
+        'quiz.payment_opened_desc': 'Complétez le paiement, puis revenez pour voir vos résultats.',
+        'quiz.error_payment_link': 'Lien de paiement non configuré. Veuillez ajouter votre lien de paiement Stripe.',
+
+        // Payment screen translations
+        'payment.congratulations': 'Félicitations ! 🎉',
+        'payment.quiz_complete': 'Votre évaluation complète est terminée !',
+        'payment.unlock_results': 'Débloquez votre analyse détaillée de personnalité avec des recommandations de carrière et d\'universités.',
+        'payment.one_time': 'Paiement unique',
+        'payment.get_results': 'Obtenir Mes Résultats',
+        'payment.back_to_quiz': 'Retour au Quiz',
+        
+        // Detailed quiz translations
+        'detailed_quiz.title': 'Évaluation Complète de Personnalité',
+        'detailed_quiz.subtitle': 'Découvrez votre profil de personnalité complet',
       },
       de: {
         'personality.quiz': 'Persönlichkeitstest',
@@ -307,6 +373,28 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         'personality.the_artist': 'Der Künstler',
         'personality.the_adventurer': 'Der Abenteurer',
         'personality.the_performer': 'Der Darsteller',
+
+        // Quiz interface translations
+        'quiz.question_counter': 'Frage {{current}} von {{total}}',
+        'quiz.percent_complete': '{{percent}}% Abgeschlossen',
+        'quiz.processing': 'Verarbeitung...',
+        'quiz.verifying_payment': 'Zahlung verifizieren...',
+        'quiz.payment_error': 'Zahlungsfehler',
+        'quiz.payment_opened': 'Zahlung Geöffnet',
+        'quiz.payment_opened_desc': 'Schließen Sie die Zahlung ab, dann kehren Sie zurück, um Ihre Ergebnisse zu sehen.',
+        'quiz.error_payment_link': 'Zahlungslink nicht gesetzt. Bitte fügen Sie Ihren Stripe-Zahlungslink hinzu.',
+
+        // Payment screen translations
+        'payment.congratulations': 'Herzlichen Glückwunsch! 🎉',
+        'payment.quiz_complete': 'Ihre umfassende Bewertung ist abgeschlossen!',
+        'payment.unlock_results': 'Schalten Sie Ihre detaillierte Persönlichkeitsanalyse mit Karriereempfehlungen und Hochschuloptionen frei.',
+        'payment.one_time': 'Einmalige Zahlung',
+        'payment.get_results': 'Meine Ergebnisse Erhalten',
+        'payment.back_to_quiz': 'Zurück zum Quiz',
+        
+        // Detailed quiz translations
+        'detailed_quiz.title': 'Umfassende Persönlichkeitsbewertung',
+        'detailed_quiz.subtitle': 'Entdecken Sie Ihr komplettes Persönlichkeitsprofil',
       },
       zh: {
         'personality.quiz': '性格测试',
@@ -367,6 +455,28 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         'personality.the_artist': '艺术家',
         'personality.the_adventurer': '冒险家',
         'personality.the_performer': '表演者',
+
+        // Quiz interface translations
+        'quiz.question_counter': '第{{current}}题，共{{total}}题',
+        'quiz.percent_complete': '已完成{{percent}}%',
+        'quiz.processing': '处理中...',
+        'quiz.verifying_payment': '验证支付...',
+        'quiz.payment_error': '支付错误',
+        'quiz.payment_opened': '支付已打开',
+        'quiz.payment_opened_desc': '完成支付，然后返回查看结果。',
+        'quiz.error_payment_link': '未设置支付链接。请添加您的Stripe支付链接。',
+
+        // Payment screen translations
+        'payment.congratulations': '恭喜！🎉',
+        'payment.quiz_complete': '您的综合评估已完成！',
+        'payment.unlock_results': '解锁您的详细性格分析，包括职业推荐和大学匹配。',
+        'payment.one_time': '一次性付款',
+        'payment.get_results': '获取我的结果',
+        'payment.back_to_quiz': '返回测试',
+        
+        // Detailed quiz translations
+        'detailed_quiz.title': '综合性格评估',
+        'detailed_quiz.subtitle': '发现你完整的性格档案',
       },
       ja: {
         'personality.quiz': '性格診断',
@@ -427,10 +537,32 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         'personality.the_artist': 'アーティスト',
         'personality.the_adventurer': '冒険家',
         'personality.the_performer': 'パフォーマー',
+
+        // Quiz interface translations
+        'quiz.question_counter': '{{current}}/{{total}}問目',
+        'quiz.percent_complete': '{{percent}}%完了',
+        'quiz.processing': '処理中...',
+        'quiz.verifying_payment': '支払いを確認中...',
+        'quiz.payment_error': '支払いエラー',
+        'quiz.payment_opened': '支払いが開かれました',
+        'quiz.payment_opened_desc': '支払いを完了してから、結果を見るために戻ってください。',
+        'quiz.error_payment_link': '支払いリンクが設定されていません。Stripe支払いリンクを追加してください。',
+
+        // Payment screen translations
+        'payment.congratulations': 'おめでとうございます！🎉',
+        'payment.quiz_complete': '包括的な診断が完了しました！',
+        'payment.unlock_results': 'キャリア推薦と大学マッチングを含む詳細な性格分析をアンロックしましょう。',
+        'payment.one_time': '一回限りの支払い',
+        'payment.get_results': '結果を取得',
+        'payment.back_to_quiz': 'クイズに戻る',
+        
+        // Detailed quiz translations
+        'detailed_quiz.title': '包括的性格診断',
+        'detailed_quiz.subtitle': '完全な性格プロフィールを発見',
       },
     };
 
-    return translations[currentLanguage.code]?.[key] || translations['en'][key] || key;
+    return translations[currentLanguage.code]?.[key] || translations['en'][key] || key.replace(/\{\{(\w+)\}\}/g, (match, param) => `{${param}}`);
   };
 
   return (
