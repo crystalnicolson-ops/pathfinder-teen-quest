@@ -559,40 +559,66 @@ export default function DetailedResults() {
           )}
           
           {/* Section Navigation Tabs (Sticky) */}
-          {!freeAssessmentAccess && (
           <div className="sticky top-0 z-30 -mx-4 px-4 py-3 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
             <div className="flex flex-wrap gap-2 justify-center">
-              <Button 
-                variant={section === 'learning-style' ? "default" : "outline"}
-                onClick={() => setSection('learning-style')}
-                className="text-sm"
-              >
-                Learning Style
-              </Button>
-              <Button 
-                variant={section === 'personality' ? "default" : "outline"}
-                onClick={() => setSection('personality')}
-                className="text-sm"
-              >
-                Personality Insights
-              </Button>
-              <Button 
-                variant={section === 'careers' ? "default" : "outline"}
-                onClick={() => setSection('careers')}
-                className="text-sm"
-              >
-                Career Matches
-              </Button>
-              <Button 
-                variant={section === 'study-methods' ? "default" : "outline"}
-                onClick={() => setSection('study-methods')}
-                className="text-sm"
-              >
-                Study Methods
-              </Button>
+              {freeAssessmentAccess ? (
+                <>
+                  <Button 
+                    variant={section === 'personality' ? "default" : "outline"}
+                    onClick={() => setSection('personality')}
+                    className="text-sm"
+                  >
+                    Personality
+                  </Button>
+                  <Button 
+                    variant={section === 'careers' ? "default" : "outline"}
+                    onClick={() => setSection('careers')}
+                    className="text-sm"
+                  >
+                    Careers
+                  </Button>
+                  <Button 
+                    variant={section === 'colleges' ? "default" : "outline"}
+                    onClick={() => setSection('colleges')}
+                    className="text-sm"
+                  >
+                    Colleges
+                  </Button>
+                </>
+              ) : (
+                <>
+                  <Button 
+                    variant={section === 'learning-style' ? "default" : "outline"}
+                    onClick={() => setSection('learning-style')}
+                    className="text-sm"
+                  >
+                    Learning Style
+                  </Button>
+                  <Button 
+                    variant={section === 'personality' ? "default" : "outline"}
+                    onClick={() => setSection('personality')}
+                    className="text-sm"
+                  >
+                    Personality Insights
+                  </Button>
+                  <Button 
+                    variant={section === 'careers' ? "default" : "outline"}
+                    onClick={() => setSection('careers')}
+                    className="text-sm"
+                  >
+                    Career Matches
+                  </Button>
+                  <Button 
+                    variant={section === 'study-methods' ? "default" : "outline"}
+                    onClick={() => setSection('study-methods')}
+                    className="text-sm"
+                  >
+                    Study Methods
+                  </Button>
+                </>
+              )}
             </div>
           </div>
-          )}
 
 
           <h1 className="text-4xl font-bold text-black mb-2">
@@ -1548,43 +1574,72 @@ export default function DetailedResults() {
         )}
 
         {/* Navigation Tabs at Bottom */}
-        {!freeAssessmentAccess && (
         <div className="flex justify-center gap-4 mt-8 pb-8">
-          <Button
-            variant="outline"
-            size="lg"
-            onClick={() => {
-              console.log('=== PERSONALITY BUTTON CLICKED ===');
-              navigate('/', { state: { showResults: true, personality } });
-            }}
-            className="px-6 py-3"
-          >
-            Personality Profile
-          </Button>
-          <Button
-            variant={section === 'careers' ? "default" : "outline"}
-            size="lg"
-            onClick={() => {
-              console.log('Clicking Career Matches button');
-              navigate('/detailed-results', { state: { personality, section: 'careers' } });
-            }}
-            className="px-6 py-3"
-          >
-            Career Matches
-          </Button>
-          <Button
-            variant={section === 'colleges' ? "default" : "outline"}
-            size="lg"
-            onClick={() => {
-              console.log('Clicking College Options button');
-              navigate('/detailed-results', { state: { personality, section: 'colleges' } });
-            }}
-            className="px-6 py-3"
-          >
-            College Options
-          </Button>
+          {freeAssessmentAccess ? (
+            <>
+              <Button
+                variant={section === 'personality' ? "default" : "outline"}
+                size="lg"
+                onClick={() => setSection('personality')}
+                className="px-6 py-3"
+              >
+                Personality
+              </Button>
+              <Button
+                variant={section === 'careers' ? "default" : "outline"}
+                size="lg"
+                onClick={() => setSection('careers')}
+                className="px-6 py-3"
+              >
+                Career Matches
+              </Button>
+              <Button
+                variant={section === 'colleges' ? "default" : "outline"}
+                size="lg"
+                onClick={() => setSection('colleges')}
+                className="px-6 py-3"
+              >
+                College Options
+              </Button>
+            </>
+          ) : (
+            <>
+              <Button
+                variant="outline"
+                size="lg"
+                onClick={() => {
+                  console.log('=== PERSONALITY BUTTON CLICKED ===');
+                  navigate('/', { state: { showResults: true, personality } });
+                }}
+                className="px-6 py-3"
+              >
+                Personality Profile
+              </Button>
+              <Button
+                variant={section === 'careers' ? "default" : "outline"}
+                size="lg"
+                onClick={() => {
+                  console.log('Clicking Career Matches button');
+                  navigate('/detailed-results', { state: { personality, section: 'careers' } });
+                }}
+                className="px-6 py-3"
+              >
+                Career Matches
+              </Button>
+              <Button
+                variant={section === 'colleges' ? "default" : "outline"}
+                size="lg"
+                onClick={() => {
+                  console.log('Clicking College Options button');
+                  navigate('/detailed-results', { state: { personality, section: 'colleges' } });
+                }}
+                className="px-6 py-3"
+              >
+                College Options
+              </Button>
+            </>
+          )}
         </div>
-        )}
 
       </div>
     </div>
