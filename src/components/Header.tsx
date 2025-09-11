@@ -9,8 +9,6 @@ interface HeaderProps {
 }
 
 export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
-  if (!showHomeButton) return null;
-
   const hasPremium = typeof window !== 'undefined' && localStorage.getItem('hasPaidPremium') === 'true';
 
   return (
@@ -27,15 +25,17 @@ export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
           
           <div className="flex items-center gap-3">
             <LanguageSelector />
-            <Button
-              variant="outline" 
-              onClick={onHome}
-              size="sm"
-              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black transition-all duration-300"
-            >
-              <Home className="h-4 w-4 mr-2" />
-              Home
-            </Button>
+            {showHomeButton && (
+              <Button
+                variant="outline" 
+                onClick={onHome}
+                size="sm"
+                className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black transition-all duration-300"
+              >
+                <Home className="h-4 w-4 mr-2" />
+                Home
+              </Button>
+            )}
           </div>
         </div>
       </div>
