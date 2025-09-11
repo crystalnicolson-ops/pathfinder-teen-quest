@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 
 declare global {
@@ -9,20 +9,20 @@ declare global {
 
 export const useGoogleAnalytics = () => {
   const location = useLocation();
+  const isFirstLoadRef = useRef(true);
 
   useEffect(() => {
-    // Check if gtag is available
     if (typeof window.gtag === 'function') {
-      // Track page view
-      window.gtag('event', 'page_view', {
-        page_location: window.location.href,
+      // Avoid double-counting: initial page_view is sent by index.html snippet
+      if (isFirstLoadRef.current) {
+        isFirstLoadRef.current = false;
+        return;
+      }
+
+      window.gtag('config', 'G-MPL1M94Y56', {
         page_path: location.pathname + location.search,
-        page_title: document.title
       });
-      
-      console.log('GA page view tracked:', location.pathname + location.search);
-    } else {
-      console.warn('Google Analytics (gtag) not available');
+      // console.debug('GA4 page_view sent via config:', location.pathname + location.search);
     }
   }, [location]);
 };
