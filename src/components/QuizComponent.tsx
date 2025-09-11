@@ -14,14 +14,15 @@ export default function QuizComponent({ onComplete }: QuizComponentProps) {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ traits: string[] }[]>([]);
   const { t } = useLanguage();
+  const totalQuestions = Math.min(10, questions.length);
 
-  const progress = ((currentQuestion + 1) / questions.length) * 100;
+  const progress = ((currentQuestion + 1) / totalQuestions) * 100;
 
   const handleAnswer = (traits: string[]) => {
     const newAnswers = [...answers, { traits }];
     setAnswers(newAnswers);
 
-    if (currentQuestion < questions.length - 1) {
+    if (currentQuestion < totalQuestions - 1) {
       setCurrentQuestion(currentQuestion + 1);
     } else {
       // Calculate MBTI personality type
@@ -38,7 +39,7 @@ export default function QuizComponent({ onComplete }: QuizComponentProps) {
         <div className="mb-6">
           <div className="flex justify-between items-center mb-4">
             <span className="text-sm font-medium text-muted-foreground">
-              {t('quiz.question_counter').replace('{{current}}', (currentQuestion + 1).toString()).replace('{{total}}', questions.length.toString())}
+              {t('quiz.question_counter').replace('{{current}}', (currentQuestion + 1).toString()).replace('{{total}}', totalQuestions.toString())}
             </span>
             <span className="text-sm font-medium text-primary">
               {t('quiz.percent_complete').replace('{{percent}}', Math.round(progress).toString())}
