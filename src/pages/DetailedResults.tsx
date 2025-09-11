@@ -1594,7 +1594,7 @@ export default function DetailedResults() {
                 onClick={() => setSection('personality')}
                 className="px-6 py-3"
               >
-                Personality
+                {rt('personality_insights')}
               </Button>
               <Button
                 variant={section === 'careers' ? "default" : "outline"}
@@ -1602,7 +1602,7 @@ export default function DetailedResults() {
                 onClick={() => setSection('careers')}
                 className="px-6 py-3"
               >
-                Career Matches
+                {rt('career_matches')}
               </Button>
               <Button
                 variant={section === 'colleges' ? "default" : "outline"}
@@ -1610,7 +1610,7 @@ export default function DetailedResults() {
                 onClick={() => setSection('colleges')}
                 className="px-6 py-3"
               >
-                College Options
+                {rt('college_options')}
               </Button>
             </>
           ) : (
@@ -1624,7 +1624,7 @@ export default function DetailedResults() {
                 }}
                 className="px-6 py-3"
               >
-                Personality Profile
+                {rt('your_complete_profile')}
               </Button>
               <Button
                 variant={section === 'careers' ? "default" : "outline"}
@@ -1635,7 +1635,7 @@ export default function DetailedResults() {
                 }}
                 className="px-6 py-3"
               >
-                Career Matches
+                {rt('career_matches')}
               </Button>
               <Button
                 variant={section === 'colleges' ? "default" : "outline"}
@@ -1646,7 +1646,7 @@ export default function DetailedResults() {
                 }}
                 className="px-6 py-3"
               >
-                College Options
+                {rt('college_options')}
               </Button>
             </>
           )}
