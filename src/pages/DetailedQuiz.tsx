@@ -11,16 +11,25 @@ import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion, AnswerType 
 import { useToast } from '@/components/ui/use-toast';
 import { PAYMENT_LINK_URL } from '@/config/payments';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { detailedQuizTranslations } from '@/i18n/detailedQuiz';
 
 const DetailedQuiz = () => {
   const navigate = useNavigate();
   const { toast } = useToast();
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ question: DetailedQuestion; answer: AnswerType }[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState<AnswerType | ''>('');
   const [showPaymentPrompt, setShowPaymentPrompt] = useState(false);
   const [isProcessingPayment, setIsProcessingPayment] = useState(false);
+
+  // Get translated question text
+  const getQuestionText = (questionIndex: number) => {
+    const questionNumber = questionIndex + 1;
+    return detailedQuizTranslations[currentLanguage.code]?.[questionNumber] || 
+           detailedQuizTranslations.en[questionNumber] || 
+           detailedQuestions[questionIndex]?.text || '';
+  };
 
   const handleGoHome = () => {
     navigate('/');
@@ -284,7 +293,7 @@ const DetailedQuiz = () => {
           <Card className="mb-8 shadow-lg border-0 bg-background">
             <CardHeader>
               <CardTitle className="text-xl text-center font-semibold">
-                {detailedQuestions[currentQuestion].text}
+                {getQuestionText(currentQuestion)}
               </CardTitle>
             </CardHeader>
             <CardContent>
