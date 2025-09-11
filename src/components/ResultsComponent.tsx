@@ -115,11 +115,11 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
   const { mbtiType, traits, cleanDescription } = parseDescription(result.description);
 
   const handleViewCareers = () => {
-    navigate('/detailed-results', { state: { personality, section: 'careers' } });
+    navigate('/detailed-results', { state: { personality, section: 'careers', fromFreeAssessment: true } });
   };
 
   const handleViewColleges = () => {
-    navigate('/detailed-results', { state: { personality, section: 'colleges' } });
+    navigate('/detailed-results', { state: { personality, section: 'colleges', fromFreeAssessment: true } });
   };
 
   const handleViewLearningStyle = () => {

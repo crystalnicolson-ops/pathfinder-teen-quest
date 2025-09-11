@@ -125,7 +125,7 @@ export default function DetailedResults() {
   const [hasAccess, setHasAccess] = useState(false);
   const [personality, setPersonality] = useState(null);
   const [section, setSection] = useState('personality');
-  const [freeCollegesAccess, setFreeCollegesAccess] = useState(false);
+  const [freeAssessmentAccess, setFreeAssessmentAccess] = useState(false);
   
   // Check payment status and provide appropriate access
   useEffect(() => {
@@ -138,6 +138,7 @@ export default function DetailedResults() {
       const navState = (location.state || {}) as any;
       const incomingSection = navState.section;
       const incomingPersonality = navState.personality;
+      const fromFreeAssessment = navState.fromFreeAssessment;
 
       // Check if user has already paid for premium access
       const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
@@ -163,21 +164,21 @@ export default function DetailedResults() {
         if (incomingSection) {
           setSection(incomingSection);
         }
-        setFreeCollegesAccess(false);
+        setFreeAssessmentAccess(false);
         return;
       }
 
-      // Allow free access to Colleges section when coming from quick assessment
-      if (incomingSection === 'colleges' && incomingPersonality) {
+      // Allow free access to careers and colleges when coming from quick assessment
+      if (fromFreeAssessment && incomingPersonality && (incomingSection === 'careers' || incomingSection === 'colleges')) {
         setPersonality(incomingPersonality);
-        setSection('colleges');
-        setFreeCollegesAccess(true);
+        setSection(incomingSection);
+        setFreeAssessmentAccess(true);
         setHasAccess(true);
         return;
       }
 
       // Free user - lock premium content until payment is completed
-      setFreeCollegesAccess(false);
+      setFreeAssessmentAccess(false);
       setHasAccess(false);
       setPersonality(null as any);
     };
@@ -558,7 +559,7 @@ export default function DetailedResults() {
           )}
           
           {/* Section Navigation Tabs (Sticky) */}
-          {!freeCollegesAccess && (
+          {!freeAssessmentAccess && (
           <div className="sticky top-0 z-30 -mx-4 px-4 py-3 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
             <div className="flex flex-wrap gap-2 justify-center">
               <Button 
@@ -1546,7 +1547,7 @@ export default function DetailedResults() {
         )}
 
         {/* Navigation Tabs at Bottom */}
-        {!freeCollegesAccess && (
+        {!freeAssessmentAccess && (
         <div className="flex justify-center gap-4 mt-8 pb-8">
           <Button
             variant="outline"
