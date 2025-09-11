@@ -127,6 +127,11 @@ export default function DetailedResults() {
   const [section, setSection] = useState('personality');
   const [freeAssessmentAccess, setFreeAssessmentAccess] = useState(false);
   
+  // Scroll to top when section changes
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [section]);
+  
   // Check payment status and provide appropriate access
   useEffect(() => {
     const init = () => {
