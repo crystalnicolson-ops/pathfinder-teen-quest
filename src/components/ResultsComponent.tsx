@@ -6,6 +6,7 @@ import { personalityResults } from '@/data/quiz';
 import { PersonalityType } from '@/types/quiz';
 import { useNavigate } from 'react-router-dom';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { resultsTranslations } from '@/i18n/results';
 
 // Import all personality avatars
 import avatarStrategist from '@/assets/avatar-strategist.jpg';
@@ -93,7 +94,12 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
   const result = personalityResults[personality];
   const avatar = personalityAvatars[personality];
   const navigate = useNavigate();
-  const { t } = useLanguage();
+  const { t, currentLanguage } = useLanguage();
+  
+  // Get translations for results
+  const rt = (key: string) => {
+    return resultsTranslations[currentLanguage.code]?.[key] || resultsTranslations.en[key] || key;
+  };
 
   // Check if user has premium access
   const hasPremium = typeof window !== 'undefined' && localStorage.getItem('hasPaidPremium') === 'true';
@@ -141,7 +147,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center pt-8 pb-4">
-          <h1 className="text-4xl font-bold text-black mb-2 animate-pulse">{t('results.results_header')}</h1>
+          <h1 className="text-4xl font-bold text-black mb-2 animate-pulse">{rt('results_header')}</h1>
         </div>
 
         {/* Personality Type */}
@@ -174,21 +180,21 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 rounded-lg border mb-6">
               <h4 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
                 <Star className="h-5 w-5 text-primary" />
-                {t('results.what_does_this_mean')}
+                {rt('what_does_this_mean')}
               </h4>
               <div className="space-y-4 text-left">
                 <p className="text-muted-foreground leading-relaxed">
-                  {t('results.personality_meaning').replace('{type}', result.type)}
+                  {rt('personality_meaning').replace('{type}', result.type)}
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  {t('results.personality_traits_desc')}
+                  {rt('personality_traits_desc')}
                 </p>
                 <p className="text-muted-foreground leading-relaxed">
-                  {t('results.personality_relationships')}
+                  {rt('personality_relationships')}
                 </p>
                 <div className="bg-white/50 p-4 rounded-lg border-l-4 border-primary">
                   <p className="text-sm font-medium text-foreground">
-                    {t('results.key_insight')}
+                    {rt('key_insight')}
                   </p>
                 </div>
               </div>
@@ -197,7 +203,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             {/* Detailed Personality Insights */}
             <div className="grid md:grid-cols-3 gap-4 mt-6">
               <div className="bg-gradient-card p-4 rounded-lg border">
-                <h4 className="font-semibold text-foreground mb-2">{t('results.your_strengths')}</h4>
+                <h4 className="font-semibold text-foreground mb-2">{rt('your_strengths')}</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• Strategic thinking and planning</li>
                   <li>• Independent problem-solving</li>
@@ -206,7 +212,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 </ul>
               </div>
               <div className="bg-gradient-card p-4 rounded-lg border">
-                <h4 className="font-semibold text-foreground mb-2">{t('results.work_style')}</h4>
+                <h4 className="font-semibold text-foreground mb-2">{rt('work_style')}</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• Prefers working independently</li>
                   <li>• Values competence and efficiency</li>
@@ -215,7 +221,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 </ul>
               </div>
               <div className="bg-gradient-card p-4 rounded-lg border">
-                <h4 className="font-semibold text-foreground mb-2">{t('results.best_environments')}</h4>
+                <h4 className="font-semibold text-foreground mb-2">{rt('best_environments')}</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
                   <li>• Structured and organized</li>
                   <li>• Innovation-focused teams</li>
@@ -233,10 +239,10 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
             <div className="relative z-10">
               <CardTitle className="text-2xl font-bold mb-2 text-foreground">
-                {t('results.your_personality_traits')}
+                {rt('your_personality_traits')}
               </CardTitle>
               <p className="text-sm text-muted-foreground">
-                {t('results.traits_subtitle')}
+                {rt('traits_subtitle')}
               </p>
             </div>
           </CardHeader>
@@ -274,7 +280,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 rounded-full border border-primary/20 shadow-md">
                 <Sparkles className="h-5 w-5 text-primary animate-spin" style={{animationDuration: '3s'}} />
                 <span className="text-base font-semibold text-foreground">
-                  {t('results.focus_on_strengths')}
+                  {rt('focus_on_strengths')}
                 </span>
               </div>
             </div>
@@ -288,7 +294,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
           {hasPremium && (
             <div className="mb-2">
               <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2">
-                {t('results.premium_access_active')}
+                {rt('premium_access_active')}
               </Badge>
             </div>
           )}
@@ -307,7 +313,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 </div>
                 
                 <Star className="h-6 w-6 mr-3 group-hover:animate-bounce" />
-                <span className="relative z-10">{t('results.learning_style_analysis')}</span>
+                <span className="relative z-10">{rt('learning_style_analysis')}</span>
               </Button>
             </div>
           )}
@@ -326,7 +332,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 </div>
                 
                 <Rocket className="h-6 w-6 mr-3 group-hover:animate-bounce" />
-                <span className="relative z-10">{t('results.deep_personality_insights')}</span>
+                <span className="relative z-10">{rt('deep_personality_insights')}</span>
               </Button>
             </div>
           )}
@@ -347,7 +353,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               </div>
               
               <Briefcase className="h-6 w-6 mr-3 group-hover:animate-bounce" />
-              <span className="relative z-10">{t('results.best_career_matches')}</span>
+              <span className="relative z-10">{rt('best_career_matches')}</span>
             </Button>
             
             {/* Glowing ring effect */}
@@ -368,7 +374,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 </div>
                 
                 <GraduationCap className="h-6 w-6 mr-3 group-hover:animate-bounce" />
-                <span className="relative z-10">{t('results.study_methods')}</span>
+                <span className="relative z-10">{rt('study_methods')}</span>
               </Button>
             </div>
           )}
@@ -389,7 +395,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               </div>
               
               <GraduationCap className="h-6 w-6 mr-3 group-hover:animate-bounce" />
-              <span className="relative z-10">{t('results.perfect_college_matches')}</span>
+              <span className="relative z-10">{rt('perfect_college_matches')}</span>
             </Button>
             
             {/* Glowing ring effect */}
@@ -405,7 +411,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black"
             >
               <Home className="h-4 w-4 mr-2" />
-              {t('results.home')}
+              {rt('home')}
             </Button>
             <Button 
               variant="outline" 
@@ -413,7 +419,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               size="lg"
               className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black"
             >
-              {t('results.retake_quiz')}
+              {rt('retake_quiz')}
             </Button>
           </div>
         </div>
