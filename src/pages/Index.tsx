@@ -9,6 +9,7 @@ import ResultsComponent from '@/components/ResultsComponent';
 import Header from '@/components/Header';
 import { PersonalityType } from '@/types/quiz';
 import heroImage from '@/assets/hero-careers.jpg';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Import all personality avatars
 import avatarStrategist from '@/assets/avatar-strategist.jpg';
@@ -34,6 +35,7 @@ const Index = () => {
   const location = useLocation();
   const [appState, setAppState] = useState<AppState>('landing');
   const [personalityResult, setPersonalityResult] = useState<PersonalityType | null>(null);
+  const { t } = useLanguage();
 
   // Check for incoming state from DetailedResults navigation
   useEffect(() => {
@@ -92,14 +94,9 @@ const Index = () => {
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 py-16 text-center">
           
-          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-bounce-gentle">
-            What's Your Personality Type?
-          </h1>
+          <h1 className="text-5xl md:text-6xl font-bold text-white mb-6 animate-bounce-gentle">{t('home.hero.title')}</h1>
           
-          <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Take our quick personality quiz and discover careers that match your unique strengths, 
-            plus colleges that can get you there!
-          </p>
+          <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">{t('home.hero.subtitle')}</p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button 
@@ -110,7 +107,7 @@ const Index = () => {
               style={{ backgroundColor: '#DDA0DD', borderColor: '#DDA0DD' }}
             >
               <Target className="h-6 w-6 mr-2" color="white" />
-              Quick Assessment (Free)
+              {t('home.hero.quick')}
             </Button>
             <Link to="/detailed-quiz">
               <Button 
@@ -119,7 +116,7 @@ const Index = () => {
                 className="text-lg px-8 py-6 rounded-full bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-transform shadow-lg"
               >
                 <Crown className="h-6 w-6 mr-2" />
-                Premium Assessment
+                {t('premium.assessment')}
               </Button>
             </Link>
           </div>
@@ -128,12 +125,8 @@ const Index = () => {
 
       {/* Personality Types Section */}
       <div className="max-w-6xl mx-auto px-4 py-8">
-        <h2 className="text-3xl font-bold text-white text-center mb-4">
-          Find Your Match
-        </h2>
-        <p className="text-white/80 text-center mb-12 max-w-2xl mx-auto">
-          Discover which of these personality types matches your unique strengths and preferences
-        </p>
+        <h2 className="text-3xl font-bold text-white text-center mb-4">{t('home.section.types.title')}</h2>
+        <p className="text-white/80 text-center mb-12 max-w-2xl mx-auto">{t('home.section.types.subtitle')}</p>
         
         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6">
           {[
@@ -172,9 +165,7 @@ const Index = () => {
 
       {/* Features Section */}
       <div className="max-w-6xl mx-auto px-4 pt-8 pb-16">
-        <h2 className="text-3xl font-bold text-white text-center mb-12">
-          What You'll Discover
-        </h2>
+        <h2 className="text-3xl font-bold text-white text-center mb-12">{t('home.section.features.title')}</h2>
         
         <div className="grid md:grid-cols-3 gap-8">
           <Card className="bg-white/95 backdrop-blur-sm shadow-card hover:shadow-lg transition-all duration-300 transform hover:scale-105">
@@ -182,12 +173,10 @@ const Index = () => {
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#DDA0DD' }}>
                 <Sparkles className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-xl">Your Personality Type</CardTitle>
+              <CardTitle className="text-xl">{t('feature.personality.title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-center">
-                Understand your unique strengths, preferences, and working style through our scientifically-based assessment.
-              </p>
+              <p className="text-muted-foreground text-center">{t('feature.personality.desc')}</p>
             </CardContent>
           </Card>
 
@@ -196,12 +185,10 @@ const Index = () => {
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#DDA0DD' }}>
                 <Target className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-xl">Perfect Career Matches</CardTitle>
+              <CardTitle className="text-xl">{t('feature.careers.title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-center">
-                Get personalized career recommendations with salary information and real job listings from Indeed.
-              </p>
+              <p className="text-muted-foreground text-center">{t('feature.careers.desc')}</p>
             </CardContent>
           </Card>
 
@@ -213,15 +200,13 @@ const Index = () => {
               <div className="mx-auto w-16 h-16 rounded-full flex items-center justify-center mb-4" style={{ backgroundColor: '#DDA0DD' }}>
                 <GraduationCap className="h-8 w-8 text-white" />
               </div>
-              <CardTitle className="text-xl">Top College Options</CardTitle>
+              <CardTitle className="text-xl">{t('feature.colleges.title')}</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-muted-foreground text-center">
-                Discover the best colleges and universities for your chosen career path, with relevant program details.
-              </p>
+              <p className="text-muted-foreground text-center">{t('feature.colleges.desc')}</p>
               <div className="mt-4 text-center">
                 <Button variant="outline" size="sm">
-                  Start Quiz to See Colleges
+                  {t('cta.colleges.start_quiz')}
                 </Button>
               </div>
             </CardContent>
@@ -233,13 +218,8 @@ const Index = () => {
       {/* CTA Section */}
       <div className="text-center pb-8">
         <div className="max-w-2xl mx-auto px-4">
-          <h3 className="text-2xl font-bold text-white mb-4">
-            Ready to Shape Your Future?
-          </h3>
-          <p className="text-white/80 mb-8">
-            Join thousands of teens who have discovered their perfect career path. 
-            It only takes 5 minutes!
-          </p>
+          <h3 className="text-2xl font-bold text-white mb-4">{t('cta.ready.title')}</h3>
+          <p className="text-white/80 mb-8">{t('cta.ready.subtitle')}</p>
           <Button 
             variant="secondary" 
             size="lg" 
@@ -247,7 +227,7 @@ const Index = () => {
             className="text-lg px-8 py-6 rounded-full"
           >
             <TrendingUp className="h-6 w-6 mr-2" />
-            Begin Assessment
+            {t('cta.begin')}
           </Button>
         </div>
       </div>
@@ -258,17 +238,17 @@ const Index = () => {
           <div className="text-center mb-6">
             <div className="flex items-center justify-center gap-2 mb-4">
               <Crown className="h-8 w-8 text-yellow-400" />
-              <h3 className="text-3xl font-bold text-white">Premium Assessment</h3>
+              <h3 className="text-3xl font-bold text-white">{t('premium.assessment')}</h3>
               <Crown className="h-8 w-8 text-yellow-400" />
             </div>
             <p className="text-white/90 text-lg mb-6">
-              Unlock deeper insights with our comprehensive 50-question assessment
+              {t('premium.section.subtitle')}
             </p>
           </div>
           
           <div className="grid md:grid-cols-2 gap-6 mb-8">
             <div className="text-left">
-              <h4 className="text-xl font-semibold text-white mb-4">What You Get:</h4>
+              <h4 className="text-xl font-semibold text-white mb-4">{t('premium.section.what_you_get')}</h4>
               <ul className="text-white/90 space-y-3">
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-400 font-bold">•</span>
@@ -285,7 +265,7 @@ const Index = () => {
               </ul>
             </div>
             <div className="text-left">
-              <h4 className="text-xl font-semibold text-white mb-4">Plus:</h4>
+              <h4 className="text-xl font-semibold text-white mb-4">{t('premium.section.plus')}</h4>
               <ul className="text-white/90 space-y-3">
                 <li className="flex items-start gap-2">
                   <span className="text-yellow-400 font-bold">•</span>
@@ -315,7 +295,7 @@ const Index = () => {
                 className="text-xl px-12 py-8 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0 hover:scale-105 transition-transform shadow-xl hover:shadow-2xl"
               >
                 <Crown className="h-6 w-6 mr-3" />
-                Get Premium Assessment
+                {t('premium.section.cta')}
               </Button>
             </Link>
           </div>
