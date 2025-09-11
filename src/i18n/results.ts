@@ -237,6 +237,24 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'personality_traits_desc': 'Tiendes a ser muy independiente y prefieres trabajar a tu propio ritmo. Mientras otros pueden verte como callado o reservado, en realidad estás procesando información y desarrollando planes integrales. Valoras la competencia y eficiencia, tanto en ti mismo como en otros.',
     'personality_relationships': 'En las relaciones y trabajo en equipo, aprecias a las personas que comparten tu impulso por la excelencia y pueden igualar tu curiosidad intelectual. Eres leal a quienes se ganan tu respeto y puedes ser increíblemente solidario cuando crees en una causa o persona.',
     'key_insight': 'Perspectiva Clave: Tu superpoder es tu capacidad de ver el potencial a largo plazo y crear enfoques sistemáticos para lograr metas ambiciosas. Eres la persona a quien otros recurren cuando necesitan un plan sólido y bien pensado.',
+    
+    // Strengths list
+    'strengths_1': 'Pensamiento y planificación estratégicos',
+    'strengths_2': 'Resolución de problemas de forma independiente',
+    'strengths_3': 'Visión y enfoque a largo plazo',
+    'strengths_4': 'Toma de decisiones analítica',
+    
+    // Work style list
+    'work_style_1': 'Prefiere trabajar de forma independiente',
+    'work_style_2': 'Valora la competencia y la eficiencia',
+    'work_style_3': 'Disfruta de desafíos complejos',
+    'work_style_4': 'Se enfoca en resultados a largo plazo',
+    
+    // Best environments list
+    'best_env_1': 'Estructurado y organizado',
+    'best_env_2': 'Equipos enfocados en la innovación',
+    'best_env_3': 'Mínima microgestión',
+    'best_env_4': 'Estimulante intelectualmente',
   },
   
   fr: {
@@ -357,6 +375,24 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'personality_traits_desc': 'Vous tendez à être très indépendant et préférez travailler à votre propre rythme. Bien que d\'autres puissent vous voir comme silencieux ou réservé, vous traitez en fait l\'information et développez des plans complets. Vous valorisez la compétence et l\'efficacité, à la fois en vous-même et chez les autres.',
     'personality_relationships': 'Dans les relations et le travail d\'équipe, vous appréciez les personnes qui partagent votre motivation pour l\'excellence et peuvent égaler votre curiosité intellectuelle. Vous êtes loyal envers ceux qui gagnent votre respect et pouvez être incroyablement solidaire quand vous croyez en une cause ou une personne.',
     'key_insight': 'Insight Clé : Votre superpouvoir est votre capacité à voir le potentiel à long terme et à créer des approches systématiques pour atteindre des objectifs ambitieux. Vous êtes la personne vers qui les autres se tournent quand ils ont besoin d\'un plan solide et bien réfléchi.',
+    
+    // Strengths list
+    'strengths_1': 'Pensée et planification stratégiques',
+    'strengths_2': 'Résolution de problèmes en autonomie',
+    'strengths_3': 'Vision et focus à long terme',
+    'strengths_4': 'Prise de décision analytique',
+    
+    // Work style list
+    'work_style_1': 'Préfère travailler de manière indépendante',
+    'work_style_2': 'Valorise la compétence et l’efficacité',
+    'work_style_3': 'Apprécie les défis complexes',
+    'work_style_4': 'Se concentre sur les résultats à long terme',
+    
+    // Best environments list
+    'best_env_1': 'Structuré et organisé',
+    'best_env_2': 'Équipes orientées innovation',
+    'best_env_3': 'Microgestion minimale',
+    'best_env_4': 'Stimulant intellectuellement',
   },
   
   de: {
@@ -477,6 +513,24 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'personality_traits_desc': 'Sie tendieren dazu, sehr unabhängig zu sein und arbeiten lieber in Ihrem eigenen Tempo. Während andere Sie als ruhig oder zurückhaltend sehen mögen, verarbeiten Sie tatsächlich Informationen und entwickeln umfassende Pläne. Sie schätzen Kompetenz und Effizienz, sowohl bei sich selbst als auch bei anderen.',
     'personality_relationships': 'In Beziehungen und Teamarbeit schätzen Sie Menschen, die Ihren Antrieb nach Exzellenz teilen und Ihre intellektuelle Neugier erreichen können. Sie sind loyal gegenüber denen, die Ihren Respekt verdienen, und können unglaublich unterstützend sein, wenn Sie an eine Sache oder Person glauben.',
     'key_insight': 'Schlüssel-Erkenntnis: Ihre Superkraft ist Ihre Fähigkeit, langfristiges Potenzial zu sehen und systematische Ansätze zu schaffen, um ehrgeizige Ziele zu erreichen. Sie sind die Person, an die sich andere wenden, wenn sie einen soliden, gut durchdachten Plan brauchen.',
+    
+    // Strengths list
+    'strengths_1': 'Strategisches Denken und Planen',
+    'strengths_2': 'Eigenständiges Problemlösen',
+    'strengths_3': 'Langfristige Vision und Fokus',
+    'strengths_4': 'Analytische Entscheidungsfindung',
+    
+    // Work style list
+    'work_style_1': 'Arbeitet bevorzugt selbstständig',
+    'work_style_2': 'Schätzt Kompetenz und Effizienz',
+    'work_style_3': 'Hat Freude an komplexen Herausforderungen',
+    'work_style_4': 'Fokus auf langfristige Ergebnisse',
+    
+    // Best environments list
+    'best_env_1': 'Strukturiert und organisiert',
+    'best_env_2': 'Innovationsorientierte Teams',
+    'best_env_3': 'Minimales Mikromanagement',
+    'best_env_4': 'Intellektuell anregend',
   },
   
   zh: {

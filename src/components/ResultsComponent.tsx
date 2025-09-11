@@ -205,28 +205,28 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
               <div className="bg-gradient-card p-4 rounded-lg border">
                 <h4 className="font-semibold text-foreground mb-2">{rt('your_strengths')}</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Strategic thinking and planning</li>
-                  <li>• Independent problem-solving</li>
-                  <li>• Long-term vision and focus</li>
-                  <li>• Analytical decision making</li>
+                  <li>• {rt('strengths_1')}</li>
+                  <li>• {rt('strengths_2')}</li>
+                  <li>• {rt('strengths_3')}</li>
+                  <li>• {rt('strengths_4')}</li>
                 </ul>
               </div>
               <div className="bg-gradient-card p-4 rounded-lg border">
                 <h4 className="font-semibold text-foreground mb-2">{rt('work_style')}</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Prefers working independently</li>
-                  <li>• Values competence and efficiency</li>
-                  <li>• Enjoys complex challenges</li>
-                  <li>• Focuses on long-term outcomes</li>
+                  <li>• {rt('work_style_1')}</li>
+                  <li>• {rt('work_style_2')}</li>
+                  <li>• {rt('work_style_3')}</li>
+                  <li>• {rt('work_style_4')}</li>
                 </ul>
               </div>
               <div className="bg-gradient-card p-4 rounded-lg border">
                 <h4 className="font-semibold text-foreground mb-2">{rt('best_environments')}</h4>
                 <ul className="text-sm text-muted-foreground space-y-1">
-                  <li>• Structured and organized</li>
-                  <li>• Innovation-focused teams</li>
-                  <li>• Minimal micromanagement</li>
-                  <li>• Intellectually stimulating</li>
+                  <li>• {rt('best_env_1')}</li>
+                  <li>• {rt('best_env_2')}</li>
+                  <li>• {rt('best_env_3')}</li>
+                  <li>• {rt('best_env_4')}</li>
                 </ul>
               </div>
             </div>

@@ -892,7 +892,7 @@ export default function DetailedResults() {
 
                   <div className="space-y-4">
                     <div className="bg-purple-50 p-4 rounded-lg border border-purple-200">
-                      <h4 className="font-semibold text-purple-800 mb-2">Work Style</h4>
+                      <h4 className="font-semibold text-purple-800 mb-2">{rt('work_style')}</h4>
                       <p className="text-purple-700 text-sm">
                         {personalityTraitDetails.energy === 'Introvert'
                           ? 'You likely excel in roles that allow for independent work, deep focus, and minimal interruptions.'
