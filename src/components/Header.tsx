@@ -1,6 +1,7 @@
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Home } from 'lucide-react';
+import LanguageSelector from './LanguageSelector';
 
 interface HeaderProps {
   onHome: () => void;
@@ -16,12 +17,16 @@ export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
     <div className="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-white/20">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          {hasPremium && (
-            <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 text-xs">
-              ✨ Premium
-            </Badge>
-          )}
-          <div className={hasPremium ? '' : 'ml-auto'}>
+          <div className="flex items-center gap-3">
+            {hasPremium && (
+              <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 text-xs">
+                ✨ Premium
+              </Badge>
+            )}
+          </div>
+          
+          <div className="flex items-center gap-3">
+            <LanguageSelector />
             <Button
               variant="outline" 
               onClick={onHome}
