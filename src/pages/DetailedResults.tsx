@@ -125,6 +125,7 @@ export default function DetailedResults() {
   const [hasAccess, setHasAccess] = useState(false);
   const [personality, setPersonality] = useState(null);
   const [section, setSection] = useState('personality');
+  const [freeCollegesAccess, setFreeCollegesAccess] = useState(false);
   
   // Check payment status and provide appropriate access
   useEffect(() => {
@@ -133,6 +134,10 @@ export default function DetailedResults() {
       if (paidParam === PAYMENT_SUCCESS_VALUE) {
         localStorage.setItem('hasPaidPremium', 'true');
       }
+
+      const navState = (location.state || {}) as any;
+      const incomingSection = navState.section;
+      const incomingPersonality = navState.personality;
 
       // Check if user has already paid for premium access
       const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
@@ -154,11 +159,27 @@ export default function DetailedResults() {
           // No quiz results but user has paid - show sample premium data
           showSamplePremiumData();
         }
-      } else {
-        // Free user - lock premium content until payment is completed
-        setHasAccess(false);
-        setPersonality(null as any);
+        // Respect incoming section selection for paid users
+        if (incomingSection) {
+          setSection(incomingSection);
+        }
+        setFreeCollegesAccess(false);
+        return;
       }
+
+      // Allow free access to Colleges section when coming from quick assessment
+      if (incomingSection === 'colleges' && incomingPersonality) {
+        setPersonality(incomingPersonality);
+        setSection('colleges');
+        setFreeCollegesAccess(true);
+        setHasAccess(true);
+        return;
+      }
+
+      // Free user - lock premium content until payment is completed
+      setFreeCollegesAccess(false);
+      setHasAccess(false);
+      setPersonality(null as any);
     };
 
     const showSamplePremiumData = () => {
@@ -187,7 +208,7 @@ export default function DetailedResults() {
     };
 
     init();
-  }, [searchParams, navigate, toast]);
+  }, [searchParams, navigate, toast, location.state]);
 
   if (isVerifying) {
     return (
@@ -537,6 +558,7 @@ export default function DetailedResults() {
           )}
           
           {/* Section Navigation Tabs (Sticky) */}
+          {!freeCollegesAccess && (
           <div className="sticky top-0 z-30 -mx-4 px-4 py-3 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
             <div className="flex flex-wrap gap-2 justify-center">
               <Button 
@@ -569,6 +591,8 @@ export default function DetailedResults() {
               </Button>
             </div>
           </div>
+          )}
+
 
           <h1 className="text-4xl font-bold text-black mb-2">
             {(() => {
@@ -1522,6 +1546,7 @@ export default function DetailedResults() {
         )}
 
         {/* Navigation Tabs at Bottom */}
+        {!freeCollegesAccess && (
         <div className="flex justify-center gap-4 mt-8 pb-8">
           <Button
             variant="outline"
@@ -1557,6 +1582,8 @@ export default function DetailedResults() {
             College Options
           </Button>
         </div>
+        )}
+
       </div>
     </div>
   );
