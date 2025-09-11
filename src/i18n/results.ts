@@ -148,6 +148,20 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'personality_traits_desc': 'You tend to be highly independent and prefer to work at your own pace. While others might see you as quiet or reserved, you\'re actually processing information and developing comprehensive plans. You value competence and efficiency, both in yourself and others.',
     'personality_relationships': 'In relationships and teamwork, you appreciate people who share your drive for excellence and can match your intellectual curiosity. You\'re loyal to those who earn your respect and can be incredibly supportive when you believe in a cause or person.',
     'key_insight': 'Key Insight: Your superpower is your ability to see long-term potential and create systematic approaches to achieve ambitious goals. You\'re the person others turn to when they need a solid, well-thought-out plan.',
+    
+    // Generic strengths, work style, and environment items
+    'strengths_1': 'Strategic thinking and long-term planning',
+    'strengths_2': 'Independent problem-solving abilities', 
+    'strengths_3': 'Analytical and logical approach',
+    'strengths_4': 'High standards and attention to quality',
+    'work_style_1': 'Prefer autonomy and minimal supervision',
+    'work_style_2': 'Focus on efficiency and competence',
+    'work_style_3': 'Enjoy complex, challenging projects',
+    'work_style_4': 'Work best with clear goals and deadlines',
+    'best_env_1': 'Quiet, organized workspaces',
+    'best_env_2': 'Intellectually stimulating environments',
+    'best_env_3': 'Minimal interruptions and distractions',
+    'best_env_4': 'Access to resources and information',
   },
   
   es: {
@@ -752,6 +766,24 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'personality_traits_desc': '您往往非常独立，喜欢按自己的节奏工作。虽然其他人可能认为您安静或内向，但您实际上在处理信息并制定全面的计划。您重视能力和效率，无论是对自己还是对他人。',
     'personality_relationships': '在人际关系和团队合作中，您欣赏那些与您分享追求卓越的动力并能匹配您智力好奇心的人。您对那些赢得您尊重的人忠诚，当您相信某个事业或人时，您可以提供令人难以置信的支持。',
     'key_insight': '关键洞察：您的超能力是您看到长期潜力并创建系统性方法来实现雄心勃勃目标的能力。您是其他人在需要可靠、深思熟虑的计划时会求助的人。',
+    
+    // Strengths list
+    'strengths_1': '战略思维和长期规划',
+    'strengths_2': '独立解决问题的能力',
+    'strengths_3': '分析性和逻辑性方法',
+    'strengths_4': '高标准和对质量的关注',
+    
+    // Work style list
+    'work_style_1': '偏好自主和最少监督',
+    'work_style_2': '注重效率和能力',
+    'work_style_3': '享受复杂、有挑战性的项目',
+    'work_style_4': '在明确目标和截止日期下工作最佳',
+    
+    // Best environments list
+    'best_env_1': '安静、有组织的工作空间',
+    'best_env_2': '智力激发的环境',
+    'best_env_3': '最少干扰和分心',
+    'best_env_4': '可以获取资源和信息',
   },
   
   ja: {
@@ -885,5 +917,23 @@ export const resultsTranslations: Record<string, Record<string, string>> = {
     'personality_traits_desc': 'あなたは非常に独立的で、自分のペースで働くことを好む傾向があります。他の人があなたを静かで控えめだと見るかもしれませんが、実際にはあなたは情報を処理し、包括的な計画を立てています。自分自身と他者の両方において、能力と効率を重視します。',
     'personality_relationships': '人間関係やチームワークにおいて、あなたは卓越性への意欲を共有し、あなたの知的好奇心に匹敵する人々を評価します。あなたの尊敬を勝ち取った人々に忠実で、信じる大義や人がいるときには信じられないほど支援的になることができます。',
     'key_insight': '重要な洞察：あなたの超能力は、長期的な可能性を見て、野心的な目標を達成するための体系的なアプローチを作成する能力です。あなたは、しっかりとした、よく考え抜かれた計画が必要なときに他の人が頼る人です。',
+    
+    // Strengths list
+    'strengths_1': '戦略的思考と長期計画',
+    'strengths_2': '独立した問題解決能力',
+    'strengths_3': '分析的で論理的なアプローチ',
+    'strengths_4': '高い基準と品質への注意',
+    
+    // Work style list
+    'work_style_1': '自律性と最小限の監督を好む',
+    'work_style_2': '効率性と能力に焦点を当てる',
+    'work_style_3': '複雑で挑戦的なプロジェクトを楽しむ',
+    'work_style_4': '明確な目標と締切で最高の成果を発揮',
+    
+    // Best environments list
+    'best_env_1': '静かで整理された職場',
+    'best_env_2': '知的に刺激的な環境',
+    'best_env_3': '最小限の中断と気晴らし',
+    'best_env_4': 'リソースと情報へのアクセス',
   },
 };
