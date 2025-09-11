@@ -600,6 +600,7 @@ export default function DetailedResults() {
               if (section === 'learning-style') return 'Your Learning Style';
               if (section === 'personality') return 'Personality Insights';
               if (section === 'careers') return 'Career Matches';
+              if (section === 'colleges') return 'College Options';
               if (section === 'study-methods') return 'Recommended Study Methods';
               return 'Your Complete Profile';
             })()}
