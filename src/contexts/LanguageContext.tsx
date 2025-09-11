@@ -1,4 +1,5 @@
 import React, { createContext, useContext, useState, useEffect } from 'react';
+import { quickQuizTranslations } from '@/i18n/quickQuiz';
 
 export type Language = {
   code: string;
@@ -617,6 +618,15 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         'detailed_quiz.subtitle': '完全な性格プロフィールを発見',
       },
     };
+
+    // Dynamic quick quiz question keys: quick_quiz.q{number}
+    const quickMatch = key.match(/^quick_quiz\.q(\d+)$/);
+    if (quickMatch) {
+      const idx = Number(quickMatch[1]);
+      const val = (quickQuizTranslations[currentLanguage.code] && quickQuizTranslations[currentLanguage.code][idx])
+        || (quickQuizTranslations['en'] && quickQuizTranslations['en'][idx]);
+      if (val) return val;
+    }
 
     return translations[currentLanguage.code]?.[key] || translations['en'][key] || key.replace(/\{\{(\w+)\}\}/g, (match, param) => `{${param}}`);
   };
