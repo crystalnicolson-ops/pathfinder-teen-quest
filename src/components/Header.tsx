@@ -14,12 +14,12 @@ export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
   const { t } = useLanguage();
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-white/90 border-b border-white/20">
+    <div className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3">
             {hasPremium && (
-              <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-white px-3 py-1 text-xs">
+              <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-primary-foreground px-3 py-1 text-xs">
                 ✨ Premium
               </Badge>
             )}
@@ -32,7 +32,7 @@ export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
                 variant="outline" 
                 onClick={onHome}
                 size="sm"
-                className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black transition-all duration-300"
+                className="bg-background/90 border-border text-foreground hover:bg-card hover:text-card-foreground transition-all duration-300"
               >
               <Home className="h-4 w-4 mr-2" />
               {t('home')}
