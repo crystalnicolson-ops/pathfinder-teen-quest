@@ -54,7 +54,7 @@ const DetailedQuiz = () => {
       }, 300); // Small delay for better UX
     } else {
       // Quiz completed - check if user already has premium access
-      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
+      const hasPaid = true; // TEMP bypass: force premium access
       console.log('[QUIZ COMPLETE] Quiz finished! hasPaidPremium =', hasPaid);
       console.log('[QUIZ COMPLETE] Total answers collected:', newAnswers.length);
       if (hasPaid) {
@@ -105,7 +105,7 @@ const DetailedQuiz = () => {
       setCurrentAnswer(newAnswers[currentQuestion + 1]?.answer || '');
     } else {
       // Quiz completed - check if user already has premium access
-      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
+      const hasPaid = true; // TEMP bypass: force premium access
       console.log('[DETAILED QUIZ] Completed. hasPaidPremium =', hasPaid);
       if (hasPaid) {
         // Premium user - go directly to results
