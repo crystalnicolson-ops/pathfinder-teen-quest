@@ -222,11 +222,101 @@ export default function DetailedResults() {
 
     // Personality-specific career alignments that override learning style defaults
     const personalityAlignments: Partial<Record<PersonalityType, Record<string, string[]>>> = {
+      "The Strategist": {
+        "Visual": ["Data Scientist", "Systems Analyst", "UX Researcher", "Business Intelligence Analyst", "Research Scientist", "Financial Analyst", "Market Research Analyst", "Strategic Planner"],
+        "Auditory": ["Management Consultant", "Strategic Advisor", "Research Director", "Policy Analyst", "Executive Coach", "Investment Advisor", "Business Analyst", "Corporate Trainer"],
+        "Reading/Writing": ["Research Scientist", "Policy Writer", "Strategic Planner", "Investment Analyst", "Technical Writer", "Business Intelligence Analyst", "Market Researcher", "Academic Researcher"],
+        "Kinesthetic": ["Systems Engineer", "Research Scientist", "Data Engineer", "Lab Manager", "Quality Assurance Manager", "Process Engineer", "Operations Research Analyst", "Technology Consultant"]
+      },
+      "The Inventor": {
+        "Visual": ["Software Developer", "Game Designer", "Product Designer", "Research Scientist", "Innovation Manager", "Technical Architect", "System Designer", "Creative Technologist"],
+        "Auditory": ["Technology Consultant", "Research Director", "Innovation Coach", "Technical Evangelist", "Product Manager", "Strategy Consultant", "Tech Entrepreneur", "Solutions Architect"],
+        "Reading/Writing": ["Software Engineer", "Technical Writer", "Research Scientist", "Patent Attorney", "Technology Journalist", "Academic Researcher", "Technical Documentation Specialist", "Innovation Analyst"],
+        "Kinesthetic": ["Software Engineer", "Research Scientist", "Lab Technician", "Prototype Developer", "Systems Engineer", "Technology Consultant", "Product Developer", "Innovation Engineer"]
+      },
+      "The Boss": {
+        "Visual": ["Business Analyst", "Management Consultant", "Project Manager", "Operations Manager", "Strategy Consultant", "Investment Banker", "Business Development Manager", "Executive"],
+        "Auditory": ["CEO", "Sales Director", "Business Coach", "Management Consultant", "Team Leader", "Executive Coach", "Business Development Manager", "Operations Director"],
+        "Reading/Writing": ["Business Analyst", "Strategy Consultant", "Investment Analyst", "Corporate Lawyer", "Business Writer", "Policy Analyst", "Management Consultant", "Executive"],
+        "Kinesthetic": ["Operations Manager", "Project Manager", "Supply Chain Manager", "Manufacturing Manager", "Construction Manager", "Logistics Manager", "Plant Manager", "Operations Director"]
+      },
+      "The Challenger": {
+        "Visual": ["Entrepreneur", "Business Development Manager", "Sales Manager", "Marketing Director", "Investment Banker", "Real Estate Developer", "Strategic Planner", "Consultant"],
+        "Auditory": ["Sales Director", "Motivational Speaker", "Business Coach", "Entrepreneur", "Executive", "Negotiator", "Team Leader", "Corporate Trainer"],
+        "Reading/Writing": ["Business Development Manager", "Marketing Manager", "Sales Strategist", "Business Analyst", "Corporate Communications", "Strategic Planner", "Investment Analyst", "Business Writer"],
+        "Kinesthetic": ["Sales Manager", "Real Estate Agent", "Event Manager", "Operations Manager", "Business Owner", "Project Manager", "Construction Manager", "Entrepreneur"]
+      },
+      "The Visionary": {
+        "Visual": ["Creative Director", "Brand Manager", "Marketing Manager", "Product Designer", "Innovation Manager", "Art Director", "Digital Marketing Specialist", "Creative Strategist"],
+        "Auditory": ["Motivational Speaker", "Creative Director", "Brand Strategist", "Marketing Director", "Public Relations Manager", "Creative Consultant", "Innovation Coach", "Media Producer"],
+        "Reading/Writing": ["Content Strategist", "Creative Writer", "Marketing Manager", "Brand Manager", "Communications Director", "Innovation Specialist", "Creative Consultant", "Digital Marketing Manager"],
+        "Kinesthetic": ["Event Planner", "Creative Producer", "Marketing Manager", "Brand Activation Manager", "Innovation Manager", "Product Manager", "Experience Designer", "Creative Project Manager"]
+      },
+      "The Creator": {
+        "Visual": ["Graphic Designer", "Art Director", "Creative Designer", "Brand Designer", "Visual Artist", "Creative Consultant", "Digital Artist", "Design Strategist"],
+        "Auditory": ["Creative Director", "Art Therapist", "Creative Coach", "Music Producer", "Creative Consultant", "Brand Strategist", "Creative Writer", "Media Producer"],
+        "Reading/Writing": ["Creative Writer", "Content Creator", "Copywriter", "Creative Director", "Brand Storyteller", "Creative Consultant", "Content Strategist", "Creative Communications"],
+        "Kinesthetic": ["Art Therapist", "Creative Producer", "Craft Artist", "Creative Workshop Leader", "Art Instructor", "Creative Project Manager", "Hands-on Creative Specialist", "Creative Experience Designer"]
+      },
+      "The Coach": {
+        "Visual": ["Training Coordinator", "Educational Designer", "Learning Specialist", "Corporate Trainer", "Instructional Designer", "Educational Consultant", "Training Manager", "Development Specialist"],
+        "Auditory": ["Life Coach", "Corporate Trainer", "Motivational Speaker", "Team Coach", "Training Manager", "Executive Coach", "Leadership Developer", "Human Resources Manager"],
+        "Reading/Writing": ["Training Developer", "Educational Writer", "Human Resources Specialist", "Corporate Trainer", "Instructional Designer", "Learning Consultant", "Development Coordinator", "Training Specialist"],
+        "Kinesthetic": ["Athletic Coach", "Physical Trainer", "Hands-on Instructor", "Team Building Specialist", "Corporate Wellness Coach", "Training Facilitator", "Workshop Leader", "Experiential Learning Specialist"]
+      },
+      "The Free Spirit": {
+        "Visual": ["Social Media Manager", "Event Planner", "Marketing Coordinator", "Creative Marketing Specialist", "Brand Ambassador", "Digital Content Creator", "Community Manager", "Creative Coordinator"],
+        "Auditory": ["Public Relations Specialist", "Event Coordinator", "Social Media Manager", "Marketing Manager", "Community Outreach Coordinator", "Brand Ambassador", "Communications Specialist", "Event Producer"],
+        "Reading/Writing": ["Content Creator", "Social Media Coordinator", "Marketing Specialist", "Communications Coordinator", "Public Relations Writer", "Community Manager", "Marketing Communications", "Creative Writer"],
+        "Kinesthetic": ["Event Planner", "Community Organizer", "Marketing Activation Specialist", "Brand Experience Coordinator", "Social Program Coordinator", "Event Producer", "Community Engagement Specialist", "Experience Marketing Manager"]
+      },
       "The Organizer": {
         "Visual": ["Quality Assurance Analyst", "CAD Technician", "Data Analyst", "Technical Illustrator", "Process Improvement Specialist", "Systems Analyst", "Project Coordinator", "Compliance Officer"],
         "Auditory": ["Project Manager", "Training Coordinator", "Quality Control Inspector", "Operations Supervisor", "Administrative Manager", "Customer Service Manager", "HR Specialist", "Process Trainer"],
         "Reading/Writing": ["Technical Writer", "Policy Analyst", "Documentation Specialist", "Regulatory Affairs Specialist", "Business Analyst", "Compliance Officer", "Grant Writer", "Procedure Developer"],
         "Kinesthetic": ["Industrial Engineer", "Manufacturing Supervisor", "Facility Manager", "Supply Chain Coordinator", "Laboratory Technician", "Operations Analyst", "Quality Inspector", "Process Engineer"]
+      },
+      "The Helper": {
+        "Visual": ["Healthcare Administrator", "Patient Coordinator", "Medical Assistant", "Educational Support Specialist", "Social Services Coordinator", "Nonprofit Program Coordinator", "Healthcare Data Analyst", "Care Coordinator"],
+        "Auditory": ["Counselor", "Social Worker", "Healthcare Advocate", "Patient Liaison", "Community Outreach Specialist", "Support Group Facilitator", "Care Coordinator", "Human Services Worker"],
+        "Reading/Writing": ["Medical Writer", "Social Services Coordinator", "Grant Writer", "Policy Analyst", "Healthcare Documentation Specialist", "Case Manager", "Program Coordinator", "Research Coordinator"],
+        "Kinesthetic": ["Nurse", "Physical Therapist Assistant", "Medical Assistant", "Healthcare Technician", "Community Health Worker", "Direct Care Provider", "Healthcare Support Specialist", "Patient Care Technician"]
+      },
+      "The Manager": {
+        "Visual": ["Operations Analyst", "Business Analyst", "Project Coordinator", "Process Improvement Specialist", "Management Analyst", "Quality Assurance Specialist", "Operations Coordinator", "Business Process Analyst"],
+        "Auditory": ["Team Leader", "Operations Manager", "Administrative Manager", "Customer Service Manager", "Training Manager", "Human Resources Manager", "Department Manager", "Operations Supervisor"],
+        "Reading/Writing": ["Operations Analyst", "Business Process Analyst", "Administrative Coordinator", "Policy Analyst", "Management Consultant", "Operational Planner", "Process Documentation Specialist", "Business Analyst"],
+        "Kinesthetic": ["Operations Manager", "Facility Manager", "Supply Chain Manager", "Production Supervisor", "Inventory Manager", "Logistics Coordinator", "Plant Supervisor", "Operations Specialist"]
+      },
+      "The Host": {
+        "Visual": ["Event Coordinator", "Customer Experience Manager", "Hospitality Manager", "Marketing Coordinator", "Community Relations Specialist", "Brand Experience Manager", "Guest Services Manager", "Experience Designer"],
+        "Auditory": ["Event Planner", "Customer Service Manager", "Public Relations Specialist", "Hospitality Manager", "Community Coordinator", "Guest Relations Manager", "Event Producer", "Customer Experience Manager"],
+        "Reading/Writing": ["Event Coordinator", "Customer Communications Specialist", "Marketing Coordinator", "Community Relations Coordinator", "Guest Services Coordinator", "Event Planning Coordinator", "Hospitality Coordinator", "Customer Experience Specialist"],
+        "Kinesthetic": ["Event Planner", "Hospitality Manager", "Guest Services Manager", "Event Producer", "Customer Experience Manager", "Community Event Coordinator", "Venue Manager", "Experience Coordinator"]
+      },
+      "The Fixer": {
+        "Visual": ["Technical Support Specialist", "IT Support Technician", "Systems Troubleshooter", "Quality Control Technician", "Technical Analyst", "Problem Resolution Specialist", "Systems Maintenance Technician", "Technical Coordinator"],
+        "Auditory": ["Technical Support Manager", "Customer Technical Support", "IT Help Desk Manager", "Technical Trainer", "Systems Support Specialist", "Technical Consultant", "Problem Resolution Manager", "Technical Support Coordinator"],
+        "Reading/Writing": ["Technical Writer", "Systems Analyst", "Technical Documentation Specialist", "IT Support Analyst", "Technical Procedures Developer", "Systems Documentation Specialist", "Technical Communications", "Problem Analysis Specialist"],
+        "Kinesthetic": ["Field Service Technician", "Maintenance Technician", "Systems Repair Specialist", "Equipment Technician", "Technical Service Provider", "Hands-on Technical Specialist", "Field Engineer", "Technical Maintenance Specialist"]
+      },
+      "The Artist": {
+        "Visual": ["Graphic Designer", "Visual Artist", "Creative Designer", "Art Director", "Digital Artist", "Brand Designer", "Creative Visual Specialist", "Design Consultant"],
+        "Auditory": ["Art Therapist", "Creative Workshop Leader", "Art Instructor", "Creative Coach", "Artistic Consultant", "Creative Arts Therapist", "Art Education Specialist", "Creative Program Coordinator"],
+        "Reading/Writing": ["Art Writer", "Creative Content Developer", "Art Critic", "Creative Communications Specialist", "Arts Grant Writer", "Creative Copywriter", "Art Education Developer", "Creative Content Strategist"],
+        "Kinesthetic": ["Craft Artist", "Studio Artist", "Art Instructor", "Creative Workshop Leader", "Art Therapist", "Hands-on Art Specialist", "Creative Arts Facilitator", "Studio Manager"]
+      },
+      "The Adventurer": {
+        "Visual": ["Travel Photographer", "Adventure Tourism Coordinator", "Outdoor Recreation Specialist", "Environmental Educator", "Travel Content Creator", "Adventure Marketing Specialist", "Tourism Marketing Coordinator", "Experience Designer"],
+        "Auditory": ["Adventure Tour Guide", "Travel Coordinator", "Outdoor Education Specialist", "Adventure Program Manager", "Tourism Specialist", "Adventure Travel Consultant", "Expedition Leader", "Adventure Marketing Manager"],
+        "Reading/Writing": ["Travel Writer", "Adventure Blogger", "Tourism Marketing Specialist", "Adventure Program Coordinator", "Travel Content Developer", "Tourism Communications", "Adventure Marketing Writer", "Travel Marketing Coordinator"],
+        "Kinesthetic": ["Adventure Guide", "Outdoor Instructor", "Recreation Specialist", "Adventure Program Leader", "Wilderness Guide", "Adventure Tourism Specialist", "Outdoor Recreation Coordinator", "Adventure Experience Manager"]
+      },
+      "The Performer": {
+        "Visual": ["Performance Artist", "Creative Director", "Entertainment Marketing Specialist", "Stage Designer", "Creative Producer", "Performance Art Coordinator", "Entertainment Designer", "Creative Visual Specialist"],
+        "Auditory": ["Performer", "Entertainment Producer", "Performance Coach", "Creative Director", "Entertainment Manager", "Performance Coordinator", "Creative Arts Manager", "Entertainment Specialist"],
+        "Reading/Writing": ["Entertainment Writer", "Performance Arts Coordinator", "Creative Content Developer", "Entertainment Marketing Writer", "Performance Arts Manager", "Creative Communications", "Entertainment Content Creator", "Performance Program Developer"],
+        "Kinesthetic": ["Performance Artist", "Entertainment Coordinator", "Performance Instructor", "Creative Arts Facilitator", "Performance Workshop Leader", "Entertainment Experience Manager", "Performance Program Manager", "Creative Performance Specialist"]
       }
     };
 
