@@ -93,7 +93,7 @@ export default function DetailedResults() {
       const fromFreeAssessment = navState.fromFreeAssessment;
 
       // Check if user has already paid for premium access
-      const hasPaid = true; // TEMP bypass: force premium access
+      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
       
       if (hasPaid) {
         // Premium user - show their actual results or sample data if no quiz taken
