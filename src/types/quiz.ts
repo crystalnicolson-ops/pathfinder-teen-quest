@@ -85,14 +85,6 @@ export interface College {
   campusFacilities?: string[];
 }
 
-export interface CollegeTiers {
-  tier1: College[];
-  tier2: College[];
-  tier3: College[];
-  tier4: College[];
-  tier5: College[];
-}
-
 export interface Celebrity {
   name: string;
   emoji: string;
@@ -110,7 +102,7 @@ export interface PersonalityResult {
   careers: Career[];
   entryLevelCareers: Career[];
   advancedCareers: Career[];
-  colleges: College[] | CollegeTiers;
+  colleges: College[];
   celebrities: Celebrity[];
   traits: PersonalityTrait[];
 }

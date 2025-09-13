@@ -5,7 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import { ExternalLink, Users, TrendingUp, MapPin, GraduationCap, Star, ArrowLeft, Home, Lock } from 'lucide-react';
 import { personalityResults } from '@/data/quiz';
-import { PersonalityType, College, CollegeTiers } from '@/types/quiz';
+import { PersonalityType, College } from '@/types/quiz';
 
 import { useToast } from '@/components/ui/use-toast';
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -50,70 +50,9 @@ const personalityAvatars: Record<PersonalityType, string> = {
   'The Performer': avatarPerformer,
 };
 
-// Helper function to get colleges by tier
-// Global variable to track assigned colleges across all tier calls
-let globalAssignedColleges = new Set<string>();
-
-const getCollegesByTier = (colleges: College[] | CollegeTiers, tier: 'tier1' | 'tier2' | 'tier3' | 'tier4' | 'tier5'): College[] => {
-  if (Array.isArray(colleges)) {
-    // Reset global tracking for the first tier
-    if (tier === 'tier1') {
-      globalAssignedColleges.clear();
-    }
-    
-    // Legacy structure - filter by college names with no overlaps
-    const tierCollege = {
-      tier1: ['harvard', 'stanford', 'columbia', 'massachusetts institute of technology', 'mit', 'yale', 'princeton', 'california institute of technology', 'caltech', 'university of chicago'],
-      tier2: ['brown', 'dartmouth', 'duke', 'university of pennsylvania', 'penn', 'johns hopkins', 'northwestern', 'cornell'],
-      tier3: ['vanderbilt', 'university of notre dame', 'notre dame', 'rice', 'georgetown', 'washington university', 'berkeley', 'ucla'],
-      tier4: ['university of michigan', 'michigan', 'georgia institute of technology', 'georgia tech', 'emory', 'new york university', 'nyu', 'boston university', 'university of virginia', 'michigan state', 'indiana university', 'university of pittsburgh', 'university of minnesota', 'university of connecticut', 'temple'],
-      tier5: ['university of california davis', 'uc davis', 'university of california irvine', 'uc irvine', 'university of california santa barbara', 'ucsb', 'university of florida', 'university of illinois', 'illinois', 'university of washington', 'purdue', 'texas a&m', 'university of colorado', 'university of maryland', 'university of arizona', 'university of oregon', 'university of kansas', 'university of alabama', 'west virginia', 'louisiana state', 'lsu']
-    };
-    
-    // First try keyword matching for current tier only
-    const filtered = colleges.filter(college => {
-      const name = college.name.toLowerCase();
-      
-      // Skip if already assigned to a previous tier
-      if (globalAssignedColleges.has(name)) {
-        return false;
-      }
-      
-      // Check if this college matches current tier
-      const matches = tierCollege[tier].some(keyword => name.includes(keyword));
-      
-      if (matches) {
-        globalAssignedColleges.add(name);
-        return true;
-      }
-      
-      return false;
-    });
-    
-    // If no colleges match keywords, distribute evenly across tiers (only unassigned ones)
-    if (filtered.length === 0) {
-      const unassignedColleges = colleges.filter(college => 
-        !globalAssignedColleges.has(college.name.toLowerCase())
-      );
-      const collegesPerTier = Math.ceil(unassignedColleges.length / 5);
-      const tierIndex = { tier1: 0, tier2: 1, tier3: 2, tier4: 3, tier5: 4 }[tier];
-      const startIndex = tierIndex * collegesPerTier;
-      const endIndex = startIndex + collegesPerTier;
-      const tierColleges = unassignedColleges.slice(startIndex, endIndex);
-      
-      // Mark these as assigned
-      tierColleges.forEach(college => {
-        globalAssignedColleges.add(college.name.toLowerCase());
-      });
-      
-      return tierColleges;
-    }
-    
-    return filtered;
-  } else {
-    // New tiered structure
-    return colleges[tier] || [];
-  }
+// Helper function to get all colleges
+const getAllColleges = (colleges: College[]): College[] => {
+  return colleges || [];
 };
 
 
@@ -1242,25 +1181,24 @@ export default function DetailedResults() {
         {/* College Recommendations */}
         {section === 'colleges' && (
         <div className="space-y-6">
-          {/* Tier 1 Colleges */}
           <Card className="bg-white/95 backdrop-blur-sm shadow-card">
             <CardHeader>
               <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
                 <GraduationCap className="h-6 w-6 text-primary" />
-                 {rt('tier_1')}
+                {rt('college_recommendations')}
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                {rt('tier_1_desc')}
+                {rt('college_recommendations_desc')}
               </p>
             </CardHeader>
             <CardContent className="grid md:grid-cols-2 gap-4">
-              {getCollegesByTier(result.colleges, 'tier1').map((college, index) => (
+              {getAllColleges(result.colleges).map((college, index) => (
               <div key={index} className="border rounded-lg p-4 bg-gradient-card">
                 {/* Header */}
                 <div className="mb-4">
                   <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
                   <div className="flex items-center gap-2 mb-1">
-                    <MapPin className="h-3 w-3 text-secondary" />
+                    <MapPin className="h-3 w-3 text-primary" />
                     <span className="text-sm text-muted-foreground">{college.location}</span>
                   </div>
                   <Badge variant="secondary" className="mb-3 text-xs">{college.ranking}</Badge>
@@ -1271,18 +1209,18 @@ export default function DetailedResults() {
                     <div className="mb-4">
                       <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
                         <Star className="h-3 w-3 text-primary" />
-                        {rt('perfect_match_for').replace('{type}', result.type)}
+                        Perfect Match for {result.type}
                       </h4>
                       <div className="space-y-2">
                         {college.whyGoodFit && (
                           <div className="bg-gradient-to-r from-primary/10 to-primary/5 p-3 rounded-lg border border-primary/20">
-                            <h5 className="font-medium text-primary mb-1 text-xs">{rt('why_great_fit')}</h5>
+                            <h5 className="font-medium text-primary mb-1 text-xs">Why This Is A Great Fit:</h5>
                             <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
                          </div>
                        )}
                         {college.relevantMajors && college.relevantMajors.length > 0 && (
                           <div className="bg-secondary/30 p-3 rounded-lg">
-                            <h5 className="font-medium text-foreground mb-2 text-xs">{rt('recommended_majors')}</h5>
+                            <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
                             <div className="flex flex-wrap gap-1">
                               {college.relevantMajors.map((major, index) => (
                                 <span key={index} className="bg-primary/10 text-primary px-2 py-1 rounded-full text-xs font-medium border border-primary/20">
@@ -1296,287 +1234,14 @@ export default function DetailedResults() {
                    </div>
                  )}
 
-
                 {/* Website Link */}
                 <div 
                   className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
                   onClick={() => window.open(college.website, '_blank')}
                 >
                   <ExternalLink className="h-3 w-3" />
-                  {rt('visit_website')}
+                  Visit Website
                 </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          {/* Tier 2 Colleges */}
-          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <GraduationCap className="h-6 w-6 text-secondary" />
-                 {rt('tier_2')}
-              </CardTitle>
-              <p className="text-muted-foreground mt-2">
-                {rt('tier_2_desc')}
-              </p>
-            </CardHeader>
-            <CardContent className="grid md:grid-cols-2 gap-4">
-              {getCollegesByTier(result.colleges, 'tier2').map((college, index) => (
-                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-secondary/20">
-                  {/* Header */}
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
-                    <div className="flex items-center gap-2 mb-1">
-                      <MapPin className="h-3 w-3 text-secondary" />
-                      <span className="text-sm text-muted-foreground">{college.location}</span>
-                    </div>
-                    <Badge variant="outline" className="mb-3 text-xs border-secondary text-secondary">{college.ranking}</Badge>
-                  </div>
-
-                  {/* Why Good Fit & Relevant Majors */}
-                  {(college.whyGoodFit || college.relevantMajors) && (
-                    <div className="mb-4">
-                      <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
-                        <Star className="h-3 w-3 text-secondary" />
-                        {rt('perfect_match_for').replace('{type}', result.type)}
-                      </h4>
-                      <div className="space-y-2">
-                        {college.whyGoodFit && (
-                          <div className="bg-gradient-to-r from-secondary/10 to-secondary/5 p-3 rounded-lg border border-secondary/20">
-                            <h5 className="font-medium text-secondary mb-1 text-xs">{rt('why_great_fit')}</h5>
-                            <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
-                          </div>
-                        )}
-                        {college.relevantMajors && college.relevantMajors.length > 0 && (
-                          <div className="bg-secondary/30 p-3 rounded-lg">
-                            <h5 className="font-medium text-foreground mb-2 text-xs">{rt('recommended_majors')}</h5>
-                            <div className="flex flex-wrap gap-1">
-                              {college.relevantMajors.map((major, index) => (
-                                <span key={index} className="bg-secondary/10 text-secondary px-2 py-1 rounded-full text-xs font-medium border border-secondary/20">
-                                  {major}
-                                </span>
-                              ))}
-                            </div>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                  )}
-
-
-                  {/* Website Link */}
-                  <div 
-                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
-                    onClick={() => window.open(college.website, '_blank')}
-                  >
-                    <ExternalLink className="h-3 w-3" />
-                    {rt('visit_website')}
-                  </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          {/* Tier 3 Colleges */}
-          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <GraduationCap className="h-6 w-6 text-blue-600" />
-                 {rt('tier_3')}
-              </CardTitle>
-              <p className="text-muted-foreground mt-2">
-                {rt('tier_3_desc')}
-              </p>
-            </CardHeader>
-            <CardContent className="grid md:grid-cols-2 gap-4">
-              {getCollegesByTier(result.colleges, 'tier3').map((college, index) => (
-                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-blue-600/20">
-                  {/* Header */}
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
-                    <div className="flex items-center gap-2 mb-1">
-                      <MapPin className="h-3 w-3 text-blue-600" />
-                      <span className="text-sm text-muted-foreground">{college.location}</span>
-                    </div>
-                    <Badge variant="outline" className="mb-3 text-xs border-blue-600 text-blue-600">{college.ranking}</Badge>
-                  </div>
-
-                  {/* Why Good Fit & Relevant Majors */}
-                   {(college.whyGoodFit || college.relevantMajors) && (
-                     <div className="mb-4">
-                       <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
-                         <Star className="h-3 w-3 text-blue-600" />
-                         Great Match for {result.type}
-                       </h4>
-                       <div className="space-y-2">
-                         {college.whyGoodFit && (
-                           <div className="bg-gradient-to-r from-blue-600/10 to-blue-600/5 p-3 rounded-lg border border-blue-600/20">
-                             <h5 className="font-medium text-blue-600 mb-1 text-xs">Why This Is A Great Fit:</h5>
-                             <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
-                           </div>
-                         )}
-                         {college.relevantMajors && college.relevantMajors.length > 0 && (
-                           <div className="bg-blue-600/30 p-3 rounded-lg">
-                             <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
-                             <div className="flex flex-wrap gap-1">
-                               {college.relevantMajors.map((major, index) => (
-                                 <span key={index} className="bg-blue-600/10 text-blue-600 px-2 py-1 rounded-full text-xs font-medium border border-blue-600/20">
-                                   {major}
-                                 </span>
-                               ))}
-                             </div>
-                           </div>
-                         )}
-                       </div>
-                     </div>
-                   )}
-
-
-                  {/* Website Link */}
-                  <div 
-                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
-                    onClick={() => window.open(college.website, '_blank')}
-                  >
-                    <ExternalLink className="h-3 w-3" />
-                    Visit Website
-                  </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          {/* Tier 4 Colleges */}
-          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <GraduationCap className="h-6 w-6 text-purple-600" />
-                 Tier 4
-              </CardTitle>
-              <p className="text-muted-foreground mt-2">
-                Great schools with solid chances of admission. Acceptance rates 20%–40%.
-              </p>
-            </CardHeader>
-            <CardContent className="grid md:grid-cols-2 gap-4">
-              {getCollegesByTier(result.colleges, 'tier4').map((college, index) => (
-                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-purple-600/20">
-                  {/* Header */}
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
-                    <div className="flex items-center gap-2 mb-1">
-                      <MapPin className="h-3 w-3 text-purple-600" />
-                      <span className="text-sm text-muted-foreground">{college.location}</span>
-                    </div>
-                    <Badge variant="outline" className="mb-3 text-xs border-purple-600 text-purple-600">{college.ranking}</Badge>
-                  </div>
-
-                  {/* Why Good Fit & Relevant Majors */}
-                   {(college.whyGoodFit || college.relevantMajors) && (
-                     <div className="mb-4">
-                       <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
-                         <Star className="h-3 w-3 text-purple-600" />
-                         Solid Match for {result.type}
-                       </h4>
-                       <div className="space-y-2">
-                         {college.whyGoodFit && (
-                            <div className="bg-gradient-to-r from-purple-600/10 to-purple-600/5 p-3 rounded-lg border border-purple-600/20">
-                              <h5 className="font-medium text-purple-600 mb-1 text-xs">Why This Is A Great Fit:</h5>
-                             <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
-                           </div>
-                         )}
-                         {college.relevantMajors && college.relevantMajors.length > 0 && (
-                           <div className="bg-purple-600/30 p-3 rounded-lg">
-                             <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
-                             <div className="flex flex-wrap gap-1">
-                               {college.relevantMajors.map((major, index) => (
-                                 <span key={index} className="bg-purple-600/10 text-purple-600 px-2 py-1 rounded-full text-xs font-medium border border-purple-600/20">
-                                   {major}
-                                 </span>
-                               ))}
-                             </div>
-                           </div>
-                         )}
-                       </div>
-                     </div>
-                   )}
-
-
-                  {/* Website Link */}
-                  <div 
-                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
-                    onClick={() => window.open(college.website, '_blank')}
-                  >
-                    <ExternalLink className="h-3 w-3" />
-                    Visit Website
-                  </div>
-                </div>
-              ))}
-            </CardContent>
-          </Card>
-
-          {/* Tier 5 Colleges */}
-          <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-            <CardHeader>
-              <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-2">
-                <GraduationCap className="h-6 w-6 text-green-600" />
-                 Tier 5
-              </CardTitle>
-              <p className="text-muted-foreground mt-2">
-                Schools you're likely to get into and thrive at. Acceptance rates 40%–85%+.
-              </p>
-            </CardHeader>
-            <CardContent className="grid md:grid-cols-2 gap-4">
-              {getCollegesByTier(result.colleges, 'tier5').map((college, index) => (
-                <div key={index} className="border rounded-lg p-4 bg-gradient-card border-green-600/20">
-                  {/* Header */}
-                  <div className="mb-4">
-                    <h3 className="text-lg font-bold mb-1 text-foreground">{college.name}</h3>
-                    <div className="flex items-center gap-2 mb-1">
-                      <MapPin className="h-3 w-3 text-green-600" />
-                      <span className="text-sm text-muted-foreground">{college.location}</span>
-                    </div>
-                    <Badge variant="outline" className="mb-3 text-xs border-green-600 text-green-600">{college.ranking}</Badge>
-                  </div>
-
-                  {/* Why Good Fit & Relevant Majors */}
-                   {(college.whyGoodFit || college.relevantMajors) && (
-                     <div className="mb-4">
-                       <h4 className="font-medium text-sm text-foreground mb-2 flex items-center gap-1">
-                         <Star className="h-3 w-3 text-green-600" />
-                         Good Match for {result.type}
-                       </h4>
-                       <div className="space-y-2">
-                         {college.whyGoodFit && (
-                            <div className="bg-gradient-to-r from-green-600/10 to-green-600/5 p-3 rounded-lg border border-green-600/20">
-                              <h5 className="font-medium text-green-600 mb-1 text-xs">Why This Is A Great Fit:</h5>
-                             <p className="text-xs text-muted-foreground leading-relaxed">{college.whyGoodFit}</p>
-                           </div>
-                         )}
-                         {college.relevantMajors && college.relevantMajors.length > 0 && (
-                           <div className="bg-green-600/30 p-3 rounded-lg">
-                             <h5 className="font-medium text-foreground mb-2 text-xs">🎓 Recommended Majors:</h5>
-                             <div className="flex flex-wrap gap-1">
-                               {college.relevantMajors.map((major, index) => (
-                                 <span key={index} className="bg-green-600/10 text-green-600 px-2 py-1 rounded-full text-xs font-medium border border-green-600/20">
-                                   {major}
-                                 </span>
-                               ))}
-                             </div>
-                           </div>
-                         )}
-                       </div>
-                     </div>
-                   )}
-
-
-                  {/* Website Link */}
-                  <div 
-                    className="inline-flex bg-gradient-to-r from-purple-500 to-purple-600 text-white px-3 py-1 rounded-md cursor-pointer hover:from-purple-600 hover:to-purple-700 transition-all duration-300 transform hover:scale-105 shadow-md items-center gap-1 text-xs"
-                    onClick={() => window.open(college.website, '_blank')}
-                  >
-                    <ExternalLink className="h-3 w-3" />
-                    Visit Website
-                  </div>
                 </div>
               ))}
             </CardContent>
@@ -1590,7 +1255,7 @@ export default function DetailedResults() {
                 Academic Fit Assessment
               </CardTitle>
               <p className="text-muted-foreground mt-2">
-                Take our academic worksheet to see which college tiers match your profile.
+                Take our academic worksheet to see which colleges match your profile.
               </p>
             </CardHeader>
             <CardContent className="text-center">
