@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import DetailedQuiz from "./pages/DetailedQuiz";
 import DetailedResults from "./pages/DetailedResults";
 import AcademicWorksheet from "./pages/AcademicWorksheet";
+import KinestheticLearner from "./pages/KinestheticLearner";
 
 import NotFound from "./pages/NotFound";
 import ScrollToTop from "./components/ScrollToTop";
@@ -27,6 +28,7 @@ const AppContent = () => {
           <Route path="/detailed-results" element={<DetailedResults />} />
           <Route path="/premium-preview" element={<DetailedResults />} />
           <Route path="/academic-worksheet" element={<AcademicWorksheet />} />
+          <Route path="/kinesthetic-learner" element={<KinestheticLearner />} />
           
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
