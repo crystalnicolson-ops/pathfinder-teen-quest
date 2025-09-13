@@ -102,7 +102,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
   };
 
   // Check if user has premium access
-  const hasPremium = typeof window !== 'undefined' && localStorage.getItem('hasPaidPremium') === 'true';
+  const hasPremium = true; // Temporarily bypassed for preview
 
   // Parse the description to extract MBTI type and traits
   const parseDescription = (description: string) => {

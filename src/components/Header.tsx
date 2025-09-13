@@ -10,7 +10,7 @@ interface HeaderProps {
 }
 
 export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
-  const hasPremium = typeof window !== 'undefined' && localStorage.getItem('hasPaidPremium') === 'true';
+  const hasPremium = true; // Temporarily bypassed for preview
   const { t } = useLanguage();
 
   return (
