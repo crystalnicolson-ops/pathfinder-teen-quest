@@ -112,6 +112,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
         'premium.section.subtitle': 'Unlock deeper insights with our comprehensive 50-question assessment',
         'premium.section.what_you_get': 'What You Get:',
         'premium.section.plus': 'Plus:',
+        'premium.section.cta': 'Get Premium Assessment',
         // Add personality type translations to context
         'personality.the_strategist': 'The Strategist',
         'personality.the_inventor': 'The Inventor', 
