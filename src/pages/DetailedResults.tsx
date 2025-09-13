@@ -272,6 +272,28 @@ export default function DetailedResults() {
   const learningStyle = detailedResults?.learningStyle || 'Visual';
   const strengths = detailedResults?.strengths || [];
 
+  // Get personality-aware career alignment
+  const getPersonalityAwareCareerAlignment = (personalityType: PersonalityType, learningStyleType: string): string[] => {
+    const baseAlignment: Record<string, string[]> = {
+      "Visual": ["Graphic Designer", "Architect", "Interior Designer", "Photographer", "Filmmaker", "UI/UX Designer", "Art Director", "Web Developer"],
+      "Auditory": ["Teacher", "Therapist", "Radio/TV Host", "Musician", "Sales Representative", "Lawyer", "Counselor", "Public Speaker"],
+      "Reading/Writing": ["Writer", "Editor", "Researcher", "Lawyer", "Journalist", "Librarian", "Technical Writer", "Academic"],
+      "Kinesthetic": ["Engineer", "Surgeon", "Chef", "Mechanic", "Athletic Trainer", "Physical Therapist", "Carpenter", "Laboratory Technician"]
+    };
+
+    // Personality-specific career alignments that override learning style defaults
+    const personalityAlignments: Partial<Record<PersonalityType, Record<string, string[]>>> = {
+      "The Organizer": {
+        "Visual": ["Quality Assurance Analyst", "CAD Technician", "Data Analyst", "Technical Illustrator", "Process Improvement Specialist", "Systems Analyst", "Project Coordinator", "Compliance Officer"],
+        "Auditory": ["Project Manager", "Training Coordinator", "Quality Control Inspector", "Operations Supervisor", "Administrative Manager", "Customer Service Manager", "HR Specialist", "Process Trainer"],
+        "Reading/Writing": ["Technical Writer", "Policy Analyst", "Documentation Specialist", "Regulatory Affairs Specialist", "Business Analyst", "Compliance Officer", "Grant Writer", "Procedure Developer"],
+        "Kinesthetic": ["Industrial Engineer", "Manufacturing Supervisor", "Facility Manager", "Supply Chain Coordinator", "Laboratory Technician", "Operations Analyst", "Quality Inspector", "Process Engineer"]
+      }
+    };
+
+    return personalityAlignments[personalityType]?.[learningStyleType] || baseAlignment[learningStyleType] || [];
+  };
+
   // Comprehensive Learning Style Details
   const learningStyleDetails = {
     Visual: {
@@ -299,7 +321,7 @@ export default function DetailedResults() {
         "Sit where you can see the board/screen clearly in class",
         "Create visual study guides with charts and graphics"
       ],
-      careerAlignment: ["Graphic Designer", "Architect", "Interior Designer", "Photographer", "Filmmaker", "UI/UX Designer", "Art Director", "Web Developer"],
+      careerAlignment: getPersonalityAwareCareerAlignment(personality as PersonalityType, "Visual"),
       icon: "👁️",
       academicTips: [
         "Request visual materials from professors when available",
@@ -333,7 +355,7 @@ export default function DetailedResults() {
         "Use mnemonic devices and verbal repetition",
         "Study in a quiet environment or with background music you find helpful"
       ],
-      careerAlignment: ["Teacher", "Therapist", "Radio/TV Host", "Musician", "Sales Representative", "Lawyer", "Counselor", "Public Speaker"],
+      careerAlignment: getPersonalityAwareCareerAlignment(personality as PersonalityType, "Auditory"),
       icon: "👂",
       academicTips: [
         "Participate actively in class discussions",
@@ -367,7 +389,7 @@ export default function DetailedResults() {
         "Seek out textbooks and written supplementary materials",
         "Write practice essays and responses to test understanding"
       ],
-      careerAlignment: ["Writer", "Editor", "Researcher", "Lawyer", "Journalist", "Librarian", "Technical Writer", "Academic"],
+      careerAlignment: getPersonalityAwareCareerAlignment(personality as PersonalityType, "Reading/Writing"),
       icon: "📝",
       academicTips: [
         "Develop a consistent note-taking system that works for you",
@@ -401,7 +423,7 @@ export default function DetailedResults() {
         "Use gesture and movement while memorizing information",
         "Create physical study spaces with room to move and work with materials"
       ],
-      careerAlignment: ["Engineer", "Surgeon", "Chef", "Mechanic", "Athletic Trainer", "Physical Therapist", "Carpenter", "Laboratory Technician"],
+      careerAlignment: getPersonalityAwareCareerAlignment(personality as PersonalityType, "Kinesthetic"),
       icon: "🤲",
       academicTips: [
         "Prioritize courses with lab components and practical applications",
