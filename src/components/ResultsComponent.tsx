@@ -150,7 +150,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
       <div className="max-w-4xl mx-auto space-y-6">
         {/* Header */}
         <div className="text-center pt-8 pb-4">
-          <h1 className="text-4xl font-bold text-black mb-2 animate-pulse">{rt('results_header')}</h1>
+          <h1 className="text-4xl font-bold text-black mb-2 animate-pulse">Your Complete Profile</h1>
         </div>
 
         {/* Personality Type */}
