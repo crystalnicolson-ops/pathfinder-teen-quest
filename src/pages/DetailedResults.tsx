@@ -613,14 +613,6 @@ export default function DetailedResults() {
             </Button>
           </div>
 
-          {/* Premium Status Indicator */}
-          {localStorage.getItem('hasPaidPremium') === 'true' && (
-            <div className="mb-4">
-              <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-1">
-                ✨ Premium Access Activated
-              </Badge>
-            </div>
-          )}
           
           {/* Section Navigation Tabs (Sticky) */}
           <div className="sticky top-0 z-30 -mx-4 px-4 py-3 bg-background/80 backdrop-blur supports-[backdrop-filter]:bg-background/60 border-b border-border">
