@@ -655,7 +655,7 @@ export default function DetailedResults() {
                     onClick={() => setSection('personality')}
                     className="text-sm"
                   >
-                    {rt('personality_insights')}
+                    Complete Profile
                   </Button>
                   <Button 
                     variant={section === 'careers' ? "default" : "outline"}
@@ -680,7 +680,7 @@ export default function DetailedResults() {
           <h1 className="text-4xl font-bold text-black mb-2">
             {(() => {
               if (section === 'learning-style') return rt('your_learning_style');
-              if (section === 'personality') return rt('personality_insights');
+              if (section === 'personality') return 'Your Complete Personality Profile';
               if (section === 'careers') return rt('career_matches');
               if (section === 'colleges') return rt('college_options');
               if (section === 'study-methods') return rt('recommended_study_methods');
