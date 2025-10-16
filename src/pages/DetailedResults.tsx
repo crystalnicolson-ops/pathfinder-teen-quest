@@ -1485,8 +1485,9 @@ export default function DetailedResults() {
                 variant="outline"
                 size="lg"
                 onClick={() => {
-                  console.log('=== PERSONALITY BUTTON CLICKED ===');
-                  navigate('/', { state: { showResults: true, personality } });
+                  console.log('=== COMPLETE PROFILE BUTTON CLICKED ===');
+                  setSection('personality');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
                 className="px-6 py-3"
               >
