@@ -221,7 +221,6 @@ const DetailedQuiz = () => {
                   />
                 ))}
               </div>
-              <span className="text-sm">{t('detailed_quiz.select_to_continue')}</span>
             </div>
 
             <div className="w-[100px]"></div> {/* Spacer to maintain layout balance */}
