@@ -872,30 +872,127 @@ export default function DetailedResults() {
         {/* Personality Insights Section */}
         {section === 'personality' && (
           <div className="space-y-6">
+            {/* Main Personality Card with Description */}
             <Card className="bg-white/95 backdrop-blur-sm shadow-card">
-              <CardHeader>
-                <CardTitle className="text-3xl font-bold text-foreground flex items-center gap-3">
-                  <Star className="h-8 w-8 text-primary" />
-                  Your Personality Profile: {result.type}
-                </CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                <div className="flex items-center gap-6 mb-6">
-                  <div className="w-24 h-24 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
+              <CardHeader className="text-center">
+                <div className="mb-6">
+                  <div className="w-32 h-32 mx-auto mb-4 rounded-full overflow-hidden shadow-lg border-4 border-primary/20">
                     <img 
                       src={personalityAvatars[personality as PersonalityType]} 
                       alt={`${result.type} avatar`}
                       className="w-full h-full object-cover"
                     />
                   </div>
-                  <div className="flex-1">
-                    <p className="text-lg text-muted-foreground leading-relaxed">{result.description}</p>
+                </div>
+                <CardTitle className="text-3xl font-bold text-primary mb-4">
+                  {result.type}
+                </CardTitle>
+                <p className="text-lg text-muted-foreground leading-relaxed mb-6">
+                  {result.description}
+                </p>
+                
+                {/* Detailed Personality Explanation */}
+                <div className="bg-gradient-to-r from-primary/5 to-secondary/5 p-6 rounded-lg border mb-6">
+                  <h4 className="text-xl font-semibold text-foreground mb-4 flex items-center gap-2">
+                    <Star className="h-5 w-5 text-primary" />
+                    {rt('what_does_this_mean')}
+                  </h4>
+                  <div className="space-y-4 text-left">
+                    <p className="text-muted-foreground leading-relaxed">
+                      {rt('personality_meaning').replace('{type}', result.type)}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {rt('personality_traits_desc')}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      {rt('personality_relationships')}
+                    </p>
+                    <div className="bg-white/50 p-4 rounded-lg border-l-4 border-primary">
+                      <p className="text-sm font-medium text-foreground">
+                        {rt('key_insight')}
+                      </p>
+                    </div>
                   </div>
+                </div>
+                
+                {/* Detailed Personality Insights Grid */}
+                <div className="grid md:grid-cols-3 gap-4 mt-6">
+                  <div className="bg-gradient-card p-4 rounded-lg border">
+                    <h4 className="font-semibold text-foreground mb-2">{rt('your_strengths')}</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• {rt('strengths_1')}</li>
+                      <li>• {rt('strengths_2')}</li>
+                      <li>• {rt('strengths_3')}</li>
+                      <li>• {rt('strengths_4')}</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gradient-card p-4 rounded-lg border">
+                    <h4 className="font-semibold text-foreground mb-2">{rt('work_style')}</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• {rt('work_style_1')}</li>
+                      <li>• {rt('work_style_2')}</li>
+                      <li>• {rt('work_style_3')}</li>
+                      <li>• {rt('work_style_4')}</li>
+                    </ul>
+                  </div>
+                  <div className="bg-gradient-card p-4 rounded-lg border">
+                    <h4 className="font-semibold text-foreground mb-2">{rt('best_environments')}</h4>
+                    <ul className="text-sm text-muted-foreground space-y-1">
+                      <li>• {rt('best_env_1')}</li>
+                      <li>• {rt('best_env_2')}</li>
+                      <li>• {rt('best_env_3')}</li>
+                      <li>• {rt('best_env_4')}</li>
+                    </ul>
+                  </div>
+                </div>
+              </CardHeader>
+            </Card>
+
+            {/* Personality Traits Visualization */}
+            <Card className="bg-gradient-to-br from-white/95 via-white/90 to-white/95 backdrop-blur-lg shadow-xl border border-white/30 overflow-hidden">
+              <CardHeader className="text-center relative pb-4">
+                <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent"></div>
+                <div className="relative z-10">
+                  <CardTitle className="text-2xl font-bold mb-2 text-foreground">
+                    {rt('your_personality_traits')}
+                  </CardTitle>
+                  <p className="text-sm text-muted-foreground">
+                    {rt('traits_subtitle')}
+                  </p>
+                </div>
+              </CardHeader>
+
+              <CardContent className="px-6 pb-6">
+                <div className="max-w-lg mx-auto mb-6">
+                  {result.traits.map((trait, index) => {
+                    const isHigh = trait.percentage >= 70;
+                    return (
+                      <div key={index} className="mb-4">
+                        <div className="flex justify-between items-center mb-2">
+                          <span className="text-sm font-medium text-foreground">
+                            {rt(`trait_${trait.name.toLowerCase().replace(/[^a-z]/g, '_')}`) || trait.name}
+                          </span>
+                          <span className="text-sm font-bold text-foreground">
+                            {trait.percentage}%
+                          </span>
+                        </div>
+                        <div className="relative">
+                          <div className="w-full h-2 bg-purple-200 rounded-full"></div>
+                          <div 
+                            className={`absolute top-0 w-4 h-4 rounded-full border-2 border-white shadow-md transform -translate-y-1 -translate-x-2 transition-all duration-1000 ${
+                              isHigh ? 'bg-blue-400' : 'bg-gray-400'
+                            }`}
+                            style={{ left: `${trait.percentage}%` }}
+                          ></div>
+                        </div>
+                      </div>
+                    );
+                  })}
                 </div>
               </CardContent>
             </Card>
 
-            {/* Detailed Personality Trait Analysis */}
+            {/* Detailed Personality Trait Analysis - Energy Style */}
             <Card className="bg-white/95 backdrop-blur-sm shadow-card">
               <CardHeader>
                 <CardTitle className="text-2xl font-bold text-foreground flex items-center gap-3">
