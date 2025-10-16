@@ -374,21 +374,27 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
           </div>
 
           {/* Home and Retake Buttons */}
-          <div className="flex gap-4">
+          <div className="flex gap-4 relative z-10">
             <Button 
               variant="outline" 
-              onClick={onHome}
+              onClick={() => {
+                console.log('Home button clicked');
+                onHome();
+              }}
               size="lg"
-              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black"
+              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black cursor-pointer"
             >
               <Home className="h-4 w-4 mr-2" />
               {rt('home')}
             </Button>
             <Button 
               variant="outline" 
-              onClick={onRetake}
+              onClick={() => {
+                console.log('Retake button clicked');
+                onRetake();
+              }}
               size="lg"
-              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black"
+              className="bg-white/90 border-gray-300 text-black hover:bg-white hover:text-black cursor-pointer"
             >
               {rt('retake_quiz')}
             </Button>
