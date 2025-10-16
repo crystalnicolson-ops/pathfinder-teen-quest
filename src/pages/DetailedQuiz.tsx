@@ -208,21 +208,6 @@ const DetailedQuiz = () => {
               {t('common.previous')}
             </Button>
 
-            <div className="flex items-center gap-2 text-muted-foreground">
-              <div className="flex gap-1">
-                {Array.from({ length: Math.ceil(detailedQuestions.length / 10) }).map((_, i) => (
-                  <div
-                    key={i}
-                    className={`w-2 h-2 rounded-full ${
-                      Math.floor(currentQuestion / 10) === i 
-                        ? 'bg-primary' 
-                        : 'bg-muted'
-                    }`}
-                  />
-                ))}
-              </div>
-            </div>
-
             <div className="w-[100px]"></div> {/* Spacer to maintain layout balance */}
           </div>
         </div>
