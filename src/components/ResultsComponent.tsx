@@ -138,7 +138,7 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
   };
 
   const handleViewPersonality = () => {
-    navigate('/detailed-results', { state: { personality, section: 'personality' } });
+    navigate('/detailed-results', { state: { personality, section: 'personality', fromFreeAssessment: true } });
   };
 
   const handleViewStudyMethods = () => {

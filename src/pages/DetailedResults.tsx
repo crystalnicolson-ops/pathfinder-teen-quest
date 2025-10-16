@@ -120,8 +120,8 @@ export default function DetailedResults() {
         return;
       }
 
-      // Allow free access to careers and colleges when coming from quick assessment
-      if (fromFreeAssessment && incomingPersonality && (incomingSection === 'careers' || incomingSection === 'colleges')) {
+      // Allow free access to personality, careers and colleges when coming from quick assessment
+      if (fromFreeAssessment && incomingPersonality && (incomingSection === 'personality' || incomingSection === 'careers' || incomingSection === 'colleges')) {
         setPersonality(incomingPersonality);
         setSection(incomingSection);
         setFreeAssessmentAccess(true);
