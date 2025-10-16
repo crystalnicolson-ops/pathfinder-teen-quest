@@ -293,10 +293,10 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
 
         {/* Action Buttons */}
         <div className="flex flex-col gap-6 items-center">
-          {/* Learning Style Button */}
+          {/* Complete Profile Button */}
           <div className="relative group">
               <Button 
-                onClick={handleViewLearningStyle}
+                onClick={handleViewPersonality}
                 size="lg"
                 className="relative bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full border-2 border-transparent hover:from-purple-600 hover:to-pink-600 transform transition-all duration-300 hover:scale-105 hover:shadow-lg px-8 py-6 text-lg font-bold overflow-hidden"
               >
@@ -306,26 +306,9 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 </div>
                 
                 <Star className="h-6 w-6 mr-3 group-hover:animate-bounce" />
-                <span className="relative z-10">{rt('learning_style_analysis')}</span>
+                <span className="relative z-10">Your Complete Profile</span>
             </Button>
           </div>
-
-          {/* Personality Insights */}
-          <div className="relative group">
-              <Button 
-                onClick={handleViewPersonality}
-                size="lg"
-                className="relative bg-gradient-to-r from-indigo-500 to-purple-500 text-white rounded-full border-2 border-transparent hover:from-indigo-600 hover:to-purple-600 transform transition-all duration-300 hover:scale-105 hover:shadow-lg px-8 py-6 text-lg font-bold overflow-hidden"
-              >
-                {/* Sparkle effect */}
-                <div className="absolute -top-1 -left-1">
-                  <Sparkles className="h-4 w-4 text-yellow-300 animate-bounce" style={{animationDelay: '0.3s'}} />
-                </div>
-                
-                <Rocket className="h-6 w-6 mr-3 group-hover:animate-bounce" />
-                <span className="relative z-10">{rt('deep_personality_insights')}</span>
-              </Button>
-            </div>
 
           {/* Career Button */}
           <div className="relative group">
