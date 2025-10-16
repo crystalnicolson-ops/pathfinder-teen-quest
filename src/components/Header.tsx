@@ -13,7 +13,7 @@ export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
   const { t } = useLanguage();
 
   return (
-    <div className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
+    <div className="fixed top-0 left-0 right-0 z-50">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3"></div>
@@ -25,7 +25,7 @@ export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
                 variant="outline" 
                 onClick={onHome}
                 size="sm"
-                className="bg-background/90 border-border text-foreground hover:bg-card hover:text-card-foreground transition-all duration-300"
+                className="bg-white/10 backdrop-blur-sm border-white/20 text-white hover:bg-white/20 hover:text-white transition-all duration-300"
               >
               <Home className="h-4 w-4 mr-2" />
               {t('home')}
