@@ -91,7 +91,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
         'home.hero.title': "What's Your Personality Type?",
         'home.hero.subtitle': 'Take our quick personality quiz and discover careers that match your unique strengths, plus colleges that can get you there!',
-        'home.hero.quick': 'Quick Assessment (Free)',
+        'home.hero.quick': 'Begin Assessment',
 
         'home.section.types.title': 'Find Your Match',
         'home.section.types.subtitle': 'Discover which of these personality types matches your unique strengths and preferences',
@@ -172,7 +172,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
         'home.hero.title': '¿Cuál es tu tipo de personalidad?',
         'home.hero.subtitle': 'Realiza nuestro test rápido y descubre carreras que coinciden con tus fortalezas únicas, además de universidades que te llevarán allí.',
-        'home.hero.quick': 'Evaluación rápida (Gratis)',
+        'home.hero.quick': 'Comenzar Evaluación',
 
         'home.section.types.title': 'Encuentra tu coincidencia',
         'home.section.types.subtitle': 'Descubre cuál de estos tipos de personalidad coincide con tus fortalezas y preferencias',
@@ -268,7 +268,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
         'home.hero.title': 'Quel est votre type de personnalité ?',
         'home.hero.subtitle': 'Faites notre test rapide et découvrez des carrières adaptées à vos forces uniques, ainsi que des universités pour y parvenir.',
-        'home.hero.quick': 'Évaluation rapide (Gratuite)',
+        'home.hero.quick': 'Commencer l\'Évaluation',
 
         'home.section.types.title': 'Trouvez votre correspondance',
         'home.section.types.subtitle': 'Découvrez lequel de ces types de personnalité correspond à vos forces et préférences',
@@ -364,7 +364,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
         'home.hero.title': 'Was ist dein Persönlichkeitstyp?',
         'home.hero.subtitle': 'Mache unseren schnellen Test und entdecke Karrieren, die zu deinen Stärken passen, plus Hochschulen, die dich dorthin bringen.',
-        'home.hero.quick': 'Schnelltest (Kostenlos)',
+        'home.hero.quick': 'Test Beginnen',
 
         'home.section.types.title': 'Finde dein Match',
         'home.section.types.subtitle': 'Finde heraus, welcher Persönlichkeitstyp zu deinen Stärken und Vorlieben passt',
@@ -460,7 +460,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
         'home.hero.title': '你的性格类型是什么？',
         'home.hero.subtitle': '参加我们的快速测试，发现与你优势相匹配的职业，并找到帮助你实现目标的大学。',
-        'home.hero.quick': '快速测评（免费）',
+        'home.hero.quick': '开始测评',
 
         'home.section.types.title': '找到你的匹配',
         'home.section.types.subtitle': '了解这些性格类型中哪一种最符合你的优势与偏好',
@@ -556,7 +556,7 @@ export function LanguageProvider({ children }: LanguageProviderProps) {
 
         'home.hero.title': 'あなたの性格タイプは？',
         'home.hero.subtitle': '短時間のテストであなたの強みに合ったキャリアを発見し、それを実現できる大学も見つけましょう。',
-        'home.hero.quick': 'クイック診断（無料）',
+        'home.hero.quick': '診断を始める',
 
         'home.section.types.title': 'あなたに合うタイプを見つけよう',
         'home.section.types.subtitle': 'これらの性格タイプの中で、あなたの強みと好みに合うものを見つけましょう',
