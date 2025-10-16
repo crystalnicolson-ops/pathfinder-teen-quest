@@ -5,11 +5,11 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
-import { ArrowLeft, ArrowRight, Crown, BookOpen, CreditCard } from 'lucide-react';
+import { BookOpen, ArrowLeft, ArrowRight } from 'lucide-react';
 import Header from '@/components/Header';
 import { detailedQuestions, calculateDetailedMBTI, DetailedQuestion, AnswerType } from '@/data/detailedQuiz';
 import { useToast } from '@/components/ui/use-toast';
-import { PAYMENT_LINK_URL } from '@/config/payments';
+
 import { useLanguage } from '@/contexts/LanguageContext';
 import { detailedQuizTranslations } from '@/i18n/detailedQuiz';
 
@@ -20,8 +20,6 @@ const DetailedQuiz = () => {
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const [answers, setAnswers] = useState<{ question: DetailedQuestion; answer: AnswerType }[]>([]);
   const [currentAnswer, setCurrentAnswer] = useState<AnswerType | ''>('');
-  const [showPaymentPrompt, setShowPaymentPrompt] = useState(false);
-  const [isProcessingPayment, setIsProcessingPayment] = useState(false);
 
   // Get translated question text
   const getQuestionText = (questionIndex: number) => {
@@ -53,40 +51,19 @@ const DetailedQuiz = () => {
         setCurrentAnswer(newAnswers[currentQuestion + 1]?.answer || '');
       }, 300); // Small delay for better UX
     } else {
-      // Quiz completed - check if user already has premium access
-      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
-      console.log('[QUIZ COMPLETE] Quiz finished! hasPaidPremium =', hasPaid);
-      console.log('[QUIZ COMPLETE] Total answers collected:', newAnswers.length);
-      if (hasPaid) {
-        // Premium user - go directly to results
-        console.log('[QUIZ COMPLETE] User has paid, going to results');
-        setTimeout(() => {
-          const results = calculateDetailedMBTI(newAnswers);
-          localStorage.setItem('pendingQuizResults', JSON.stringify({
-            results,
-            answers: newAnswers.map(a => ({
-              question: a.question.text,
-              answer: a.answer
-            }))
-          }));
-          navigate('/detailed-results');
-        }, 300);
-      } else {
-        // Free user - show payment prompt
-        console.log('[QUIZ COMPLETE] User has NOT paid, showing payment prompt');
-        setTimeout(() => {
-          const results = calculateDetailedMBTI(newAnswers);
-          localStorage.setItem('pendingQuizResults', JSON.stringify({
-            results,
-            answers: newAnswers.map(a => ({
-              question: a.question.text,
-              answer: a.answer
-            }))
-          }));
-          console.log('[QUIZ COMPLETE] About to set showPaymentPrompt to true');
-          setShowPaymentPrompt(true);
-        }, 300);
-      }
+      // Quiz completed - go directly to results
+      setTimeout(() => {
+        const results = calculateDetailedMBTI(newAnswers);
+        localStorage.setItem('pendingQuizResults', JSON.stringify({
+          results,
+          answers: newAnswers.map(a => ({
+            question: a.question.text,
+            answer: a.answer
+          }))
+        }));
+        localStorage.setItem('hasPaidPremium', 'true');
+        navigate('/detailed-results');
+      }, 300);
     }
   };
 
@@ -104,74 +81,22 @@ const DetailedQuiz = () => {
       setCurrentQuestion(currentQuestion + 1);
       setCurrentAnswer(newAnswers[currentQuestion + 1]?.answer || '');
     } else {
-      // Quiz completed - check if user already has premium access
-      const hasPaid = localStorage.getItem('hasPaidPremium') === 'true';
-      console.log('[DETAILED QUIZ] Completed. hasPaidPremium =', hasPaid);
-      if (hasPaid) {
-        // Premium user - go directly to results
-        setTimeout(() => {
-          const results = calculateDetailedMBTI(newAnswers);
-          localStorage.setItem('pendingQuizResults', JSON.stringify({
-            results,
-            answers: newAnswers.map(a => ({
-              question: a.question.text,
-              answer: a.answer
-            }))
-          }));
-          navigate('/detailed-results');
-        }, 300);
-      } else {
-        // Free user - show payment prompt
-        setTimeout(() => {
-          const results = calculateDetailedMBTI(newAnswers);
-          localStorage.setItem('pendingQuizResults', JSON.stringify({
-            results,
-            answers: newAnswers.map(a => ({
-              question: a.question.text,
-              answer: a.answer
-            }))
-          }));
-          console.log('[DETAILED QUIZ] Showing payment prompt');
-          setShowPaymentPrompt(true);
-        }, 300);
-      }
+      // Quiz completed - go directly to results
+      setTimeout(() => {
+        const results = calculateDetailedMBTI(newAnswers);
+        localStorage.setItem('pendingQuizResults', JSON.stringify({
+          results,
+          answers: newAnswers.map(a => ({
+            question: a.question.text,
+            answer: a.answer
+          }))
+        }));
+        localStorage.setItem('hasPaidPremium', 'true');
+        navigate('/detailed-results');
+      }, 300);
     }
   };
 
-  const handlePayment = async () => {
-    setIsProcessingPayment(true);
-    try {
-      // Store quiz data in localStorage before redirecting
-      const results = calculateDetailedMBTI(answers);
-      localStorage.setItem('pendingQuizResults', JSON.stringify({
-        results,
-        answers: answers.map(a => ({
-          question: a.question.text,
-          answer: a.answer
-        }))
-      }));
-
-      if (!PAYMENT_LINK_URL) {
-        throw new Error(t('quiz.error_payment_link'));
-      }
-
-      // Open Stripe checkout in a new tab
-      window.open(PAYMENT_LINK_URL, '_blank');
-      toast({
-        title: t('quiz.payment_opened'),
-        description: t('quiz.payment_opened_desc'),
-      });
-    } catch (error: any) {
-      console.error('Payment error:', error);
-      toast({
-        title: t('quiz.payment_error'),
-        description: error.message || 'Failed to open payment link.',
-        variant: 'destructive',
-      });
-    } finally {
-      setIsProcessingPayment(false);
-    }
-  };
 
   const handlePrevious = () => {
     if (currentQuestion > 0) {
@@ -192,61 +117,6 @@ const DetailedQuiz = () => {
     "Creative vs Practical Thinking": "🌈"
   };
 
-  if (showPaymentPrompt) {
-    console.log('[PAYMENT PROMPT] Rendering payment prompt screen');
-    return (
-      <>
-        <Header onHome={handleGoHome} />
-        <div className="min-h-screen bg-gradient-to-br from-primary/10 via-secondary/5 to-accent/10 flex items-center justify-center">
-          <Card className="max-w-md mx-auto">
-            <CardHeader>
-              <CardTitle className="text-center">{t('payment.congratulations')}</CardTitle>
-            </CardHeader>
-            <CardContent className="text-center space-y-6">
-              <div className="space-y-2">
-                <p className="text-lg font-medium">{t('payment.quiz_complete')}</p>
-                <p className="text-muted-foreground">
-                  {t('payment.unlock_results')}
-                </p>
-              </div>
-              
-              <div className="bg-primary/10 p-4 rounded-lg">
-                <p className="text-2xl font-bold text-primary">$9.97</p>
-                <p className="text-sm text-muted-foreground">{t('payment.one_time')}</p>
-              </div>
-
-              <div className="space-y-2">
-                <Button 
-                  onClick={handlePayment}
-                  disabled={isProcessingPayment}
-                  className="w-full"
-                  size="lg"
-                >
-                  <CreditCard className="mr-2 h-4 w-4" />
-                  {isProcessingPayment ? t('quiz.processing') : t('payment.get_results')}
-                </Button>
-                <Button 
-                  variant="outline" 
-                  onClick={() => setShowPaymentPrompt(false)}
-                  className="w-full"
-                >
-                  {t('payment.back_to_quiz')}
-                </Button>
-                <Button 
-                  variant="ghost"
-                  className="w-full"
-                  onClick={() => navigate('/detailed-results')}
-                >
-                  Already paid? Open Results
-                </Button>
-              </div>
-            </CardContent>
-          </Card>
-        </div>
-      </>
-    );
-  }
-
   return (
     <>
       <Header onHome={handleGoHome} />
@@ -255,9 +125,7 @@ const DetailedQuiz = () => {
           {/* Header */}
           <div className="text-center mb-8">
             <div className="flex items-center justify-center gap-2 mb-4">
-              <Crown className="h-6 w-6 text-primary" />
               📊 {t('detailed_quiz.title')}
-              <Crown className="h-6 w-6 text-primary" />
             </div>
             <p className="text-muted-foreground">
               {t('detailed_quiz.subtitle')}

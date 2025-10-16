@@ -10,20 +10,13 @@ interface HeaderProps {
 }
 
 export default function Header({ onHome, showHomeButton = true }: HeaderProps) {
-  const hasPremium = localStorage.getItem('hasPaidPremium') === 'true';
   const { t } = useLanguage();
 
   return (
     <div className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-sm border-b border-border">
       <div className="max-w-7xl mx-auto px-4 py-3">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-3">
-            {hasPremium && (
-              <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-primary-foreground px-3 py-1 text-xs">
-                ✨ Premium
-              </Badge>
-            )}
-          </div>
+          <div className="flex items-center gap-3"></div>
           
           <div className="flex items-center gap-3">
             <LanguageSelector />

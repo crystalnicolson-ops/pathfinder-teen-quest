@@ -101,8 +101,6 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
     return resultsTranslations[currentLanguage.code]?.[key] || resultsTranslations.en[key] || key;
   };
 
-  // Check if user has premium access
-  const hasPremium = localStorage.getItem('hasPaidPremium') === 'true';
 
   // Parse the description to extract MBTI type and traits
   const parseDescription = (description: string) => {
@@ -295,18 +293,8 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
 
         {/* Action Buttons */}
         <div className="flex flex-col gap-6 items-center">
-          {/* Premium Status Badge */}
-          {hasPremium && (
-            <div className="mb-2">
-              <Badge variant="default" className="bg-gradient-to-r from-primary to-secondary text-white px-4 py-2">
-                {rt('premium_access_active')}
-              </Badge>
-            </div>
-          )}
-
-          {/* Premium Learning Style Button - Only for Premium Users */}
-          {hasPremium && (
-            <div className="relative group">
+          {/* Learning Style Button */}
+          <div className="relative group">
               <Button 
                 onClick={handleViewLearningStyle}
                 size="lg"
@@ -319,13 +307,11 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 
                 <Star className="h-6 w-6 mr-3 group-hover:animate-bounce" />
                 <span className="relative z-10">{rt('learning_style_analysis')}</span>
-              </Button>
-            </div>
-          )}
+            </Button>
+          </div>
 
-          {/* Premium Personality Insights - Only for Premium Users */}
-          {hasPremium && (
-            <div className="relative group">
+          {/* Personality Insights */}
+          <div className="relative group">
               <Button 
                 onClick={handleViewPersonality}
                 size="lg"
@@ -340,7 +326,6 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 <span className="relative z-10">{rt('deep_personality_insights')}</span>
               </Button>
             </div>
-          )}
 
           {/* Career Button */}
           <div className="relative group">
@@ -365,9 +350,8 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
             <div className="absolute inset-0 rounded-full bg-gradient-secondary opacity-30 group-hover:opacity-50 blur-xl transition-opacity duration-300 -z-10"></div>
           </div>
 
-          {/* Premium Study Methods - Only for Premium Users */}
-          {hasPremium && (
-            <div className="relative group">
+          {/* Study Methods */}
+          <div className="relative group">
               <Button 
                 onClick={handleViewStudyMethods}
                 size="lg"
@@ -382,7 +366,6 @@ export default function ResultsComponent({ personality, onRetake, onHome }: Resu
                 <span className="relative z-10">{rt('study_methods')}</span>
               </Button>
             </div>
-          )}
 
           {/* College Button */}
           <div className="relative group">

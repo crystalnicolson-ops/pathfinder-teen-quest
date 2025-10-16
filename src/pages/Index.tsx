@@ -3,7 +3,7 @@ import { useLocation, Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Sparkles, Target, GraduationCap, TrendingUp, Crown } from 'lucide-react';
+import { Sparkles, Target, GraduationCap, TrendingUp } from 'lucide-react';
 import QuizComponent from '@/components/QuizComponent';
 import ResultsComponent from '@/components/ResultsComponent';
 import Header from '@/components/Header';
@@ -98,25 +98,16 @@ const Index = () => {
           
           <p className="text-xl md:text-2xl text-white/80 mb-8 max-w-2xl mx-auto leading-relaxed">{t('home.hero.subtitle')}</p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button 
-              variant="secondary" 
-              size="lg" 
-              onClick={handleStartQuiz}
-              className="text-lg px-8 py-6 animate-pulse-slow rounded-full text-white border-[#DDA0DD]"
-              style={{ backgroundColor: '#DDA0DD', borderColor: '#DDA0DD' }}
-            >
-              <Target className="h-6 w-6 mr-2" color="white" />
-              {t('home.hero.quick')}
-            </Button>
+          <div className="flex justify-center">
             <Link to="/detailed-quiz">
               <Button 
-                variant="hero" 
+                variant="secondary" 
                 size="lg" 
-                className="text-lg px-8 py-6 rounded-full bg-gradient-to-r from-primary to-accent text-white border-0 hover:scale-105 transition-transform shadow-lg"
+                className="text-lg px-8 py-6 animate-pulse-slow rounded-full text-white border-[#DDA0DD]"
+                style={{ backgroundColor: '#DDA0DD', borderColor: '#DDA0DD' }}
               >
-                <Crown className="h-6 w-6 mr-2" />
-                {t('premium.assessment')}
+                <Target className="h-6 w-6 mr-2" color="white" />
+                {t('home.hero.quick')}
               </Button>
             </Link>
           </div>
@@ -232,75 +223,6 @@ const Index = () => {
         </div>
       </div>
 
-      {/* Premium Section */}
-      <div className="max-w-4xl mx-auto px-4 pb-16">
-        <div className="bg-white/10 backdrop-blur-sm rounded-xl p-8 border border-white/20">
-          <div className="text-center mb-6">
-            <div className="flex items-center justify-center gap-2 mb-4">
-              <Crown className="h-8 w-8 text-yellow-400" />
-              <h3 className="text-3xl font-bold text-white">{t('premium.assessment')}</h3>
-              <Crown className="h-8 w-8 text-yellow-400" />
-            </div>
-            <p className="text-white/90 text-lg mb-6">
-              {t('premium.section.subtitle')}
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-2 gap-6 mb-8">
-            <div className="text-left">
-              <h4 className="text-xl font-semibold text-white mb-4">{t('premium.section.what_you_get')}</h4>
-              <ul className="text-white/90 space-y-3">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-400 font-bold">•</span>
-                  <span><strong>50 detailed questions</strong> for maximum accuracy</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-400 font-bold">•</span>
-                  <span><strong>Precise career matching</strong> with entry-level and advanced positions</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-400 font-bold">•</span>
-                  <span><strong>Personalized learning style analysis</strong> to optimize your study approach</span>
-                </li>
-              </ul>
-            </div>
-            <div className="text-left">
-              <h4 className="text-xl font-semibold text-white mb-4">{t('premium.section.plus')}</h4>
-              <ul className="text-white/90 space-y-3">
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-400 font-bold">•</span>
-                  <span><strong>Comprehensive strength assessment</strong> with actionable insights</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-400 font-bold">•</span>
-                  <span><strong>Detailed college recommendations</strong> by tier and program</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-yellow-400 font-bold">•</span>
-                  <span><strong>In-depth personality analysis</strong> with 16 MBTI types</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="text-center">
-            <div className="mb-6">
-              <span className="text-3xl font-bold text-white">$9.97</span>
-              <span className="text-white/70 ml-2">one-time payment</span>
-            </div>
-            <Link to="/detailed-quiz">
-              <Button 
-                variant="hero" 
-                size="lg" 
-                className="text-xl px-12 py-8 rounded-full bg-gradient-to-r from-yellow-500 to-orange-500 text-white border-0 hover:scale-105 transition-transform shadow-xl hover:shadow-2xl"
-              >
-                <Crown className="h-6 w-6 mr-3" />
-                {t('premium.section.cta')}
-              </Button>
-            </Link>
-          </div>
-        </div>
-      </div>
     </div>
     </>
   );
